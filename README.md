@@ -72,3 +72,6 @@ Me</a>
 6.  [Penguin dives](../main/data/penguin_dives.csv)
 7.  [Crime rate and economic
     stability](../main/data/crimerate_econstability.csv)
+
+Inspiration from :
+https://github.com/gregridgeway/R4crim/blob/master/README.md?plain=1
