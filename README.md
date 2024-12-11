@@ -40,6 +40,9 @@ Here is a flowchart to do exploratory data analysis, or EDA.
 
 ## Exercises:
 
+<a href="https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html" title="About Me">About
+Me</a>
+
 1.  [Reading data in
     RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%231.R)
 2.  [First look at the
@@ -49,15 +52,15 @@ Here is a flowchart to do exploratory data analysis, or EDA.
 4.  [EDA for a single quantitative
     variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234%20with%20notes.R)
 5.  [EDA for two categorical
-    variable](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
+    variable](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
 6.  [Practice for exam
-    1](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--6.html)
+    1](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--6.html)
 7.  [EDA for a categorical and quantitative variable
-    variable](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--7-with-notes.html)
+    variable](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--7-with-notes.html)
 8.  [Diagnostics of a linear
-    model](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--8-with-notes.html)
+    model](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--8-with-notes.html)
 9.  [Preparation for exam - Linear
-    models](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--9.html)
+    models](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--9.html)
 
 ## Datasets:
 
