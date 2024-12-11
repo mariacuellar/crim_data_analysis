@@ -41,23 +41,23 @@ Here is a flowchart to do exploratory data analysis, or EDA.
 ## Exercises:
 
 1.  [Reading data in
-    RStudio](https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises%20%231.R)
+    RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%231.R)
 2.  [First look at the
-    data](https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises%20%232.R)
+    data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%232.R)
 3.  [EDA for a single categorical
-    variable](https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises%20%233.R)
+    variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
 4.  [EDA for a single quantitative
-    variable](https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises%20%234%20with%20notes.R)
+    variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234%20with%20notes.R)
 5.  [EDA for two categorical
-    variable](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises--5---with-notes.html)
+    variable](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
 6.  [Practice for exam
-    1](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises--6.html)
+    1](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--6.html)
 7.  [EDA for a categorical and quantitative variable
-    variable](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises--7-with-notes.html)
+    variable](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--7-with-notes.html)
 8.  [Diagnostics of a linear
-    model](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises--8-with-notes.html)
+    model](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--8-with-notes.html)
 9.  [Preparation for exam - Linear
-    models](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim1200-stat/blob/main/exercises/Exercises--9.html)
+    models](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--9.html)
 
 ## Datasets:
 
