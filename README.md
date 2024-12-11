@@ -64,11 +64,11 @@ Me</a>
 
 ## Datasets:
 
-1.  [Kentucky derby data](../data/kentucky-derby-2018.csv)
-2.  [Crime in Vancouver data](../data/crimeinvancouver.csv)
-3.  [Domestic violence data](../data/domestic_violence.csv)
-4.  [Police use of force](../data/police_use_of_force.csv)
-5.  [Income data](../data/income.data.csv)
-6.  [Penguin dives](../data/penguin_dives.csv)
+1.  [Kentucky derby data](../main/data/kentucky-derby-2018.csv)
+2.  [Crime in Vancouver data](../main/data/crimeinvancouver.csv)
+3.  [Domestic violence data](../main/data/domestic_violence.csv)
+4.  [Police use of force](../main/data/police_use_of_force.csv)
+5.  [Income data](../main/data/income.data.csv)
+6.  [Penguin dives](../main/data/penguin_dives.csv)
 7.  [Crime rate and economic
-    stability](../data/crimerate_econstability.csv)
+    stability](../main/data/crimerate_econstability.csv)
