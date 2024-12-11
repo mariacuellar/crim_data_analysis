@@ -1,0 +1,92 @@
+---
+title: "Exercises 5"
+author: "Maria Cuellar"
+date: "2024-09-20"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) 
+# echo=FALSE hides the code in the knitted file, include=FALSE doesn't include that chunk.
+```
+
+# Exercises 5
+
+```{r preamble}
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+### 1. Load the data called domestic violence
+
+```{r load-data}
+dat <- read_csv("data/domestic_violence.csv") # make sure data is in the right folder
+```
+
+Answer: Loaded the data.
+
+### 2. What type of stat variable is Employment?
+
+```{r Employment-type}
+dat$Employment # base R version
+
+dat %>% select(Employment) # tidyverse version, pick out the variable Employment to look at it
+```
+
+Answer: Employment is a categorical variable.
+
+
+### 3. What categories does it have?
+
+```{r Employment-categories}
+levels(as.factor(dat$Employment)) # base R version
+
+dat <- dat %>% mutate(Employment=as.factor(Employment)) # tidyverse version, make Employment a factor
+
+levels(dat$Employment) # read the levels of the factor
+```
+
+Answer: Employed, semi employed, and unemployed.
+
+
+### 4. Do quantitative EDA for Employment.
+
+```{r Employment-quant-EDA}
+table(dat$Employment)
+
+dat %>% 
+  count(Employment) %>%
+  mutate(prop = prop.table(n)) # make a table of counts, this one includes proportions.
+```
+
+Answer: I made a table of Employment, and I can see the three categories and their respective counts, as well as their proportions.
+
+### 5. Do visual EDA for Employment.
+
+```{r Employment-visual-EDA}
+barplot(table(dat$Employment)) # base R
+
+
+dat %>%
+  ggplot(aes(x=Employment)) +
+  geom_bar() +
+  theme_minimal()
+
+```
+
+Answer: Made a barplot. 
+
+### 6. What kind of variables are `Marital status` (and why does it have single quotes around it) and Violence?
+
+Categorical, and `Marital status` has quotes because it has a space in the name.
+
+
+### 7. Make a contingency table of both Marital status and Violence
+```{r contingency-table}
+addmargins(table(dat$`Marital status`, dat$Violence)) # use base-R to make this. Is there a better way?
+```
+
+Answer: Made a contingency table of the two categorical variables, with margins.
+

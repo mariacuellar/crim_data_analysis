@@ -1,0 +1,121 @@
+---
+title: "Practice for Exam 1"
+author: "Your name"
+date: "2024-09-30"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Practice for Exam 1
+
+```{r preamble}
+library(tidyverse)
+```
+
+### 1. Load the data called police_use_of_force.
+
+```{r load-data}
+dat <- read_csv("police_use_of_force.csv")
+
+```
+Answer: 
+
+
+### 2. What variables are included in the dataset?
+
+```{r what-variables}
+names(dat)
+```
+
+Answer:
+
+
+### 3. What type of stat variables are ForceType, Race, and EventAge and what values can they take? Comment on anything unusual you find.
+
+```{r age2-type}
+levels(as.factor(dat$ForceType))
+levels(as.factor(dat$Race))
+
+range(dat$EventAge, na.rm = TRUE) # looks like there's an erroneous value
+dat$EventAge <- ifelse(dat$EventAge<0, NA, dat$EventAge) # this removes anything below 0
+range(dat$EventAge, na.rm = TRUE) # looks better now, from 0-82.
+```
+
+Answer: ForceType and Race are Categorical and EventAge is quantitative. 
+
+ForceType:
+[1] "Baton"                       "Bodily Force"                "Chemical Irritant"          
+ [4] "Firearm"                     "Gun Point Display"           "Improvised Weapon"          
+ [7] "Less Lethal"                 "Less Lethal Projectile"      "Maximal Restraint Technique"
+[10] "Police K9 Bite"              "Taser"  
+
+Race:
+[1] "Asian"              "Black"              "Native American"    "not recorded"       "Other / Mixed Race"
+[6] "Pacific Islander"   "Unknown"            "White"             
+
+EventAge: Ranges from 0-82 when erroneous data is removed.
+
+
+### 4. Do visual EDA for ForceType and Race. Do you find anything interesting or unusual?
+
+```{r ForceType-visual-EDA}
+dat %>%
+  ggplot(aes(ForceType)) + 
+  geom_bar() +
+  theme(axis.text.x = element_text(angle=90, vjust=.5, hjust=1)) # this line makes the labels vertical
+
+dat %>%
+  ggplot(aes(Race)) + 
+  geom_bar() +
+  theme(axis.text.x = element_text(angle=90, vjust=.5, hjust=1)) # this line makes the labels vertical
+```
+
+Answer: 
+
+
+### 5. Do quantitative EDA for ForceType and Race. Which do you think is more helpful, a plot or a table?
+
+```{r ForceType-quant-EDA}
+dat %>%
+  count(ForceType) %>%
+  mutate(prop = prop.table(n))
+
+dat %>%
+  count(Race) %>%
+  mutate(prop = prop.table(n))
+```
+
+Answer: 
+
+
+### 6. Do visual EDA on EventAge. What can you learn from this?
+
+```{r EventAge-visual-EDA}
+hist(dat$EventAge)
+
+dat %>% 
+  ggplot(aes(EventAge)) + 
+  geom_histogram()
+
+```
+
+Answer:
+
+
+### 7. Do quantitative EDA for EventAge.
+
+```{r EventAge-quant-EDA}
+dat %>%
+  filter(!is.na(EventAge)) %>% 
+  summarize(median = median(EventAge), 
+            IQR = IQR(EventAge),
+            n = length(EventAge))
+```
+
+Answer: 
+
