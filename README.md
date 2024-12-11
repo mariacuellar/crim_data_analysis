@@ -52,15 +52,15 @@ Me</a>
 4.  [EDA for a single quantitative
     variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234%20with%20notes.R)
 5.  [EDA for two categorical
-    variable](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
+    variables](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
 6.  [Practice for exam
-    1](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--6.html)
+    1](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--6.html)
 7.  [EDA for a categorical and quantitative variable
-    variable](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--7-with-notes.html)
+    variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--7-with-notes.html)
 8.  [Diagnostics of a linear
-    model](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--8-with-notes.html)
+    model](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--8-with-notes.html)
 9.  [Preparation for exam - Linear
-    models](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--9.html)
+    models](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--9.html)
 
 ## Datasets:
 
