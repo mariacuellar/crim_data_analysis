@@ -1,0 +1,81 @@
+---
+title: "Practice for Exam 1"
+author: "Your name"
+date: "2024-09-25"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Practice for Exam 1
+
+```{r preamble}
+
+```
+
+### 1. Load the data called police_use_of_force. Data on: Minneapolis Police Stops and Police Violence. Source: https://www.kaggle.com/datasets/paultimothymooney/minneapolis-police-stops-and-police-violence/
+
+```{r load-data}
+
+```
+
+Answer: 
+
+
+### 2. What variables are included in the dataset?
+
+```{r what-variables}
+
+```
+
+Answer:
+
+
+### 3. What type of stat variables are ForceType, Race, and EventAge and what values can they take? Comment on anything unusual you find.
+
+```{r ForceType-Race-EventAge-type}
+
+```
+
+Answer:
+
+
+### 4. Do visual EDA for ForceType and Race. Do you find anything interesting or unusual?
+
+```{r ForceType-Race-visual-EDA}
+
+```
+
+Answer: 
+
+
+### 5. Do quantitative EDA for ForceType and Race. Which do you think is more helpful, a plot or a table?
+
+```{r ForceType-Race-quant-EDA}
+
+```
+
+Answer: 
+
+
+### 6. Do visual EDA on EventAge. What can you learn from this?
+
+```{r EventAge-visual-EDA}
+
+```
+
+Answer:
+
+
+### 7. Do quantitative EDA for EventAge. Comment on what you see.
+
+```{r EventAge-quant-EDA}
+
+```
+
+Answer: 
+

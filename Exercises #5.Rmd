@@ -1,0 +1,76 @@
+---
+title: "Exercises 5"
+author: "Maria Cuellar"
+date: "2024-09-20"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Exercises 5
+
+```{r preamble}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+
+### 1. Load the data called domestic violence
+
+```{r load-data}
+dat <- read_csv("data/domestic_violence.csv")
+dat
+
+```
+
+Answer: I loaded the data.
+
+### 2. What type of stat variable is Employment?
+
+```{r Employment-type}
+
+```
+
+Answer: 
+
+
+### 3. What categories does it have?
+
+```{r Employment-categories}
+
+```
+
+Answer: 
+
+
+### 4. Do quantitative EDA for Employment.
+
+```{r Employment-quant-EDA}
+
+```
+
+Answer: 
+
+
+### 5. Do visual EDA for Employment.
+
+```{r Employment-visual-EDA}
+
+```
+
+Answer: 
+
+### 6. What kind of variables are `Marital status` (and why does it have single quotes around it) and violence?
+Categorical, and `Marital status` has quotes because it has a space in the name.
+
+
+### 7. Make a contingency table of both Marital status and Violence
+```{r contingency-table}
+
+```
+
+Answer: 
+
