@@ -60,7 +60,7 @@ Here is a flowchart to do exploratory data analysis, or EDA.
 2. [First look at the data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%232.R)
 3. [EDA for a single categorical variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
 4. [EDA for a single quantitative variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234%20with%20notes.R)
-5. [EDA for two categorical variable](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
+5. [EDA for two categorical variables](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
 6. [Practice for exam 1](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--6.html)
 7. [EDA for a categorical and quantitative variable variable](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--7-with-notes.html)
 8. [Diagnostics of a linear model](https://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--8-with-notes.html)
