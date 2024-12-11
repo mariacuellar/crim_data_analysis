@@ -1,0 +1,91 @@
+---
+title: "Quiz 2"
+author: "Your name"
+date: "2024-10-21"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+# Quiz 2
+
+```{r preamble}
+library(tidyverse)
+```
+
+### 1. Load the data called dat.nsduh.small.csv.
+
+```{r load-data}
+dat <- read_csv("data/dat.nsduh.small.csv")
+```
+
+
+### 2. Do visual EDA for x=cigage and y=mjage, together. Describe the scatterplot.
+
+```{r}
+dat %>% ggplot(aes(x=cigage, y=mjage)) + geom_point()
+```
+
+Answer: 
+
+### 3. Fit a linear model of mjage vs. cigage. What are the model's estimated parameters for intercept and slope?
+
+```{r linear-model}
+out <- lm(mjage ~ cigage + iralcage, data = dat)
+summary(out)
+```
+
+Answer: 
+
+
+### 4. Are the assumptions of the linear model satisfied?
+
+```{r}
+plot(out)
+```
+
+Answer: 
+
+### 5. Are the outliers from the diagnostic plots visible in the scatterplot? This code helps you see the outliers in the scatterplot. Write down their id's here, where it says 1,2,3,4,5. 
+
+```{r}
+dat %>% mutate(highlight = ifelse(row_number() %in% c(1,9,92,147), "highlight", "normal")) %>%
+  ggplot(aes(x=cigage, y=mjage)) + geom_point(aes(colour = highlight))
+```
+
+Answer:
+
+### 6. Make a new dataframe without outliers, call it dat.no.outliers. See how the scatterplot changes for cigage and mjage in  dat.no.outliers.
+
+```{r}
+# make new dataset without outliers
+`%not_in%` <- purrr::negate(`%in%`) # this line defines a new command not_in.
+dat.no.outliers <- dat %>% filter(id %not_in% c(1,9,92,147))
+
+dat.no.outliers %>% ggplot(aes(x=cigage, y=mjage)) + geom_point()
+```
+
+Answer: 
+
+### 7. How do the model diagnostics change? Did the model fit improve?  
+```{r}
+out.no.outliers <- lm(mjage ~ cigage + iralcage, dat.no.outliers)
+plot(out.no.outliers)
+```
+
+Answer: 
+
+### 10. Compare the two model outputs. Do the coefficients change? What about R^2, the coefficient of determination? 
+```{r}
+summary(out.no.outliers)
+summary(out)
+```
+
+Answer: 
+
+
+

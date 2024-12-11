@@ -1,0 +1,27 @@
+Source: https://www.kaggle.com/datasets/fahmidachowdhury/domestic-violence-against-women
+
+
+Description
+This dataset contains information on domestic violence against women in a specific rural area of a developing country. The data is collected to help understand the correlation between various socio-economic factors and domestic violence.
+
+Dataset Content
+The dataset includes the following columns:
+
+SL. No: Serial number of the record.
+Age: Age of the respondent.
+Education: Educational attainment of the respondent( tertiary for higher secondary).
+Employment: Employment status of the respondent.
+Income: Income level of the respondent (0 indicating no income).
+Marital status: Marital status of the respondent (married or unmarried).
+Violence: Indicates whether the respondent has experienced domestic violence (yes or no).
+Context
+Domestic violence against women is a significant issue in many developing countries. Understanding the factors that contribute to this violence can help in creating effective interventions and policies. This dataset aims to provide a basis for analysis and research in this critical area.
+Inspiration
+The dataset can be used to:
+
+Analyze the correlation between education level and domestic violence.
+Study the impact of marital status on domestic violence.
+Explore the age distribution of domestic violence victims.
+Identify potential socio-economic factors contributing to domestic violence.
+
+
