@@ -49,6 +49,8 @@ with designs or analyses beyond the scope of this course.
 
 Here is a flowchart to do exploratory data analysis, or EDA. 
 
+<img src="https://github.com/mariacuellar/crim_data_analysis/blob/main/graphics/flowchart.png">
+
 ![Flowchart](../graphics/flowchart.pdf){width=65%}
 
 ## Exercises:
