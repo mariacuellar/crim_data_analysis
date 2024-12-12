@@ -34,11 +34,11 @@ analyses beyond the scope of this course.
 
 ## Flowchart:
 
-Here is a flowchart to do exploratory data analysis, or EDA.
+Here is a flowchart to do exploratory data analysis, or EDA. (Note: This
+guide is limited. For instance, it does not include guidance on handling
+time series data.)
 
 <img src="https://github.com/mariacuellar/crim_data_analysis/blob/main/graphics/flowchart.png">
-
-<embed src="../graphics/flowchart.pdf" style="width:65.0%" />
 
 ## Exercises:
 
