@@ -1,6 +1,6 @@
 # Crim 1200 - Statistics for the Social Sciences
 Written by Maria Cuellar
-2024-12-11
+2025-08-21
 
 Instructor website: https://web.sas.upenn.edu/mcuellar/
 
@@ -32,14 +32,6 @@ interpret the results of analyses and effectively communicate them to
 others and identify when to seek additional help with designs or
 analyses beyond the scope of this course.
 
-## Flowchart:
-
-Here is a flowchart to do exploratory data analysis, or EDA. (Note: This
-guide is limited. For instance, it does not include guidance on handling
-time series data.)
-
-<img src="https://github.com/mariacuellar/crim_data_analysis/blob/main/graphics/flowchart.png">
-
 ## Exercises:
 
 1.  [Reading data in
@@ -48,28 +40,15 @@ time series data.)
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%232.R)
 3.  [EDA for a single categorical
     variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
-4.  [EDA for a single quantitative
-    variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234%20with%20notes.R)
-5.  [EDA for two categorical
-    variables](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--5---with-notes.html)
-6.  [Practice for exam
-    1](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--6.html)
-7.  [EDA for a categorical and quantitative variable
-    variable](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--7-with-notes.html)
-8.  [Diagnostics of a linear
-    model](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--8-with-notes.html)
-9.  [Preparation for exam - Linear
-    models](http://htmlpreview.github.io/?https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises--9.html)
 
 ## Datasets:
 
-1.  [Kentucky derby data](../main/data/kentucky-derby-2018.csv)
-2.  [Crime in Vancouver data](../main/data/crimeinvancouver.csv)
-3.  [Domestic violence data](../main/data/domestic_violence.csv)
-4.  [Police use of force](../main/data/police_use_of_force.csv)
-5.  [Income data](../main/data/income.data.csv)
-6.  [Penguin dives](../main/data/penguin_dives.csv)
-7.  [Crime rate and economic
+1.  [Crime in Vancouver data](../main/data/crimeinvancouver.csv)
+2.  [Domestic violence data](../main/data/domestic_violence.csv)
+3.  [Police use of force](../main/data/police_use_of_force.csv)
+4.  [Income data](../main/data/income.data.csv)
+5.  [Penguin dives](../main/data/penguin_dives.csv)
+6.  [Crime rate and economic
     stability](../main/data/crimerate_econstability.csv)
 
 Inspiration from :
