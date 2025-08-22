@@ -34,6 +34,8 @@ analyses beyond the scope of this course.
 
 ## Exercises:
 
+0.  [Downloading R (up to section
+    1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 1.  [Reading data in
     RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%231.R)
 2.  [First look at the
