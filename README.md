@@ -1,6 +1,6 @@
 # Crim 1200 - Statistics for the Social Sciences
-Written by Maria Cuellar
-2025-08-21
+Written by Maria Cuellar - updated on
+2025-08-22
 
 Instructor website: https://web.sas.upenn.edu/mcuellar/
 

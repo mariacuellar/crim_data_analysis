@@ -1,7 +1,7 @@
 ---
 title: "Crim 1200 - Statistics for the Social Sciences"
-author: "Written by Maria Cuellar"
-date: "2025-08-21"
+author: "Written by Maria Cuellar - updated on "
+date: "2025-08-22"
 format: 
   gfm:
     toc: false
