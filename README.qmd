@@ -56,12 +56,13 @@ with designs or analyses beyond the scope of this course.
 ## Datasets:
 
 0. [Kentucky derby](../main/data/kentucky-derby-2018.csv)
-1. [Crime in Vancouver data](../main/data/crimeinvancouver.csv)
-2. [Domestic violence data](../main/data/domestic_violence.csv)
-3. [Police use of force](../main/data/police_use_of_force.csv)
-4. [Income data](../main/data/income.data.csv)
-5. [Penguin dives](../main/data/penguin_dives.csv)
-6. [Crime rate and economic stability](../main/data/crimerate_econstability.csv)
+1. [Students](../main/data/students.csv)
+2. [Crime in Vancouver data](../main/data/crimeinvancouver.csv)
+3. [Domestic violence data](../main/data/domestic_violence.csv)
+4. [Police use of force](../main/data/police_use_of_force.csv)
+5. [Income data](../main/data/income.data.csv)
+6. [Penguin dives](../main/data/penguin_dives.csv)
+7. [Crime rate and economic stability](../main/data/crimerate_econstability.csv)
 
 
 
