@@ -40,8 +40,8 @@ analyses beyond the scope of this course.
     RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%231.R)
 2.  [First look at the
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%232.R)
-3.  [EDA for a single categorical
-    variable](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
+3.  [Data selection and
+    plotting](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%203.R)
 
 ## Datasets:
 
