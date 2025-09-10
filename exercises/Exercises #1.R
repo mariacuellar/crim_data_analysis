@@ -14,7 +14,7 @@ install.packages("tidyverse") # only run this once!
 library(tidyverse)
 
 # load the data (note that it's a "comma-separated value" file so you read it in with csv)
-dat <- read_csv("/Users/mariacuellar/Desktop/crim1200-stat/data/kentucky-derby-2018.csv")
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/kentucky-derby-2018.csv")
 
 # see the first few rows of the data
 dat
@@ -29,6 +29,8 @@ dim(dat)
 
 # filter to only keep the observation from 1880
 dat %>% filter(Year == 1880)
+
+# The name of the winning horse in 1880 is Fonso.
 
 # b) When did the length of the race change?
 
