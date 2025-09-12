@@ -1,4 +1,4 @@
-
+rm(list=ls())
 
 # Change appearance colors in RStudio:
 
@@ -18,6 +18,7 @@ dat_students
 
 
 
+
 # ------ DATA SELECTION -------
 
 # How to select an observation: 
@@ -31,6 +32,8 @@ year1986
 
 
 # How to select a variable:
+
+dat_kentucky$Winner
 
 thewinner <- dat_kentucky %>% select(Winner)
 
@@ -68,6 +71,8 @@ dim(dat_kentucky)
 
 
 # How to make a table to summarize a categorical variable:
+names(dat_students)
+
 table(dat_students$YearInCollege) # Base R
 
 dat_students %>% count(YearInCollege) # tidyverse

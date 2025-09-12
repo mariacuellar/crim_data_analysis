@@ -77,19 +77,26 @@ dat_kentucky %>%
 # Exercises
 
 # Use the dataset called: students1.csv
+dat_students1 <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/students3.csv")
 
 # 1. Make a histogram of age in the students data.
-
+dat_students1 %>% ggplot(aes(x=age)) + geom_histogram()
+  
 # 2. Make a histogram of grade in the students data.
+dat_students1 %>% ggplot(aes(x=grade)) + geom_histogram()
 
 # 2a. Describe the histogram in terms of shape (modes, symmetry, how peaked it is, outliers?).
 
 # 3. Add to the plot the year in college (remember it has to be a factor).
+dat_students1 %>% ggplot(aes(x=grade, fill=as.factor(year_in_college))) + geom_histogram()
 
 # 4. Make a barplot of favorite color. which one has the most votes?
+dat_students1 %>% ggplot(aes(x=as.factor(favorite_color))) + geom_bar()
 
 # 5. Make a table that expresses the same info as the barplot.
+dat_students1 %>% count(favorite_color) %>% mutate(prop = n / sum(n))
 
-# 6. Make a density plot for grade, that has gender as fill (use alpha=.5)
+# 5. Make a density plot for grade, that has gender as fill (use alpha=.5)
+dat_students1 %>% ggplot(aes(x=grade, fill=gender)) + geom_density(alpha=.5)
 
 

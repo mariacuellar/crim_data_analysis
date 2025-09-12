@@ -46,7 +46,8 @@ analyses beyond the scope of this course.
 ## Datasets:
 
 0.  [Kentucky derby](../main/data/kentucky-derby-2018.csv)
-1.  [Students](../main/data/students.csv)
+1.  [Students](../main/data/students.csv) 1.1
+    [Students1](../main/data/students1.csv)
 2.  [Crime in Vancouver data](../main/data/crimeinvancouver.csv)
 3.  [Domestic violence data](../main/data/domestic_violence.csv)
 4.  [Police use of force](../main/data/police_use_of_force.csv)
