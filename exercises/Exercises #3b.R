@@ -3,22 +3,32 @@
 
 library(tidyverse)
 
-dat_kentucky <- read_csv("data/kentucky-derby-2018.csv")
+mpg
+?mpg
 
-ggplot(data = mpg)
+# mpg %>% ggplot() equivalent to ggplot(data = mpg)
 
 ggplot(data = mpg, aes(x = displ, y = hwy))
 
-ggplot(data = mpg, aes(x = displ, y = hwy)) +
-  geom_point()
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
 
 # MAPPING color to a variable (legend appears)
-ggplot(mpg, aes(displ, hwy, color = drv)) +
-  geom_point()
+mpg %>% ggplot(aes(x=displ, y=hwy, color = drv)) + geom_point()
+
 
 # SETTING a constant color (no legend)
-ggplot(mpg, aes(displ, hwy)) +
-  geom_point(color = "steelblue")
+mpg %>% ggplot(aes(x=displ, y=hwy)) + geom_point(color = "steelblue")
+
+mpg %>% ggplot(aes(x=displ, y=hwy)) + geom_point() + facet_grid(~drv)
+
+library(ggthemes)
+
+mpg %>% ggplot(aes(x=displ, y=hwy)) + geom_point() +
+  labs(title="Quant variables by cat variable",
+       x="Display", y="Highway") +
+  theme_wsj()
+  
+
 
 ggplot(mpg, aes(displ, hwy, color = drv)) +
   geom_point() +
@@ -66,5 +76,24 @@ ggplot(mpg, aes(displ, hwy, color = drv)) +
     strip.text = element_text(face = "bold"),
     plot.title = element_text(face = "bold")
   )
+
+
+
+
+
+# TO BE CONTINUED...
+
+
+# ------ Exercises
+
+# 1. Using the student data, 
+
+library(tidyverse)
+dat_students <- read_csv("data/students1.csv")
+
+dat_students
+
+dat_students %>% ggplot(aes(x=grade)) + geom_histogram() + facet_grid(~favorite_color)
+dat_students %>% ggplot(aes(x=grade, fill=favorite_color)) + geom_density(alpha=.4)
 
 

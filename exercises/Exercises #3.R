@@ -91,9 +91,29 @@ table(dat_students$FavoriteColor, dat_students$YearInCollege) # It's trickier in
 
 # How to draw a histogram
 
-dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram()
+dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram(bins=60)
+
+dat_kentucky_lowtime <- dat_kentucky %>% filter(Time.in.Sec<140)
+
+dat_kentucky_lowtime %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram()
+
+
+
+dat_kentucky %>% 
+  filter(Time.in.Sec < 140) %>% 
+  ggplot(aes(x=Time.in.Sec)) + 
+  geom_histogram()
+
+
+
 
 # You can save it as an object 
+
+p <- dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram()
+
+p + theme_economist()
+p + labs(title="Histogram") + theme_economist()
+
 p <- dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram()
 
 
@@ -145,8 +165,10 @@ dat_students <- dat_students %>% mutate(YearInCollege = as_factor(YearInCollege)
 # Check to see that it's a factor in your tibble (aka dataframe).
 dat_students
 
+
+
 # Now use ggplot
-dat_students %>% ggplot(aes(x = YearInCollege)) + geom_bar() 
+dat_students %>% ggplot(aes(x = grade)) + geom_boxplot()
 
 
 
