@@ -23,9 +23,7 @@
 # 5a. Make a table to summarize Year in college using tidyverse
 
 
-
 # 6. Make a barplot using base R
-
 
 
 # 6a. Make a barplot using ggplot

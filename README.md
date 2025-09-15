@@ -1,6 +1,6 @@
 # Crim 1200 - Statistics for the Social Sciences
 Written by Maria Cuellar - updated on
-2025-08-22
+2025-09-15
 
 Instructor website: https://web.sas.upenn.edu/mcuellar/
 
@@ -32,33 +32,26 @@ interpret the results of analyses and effectively communicate them to
 others and identify when to seek additional help with designs or
 analyses beyond the scope of this course.
 
+## Workshops:
+
+- [Downloading R (up to section
+  1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
+- [Data selection and
+  plotting](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
+- [ggplot](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233b.R)
+- [Exploring
+  distribution](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234.R)
+
 ## Exercises:
 
-0.  [Downloading R (up to section
-    1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 1.  [Exercises 1: Reading data in
     RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%231.R)
 2.  [Exercises 2: First look at the
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%232.R)
-3.  [Exercises 3: Data selection and
-    plotting](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
-    3.1. [Exercises 3b:
-    ggplot](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233b.R)
-4.  [Exercises 4: Exploring
-    distribution](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234.R)
 
 ## Datasets:
 
 0.  [Kentucky derby](../main/data/kentucky-derby-2018.csv)
-1.  [Students](../main/data/students.csv) 1.1
-    [Students1](../main/data/students1.csv)
-2.  [Crime in Vancouver data](../main/data/crimeinvancouver.csv)
+1.  [Students](../main/data/students.csv)
+2.  [Students1](../main/data/students1.csv)
 3.  [Domestic violence data](../main/data/domestic_violence.csv)
-4.  [Police use of force](../main/data/police_use_of_force.csv)
-5.  [Income data](../main/data/income.data.csv)
-6.  [Penguin dives](../main/data/penguin_dives.csv)
-7.  [Crime rate and economic
-    stability](../main/data/crimerate_econstability.csv)
-
-Inspiration from :
-https://github.com/gregridgeway/R4crim/blob/master/README.md?plain=1

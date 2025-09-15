@@ -1,0 +1,215 @@
+---
+title: "First look at the data"
+author: "Maria Cuellar"
+date: "2025-09-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+# Change appearance colors in RStudio
+
+Navigate to Tools > Global Options > Appearance (or RStudio > Preferences > Appearance on macOS) and select a desired theme from the dropdown menu. 
+
+
+
+# Load data
+
+Load the tidyverse - a package that will give you lots of tools.
+
+```{r tidyverse}
+library(tidyverse)
+```
+
+Load data (make sure you name it as an object with a useful name)
+
+```{r load-data}
+dat_kentucky <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/kentucky-derby-2018.csv")
+dat_students <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/students.csv")
+```
+
+
+
+
+# Data selection
+
+How to select an observation: 
+
+```{r}
+year1986 <- dat_kentucky %>% filter(Year==1986)
+
+year1986
+```
+
+
+
+Note: understand the pipe operator (%>% or |>): The main function of the pipe operator is to take the output of the expression or function on its left-hand side (LHS) and pass it as the first argument to the function on its right-hand side (RHS). This allows you to chain multiple operations together in a clear, sequential manner.
+
+
+# How to select a variable:
+
+```{r}
+dat_kentucky$Winner
+
+thewinner <- dat_kentucky %>% select(Winner)
+
+thewinner
+```
+
+How to select both (observation and variable):
+
+```{r}
+thewinnerin1986 <- dat_kentucky %>% 
+  filter(Year==1986) %>% 
+  select(Winner)
+
+thewinnerin1986
+```
+
+
+
+# First look at the data
+
+Variables in dataset? can look at Data pane, or use names()
+```{r}
+names(dat_kentucky)
+```
+
+Type of R variable: can look at the Data pane, or use class()
+```{r}
+class(dat_kentucky$Secs)
+```
+
+Look at dimensions of data: can look at the Data pane, or use dim()
+```{r}
+dim(dat_kentucky)
+```
+
+*Note*: the commands let me see what you did.
+
+
+
+
+# Summarize categorical variable
+
+How to make a table to summarize a categorical variable:
+
+```{r}
+names(dat_students)
+
+table(dat_students$year_in_college) # Base R
+
+dat_students %>% count(year_in_college) # tidyverse
+```
+
+How to make add proportions:
+
+```{r}
+dat_students %>% 
+  count(year_in_college) %>% 
+  mutate(prop = n / sum(n))
+```
+
+How to make a table to summarize Two categorical variables:
+```{r}
+table(dat_students$favorite_color, dat_students$year_in_college) # It's trickier in tidyverse, but check out the janitor package
+```
+
+
+
+
+
+# Visualize quantitative variable
+
+How to draw a histogram:
+
+```{r}
+dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram()
+
+dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram(bins=60) # Changes number of bins
+```
+
+
+
+```{r}
+dat_kentucky_lowtime <- dat_kentucky %>% filter(Time.in.Sec<140)
+
+dat_kentucky_lowtime %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram()
+
+
+
+dat_kentucky %>% 
+  filter(Time.in.Sec < 140) %>% 
+  ggplot(aes(x=Time.in.Sec)) + 
+  geom_histogram()
+
+```
+
+
+You can save the plot as an object 
+
+```{r}
+p <- dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram()
+
+library(ggthemes)
+p + theme_economist()
+p + labs(title="Histogram") + theme_economist()
+```
+
+
+How to change the aesthetics and labels
+
+```{r}
+dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram(bins = 30, fill = "steelblue", color = "white")
+```
+  
+
+How to change the aesthetics and labels
+```{r}
+dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_histogram() +
+    labs(
+    x = "Time in seconds",   # new label for x-axis
+    y = "Count",         # new label for y-axis
+    title = "Histogram of Time in Seconds"
+  )
+```
+
+This is equivalent to
+```{r}
+p +
+  labs(
+    x = "Time in seconds",   # new label for x-axis
+    y = "Count",         # new label for y-axis
+    title = "Histogram of Time in Seconds"
+  )
+```
+
+You can change the theme too
+```{r}
+p + theme_economist()
+p + theme_stata()
+p + theme_fivethirtyeight()
+p + theme_minimal()
+```
+
+
+
+
+# Visualize categorical variable
+
+How to draw a barplot for YearInCollege
+
+```{r}
+# using base R, it's just barplot()
+barplot(table(dat_students$year_in_college))
+```
+
+```{r}
+dat_students %>% ggplot(aes(x = year_in_college)) + geom_bar()
+```
+
