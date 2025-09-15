@@ -3,6 +3,8 @@
 
 library(tidyverse)
 
+dat_kentucky <- read_csv("data/kentucky-derby-2018.csv")
+
 ggplot(data = mpg)
 
 ggplot(data = mpg, aes(x = displ, y = hwy))

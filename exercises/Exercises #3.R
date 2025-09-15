@@ -1,4 +1,3 @@
-rm(list=ls())
 
 # Change appearance colors in RStudio:
 
@@ -12,9 +11,6 @@ rm(list=ls())
 library(tidyverse)
 dat_kentucky <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/kentucky-derby-2018.csv")
 dat_students <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/students.csv")
-
-dat_kentucky
-dat_students
 
 
 
