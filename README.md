@@ -42,6 +42,8 @@ analyses beyond the scope of this course.
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%232.R)
 3.  [Exercises 3: Data selection and
     plotting](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
+    3.1. [Exercises 3b:
+    ggplot](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233b.R)
 4.  [Exercises 4: Exploring
     distribution](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234.R)
 
