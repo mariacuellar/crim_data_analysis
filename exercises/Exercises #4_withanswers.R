@@ -77,7 +77,7 @@ dat_kentucky %>%
 # Exercises
 
 # Use the dataset called: students1.csv
-dat_students1 <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/students3.csv")
+dat_students1 <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/students1.csv")
 
 # 1. Make a histogram of age in the students data.
 dat_students1 %>% ggplot(aes(x=age)) + geom_histogram()
