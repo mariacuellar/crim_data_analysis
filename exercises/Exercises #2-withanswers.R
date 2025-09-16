@@ -3,7 +3,7 @@
 
 library(tidyverse)
 # 1. Load the data called students.csv
-dat <- read_csv("/Users/mariacuellar/Downloads/students.csv")
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/students.csv")
 
 
 # 2. What are the variables in the dataset?
@@ -14,39 +14,39 @@ names(dat)
 nrow(dat)
 
 
-# 4. What type of R variable is "YearInCollege"?
-class(dat$YearInCollege)
+# 4. What type of R variable is "year_in_college"?
+class(dat$year_in_college)
 
 # 4a. Make it into a factor 
-dat$YearInCollege<-as.factor(dat$YearInCollege)
+dat$year_in_college<-as.factor(dat$year_in_college)
 
-class(dat$YearInCollege)
+class(dat$year_in_college)
 
 # 5. Make a table to summarize Year in college using base R
-table(dat$YearInCollege)
+table(dat$year_in_college)
 
 # 5a. Make a table to summarize Year in college using tidyverse
 
 dat %>% 
-  count(YearInCollege)
+  count(year_in_college)
 
 dat %>%
-  count(YearInCollege) %>%
+  count(year_in_college) %>%
   mutate(prop = n / sum(n))
 
 
 # 6. Make a barplot using base R
 
-plot(dat$YearInCollege)
+plot(dat$year_in_college) # no titles 
 
-plot(dat$YearInCollege, 
+plot(dat$year_in_college, # with title and labels
      main = "Students per Year",
      xlab = "Year in College", 
      ylab = "Count")
 
 # 6a. Make a barplot using ggplot
 
-dat %>% ggplot(aes(x = factor(YearInCollege))) + geom_bar() +
+dat %>% ggplot(aes(x = factor(year_in_college))) + geom_bar() +
   labs(title = "Students per Year",
        x = "Year in College",
        y = "Count")

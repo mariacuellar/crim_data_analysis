@@ -1,21 +1,19 @@
 ---
 title: "ggplot"
-format: html
-editor: visual
-execute:
-  echo: true  # to show code
-  eval: true  # to evaluate code
-
+author: "Maria Cuellar"
+date: "2025-09-16"
+output: html_document
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 # ggplot
 
 The Grammar of Graphics was a book published in 1999 by a statistician named Leland Wilkinson, and later Hadley Wickham used it to write a package called ggplot in R. ggplot stands for Grammar of Graphics plot. 
 
 It is called a grammar because it is a structure for producing plots that resembles a language. Nearly every current software tool used to build plots has been informed by this book. Its influence can be found in Tableau, Plotly, and the Python libraries bokeh, altair, seaborn, and plotnine. The most complete implementation of the grammar is found in an R package called ggplot2 by Hadley Wickham.
-
-<img src="https://github.com/mariacuellar/crim_data_analysis/blob/main/graphics/grammar-of-graphics.png" alt="Logo" width="200">
-
 
 ![Grammar of graphics](../graphics/grammar-of-graphics.png) 
 In Wickham’s adaptation of the grammar of graphics, a plot can be decomposed into seven elements:
