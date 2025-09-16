@@ -36,8 +36,8 @@ analyses beyond the scope of this course.
 
 - [Downloading R (up to section
   1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
-- [Data selection and
-  plotting](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233.R)
+- [First look at the
+  data](https://github.com/mariacuellar/crim_data_analysis/blob/main/workshops/firstlook.html)
 - [ggplot](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233b.R)
 - [Exploring
   distribution](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234.R)
@@ -51,7 +51,9 @@ analyses beyond the scope of this course.
 
 ## Datasets:
 
-0.  [Kentucky derby](../main/data/kentucky-derby-2018.csv)
-1.  [Students](../main/data/students.csv)
-2.  [Students1](../main/data/students1.csv)
-3.  [Domestic violence data](../main/data/domestic_violence.csv)
+To download the data, right-click the link and choose “Save Link As…”.
+Save the data into the folder of your choice.
+
+0.  [Kentucky derby](data/kentucky-derby-2018.csv)
+1.  [Students](data/students.csv)
+2.  [Domestic violence](data/domestic_violence.csv)
