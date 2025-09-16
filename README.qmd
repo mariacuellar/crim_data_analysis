@@ -27,7 +27,7 @@ library(readxl)
 
 Instructor website: https://web.sas.upenn.edu/mcuellar/
 
-## Course description:
+## Course description
 
 Statistics is the science of developing and studying methods for collecting, analyzing, interpreting, and
 presenting empirical data. A common challenge in statistics is dealing with incomplete information: when
@@ -38,7 +38,7 @@ This course offers an introduction to statistics with a focus on careful and sys
 
 Designed as a foundational course in statistics for the social sciences, this class is suitable for students pursuing a bachelor’s degree in criminology or related fields. It requires minimal mathematical or statistical background. By the end of the course, students should be able to explore datasets using visualization techniques, select and perform the appropriate statistical analyses for research, accurately interpret the results of analyses and effectively communicate them to others and identify when to seek additional help with designs or analyses beyond the scope of this course.
 
-## Workshops:
+## Workshops
 
 - [Downloading R (up to section 1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 - [First look at the data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
@@ -46,7 +46,7 @@ Designed as a foundational course in statistics for the social sciences, this cl
 - [EDA](https://github.com/mariacuellar/crim_data_analysis/blob/main/workshops/EDA%20-%20chapter4.pdf)
 
 
-## Exercises:
+## Exercises
 
 1. [Reading data in RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20questions.R)
 [(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20solutions.R)
@@ -55,7 +55,7 @@ Designed as a foundational course in statistics for the social sciences, this cl
 3. [Visual summary of quantitative and categorical data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%203%20-%20questions.R)
 (Solutions)
 
-## Datasets:
+## Datasets
 
 To download the data, right-click the link and choose “Save Link As…”. Save the data into the folder of your choice.
 
