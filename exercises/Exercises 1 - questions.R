@@ -1,5 +1,9 @@
 
-# DVB Chp 1: Problem 41
+# Exercises 1
+# Crim 1200 - Fall 2025
+
+
+# This is based on DVB Chp 1: Problem 41
 # Kentucky Derby 2018 on the computer Load the Kentucky Derby 2018 data into your preferred statistics package and answer the following questions;
 # a) What was the name of the winning horse in 1880?
 # b) When did the length of the race change?

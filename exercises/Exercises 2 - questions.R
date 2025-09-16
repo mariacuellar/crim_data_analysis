@@ -1,5 +1,6 @@
 
-# Exercises #2
+# Exercises 2
+# Crim 1200 - Fall 2025
 
 
 # 1. Load the data called students.csv

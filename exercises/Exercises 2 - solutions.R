@@ -1,5 +1,7 @@
+# Exercises 2: Solutions
+# Crim 1200 - Fall 2025
 
-# Exercises #2
+
 
 library(tidyverse)
 # 1. Load the data called students.csv

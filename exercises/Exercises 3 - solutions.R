@@ -1,4 +1,7 @@
-# Exercises #4
+# Exercises 3: Solutions
+# Crim 1200 - Fall 2025
+
+
 library(tidyverse)
 library(ggthemes)
 

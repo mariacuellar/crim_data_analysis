@@ -1,3 +1,6 @@
+# Exercises 1: Solutions
+# Crim 1200 - Fall 2025
+
 
 # DVB Chp 1: Problem 41
 # Kentucky Derby 2018 on the computer Load the Kentucky Derby 2018 data into your preferred statistics package and answer the following questions;

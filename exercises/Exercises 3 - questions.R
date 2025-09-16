@@ -1,4 +1,6 @@
 # Exercises 3
+# Crim 1200 - Fall 2025
+
 
 
 library(tidyverse)
