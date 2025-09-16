@@ -1,0 +1,55 @@
+﻿gender,crime type,age,number of convictions,race
+female,murder,18,1,White
+male,aggravated assault,21,1,Black or African American
+female,aggravated assault,45,3,American Indian or Alaska Native
+male,robbery,32,4,Asian
+female,burglary,20,2,Native Hawaiian or Other Pacific Islander
+male,larceny-theft,150,1,White
+female,motor vehicle theft,25,2,White
+male,burglary,27,1,White
+male,larceny-theft,19,3,White
+male,motor vehicle theft,200,3,White
+male,robbery,18,2,White
+male,robbery,999,1,Black or African American
+male,robbery,25,2,Black or African American
+male,forcible rape,26,1,Black or African American
+male,forcible rape,45,1,American Indian or Alaska Native
+male,murder,60,1,Black or African American
+male,burglary,24,3,Black or African American
+male,motor vehicle theft,24,2,Black or African American
+female,arson,20,1,Asian
+male,robbery,21,2,Asian
+female,arson,22,3,Asian
+male,larceny-theft,23,4,Black or African American
+female,motor vehicle theft,24,3,White
+male,burglary,25,2,White
+female,aggravated assault,26,1,White
+male,robbery,27,2,White
+male,burglary,28,2,Black or African American
+male,larceny-theft,29,2,Black or African American
+male,arson,30,1,Black or African American
+male,arson,29,1,American Indian or Alaska Native
+female,arson,28,1,Black or African American
+male,arson,27,2,Black or African American
+female,arson,25,3,Native Hawaiian or Other Pacific Islander
+male,arson,24,3,Native Hawaiian or Other Pacific Islander
+female,arson,23,3,White
+male,murder,22,3,White
+female,burglary,22,3,American Indian or Alaska Native
+male,motor vehicle theft,20,2,White
+male,aggravated assault,19,2,White
+male,burglary,18,2,White
+male,larceny-theft,18,1,Black or African American
+male,motor vehicle theft,20,1,Black or African American
+female,burglary,21,1,Black or African American
+male,larceny-theft,21,2,American Indian or Alaska Native
+female,motor vehicle theft,22,3,Black or African American
+male,robbery,40,2,Black or African American
+male,robbery,39,2,Black or African American
+male,robbery,35,1,Asian
+male,forcible rape,36,1,Asian
+female,forcible rape,25,1,Asian
+male,murder,25,2,White
+female,burglary,26,3,White
+male,motor vehicle theft,27,3,White
+male,aggravated assault,28,2,White

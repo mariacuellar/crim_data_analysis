@@ -44,21 +44,21 @@ analyses beyond the scope of this course.
 
 ## Exercises:
 
-1.  [Exercises 1: Reading data in
+1.  [Reading data in
     RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20questions.R)
-    [(Solutions to Exercises
-    1)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20solutions.R)
-2.  [Exercises 2: First look at the
+    [(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20solutions.R)
+2.  [First look at the
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%202%20-%20questions.R)
-3.  [Exercises 3: Visual summary of quantitative and categorical
+    (Solutions)
+3.  [Visual summary of quantitative and categorical
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%203%20-%20questions.R)
-    \[(Solutions to Exercises 3)\]
+    (Solutions)
 
 ## Datasets:
 
 To download the data, right-click the link and choose “Save Link As…”.
 Save the data into the folder of your choice.
 
-0.  [Kentucky derby](data/kentucky-derby-2018.csv)
-1.  [Students](data/students.csv)
-2.  [Domestic violence](data/domestic_violence.csv)
+1.  [Kentucky derby](data/kentucky-derby-2018.csv)
+2.  [Students](data/students.csv)
+3.  [Domestic violence](data/domestic_violence.csv)
