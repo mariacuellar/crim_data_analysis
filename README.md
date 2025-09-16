@@ -46,8 +46,12 @@ analyses beyond the scope of this course.
 
 1.  [Exercises 1: Reading data in
     RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%231.R)
+    [(Solutions to Exercises
+    1)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%231%20-%20with%20answers.R)
 2.  [Exercises 2: First look at the
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%232.R)
+    (Solutions to Exercises 2)
+3.  [Exercises 3: Visual summary of quantitative and categorical data]()
 
 ## Datasets:
 

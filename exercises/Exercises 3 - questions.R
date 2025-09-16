@@ -1,4 +1,6 @@
-# Exercises #4
+# Exercises 3
+
+
 library(tidyverse)
 library(ggthemes)
 
@@ -28,12 +30,11 @@ dat_kentucky %>% ggplot(aes(x=Time.in.Sec)) + geom_density()
 # Describe this distribution quantitatively.
 # need to work on this because it's bimodal. split it up into two sets of data, <140 and >=140.
 
-
 # Filter out the values smaller than 140:
 dat_kentucky %>% filter(Time.in.Sec<140) 
 
 
-# thi splots a histogram for those filtered values
+# this plots a histogram for those filtered values
 dat_kentucky %>% 
   filter(Time.in.Sec<140) %>%
   ggplot(aes(x=Time.in.Sec)) + 
