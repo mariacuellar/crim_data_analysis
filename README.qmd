@@ -1,15 +1,13 @@
 ---
-title: "Crim 1200 - Statistics for the Social Sciences"
-author: "Written by Maria Cuellar - updated on "
-date: "2025-09-15"
-format: 
-  gfm:
-    toc: false
+title: "Crim 1200 Statistics for the Social Sciences"
+output:
+  pdf_document: default
+  html_document:
+    toc: true
     toc_float: true
     collapsed: false
     number_sections: false
     toc_depth: 2
-
 ---
 
 ```{r setup, include=FALSE}
@@ -36,19 +34,9 @@ presenting empirical data. A common challenge in statistics is dealing with inco
 the entire picture is not visible, how can findings from a small sample be generalized to a broader
 population, and should they be?
 
-This course offers an introduction to statistics with a focus on careful and systematic data analysis. Students
-will learn to critically assess how datasets are collected, approach them thoughtfully, and decide on the
-appropriate analyses to answer specific research questions. Rather than simply following a set procedure,
-students will gain the tools to determine which methods are best suited for the data—and understand the
-implications when ideal procedures aren’t feasible. They will also learn to identify the assumptions needed
-to make credible claims and draw valid conclusions.
+This course offers an introduction to statistics with a focus on careful and systematic data analysis. Students will learn to critically assess how datasets are collected, approach them thoughtfully, and decide on the appropriate analyses to answer specific research questions. Rather than simply following a set procedure, students will gain the tools to determine which methods are best suited for the data—and understand the implications when ideal procedures aren’t feasible. They will also learn to identify the assumptions needed to make credible claims and draw valid conclusions.
 
-Designed as a foundational course in statistics for the social sciences, this class is suitable for students
-pursuing a bachelor’s degree in criminology or related fields. It requires minimal mathematical or statistical
-background. By the end of the course, students should be able to explore datasets using visualization
-techniques, select and perform the appropriate statistical analyses for research, accurately interpret the
-results of analyses and effectively communicate them to others and identify when to seek additional help
-with designs or analyses beyond the scope of this course.
+Designed as a foundational course in statistics for the social sciences, this class is suitable for students pursuing a bachelor’s degree in criminology or related fields. It requires minimal mathematical or statistical background. By the end of the course, students should be able to explore datasets using visualization techniques, select and perform the appropriate statistical analyses for research, accurately interpret the results of analyses and effectively communicate them to others and identify when to seek additional help with designs or analyses beyond the scope of this course.
 
 ## Workshops:
 
