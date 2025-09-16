@@ -1,0 +1,13 @@
+---
+title: "EDA"
+author: "Maria Cuellar"
+date: "2025-09-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# EDA
+
