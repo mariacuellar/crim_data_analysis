@@ -1,7 +1,4 @@
 
-
-
-
 # DVB Chp 1: Problem 41
 # Kentucky Derby 2018 on the computer Load the Kentucky Derby 2018 data into your preferred statistics package and answer the following questions;
 # a) What was the name of the winning horse in 1880?
@@ -46,10 +43,4 @@ dat %>% filter(Year == 1974)
 
 # filter to only keep the observations that have fewer than 2 minutes.
 dat %>% filter(Mins < 2)
-
-
-
-
-
-
 
