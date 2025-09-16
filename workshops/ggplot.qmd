@@ -8,7 +8,7 @@ editor: visual
 
 ggplot stands for Grammar of Graphics plot. The Grammar of Graphics was a book published in 1999 by a statistician named Leland Wilkinson. It is called a grammar because it is a structure for producing plots that resembles a language. In ggplot, the 
 
-![Grammar of graphics](../graphics/grammar-of-graphics.png){width=60%}
+![Grammar of graphics](../graphics/grammar-of-graphics.png) 
 
 library(tidyverse)
 
