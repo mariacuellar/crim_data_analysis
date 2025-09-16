@@ -37,7 +37,7 @@ analyses beyond the scope of this course.
 - [Downloading R (up to section
   1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 - [First look at the
-  data](https://github.com/mariacuellar/crim_data_analysis/blob/main/workshops/firstlook.html)
+  data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [ggplot](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%233b.R)
 - [Exploring
   distribution](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%20%234.R)
