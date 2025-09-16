@@ -2,94 +2,81 @@
 title: "ggplot"
 format: html
 editor: visual
+execute:
+  echo: true  # to show code
+  eval: true  # to evaluate code
+
 ---
 
 # ggplot
 
-ggplot stands for Grammar of Graphics plot. The Grammar of Graphics was a book published in 1999 by a statistician named Leland Wilkinson. It is called a grammar because it is a structure for producing plots that resembles a language. In ggplot, the 
+The Grammar of Graphics was a book published in 1999 by a statistician named Leland Wilkinson, and later Hadley Wickham used it to write a package called ggplot in R. ggplot stands for Grammar of Graphics plot. 
+
+It is called a grammar because it is a structure for producing plots that resembles a language. Nearly every current software tool used to build plots has been informed by this book. Its influence can be found in Tableau, Plotly, and the Python libraries bokeh, altair, seaborn, and plotnine. The most complete implementation of the grammar is found in an R package called ggplot2 by Hadley Wickham.
+
+<img src="https://github.com/mariacuellar/crim_data_analysis/blob/main/graphics/grammar-of-graphics.png" alt="Logo" width="200">
+
 
 ![Grammar of graphics](../graphics/grammar-of-graphics.png) 
+In Wickham’s adaptation of the grammar of graphics, a plot can be decomposed into seven elements:
 
+- *Data*: The data frame that contains the data you want to visualize.
+- *Aesthetic* (aes) mapping of the variables in the data to visual cues: What is your x or y.
+- *Geometry* used to encode the observations on the plot: What kind of plot you’re making, a histogram, a bar plot, a line, etc.
+- *Facets*: If you want to split up the plots by categories, e.g., one plot for females and one for males.
+- *Statistics*: If you want to fit a model to the data. Geoms decide how to draw (points, lines, bars). Stats decide what to draw by computing summaries (counts, means, model fits).
+- *Coordinates*: If you want to change the scales.
+Theme: If you want to make it pretty.
+
+
+Load tidyverse.
+```{r}
 library(tidyverse)
+```
 
-ggplot(data = mpg)
 
-ggplot(data = mpg, aes(x = displ, y = hwy))
+If you only use ggplot, then nothing happens.
+```{r}
+mpg %>% ggplot()
+```
 
-ggplot(data = mpg, aes(x = displ, y = hwy)) +
-  geom_point()
+If you add the aesthetics, you get a coordinate system where the plot will go. We've defined two variables, x and y, that are quantitative variables.
+```{r}
+mpg %>% ggplot(aes(x = displ, y = hwy))
+```
+If you then add the geometry (shortened as geom), then you get some points.
+```{r}
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
+```
 
-# MAPPING color to a variable (legend appears)
-ggplot(mpg, aes(displ, hwy, color = drv)) +
-  geom_point()
-
+You can change the color of the points for fun, without having any particular meaning. Note that there is no legend.
+```{r}
 # SETTING a constant color (no legend)
+ggplot(mpg, aes(displ, hwy)) + geom_point(color = "steelblue")
+```
+
+Or you can use color with meaning. Here we use it to tell us how the points split up by a third categorical variable, drv. Note that a legend appears. This splits up the points by color, one for each category of drv. 
+```{r}
+# MAPPING color to a variable (legend appears)
+ggplot(mpg, aes(displ, hwy, color = drv)) + geom_point()
+```
+
+You can use facets instead to see the differences in the points according to a third categorical variable. This splits up the plot into three plots, one for each category of drv. 
+
+```{r}
 ggplot(mpg, aes(displ, hwy)) +
-  geom_point(color = "steelblue")
-
-ggplot(mpg, aes(displ, hwy, color = drv)) +
   geom_point() +
-  facet_wrap(~ class)
+  facet_wrap(~ drv)
+```
 
-# Add a fitted line with standard errors (stat_smooth)
-ggplot(mpg, aes(displ, hwy, color = drv)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = TRUE) +  # stat_smooth under the hood
-  facet_wrap(~ class)
+You can also change the coordinates (although we won't do this often).
 
-# Zoom into a region without recomputing the stat
-ggplot(mpg, aes(displ, hwy, color = drv)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = TRUE) +
-  facet_wrap(~ class) +
-  coord_cartesian(xlim = c(1, 6), ylim = c(10, 45))
-
-ggplot(mpg, aes(displ, hwy, color = drv)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = TRUE) +
-  facet_wrap(~ class) +
-  coord_polar()
-
+```{r}
 # Another example:
-# coord_flip() for horizontal geoms; coord_polar() for pie/polar charts
+# coord_polar() for pie/polar charts
 
+ggplot(mpg, aes(displ, hwy)) + geom_point() + coord_polar()
 
-
-ggplot(mpg, aes(displ, hwy, color = drv)) +
-  geom_point(size = 2, alpha = 0.8) +
-  geom_smooth(method = "lm", se = TRUE) +
-  facet_wrap(~ class) +
-  coord_cartesian(xlim = c(1, 6), ylim = c(10, 45)) +
-  labs(
-    title = "Grammar of Graphics, Layer by Layer",
-    subtitle = "Engine size vs highway MPG, faceted by vehicle class",
-    x = "Engine displacement (liters)",
-    y = "Highway MPG",
-    color = "Drivetrain"
-  ) +
-  theme_minimal(base_size = 12) +
-  theme(
-    panel.grid.minor = element_blank(),
-    strip.text = element_text(face = "bold"),
-    plot.title = element_text(face = "bold")
-  )
-
-
-
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
 ```
 
-You can add options to executable code like this
 
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).

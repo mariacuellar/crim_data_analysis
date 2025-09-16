@@ -98,59 +98,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="ggplot" class="level1">
 <h1>ggplot</h1>
-<p>ggplot stands for Grammar of Graphics plot. The Grammar of Graphics was a book published in 1999 by a statistician named Leland Wilkinson. It is called a grammar because it is a structure for producing plots that resembles a language. In ggplot, the</p>
-<div class="quarto-figure quarto-figure-center">
+<p>The Grammar of Graphics was a book published in 1999 by a statistician named Leland Wilkinson, and later Hadley Wickham used it to write a package called ggplot in R. ggplot stands for Grammar of Graphics plot.</p>
+<p>It is called a grammar because it is a structure for producing plots that resembles a language. Nearly every current software tool used to build plots has been informed by this book. Its influence can be found in Tableau, Plotly, and the Python libraries bokeh, altair, seaborn, and plotnine. The most complete implementation of the grammar is found in an R package called ggplot2 by Hadley Wickham.</p>
+<p><img src="https://github.com/mariacuellar/crim_data_analysis/blob/main/graphics/grammar-of-graphics.png" alt="Logo" width="200"></p>
+<p><img src="../graphics/grammar-of-graphics.png" class="img-fluid" alt="Grammar of graphics"> In Wickham’s adaptation of the grammar of graphics, a plot can be decomposed into seven elements:</p>
+<ul>
+<li><em>Data</em>: The data frame that contains the data you want to visualize.</li>
+<li><em>Aesthetic</em> (aes) mapping of the variables in the data to visual cues: What is your x or y.</li>
+<li><em>Geometry</em> used to encode the observations on the plot: What kind of plot you’re making, a histogram, a bar plot, a line, etc.</li>
+<li><em>Facets</em>: If you want to split up the plots by categories, e.g., one plot for females and one for males.</li>
+<li><em>Statistics</em>: If you want to fit a model to the data. Geoms decide how to draw (points, lines, bars). Stats decide what to draw by computing summaries (counts, means, model fits).</li>
+<li><em>Coordinates</em>: If you want to change the scales. Theme: If you want to make it pretty.</li>
+</ul>
+<p>Load tidyverse.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<p>If you only use ggplot, then nothing happens.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="../graphics/grammar-of-graphics.png" class="img-fluid figure-img"></p>
-<figcaption>Grammar of graphics</figcaption>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
-<p>library(tidyverse)</p>
-<p>ggplot(data = mpg)</p>
-<p>ggplot(data = mpg, aes(x = displ, y = hwy))</p>
-<p>ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()</p>
-</section>
-<section id="mapping-color-to-a-variable-legend-appears" class="level1">
-<h1>MAPPING color to a variable (legend appears)</h1>
-<p>ggplot(mpg, aes(displ, hwy, color = drv)) + geom_point()</p>
-</section>
-<section id="setting-a-constant-color-no-legend" class="level1">
-<h1>SETTING a constant color (no legend)</h1>
-<p>ggplot(mpg, aes(displ, hwy)) + geom_point(color = “steelblue”)</p>
-<p>ggplot(mpg, aes(displ, hwy, color = drv)) + geom_point() + facet_wrap(~ class)</p>
-</section>
-<section id="add-a-fitted-line-with-standard-errors-stat_smooth" class="level1">
-<h1>Add a fitted line with standard errors (stat_smooth)</h1>
-<p>ggplot(mpg, aes(displ, hwy, color = drv)) + geom_point() + geom_smooth(method = “lm”, se = TRUE) + # stat_smooth under the hood facet_wrap(~ class)</p>
-</section>
-<section id="zoom-into-a-region-without-recomputing-the-stat" class="level1">
-<h1>Zoom into a region without recomputing the stat</h1>
-<p>ggplot(mpg, aes(displ, hwy, color = drv)) + geom_point() + geom_smooth(method = “lm”, se = TRUE) + facet_wrap(~ class) + coord_cartesian(xlim = c(1, 6), ylim = c(10, 45))</p>
-<p>ggplot(mpg, aes(displ, hwy, color = drv)) + geom_point() + geom_smooth(method = “lm”, se = TRUE) + facet_wrap(~ class) + coord_polar()</p>
-</section>
-<section id="another-example" class="level1">
-<h1>Another example:</h1>
-</section>
-<section id="coord_flip-for-horizontal-geoms-coord_polar-for-piepolar-charts" class="level1">
-<h1>coord_flip() for horizontal geoms; coord_polar() for pie/polar charts</h1>
-<p>ggplot(mpg, aes(displ, hwy, color = drv)) + geom_point(size = 2, alpha = 0.8) + geom_smooth(method = “lm”, se = TRUE) + facet_wrap(~ class) + coord_cartesian(xlim = c(1, 6), ylim = c(10, 45)) + labs( title = “Grammar of Graphics, Layer by Layer”, subtitle = “Engine size vs highway MPG, faceted by vehicle class”, x = “Engine displacement (liters)”, y = “Highway MPG”, color = “Drivetrain” ) + theme_minimal(base_size = 12) + theme( panel.grid.minor = element_blank(), strip.text = element_text(face = “bold”), plot.title = element_text(face = “bold”) )</p>
-<section id="running-code" class="level2">
-<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+</div>
+</div>
+<p>If you add the aesthetics, you get a coordinate system where the plot will go. We’ve defined two variables, x and y, that are quantitative variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p>You can add options to executable code like this</p>
+</div>
+<p>If you then add the geometry (shortened as geom), then you get some points.</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
-</section>
+</div>
+<p>You can change the color of the points for fun, without having any particular meaning. Note that there is no legend.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SETTING a constant color (no legend)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Or you can use color with meaning. Here we use it to tell us how the points split up by a third categorical variable, drv. Note that a legend appears. This splits up the points by color, one for each category of drv.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MAPPING color to a variable (legend appears)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy, <span class="at">color =</span> drv)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can use facets instead to see the differences in the points according to a third categorical variable. This splits up the plot into three plots, one for each category of drv.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can also change the coordinates (although we won’t do this often).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Another example:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># coord_polar() for pie/polar charts</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">coord_polar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="ggplot_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 </main>
