@@ -43,7 +43,7 @@ Designed as a foundational course in statistics for the social sciences, this cl
 - [Downloading R (up to section 1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 - [First look at the data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [ggplot](https://mariacuellar.github.io/crim_data_analysis/workshops/ggplot.html)
-- [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA%20-%20chapter4.pdf)
+- [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
 
 
 ## Exercises
@@ -59,7 +59,7 @@ Designed as a foundational course in statistics for the social sciences, this cl
 
 To download the data, right-click the link and choose “Save Link As…”. Save the data into the folder of your choice.
 
-1. [Kentucky derby](data/kentucky-derby-2018.csv)
-2. [Students](data/students.csv)
-3. [Domestic violence](data/domestic_violence.csv)
+1. [kentucky-derby-2018.csv](data/kentucky-derby-2018.csv)
+2. [students.csv](data/students.csv)
+3. [domestic_violence.csv](data/domestic_violence.csv)
 

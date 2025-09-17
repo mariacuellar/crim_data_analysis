@@ -9,488 +9,73 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# EDA
+# EDA text
 
-Exploratory data analysis or “EDA” is a term coined by statistician John Tukey. It is a critical first step in analyzing the data from an experiment. Here are the main reasons we use EDA:
+Find the entire EDA text here: https://github.com/mariacuellar/crim_data_analysis/blob/main/workshops/EDA%20-%20chapter4.pdf
 
-- detection of mistakes
-- checking of assumptions
-- preliminary selection of appropriate models
-- determining relationships among the explanatory variables, and
-- assessing the direction and rough size of relationships between explanatory and outcome variables.
+This text was written by Howard Seltman, a statistician and physician at Carnegie Mellon University.
 
-Loosely speaking, any method of looking at data that does not include formal statistical modeling and inference falls under the term exploratory data analysis.
 
 
+# Quantitative EDA
 
+## For a single quantitative variable
 
-# Typical data format and the types of EDA
-
-The data from an experiment are generally collected into a rectangular array (e.g., spreadsheet or database), most commonly with one row per experimental subject and one column for each subject identifier, outcome variable, and explanatory variable. Each column contains the numeric values for a particular quantitative variable or the levels for a categorical variable. (Some more complicated experiments require a more complex data layout.)
-
-People are not very good at looking at a column of numbers or a whole spreadsheet and then determining important characteristics of the data. They find looking at numbers to be tedious, boring, and/or overwhelming. Exploratory data analysis techniques have been devised as an aid in this situation. Most of these techniques work in part by hiding certain aspects of the data while making other aspects more clear.
-
-Exploratory data analysis is generally cross-classified in two ways. First, each method is either non-graphical or graphical. And second, each method is either univariate or multivariate (usually just bivariate).
-
-Non-graphical methods generally involve calculation of summary statistics, while graphical methods obviously summarize the data in a diagrammatic or pictorial way. Univariate methods look at one variable (data column) at a time, while multivariate methods look at two or more variables at a time to explore relationships. Usually our multivariate EDA will be bivariate (looking at exactly two variables), but occasionally it will involve three or more variables. It is almost always a good idea to perform univariate EDA on each of the components of a multivariate EDA before performing the multivariate EDA.
-
-Beyond the four categories created by the above cross-classification, each of the categories of EDA have further divisions based on the role (outcome or explanatory) and type (categorical or quantitative) of the variable(s) being examined.
-
-Although there are guidelines about which EDA techniques are useful in what circumstances, there is an important degree of looseness and art to EDA. Competence and confidence come with practice, experience, and close observation of others. Also, EDA need not be restricted to techniques you have seen before; sometimes you need to invent a new way of looking at your data.
-
-The four types of EDA are univariate non-graphical, multivariate non-graphical, univariate graphical, and multivariate graphical.
-
-This chapter first discusses the non-graphical and graphical methods for looking at single variables, then moves on to looking at multiple variables at once, mostly to investigate the relationships between the variables.
-
-
-
-
-<div style="border: 2px solid #333; ; display: inline-block;">
-<strong> The four types of EDA are univariate non-graphical, multivariate non-graphical, univariate graphical, and multivariate graphical. </strong>
-</div>
-
-
-
-
-## 4.2 Univariate Non-Graphical EDA
-
-The data that come from making a particular measurement on all of the subjects in a sample represent our observations for a single characteristic such as *age*, *gender*, *speed at a task*, or *response to a stimulus*.  
-
-We should think of these measurements as representing a **sample distribution** of the variable, which in turn more or less represents the **population distribution**.  
-The goal of univariate non-graphical EDA is to better appreciate the sample distribution and to make tentative conclusions about what population distribution(s) may be compatible with the sample.  
-
-> **Note:** Outlier detection is also part of this analysis.
-
----
-
-### 4.2.1 Categorical Data
-
-The characteristics of interest for a categorical variable are:
-
-- **Range of values** (levels)
-- **Frequency** or **relative frequency** of each value  
-
-For example, suppose we categorize students by College as H&SS, MCS, SCS, or Other, and we take a random sample of 20 students.  
-Our sample might look like:
-
-H&SS, H&SS, MCS, other, other, SCS, MCS, other,
-H&SS, MCS, SCS, SCS, other, MCS, MCS, H&SS,
-MCS, other, H&SS, SCS
-
-markdown
-Copy code
-
-We can tabulate the results:
-
-| College | Count | Proportion | Percent |
-|--------|------|-----------|--------|
-| H&SS  | 5    | 0.25      | 25%    |
-| MCS   | 6    | 0.30      | 30%    |
-| SCS   | 4    | 0.20      | 20%    |
-| Other | 5    | 0.25      | 25%    |
-| **Total** | 20 | 1.00 | 100% |
-
-> **Key point:**  
-> A simple tabulation of the frequency of each category is the best univariate non-graphical EDA for categorical data.
-
----
-
-### 4.2.2 Characteristics of Quantitative Data
-
-Univariate EDA for a quantitative variable is used to make **preliminary assessments** about the population distribution.  
-The main characteristics of interest are:
-
-- **Center** (mean, median)
-- **Spread** (variance, SD, IQR)
-- **Modality** (number of peaks)
-- **Shape** (tails, symmetry)
-- **Outliers**
-
-> **Reminder:** What we observe is just one random sample. Its statistics vary from sample to sample and are best thought of as estimates of the population parameters.
-
----
-
-### 4.2.3 Central Tendency
-
-Common measures of central tendency:
-
-- **Mean:** arithmetic average  
-- **Median:** middle value in ordered list (robust to outliers)  
-- **Mode:** most frequent value  
-
-> **Guidance:**  
-> - For symmetric distributions, mean = median  
-> - For skewed data or data with outliers, **median is preferred**
-
----
-
-### 4.2.4 Spread
-
-Spread tells us how far data values lie from the center.  
-Common measures:
-
-- **Variance (s²):** mean of squared deviations  
-- **Standard Deviation (s):** square root of variance (in original units)  
-- **Interquartile Range (IQR):** `Q3 - Q1`, robust to outliers  
-
-> **Tip:**  
-> For Normally distributed data, ~95% of values lie within ±2 standard deviations of the mean.
-
----
-
-### 4.2.5 Skewness and Kurtosis
-
-Additional descriptors:
-
-- **Skewness:** measure of asymmetry  
-  - Positive skew → right tail longer  
-  - Negative skew → left tail longer  
-- **Kurtosis:** measure of “peakedness”  
-  - Positive kurtosis → more peaked, fatter tails  
-  - Negative kurtosis → flatter peak, thinner tails  
-
-> **Takeaway:**  
-> Skewness and kurtosis help determine whether the data are approximately Normal or deviate substantially.
-
-
-
-
-
-
-## 4.3 Univariate Graphical EDA
-
-When analyzing a single variable measured on \(n\) subjects (a sample of size \(n\)),  
-it is important to complement non-graphical statistics with graphical displays.  
-
-- **Non-graphical methods** are quantitative and objective but do not give a complete picture.  
-- **Graphical methods** are more qualitative and allow for quick, intuitive understanding.
-
-> **Key idea:** Use both — numbers and plots — to get a full understanding of the data.
-
----
-
-### 4.3.1 Histograms
-
-The most common and useful plot for quantitative data is the **histogram**.
-
-- Each bar represents the **frequency** (or **proportion**) of cases within a range of values (a *bin*).
-- Typically, bins are chosen so that there are between 5 and 30 bars, depending on sample size and shape.
-
-**Steps to create a histogram manually:**
-
-1. Define the bin ranges  
-2. Count how many cases fall in each bin  
-3. Draw bars with heights proportional to counts
-
-> **Tips:**
-> - Values that fall exactly on the boundary are usually placed in the lower bin.  
-> - Try different bin widths to see whether key features (like bimodality) appear or disappear.  
-> - Be cautious with small samples: sampling variation may obscure the true distribution.
-
-**Example observation:**  
-Histograms can reveal shape (unimodal, bimodal), spread, and potential outliers at a glance.
-
----
-
-### 4.3.2 Stem-and-Leaf Plots
-
-A **stem-and-leaf plot** is a quick way to see all individual values **and** the shape of the distribution.  
-
-Example layout:
-
-The decimal place is at the "|".
-
-1|000000
-2|00
-3|000000000
-4|000000
-5|00000000000
-6|000
-7|0000
-8|0
-9|00
-
-markdown
-Copy code
-
-Here, the first line represents six values equal to 1.0, the second line two values equal to 2.0, etc.
-
-> **Use when:** You want to see all values explicitly and retain data granularity.  
-> **Limitations:** Not as visually powerful for appreciating shape as histograms.
-
----
-
-### 4.3.3 Boxplots
-
-Boxplots are extremely effective at summarizing:
-
-- **Central tendency** (median)
-- **Spread** (IQR)
-- **Skewness**
-- **Outliers**
-
-**Boxplot components:**
-
-- **Box:** bounded by \(Q1\) and \(Q3\) (the interquartile range)
-- **Median:** horizontal line inside the box
-- **Whiskers:** extend to the most extreme values within \(1.5 \times IQR\) of Q1/Q3
-- **Outliers:** points beyond the whiskers, sometimes marked with different symbols
-
-> **Interpretation:**
-> - If the median is closer to one hinge, the distribution is skewed.  
-> - Many outliers may suggest "fat tails" (positive kurtosis) or data entry errors.  
-> - Side-by-side boxplots are excellent for comparing groups.
-
-> **Reminder:** The boxplot definition of “outlier” is purely mechanical  
-> (\(>1.5 \times IQR\) beyond Q1/Q3). Not all such points are mistakes.
-
----
-
-### 4.3.4 Quantile-Normal (QQ) Plots
-
-A **Quantile-Normal (QN) plot** (or more general **QQ plot**) compares your data’s distribution  
-to a theoretical distribution (commonly Normal).
-
-**How to interpret:**
-
-- If points fall roughly along a straight line → data are approximately Normal.  
-- **Systematic curvature** indicates non-Normality:
-  - **S-curve:** positive skew
-  - **Backwards S-curve:** negative skew
-  - **Fat tails:** points too far from center at both ends → positive kurtosis
-  - **Thin tails:** points too close to center → negative kurtosis
-- A single point far from the line suggests an **outlier**.
-
-> **Key use:** Checking assumptions before inference (e.g., residuals in regression/ANOVA).  
-> **Goal:** Distinguish between “OK” (random scatter around the line) and “non-normal” patterns.
-
----
-
-> **Summary:**  
-> - Histograms are best for quickly assessing shape, spread, and modality.  
-> - Stem-and-leaf plots retain all data values.  
-> - Boxplots provide robust summaries and highlight potential outliers.  
-> - Quantile-normal plots formally assess departures from Normality.
-
-**Always use graphical EDA alongside summary statistics to catch mistakes and reveal patterns.**
-
-
-
-
-## 4.4 Multivariate Non-Graphical EDA
-
-Multivariate non-graphical EDA techniques examine the **relationship between two or more variables**  
-without relying on plots. They are usually presented as **tables** or **summary statistics**.
-
----
-
-### 4.4.1 Cross-Tabulation
-
-For two categorical variables (or quantitative variables with few distinct values),  
-**cross-tabulation** is the basic technique.
-
-- Make a two-way table:
-  - **Columns** represent levels of one variable
-  - **Rows** represent levels of the other
-  - Fill in cell counts for each combination of levels
-
-You can also calculate:
-
-- **Row percentages** (sum to 100% within each row)
-- **Column percentages** (sum to 100% within each column)
-- **Cell percentages** (sum to 100% across all cells)
-
-**Example:**
-
-| Subject ID | Age Group | Sex |
-|-----------|-----------|-----|
-| GW        | young     | F   |
-| JA        | middle    | F   |
-| TJ        | young     | M   |
-| ...       | ...       | ... |
-
-Cross-tabulation result:
-
-| Age Group | Female | Male | Total |
-|----------|--------|------|------|
-| Young    | 2      | 3    | 5    |
-| Middle   | 2      | 1    | 3    |
-| Old      | 3      | 0    | 3    |
-| **Total**| 7      | 4    | 11   |
-
-> **Key point:** Cross-tabulation is the basic bivariate non-graphical EDA technique.
-
----
-
-### 4.4.2 Correlation for Categorical Data
-
-It is possible to compute **correlations between two categorical variables**,  
-but there are many types (phi coefficient, Cramér’s V, etc.), which are beyond this book’s scope.
-
----
-
-### 4.4.3 Univariate Statistics by Category
-
-When you have **one categorical (usually explanatory)** and **one quantitative (usually outcome)** variable:
-
-- Calculate standard univariate statistics **separately for each category**.
-- Compare means, medians, and spreads across levels.
-
-> **Informal inference:**  
-> - Comparing means is like a preliminary ANOVA  
-> - Comparing medians is a robust version  
-> - Comparing spreads checks the assumption of equal variances  
-
-> **Guidance:** This is a good first step before formal statistical modeling.
-
----
-
-### 4.4.4 Correlation and Covariance
-
-For **two quantitative variables**, we often compute:
-
-- **Sample covariance:**  
-  Measures how two variables co-vary.  
-  \[
-  \text{Cov}(X,Y) = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{n-1}
-  \]
-
-- **Sample correlation (r):**  
-  Standardized covariance, always between \(-1\) and \(+1\):  
-  \[
-  r = \frac{\text{Cov}(X,Y)}{s_X s_Y}
-  \]
-
-Interpretation:
-
-- \(r > 0\): positive association  
-- \(r < 0\): negative association  
-- \(r \approx 0\): little or no linear relationship  
-
-> **Key point:** Technically, independence implies \(r = 0\),  
-> but \(r = 0\) does not guarantee independence.
-
----
-
-### 4.4.5 Covariance and Correlation Matrices
-
-When you have **many quantitative variables**, you can create a **matrix** of pairwise covariances or correlations.
-
-Example covariance matrix:
-
-|     | X   | Y   | Z   |
-|-----|-----|-----|-----|
-| X   | 5.00| 1.77| -2.24 |
-| Y   | 1.77| 7.00| 3.17 |
-| Z   | -2.24| 3.17| 4.00 |
-
-Example correlation matrix:
-
-|     | X   | Y   | Z   |
-|-----|-----|-----|-----|
-| X   | 1.00| 0.30| -0.50 |
-| Y   | 0.30| 1.00| 0.60  |
-| Z   | -0.50| 0.60| 1.00 |
-
-> **Takeaway:** Correlation matrices summarize linear relationships in a compact form  
-> and are especially useful as a first step before multivariate modeling.
-
----
-
-> **Summary:**  
-> Multivariate non-graphical EDA relies on tables and statistics  
-> (cross-tabs, means by category, covariance/correlation).  
-> These methods are a foundation for more advanced modeling techniques.
-
-
-
-
-
-## 4.5 Multivariate Graphical EDA
-
-When exploring relationships between **two or more variables**, graphical techniques are invaluable.  
-They allow you to visualize patterns, trends, and interactions that might be missed in tables.
-
----
-
-### 4.5.1 Univariate Graphs by Category
-
-When you have **one categorical (usually explanatory)** and **one quantitative (usually outcome)** variable:
-
-- **Condition on the categorical variable** (analyze one group at a time)
-- Create plots of the quantitative variable **for each category**
-- Compare distributions visually
-
-**Best practice:** Use **side-by-side boxplots** to compare groups.  
-
-Example:
-
-```{r, echo=FALSE, fig.align="center", eval=FALSE}
-# Example R code (you can adapt with your own data)
-boxplot(strength ~ age_group, data = df,
-        main = "Strength by Age Group",
-        ylab = "Strength",
-        xlab = "Age Group")
-```
-Interpretation:
-
-Compare medians (central tendency)
-
-Compare IQRs (spread)
-
-Check for symmetry or skewness
-
-Look for outliers in each group
-
-Key point: Side-by-side boxplots are the best graphical EDA tool for comparing a quantitative variable across categorical levels.
-
-4.5.2 Scatterplots
-For two quantitative variables, the standard tool is the scatterplot:
-
-Plot one variable on the x-axis, the other on the y-axis
-
-Each case is represented by a point
-
-```{r, eval=FALSE}
-# Example scatterplot code
-plot(df$age, df$strength,
-     xlab = "Age",
-     ylab = "Strength",
-     main = "Age vs Strength")
+```{r, include=FALSE}
+library(tidyverse)
 ```
 
-Convention: If one variable is explanatory and the other is outcome,
-place the outcome on the y-axis (vertical).
-
-Adding More Variables
-You can encode additional variables with:
-
-Color
-
-Shape
-
-Size
-
-Example (using ggplot2):
+First look at the histogram. Is it uniform? Then summarize using the range. 
 
 ```{r}
-
-library(ggplot2)
-ggplot(df, aes(x = age, y = strength, color = gender, shape = party)) +
-  geom_point(size = 3) +
-  labs(title = "Strength vs Age, by Gender and Party")
+mpg %>% select(cty) %>% reframe(range=range(cty)) 
+# note that I used reframe instead of summarize because it's two values
 ```
 
-Interpretation:
-Look for clusters, linear/nonlinear trends, and possible interactions.
+If it is bimodal, then describe the two modes. Perhaps it's worth it to split up the data and analyze it as two separate unimodal distributions.
 
-Summary:
+If it is unimodal, then check whether it is symmetric, visually. There are tests for this (e.g., a qq plot), but it's usually good enough to see it.
 
-Use side-by-side boxplots to compare a quantitative variable across groups
+If it is symmetric, then provide the mean and sd. 
 
-Use scatterplots to examine relationships between two quantitative variables
+```{r}
+mpg %>% select(cty) %>% summarise(mean=mean(cty), sd=sd(cty))
+```
 
-Encode additional variables with color, shape, or size for richer visualization
+If it is not symmetric, then provide the median and IQR. You need to say whether it is skewed to the right or left, meaning does it have a long tail on the right or left. A long tail on the right is a right-skewed distribution. 
 
-In a nutshell: Multivariate graphical EDA is a fast, intuitive way to see relationships and guide modeling choices.
+
+<img src="../graphics/assymetric.png" width="35%" />
+
+
+```{r}
+mpg %>% select(cty) %>% summarise(median=median(cty), IQR=IQR(cty))
+```
+
+In fact, one way to test whether the distribution is symmetric is by comparing the median to the mean. If they are equal, then the distribution is symmetric.
+
+
+You can also see all the summary statistics together if you like.
+```{r}
+mpg %>% select(cty) %>% summarise(mean=mean(cty), 
+                                  sd=sd(cty),
+                                  median=median(cty), 
+                                  IQR=IQR(cty)
+                                  )
+```
+
+There is no built-in mode function in R, but you can calculate it this way. 
+
+```{r}
+# define a new function for mode, call it Mode
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# use it on your variable
+Mode(mpg$cty)
+
+```
+
 
