@@ -15,7 +15,7 @@ The Grammar of Graphics was a book published in 1999 by a statistician named Lel
 
 It is called a grammar because it is a structure for producing plots that resembles a language. Nearly every current software tool used to build plots has been informed by this book. Its influence can be found in Tableau, Plotly, and the Python libraries bokeh, altair, seaborn, and plotnine. The most complete implementation of the grammar is found in an R package called ggplot2 by Hadley Wickham.
 
-<img src="../graphics/grammar-of-graphics.png" width="50%" />
+<img src="../graphics/grammar-of-graphics.png" width="70%" />
 
 In Wickham’s adaptation of the grammar of graphics, a plot can be decomposed into seven elements:
 
