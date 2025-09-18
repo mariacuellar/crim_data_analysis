@@ -2,14 +2,20 @@
 title: "ggplot"
 author: "Maria Cuellar"
 date: "2025-09-16"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# ggplot
+# The grammar of graphics
 
 The Grammar of Graphics was a book published in 1999 by a statistician named Leland Wilkinson, and later Hadley Wickham used it to write a package called ggplot in R. ggplot stands for Grammar of Graphics plot. 
 
@@ -36,9 +42,13 @@ Why it’s called "aesthetics": It's not about style or beauty — it’s about 
 Theme: If you want to make it pretty.
 
 
-# Data
+
+# ggplot components
 
 We will use the `mpg` dataset, which is built into the `ggplot2` package, which is part of the `tidyverse` package.
+
+We will use the variables `cty` and `hwy` as our quantitative variables, and the variables `drv`, `cyl` as our categorical ones.
+
 
 ```{r, message=FALSE}
 # load packages
@@ -46,15 +56,6 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-```{r}
-# See the data we'll be using
-mpg
-```
-
-We will use the variables `cty` and `hwy` as our quantitative variables, and the variables `drv`, `cyl` as our categorical ones.
-
-
-# Different elements of a plot
 
 If you only use ggplot, then nothing happens.
 ```{r, fig.width=4, fig.height=3}
@@ -118,6 +119,7 @@ mpg %>% ggplot(aes(x=cty)) + geom_histogram() + theme_economist()
 And you can also change the palettes. There's a nice set of palettes called the Brewer palettes:  https://r-graph-gallery.com/38-rcolorbrewers-palettes.html. Designed by Cynthia Brewer: https://en.wikipedia.org/wiki/Cynthia_Brewer.
 
 ```{r, fig.width=4, fig.height=3}
+library(tidyverse)
 mpg %>% ggplot(aes(x=cty, fill=drv)) + geom_histogram() + scale_fill_brewer(palette = "Dark2")
 ```
 
@@ -131,7 +133,7 @@ mpg %>% ggplot(aes(x=cty, fill=drv)) + geom_histogram() + scale_fill_brewer(pale
 
 ## Quantitative varible: 
 
-### Histogram
+*Histogram*: 
 
 Plot a histogram to visualize a single quantitative variable.
 
@@ -139,7 +141,7 @@ Plot a histogram to visualize a single quantitative variable.
 mpg %>% ggplot(aes(x=cty)) + geom_histogram()
 ```
 
-### Boxplot
+*Boxplot*:
 
 Plot a boxplot to visualize a single quantitative variable.
 
@@ -151,7 +153,7 @@ mpg %>% ggplot(aes(y=cty)) + geom_boxplot()
 
 ## Categorical variable
 
-### Barplot
+*Barplot:*
 
 Draw a barplot to visualize a single categorical variable.
 
@@ -160,7 +162,8 @@ mpg %>% ggplot(aes(x=drv)) + geom_bar()
 ```
 
 
-### Pie chart
+*Pie chart:*
+
 (Actually, don't use pie charts. They're often more deceiving than helpful - this is because humans are bad at comparing areas to each other. Just stick to barplots, or tables.)
 ```{r, fig.width=4, fig.height=3}
 #mpg %>% ggplot(aes(x="", fill=drv)) + geom_bar() + coord_polar("y") + theme_void()
@@ -170,19 +173,21 @@ mpg %>% ggplot(aes(x=drv)) + geom_bar()
 
 
 
+# Two variable EDA
+
 ## Two categorical variables
 
-
-### Side-by-side barplots
+*Side-by-side barplots:*
 
 ```{r, fig.width=4, fig.height=3}
-mpg %>% ggplot(aes(x=cyl)) + geom_bar() + facet_grid(~drv)
+library(tidyverse)
+mpg %>% ggplot(aes(x=cyl)) + geom_bar() + facet_wrap(~drv)
 ```
 
 
 
 
-### Different color barplots
+*Different color barplots:*
 
 Note: position dodge is almost always prefereable to identity because identity stacks the bars up, and it's very difficult for humans to compare the sizes of the bars when they start at different heights.
 
@@ -199,19 +204,19 @@ mpg %>% ggplot(aes(x=cyl, fill=factor(drv))) + geom_bar(position="dodge")
 ## A quantitative variable and a categorical variable
 
 
-### Side-by-side histograms
+*Side-by-side histograms:*
 
 ```{r, fig.width=4, fig.height=3}
 mpg %>% ggplot(aes(x=cty)) + geom_histogram() + facet_grid(~drv)
 ```
 
-### Side-by-side boxplots
+*Side-by-side boxplots:*
 
 ```{r, fig.width=4, fig.height=3}
 mpg %>% ggplot(aes(y=cyl)) + geom_boxplot() + facet_grid(~drv)
 ```
 
-# Different color histograms
+*Different color histograms:*
 
 ```{r, fig.width=4, fig.height=3}
 mpg %>% ggplot(aes(x=cty, fill=factor(drv))) + geom_histogram(alpha=.7)
@@ -221,16 +226,21 @@ mpg %>% ggplot(aes(x=cty, fill=factor(drv))) + geom_histogram(alpha=.7)
 
 ## Two quantitative variables
 
-### Scatterplot
+*Scatterplot:*
 
 ```{r, fig.width=4, fig.height=3}
 mpg %>% ggplot(aes(x=cty, y=hwy)) + geom_point()
 ```
 
 
-# Two quantitative variables and a categorical variable
 
-### Scatterplot with different colors by the categories.
+# Three variable EDA
+
+## Three categorical variables
+
+## Two quantitative variables and a categorical variable
+
+*Scatterplot with different colors by the categories:*
 
 ```{r, fig.width=4, fig.height=3}
 mpg %>% ggplot(aes(x=cty, y=hwy, color=drv)) + geom_point()
@@ -238,9 +248,9 @@ mpg %>% ggplot(aes(x=cty, y=hwy, color=drv)) + geom_point()
 
 
 
-# Three quantitative variables
+### Three quantitative variables
 
-### Scatterplot with different colors by the shade of the third quant variable.
+*Scatterplot with different colors by the shade of the third quant variable:*
 
 ```{r, fig.width=4, fig.height=3}
 mpg %>% ggplot(aes(x=cty, y=hwy, color=displ)) + geom_point()
