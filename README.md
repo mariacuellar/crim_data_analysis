@@ -54,7 +54,7 @@ analyses beyond the scope of this course.
 - [Exercises 3: Visual summary of quantitative and categorical
   data](exercises/Exercises%203%20-%20questions.R) (Solutions)
 - [Exercises 4: Using R
-  Markdown](exercises/Exercises%204%20-%20questions.R)(Solutions)
+  Markdown](exercises/Exercises%204%20-%20questions.R) (Solutions)
 
 ## Datasets
 
