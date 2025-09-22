@@ -38,7 +38,8 @@ analyses beyond the scope of this course.
 - [First look at the
   data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [ggplot](https://mariacuellar.github.io/crim_data_analysis/workshops/ggplot.html)
-- [R Markdown]()
+- [R
+  Markdown](https://mariacuellar.github.io/crim_data_analysis/workshops/Rmarkdown.html)
 - [Linear
   regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
 
