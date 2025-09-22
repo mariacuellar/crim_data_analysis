@@ -1,5 +1,5 @@
 ---
-title: "Rmarkdown"
+title: "RMarkdown"
 author: "Maria Cuellar"
 date: "2025-09-18"
 output: html_document
@@ -9,25 +9,111 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Introduction
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+R Markdown lets you **combine code, output, and text** in the same document.
+You can write your analysis, include plots, and explain your results — all in
+one file — and render it into an HTML, PDF, or Word report.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+This guide will help you:
 
-```{r cars}
-library(tidyverse)
-mpg %>% summarise(mean=mean(cty))
+1. Understand the basic structure of an `.Rmd` file  
+2. Write text using **Markdown** formatting  
+3. Add and run R code chunks  
+4. Render the document to HTML  
+
+---
+
+# R Markdown Structure
+
+An R Markdown file has three parts:
+
+1. **YAML header** – appears at the top between `---` lines (title, author, etc.)
+2. **Markdown text** – regular writing with formatting
+3. **Code chunks** – blocks of R code surrounded by three backticks
+
+---
+
+# Writing Text with Markdown
+
+You can write *italic*, **bold**, and even lists:
+
+- Item 1  
+- Item 2  
+- Item 3  
+
+You can also add links:  
+[Visit RStudio's R Markdown site](https://rmarkdown.rstudio.com)
+
+And equations (if you want):  
+`$E = mc^2$` → \(E = mc^2\)
+
+---
+
+# Code Chunks
+
+To include R code, use a **code chunk** using this syntax: <pre> ```{r}  x <- 5 x + 10 ``` </pre>
+
+Ends up looking like this:
+
+```{r}
+# A simple calculation
+x <- 5
+y <- 10
+x + y
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-mpg %>% ggplot(aes(x=cty)) + geom_histogram()
+# Adding Plots
+
+Plots can be added using the same 'chunk' syntax:
+
+```{r}
+# Make a simple scatterplot
+
+plot(mtcars$mpg, mtcars$wt,
+     xlab = "Miles per Gallon",
+     ylab = "Weight",
+     main = "Car Weight vs MPG")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-`eval = FALSE` determines whether the code within a chunk is executed by R when the document is knitted.
+
+# Chunk Options
+
+You can control what appears in your report with chunk options in with the {r} curly braces: e.g., <pre> ```{r, echo=FALSE, eval=FALSE}  x <- 5 x + 10 ``` </pre>:
+
+- echo=FALSE → hide code, show results
+- eval=FALSE → show code, but don’t run it
+- message=FALSE, warning=FALSE → hide messages/warnings
+
+
+
+# Rendering Your Document
+
+Click Knit in RStudio and choose Knit to HTML.
+
+R will:
+
+- Run all the code chunks
+- Combine them with your text
+- Produce a clean, shareable report
+
+# Tips for Success:
+
+- Save your .Rmd file often.
+- Knit regularly to catch errors early.
+- Use clear headings (#, ##, ###) to organize your report.
+- Keep code readable: use comments (#) to explain what it does.
+
+
+# Practice
+
+Try using the mtcars dataset and adding:
+
+1. A summary statistic, mean of disp
+2. A histogram of disp
+3. A short paragraph explaining what you found
+4. Then knit again and see how your document updates!
+
