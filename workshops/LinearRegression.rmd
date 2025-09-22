@@ -14,9 +14,6 @@ output:
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
 
-
-Created: 2021-10-19, Last compiled: `r Sys.Date()`
-
 Here we discuss how one should run a linear regression in R. There is a special emphasis on explaining what is a model, and how we use it to evaluate the relationship between two variables, x and y, in order to do proper inferences and predictions.
 
 

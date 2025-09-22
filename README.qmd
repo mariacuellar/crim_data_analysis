@@ -43,6 +43,7 @@ Designed as a foundational course in statistics for the social sciences, this cl
 - [Downloading R (up to section 1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 - [First look at the data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [ggplot](https://mariacuellar.github.io/crim_data_analysis/workshops/ggplot.html)
+- [R Markdown]()
 - [Linear regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
 
 
