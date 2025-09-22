@@ -1,10 +1,9 @@
-# Crim 1200 - Statistics for the Social Sciences
-Written by Maria Cuellar - updated on
-2025-09-15
+# Crim 1200 Statistics for the Social Sciences
+
 
 Instructor website: https://web.sas.upenn.edu/mcuellar/
 
-## Course description:
+## Course description
 
 Statistics is the science of developing and studying methods for
 collecting, analyzing, interpreting, and presenting empirical data. A
@@ -32,32 +31,34 @@ interpret the results of analyses and effectively communicate them to
 others and identify when to seek additional help with designs or
 analyses beyond the scope of this course.
 
-## Workshops:
+## Workshops
 
 - [Downloading R (up to section
   1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 - [First look at the
   data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [ggplot](https://mariacuellar.github.io/crim_data_analysis/workshops/ggplot.html)
-- [EDA]()
+- [R Markdown]()
+- [Linear
+  regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
 
-## Exercises:
+## Exercises
 
 1.  [Reading data in
     RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20questions.R)
     [(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20solutions.R)
 2.  [First look at the
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%202%20-%20questions.R)
-    (Solutions)
+    [(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%202%20-%20solutions.R)
 3.  [Visual summary of quantitative and categorical
     data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%203%20-%20questions.R)
     (Solutions)
 
-## Datasets:
+## Datasets
 
 To download the data, right-click the link and choose “Save Link As…”.
 Save the data into the folder of your choice.
 
-1.  [Kentucky derby](data/kentucky-derby-2018.csv)
-2.  [Students](data/students.csv)
-3.  [Domestic violence](data/domestic_violence.csv)
+1.  [kentucky-derby-2018.csv](data/kentucky-derby-2018.csv)
+2.  [students.csv](data/students.csv)
+3.  [domestic_violence.csv](data/domestic_violence.csv)
