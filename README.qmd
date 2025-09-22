@@ -43,7 +43,7 @@ Designed as a foundational course in statistics for the social sciences, this cl
 - [Downloading R (up to section 1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 - [First look at the data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [ggplot](https://mariacuellar.github.io/crim_data_analysis/workshops/ggplot.html)
-- [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA - chapter 4.pdf)
+- [Linear regression](https://mariacuellar.github.io/crim_data_analysis/workshops/linearregression.html)
 
 
 ## Exercises
@@ -51,7 +51,7 @@ Designed as a foundational course in statistics for the social sciences, this cl
 1. [Reading data in RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20questions.R)
 [(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20solutions.R)
 2. [First look at the data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%202%20-%20questions.R)
-(Solutions)
+[(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%202%20-%20solutions.R)
 3. [Visual summary of quantitative and categorical data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%203%20-%20questions.R)
 (Solutions)
 
