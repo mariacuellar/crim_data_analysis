@@ -1,7 +1,6 @@
 ---
 title: "Crim 1200 Statistics for the Social Sciences"
-output:
-  pdf_document: default
+output: 
   html_document:
     toc: true
     toc_float: true
