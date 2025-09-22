@@ -116,7 +116,7 @@ R will:
 
 # Practice
 
-Try using the mtcars dataset and adding:
+Try using the `mtcars` dataset and adding:
 
 1. A summary statistic, mean of disp
 2. A histogram of disp
