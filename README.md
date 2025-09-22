@@ -45,19 +45,18 @@ analyses beyond the scope of this course.
 
 ## Exercises
 
-- <a href="exercises/Exercises%201%20-%20questions.R"
-  target="_blank">Exercises 1: Reading data in RStudio</a>
-  <a href="exercises/Exercises%201%20-%20solutions.R"
-  target="_blank">(Solutions)</a>
-- <a href="exercises/Exercises%202%20-%20questions.R"
-  target="_blank">Exercises 2: First look at the data</a>
-  <a href="exercises/Exercises%202%20-%20solutions.R"
-  target="_blank">(Solutions)</a>
-- <a href="exercises/Exercises%203%20-%20questions.R"
-  target="_blank">Exercises 3: Visual summary of quantitative and
-  categorical data</a> (Solutions)
-- <a href="exercises/Exercises%204%20-%20questions.R"
-  target="_blank">Exercises 4: Using R Markdown</a> (Solutions)
+- [Exercises 1: Reading data in
+  RStudio](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%201%20-%20questions.R)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%201%20-%20solutions.R)
+- [Exercises 2: First look at the
+  data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%202%20-%20questions.R)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%202%20-%20solutions.R)
+- [Exercises 3: Visual summary of quantitative and categorical
+  data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%203%20-%20questions.R)
+  (Solutions)
+- [Exercises 4: Using R
+  Markdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20questions.R)
+  (Solutions)
 
 ## Datasets
 
