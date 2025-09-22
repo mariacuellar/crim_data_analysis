@@ -66,12 +66,12 @@ analyses beyond the scope of this course.
 
 ## Exercises
 
--  [Exercises 1: Reading data in RStudio](exercises/Exercises 1 - questions.R)
-    [(Solutions)](exercises/Exercises 1 - solutions.R)
--  [Exercises 2: First look at the data](exercises/Exercises 2 - questions.R)
-    [(Solutions)](exercises/Exercises 2 - solutions.R)
--  [Exercises 3: Visual summary of quantitative and categorical data](exercises/Exercises 3 - questions.R) (Solutions)
--  [Exercises 4: Using R Markdown](exercises/Exercises 4 - questions.R) (Solutions)
+-  [Exercises 1: Reading data in RStudio](exercises/Exercises 1 - questions.R){target="_blank"}
+    [(Solutions)](exercises/Exercises 1 - solutions.R){target="_blank"}
+-  [Exercises 2: First look at the data](exercises/Exercises 2 - questions.R){target="_blank"}
+    [(Solutions)](exercises/Exercises 2 - solutions.R){target="_blank"}
+-  [Exercises 3: Visual summary of quantitative and categorical data](exercises/Exercises 3 - questions.R){target="_blank"} (Solutions)
+-  [Exercises 4: Using R Markdown](exercises/Exercises 4 - questions.R){target="_blank"} (Solutions)
 
 
 ## Datasets
