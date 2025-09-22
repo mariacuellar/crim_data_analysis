@@ -1534,11 +1534,13 @@ lists:</p>
 </li>
 <li>Item 3</li>
 </ul>
-<p>You can also add links:<br />
-<a href="https://rmarkdown.rstudio.com">Visit RStudio’s R Markdown
+You can also add links:
+<pre> [Visit RStudio&#39;s R Markdown site](https://rmarkdown.rstudio.com) </pre>
+<p><a href="https://rmarkdown.rstudio.com">Visit RStudio’s R Markdown
 site</a></p>
-<p>And equations (if you want):<br />
-<code>$E = mc^2$</code> → <span class="math inline">\(E =
+<p>And equations:</p>
+<pre> `$E = mc^2$` → \(E = mc^2\) </pre>
+<p><code>$E = mc^2$</code> → <span class="math inline">\(E =
 mc^2\)</span></p>
 <hr />
 </div>
@@ -1593,6 +1595,12 @@ the {r} curly braces: e.g.,
 <li>Knit regularly to catch errors early.</li>
 <li>Use clear headings (#, ##, ###) to organize your report.</li>
 <li>Keep code readable: use comments (#) to explain what it does.</li>
+<li>Load the libraries you need at the beginning of the document. Don’t
+try to use an object you haven’t defined earlier in the document. Rmd
+runs the R code from the beginning of the file to the end, so if the
+library or object haven’t been defined, the Rmd file won’t run.</li>
+<li>Don’t install.packages or use <code>View(data)</code> in Rmd
+files.</li>
 </ul>
 </div>
 <div id="practice" class="section level1">

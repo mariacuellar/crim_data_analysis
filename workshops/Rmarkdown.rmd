@@ -48,10 +48,17 @@ You can write *italic*, **bold**, and even lists:
 - Item 2  
 - Item 3  
 
-You can also add links:  
+You can also add links:
+<pre> [Visit RStudio's R Markdown site](https://rmarkdown.rstudio.com) </pre>
+
 [Visit RStudio's R Markdown site](https://rmarkdown.rstudio.com)
 
-And equations (if you want):  
+
+And equations:
+
+<pre> `$E = mc^2$` → \(E = mc^2\) </pre>
+
+
 `$E = mc^2$` → \(E = mc^2\)
 
 ---
@@ -112,14 +119,7 @@ R will:
 - Knit regularly to catch errors early.
 - Use clear headings (#, ##, ###) to organize your report.
 - Keep code readable: use comments (#) to explain what it does.
+- Load the libraries you need at the beginning of the document. Don't try to use an object you haven't defined earlier in the document. Rmd runs the R code from the beginning of the file to the end, so if the library or object haven't been defined, the Rmd file won't run.
+- Don't install.packages or use `View(data)` in Rmd files.
 
-
-# Practice
-
-Try using the `mtcars` dataset and adding:
-
-1. A summary statistic, mean of disp
-2. A histogram of disp
-3. A short paragraph explaining what you found
-4. Then knit again and see how your document updates!
 

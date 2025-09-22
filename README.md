@@ -45,15 +45,16 @@ analyses beyond the scope of this course.
 
 ## Exercises
 
-1.  [Reading data in
-    RStudio](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20questions.R)
-    [(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%201%20-%20solutions.R)
-2.  [First look at the
-    data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%202%20-%20questions.R)
-    [(Solutions)](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%202%20-%20solutions.R)
-3.  [Visual summary of quantitative and categorical
-    data](https://github.com/mariacuellar/crim_data_analysis/blob/main/exercises/Exercises%203%20-%20questions.R)
-    (Solutions)
+- [Exercises 1: Reading data in
+  RStudio](exercises/Exercises%201%20-%20questions.R)
+  [(Solutions)](exercises/Exercises%201%20-%20solutions.R)
+- [Exercises 2: First look at the
+  data](exercises/Exercises%202%20-%20questions.R)
+  [(Solutions)](exercises/Exercises%202%20-%20solutions.R)
+- [Exercises 3: Visual summary of quantitative and categorical
+  data](exercises/Exercises%203%20-%20questions.R) (Solutions)
+- [Exercises 4: Using R
+  Markdown](exercises/Exercises%204%20-%20questions.R)(Solutions)
 
 ## Datasets
 
