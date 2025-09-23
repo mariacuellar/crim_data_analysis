@@ -1,0 +1,13 @@
+Dataset Codebook:
+
+The dataset comes from anonymized pretrial records in the fictional U.S. city of Riverton, a mid-sized urban area with a population of approximately 400,000. Located in the Midwest, Riverton has a mix of urban, suburban, and rural court jurisdictions, including municipal and state-level courts as well as a federal courthouse serving the surrounding region.
+
+The data were collected as part of a research study on pretrial detention and court processing, focusing on potential disparities in bail practices and time to trial. All individuals in the dataset were arrested between 2018 and 2022, and their records include key pretrial variables: race, court type, bail amount, and number of days between arrest and trial.
+
+This dataset is designed to support statistical analysis and data visualization related to racial disparities, court system differences, and relationships between bail and pretrial delay.
+
+- race: Self-identified race of the defendant (White, Black, Hispanic, or Other)
+- court_type: The court where the defendant’s case was processed (Municipal, State, or Federal)
+- bail_amount: Bail amount set by the judge for pretrial release (U.S. dollars)
+- days_until_trial: Number of days between the defendant’s arrest and the start of trial (Days)
+
