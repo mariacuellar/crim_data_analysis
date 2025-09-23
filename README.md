@@ -57,8 +57,8 @@ analyses beyond the scope of this course.
 - [Exercises 4: Using R
   Markdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20questions.R)
   (Solutions)
-- [Practice exercises for Exam
-  1](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
+- [Practice exercises for Exam 1 - in
+  RMarkdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
   (Solutions - I will post these on Saturday night)
 
 ## Datasets
