@@ -69,3 +69,5 @@ Save the data into the folder of your choice.
 1.  [kentucky-derby-2018.csv](data/kentucky-derby-2018.csv)
 2.  [students.csv](data/students.csv)
 3.  [domestic_violence.csv](data/domestic_violence.csv)
+4.  [pretrial_df](data/pretrial_df.csv) [(Codebook for
+    pretrial_df)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20pretrial_df.txt)
