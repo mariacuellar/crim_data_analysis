@@ -53,10 +53,12 @@ analyses beyond the scope of this course.
   [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%202%20-%20solutions.R)
 - [Exercises 3: Visual summary of quantitative and categorical
   data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%203%20-%20questions.R)
-  (Solutions)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%203%20-%20solutions.R)
 - [Exercises 4: Using R
   Markdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20questions.R)
   (Solutions)
+- [Practice exercises for Exam
+  1](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
 
 ## Datasets
 

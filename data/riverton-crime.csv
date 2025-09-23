@@ -1,0 +1,501 @@
+"","id","gender","offense_type","num_prior_arrests","time_served_months"
+"1",59407,"Female","Property",3,14.6
+"2",38998,"Female","Property",0,17.3
+"3",27710,"Male","Drug",6,39.3
+"4",83170,"Female","Violent",2,50.4
+"5",57504,"Male","Property",4,24.6
+"6",17788,"Male","Public Order",1,15.4
+"7",22446,"Male","Drug",4,34.1
+"8",84555,"Male","Property",5,15.6
+"9",14297,"Male","Public Order",2,17.7
+"10",35947,"Male","Property",6,36.3
+"11",57533,"Male","Property",3,46
+"12",75504,"Male","Violent",4,55.6
+"13",82883,"Female","Property",1,37.7
+"14",78702,"Male","Drug",2,45.7
+"15",10755,"Male","Drug",2,53.8
+"16",23156,"Female","Drug",3,27.1
+"17",38675,"Female","Property",0,19.7
+"18",74749,"Male","Property",3,25.4
+"19",90649,"Male","Drug",6,36.7
+"20",24599,"Male","Drug",3,43.4
+"21",37524,"Female","Violent",4,66
+"22",34933,"Male","Public Order",1,16
+"23",88081,"Female","Violent",1,47.6
+"24",10886,"Female","Property",1,14.6
+"25",38359,"Male","Violent",2,61.8
+"26",10913,"Male","Violent",3,51.1
+"27",24404,"Male","Property",4,31.3
+"28",55532,"Female","Public Order",0,8.4
+"29",91920,"Male","Drug",9,47.6
+"30",90733,"Female","Property",4,35.5
+"31",46233,"Male","Public Order",9,9.2
+"32",93711,"Female","Property",1,20.1
+"33",73966,"Male","Violent",1,37.6
+"34",15798,"Male","Violent",2,42.7
+"35",30873,"Male","Drug",3,29.2
+"36",94188,"Female","Property",2,25.4
+"37",30473,"Male","Property",7,50.8
+"38",24477,"Male","Drug",5,32.1
+"39",20942,"Female","Drug",2,19.6
+"40",11788,"Male","Property",1,27.6
+"41",33505,"Male","Violent",7,61.7
+"42",42637,"Male","Public Order",3,24.4
+"43",15482,"Male","Drug",3,27.1
+"44",82382,"Female","Property",2,29.6
+"45",51124,"Male","Drug",5,45.3
+"46",32848,"Female","Violent",1,38.9
+"47",68126,"Female","Violent",2,27.2
+"48",48853,"Male","Property",6,44.9
+"49",14960,"Female","Drug",8,34.4
+"50",87223,"Male","Drug",0,29.1
+"51",94795,"Male","Public Order",6,25.8
+"52",83716,"Male","Property",2,24.3
+"53",13003,"Male","Violent",2,54.7
+"54",18389,"Female","Property",3,29.4
+"55",40773,"Male","Property",3,28.5
+"56",57867,"Male","Property",6,35.9
+"57",74789,"Male","Public Order",5,19.4
+"58",98177,"Male","Property",4,27.2
+"59",25016,"Male","Public Order",1,16.7
+"60",77100,"Male","Violent",3,58.4
+"61",60107,"Male","Violent",1,40.7
+"62",87783,"Female","Property",4,34.4
+"63",43036,"Female","Property",0,28.1
+"64",68459,"Male","Property",1,13.5
+"65",92411,"Female","Property",1,29
+"66",62242,"Male","Drug",5,48.7
+"67",64334,"Male","Violent",7,55.6
+"68",71594,"Female","Property",1,31.2
+"69",82069,"Male","Drug",3,28.8
+"70",57331,"Male","Violent",4,86.6
+"71",35081,"Male","Violent",4,30.5
+"72",68011,"Male","Property",1,41.3
+"73",61395,"Male","Public Order",4,25.6
+"74",12436,"Male","Property",8,39.4
+"75",36218,"Male","Property",3,28.9
+"76",28770,"Male","Violent",5,65.6
+"77",53024,"Male","Property",7,28.1
+"78",51512,"Male","Property",1,39.4
+"79",28670,"Male","Violent",2,54.3
+"80",31555,"Male","Drug",2,42.6
+"81",12314,"Male","Property",3,42.2
+"82",49112,"Male","Public Order",8,22.8
+"83",80994,"Male","Violent",3,55.7
+"84",67333,"Male","Violent",5,60.3
+"85",65240,"Female","Property",3,19.3
+"86",52774,"Male","Drug",1,18.9
+"87",87840,"Male","Public Order",7,32.9
+"88",81111,"Male","Public Order",4,17.2
+"89",50331,"Male","Drug",5,33.6
+"90",14175,"Male","Violent",1,39.3
+"91",67246,"Male","Drug",7,54.7
+"92",71972,"Male","Violent",1,42.8
+"93",82731,"Male","Drug",5,35.7
+"94",30569,"Female","Public Order",2,12.3
+"95",61113,"Female","Violent",1,50.8
+"96",88456,"Male","Drug",4,37.2
+"97",39277,"Male","Drug",4,50.3
+"98",49403,"Male","Drug",1,31.7
+"99",63041,"Male","Property",7,38.4
+"100",10351,"Male","Drug",4,31.2
+"101",75919,"Male","Drug",1,27.2
+"102",61259,"Male","Property",5,24.4
+"103",34162,"Male","Violent",4,54.4
+"104",50817,"Male","Drug",1,44
+"105",42762,"Female","Drug",2,46.6
+"106",71327,"Female","Drug",2,45.3
+"107",11190,"Male","Violent",6,68.7
+"108",32659,"Male","Property",3,29.7
+"109",69554,"Male","Drug",5,37
+"110",49395,"Male","Drug",6,36.8
+"111",92242,"Male","Drug",4,55.2
+"112",40932,"Female","Drug",1,36.8
+"113",27831,"Female","Violent",4,53.8
+"114",50196,"Male","Drug",5,37.3
+"115",14587,"Male","Violent",1,52.8
+"116",99670,"Male","Public Order",2,11.5
+"117",12303,"Male","Property",6,29.5
+"118",31770,"Male","Property",6,29
+"119",43441,"Male","Drug",1,41.1
+"120",78812,"Female","Drug",4,36.1
+"121",49149,"Male","Drug",5,40.8
+"122",55173,"Male","Drug",7,47.2
+"123",40535,"Male","Property",4,18
+"124",39443,"Male","Violent",3,51.3
+"125",75838,"Male","Property",6,35.5
+"126",66986,"Male","Violent",6,43.6
+"127",67776,"Female","Property",2,27.9
+"128",67765,"Female","Drug",3,28.6
+"129",42816,"Male","Violent",1,60.2
+"130",89172,"Male","Drug",4,43.3
+"131",30695,"Female","Drug",0,37.2
+"132",96159,"Male","Property",5,29.9
+"133",61050,"Male","Property",5,28.4
+"134",41565,"Female","Property",0,27.6
+"135",60877,"Female","Drug",2,25.3
+"136",11002,"Male","Violent",4,80.4
+"137",90925,"Female","Property",1,12.3
+"138",94908,"Male","Drug",1,43.7
+"139",80211,"Female","Public Order",1,2.4
+"140",47983,"Male","Violent",4,68
+"141",97508,"Male","Drug",3,32.4
+"142",66784,"Male","Property",7,32.2
+"143",24631,"Male","Drug",4,53
+"144",68084,"Female","Violent",3,55.3
+"145",63546,"Male","Drug",2,32
+"146",34225,"Female","Violent",1,50.7
+"147",19007,"Male","Drug",1,29.1
+"148",98319,"Female","Drug",1,28.2
+"149",84883,"Male","Public Order",3,15.8
+"150",91625,"Male","Public Order",2,19.3
+"151",61416,"Male","Property",6,43
+"152",35680,"Male","Public Order",0,10.3
+"153",49459,"Female","Public Order",5,16.9
+"154",74934,"Male","Violent",6,54.2
+"155",58186,"Male","Drug",4,23.8
+"156",46572,"Female","Drug",4,40.5
+"157",64046,"Male","Property",4,19.6
+"158",27954,"Male","Property",4,28.8
+"159",67136,"Male","Drug",6,36.1
+"160",46090,"Male","Drug",2,37.9
+"161",50268,"Female","Violent",2,50.6
+"162",51193,"Male","Public Order",4,16.1
+"163",15391,"Male","Drug",3,41.7
+"164",55029,"Male","Violent",4,56.2
+"165",19562,"Male","Property",1,27.6
+"166",42709,"Male","Violent",3,45.8
+"167",34789,"Male","Drug",2,27.7
+"168",80404,"Male","Drug",3,24.2
+"169",38649,"Male","Violent",5,57.3
+"170",12472,"Male","Property",3,29.4
+"171",86084,"Male","Drug",1,37.6
+"172",62817,"Male","Violent",5,48.7
+"173",28936,"Male","Property",6,27.9
+"174",53800,"Male","Drug",6,23.2
+"175",92421,"Male","Property",1,17.5
+"176",60035,"Male","Property",0,28.6
+"177",93097,"Female","Property",2,20.6
+"178",41071,"Male","Property",8,32
+"179",60813,"Female","Property",2,17.1
+"180",20173,"Female","Drug",6,38.8
+"181",26020,"Female","Drug",2,21
+"182",23938,"Female","Public Order",0,11.4
+"183",99104,"Male","Violent",4,60.5
+"184",78445,"Male","Public Order",3,7.4
+"185",67538,"Male","Drug",5,22.5
+"186",45543,"Male","Violent",6,38
+"187",52458,"Female","Property",2,26.1
+"188",96614,"Female","Property",2,32.3
+"189",22333,"Male","Violent",3,45.2
+"190",40091,"Male","Drug",7,35.7
+"191",23447,"Male","Violent",4,38.5
+"192",19045,"Female","Property",3,32.9
+"193",91996,"Male","Public Order",3,18.2
+"194",20846,"Male","Violent",2,57.3
+"195",85795,"Male","Property",7,54.5
+"196",68551,"Male","Violent",5,59.9
+"197",19470,"Male","Drug",0,28
+"198",43713,"Male","Public Order",2,14.6
+"199",13648,"Male","Public Order",6,15.4
+"200",90074,"Male","Drug",4,25.5
+"201",27520,"Female","Violent",1,59.7
+"202",22529,"Male","Drug",3,33.7
+"203",25885,"Female","Property",2,35.6
+"204",75767,"Male","Violent",2,41.4
+"205",22892,"Male","Violent",6,45.8
+"206",91968,"Male","Violent",7,65.5
+"207",47855,"Female","Property",3,18.4
+"208",24609,"Male","Property",4,30
+"209",58267,"Male","Drug",3,46.4
+"210",72338,"Male","Drug",5,39.5
+"211",58813,"Male","Public Order",7,19.3
+"212",86990,"Male","Public Order",9,25.4
+"213",88627,"Male","Drug",1,30.1
+"214",41388,"Male","Violent",3,48.2
+"215",16332,"Male","Violent",6,65.6
+"216",86201,"Female","Violent",2,69.6
+"217",83909,"Male","Drug",3,39.8
+"218",65790,"Male","Property",3,31.2
+"219",64815,"Male","Property",1,22.3
+"220",10673,"Female","Violent",3,61.7
+"221",27673,"Male","Property",1,34.2
+"222",71188,"Male","Violent",5,35.7
+"223",69856,"Male","Property",4,29.2
+"224",36233,"Female","Drug",1,37.7
+"225",35854,"Male","Drug",9,42.3
+"226",78746,"Female","Violent",3,56.4
+"227",17102,"Male","Drug",4,36.6
+"228",96200,"Male","Drug",2,34.8
+"229",95278,"Male","Drug",6,23.3
+"230",11761,"Male","Violent",4,22
+"231",37250,"Male","Drug",6,26.6
+"232",79960,"Male","Public Order",1,11.3
+"233",98697,"Male","Public Order",3,22.1
+"234",73161,"Male","Public Order",5,23
+"235",23343,"Female","Property",3,24
+"236",93955,"Female","Drug",2,29.4
+"237",89942,"Male","Drug",5,36.8
+"238",11606,"Female","Violent",2,83.4
+"239",53390,"Male","Violent",4,61.2
+"240",24302,"Male","Public Order",2,20.2
+"241",77146,"Male","Public Order",6,18.2
+"242",71033,"Male","Drug",3,33
+"243",19812,"Male","Drug",5,41.2
+"244",87390,"Male","Public Order",8,28.3
+"245",78806,"Male","Public Order",3,13.7
+"246",82041,"Male","Drug",6,33.3
+"247",56338,"Male","Property",5,33.4
+"248",20556,"Male","Violent",6,73.5
+"249",29806,"Male","Public Order",2,14.5
+"250",83690,"Female","Drug",3,33.3
+"251",56128,"Male","Property",5,25.3
+"252",75307,"Male","Property",5,29.8
+"253",38622,"Male","Drug",3,21.5
+"254",37954,"Male","Property",1,34.2
+"255",13301,"Male","Property",5,23
+"256",65208,"Female","Property",0,27.8
+"257",61896,"Male","Drug",5,34.2
+"258",11846,"Male","Property",3,19.4
+"259",21275,"Male","Public Order",3,19.6
+"260",70971,"Male","Public Order",7,35.3
+"261",18411,"Male","Public Order",5,12.1
+"262",56970,"Male","Violent",5,54.3
+"263",76736,"Male","Property",5,36.1
+"264",56354,"Female","Property",1,31.9
+"265",28534,"Male","Violent",3,55.4
+"266",17110,"Male","Violent",4,43.7
+"267",82299,"Female","Public Order",4,16.4
+"268",51938,"Male","Drug",4,48.4
+"269",95559,"Female","Drug",4,35.4
+"270",13365,"Female","Drug",1,30.2
+"271",76983,"Male","Drug",3,41.9
+"272",97077,"Female","Property",3,46
+"273",22082,"Male","Drug",2,26.9
+"274",66285,"Male","Property",4,29.5
+"275",52480,"Female","Violent",3,46.9
+"276",91622,"Male","Property",5,27.9
+"277",52867,"Male","Public Order",2,27.1
+"278",73520,"Male","Public Order",5,14.4
+"279",61185,"Male","Violent",3,42.8
+"280",28969,"Male","Public Order",3,20.7
+"281",74686,"Male","Violent",6,61.4
+"282",59956,"Male","Violent",3,60
+"283",91018,"Male","Drug",3,30.1
+"284",32311,"Female","Property",1,32.9
+"285",74352,"Male","Violent",1,45
+"286",83795,"Male","Property",5,37.9
+"287",76843,"Male","Property",5,40.8
+"288",92486,"Male","Violent",5,55.7
+"289",30438,"Male","Drug",1,48.9
+"290",77537,"Male","Property",4,30.2
+"291",39707,"Female","Public Order",0,12.3
+"292",13287,"Male","Drug",3,37.8
+"293",21158,"Male","Violent",0,38.4
+"294",82777,"Male","Property",5,20.5
+"295",37643,"Male","Drug",6,33
+"296",91146,"Male","Property",2,25.2
+"297",67435,"Female","Drug",2,20.2
+"298",50702,"Male","Property",3,37.3
+"299",22466,"Male","Violent",5,48.5
+"300",96871,"Male","Property",3,12.6
+"301",75863,"Male","Public Order",6,26
+"302",53473,"Male","Public Order",9,11.9
+"303",48460,"Male","Property",4,30.2
+"304",44621,"Male","Drug",1,36
+"305",55775,"Female","Drug",0,50.9
+"306",25126,"Female","Property",4,17.6
+"307",15189,"Male","Drug",5,47.1
+"308",23834,"Male","Property",6,32.9
+"309",56987,"Male","Property",7,26.6
+"310",14797,"Male","Drug",4,39.1
+"311",70388,"Male","Property",1,34.8
+"312",20246,"Female","Public Order",3,16.6
+"313",80344,"Male","Drug",3,48.5
+"314",33947,"Male","Violent",3,46.5
+"315",63979,"Male","Violent",3,27.8
+"316",57839,"Female","Violent",1,42.8
+"317",14342,"Male","Public Order",2,3.9
+"318",91106,"Male","Property",4,42
+"319",37681,"Female","Property",3,24.1
+"320",56775,"Female","Drug",2,35.1
+"321",68699,"Male","Property",3,26.1
+"322",92761,"Male","Violent",4,59.8
+"323",53535,"Male","Drug",7,39.6
+"324",36817,"Male","Property",7,56.2
+"325",40855,"Male","Property",4,29
+"326",26224,"Female","Public Order",3,15.7
+"327",40551,"Male","Property",5,31
+"328",10527,"Female","Property",3,33.9
+"329",84685,"Male","Property",7,23.9
+"330",10662,"Female","Property",2,28.3
+"331",75227,"Female","Property",2,19.5
+"332",69055,"Male","Drug",2,41.3
+"333",70042,"Male","Property",6,36.7
+"334",96010,"Male","Drug",7,33.8
+"335",40480,"Male","Drug",4,17.5
+"336",76328,"Male","Violent",5,43.8
+"337",16600,"Male","Property",1,20.1
+"338",38475,"Male","Violent",3,40.7
+"339",32231,"Female","Public Order",2,18
+"340",42488,"Male","Property",4,34.8
+"341",65438,"Male","Violent",5,46.4
+"342",35604,"Male","Violent",3,53.8
+"343",54287,"Female","Property",3,21.3
+"344",26006,"Male","Drug",4,44.1
+"345",13801,"Male","Drug",3,36.9
+"346",64614,"Male","Property",6,32.4
+"347",13631,"Female","Property",0,17.4
+"348",48025,"Male","Drug",3,18.2
+"349",97835,"Female","Violent",3,46.8
+"350",74747,"Female","Property",2,7.9
+"351",26647,"Male","Drug",2,29.6
+"352",39531,"Male","Violent",5,47
+"353",49727,"Male","Property",2,34.9
+"354",88589,"Male","Drug",3,27.3
+"355",32252,"Male","Violent",5,60.5
+"356",16501,"Male","Property",1,41.5
+"357",13102,"Male","Drug",2,41.3
+"358",21371,"Female","Public Order",2,15.7
+"359",48556,"Male","Drug",4,36.4
+"360",42410,"Male","Public Order",2,21.6
+"361",21079,"Male","Public Order",4,14.3
+"362",30991,"Male","Violent",6,63.7
+"363",30315,"Male","Property",2,30.4
+"364",92215,"Female","Property",2,31.4
+"365",19722,"Male","Drug",6,31.2
+"366",27193,"Male","Public Order",4,20.2
+"367",94845,"Male","Property",3,33.6
+"368",84826,"Female","Property",0,16.4
+"369",96162,"Male","Drug",6,37.5
+"370",61496,"Male","Drug",2,28.9
+"371",44564,"Male","Violent",3,37.1
+"372",93205,"Male","Public Order",5,27.1
+"373",91104,"Female","Property",1,5.9
+"374",51099,"Male","Violent",3,49.6
+"375",51569,"Male","Drug",4,29.3
+"376",97169,"Female","Violent",1,39.5
+"377",21721,"Male","Property",3,27.3
+"378",73092,"Male","Drug",1,42.4
+"379",80618,"Male","Public Order",3,19.9
+"380",72241,"Female","Drug",5,37
+"381",46007,"Male","Public Order",2,22.5
+"382",42797,"Male","Violent",6,52.8
+"383",81560,"Male","Violent",2,55.1
+"384",61263,"Male","Violent",2,67.7
+"385",69084,"Male","Public Order",5,19.7
+"386",20074,"Female","Property",1,46
+"387",72716,"Male","Property",2,15.9
+"388",22780,"Female","Property",2,18.8
+"389",85720,"Male","Violent",1,57.8
+"390",46903,"Male","Violent",4,63
+"391",88141,"Female","Property",1,30.9
+"392",90773,"Male","Drug",7,26.2
+"393",38437,"Male","Violent",2,58.3
+"394",95795,"Male","Drug",4,24.7
+"395",63936,"Male","Drug",0,52.7
+"396",44887,"Male","Public Order",4,18.9
+"397",39781,"Female","Drug",1,29.4
+"398",12037,"Female","Property",0,19.9
+"399",80616,"Male","Violent",4,76.3
+"400",81938,"Male","Violent",4,51.1
+"401",84921,"Male","Property",4,30.7
+"402",47022,"Male","Property",1,12.9
+"403",35196,"Male","Drug",5,26
+"404",82348,"Male","Property",3,26
+"405",65188,"Female","Drug",1,36.1
+"406",60938,"Male","Public Order",2,31.9
+"407",29459,"Female","Drug",1,32.1
+"408",68063,"Male","Property",5,34.2
+"409",20354,"Male","Drug",2,45
+"410",22198,"Male","Property",3,28
+"411",32053,"Male","Drug",3,49.1
+"412",36364,"Male","Drug",3,21.4
+"413",58513,"Male","Public Order",2,3.5
+"414",85556,"Male","Public Order",3,22.3
+"415",43414,"Male","Violent",2,54.7
+"416",20869,"Male","Violent",4,54.6
+"417",12945,"Male","Public Order",5,12.3
+"418",58908,"Female","Drug",0,31.1
+"419",16439,"Male","Property",3,16
+"420",71928,"Male","Property",6,30
+"421",21620,"Male","Violent",3,59.6
+"422",92624,"Male","Public Order",4,15.6
+"423",80273,"Female","Public Order",5,22.2
+"424",67708,"Female","Property",3,30.4
+"425",10742,"Male","Violent",4,53
+"426",49797,"Male","Public Order",9,16.4
+"427",27889,"Male","Property",3,28.6
+"428",21682,"Male","Drug",2,30.3
+"429",54849,"Male","Property",5,21.1
+"430",83863,"Male","Drug",6,33.4
+"431",86392,"Male","Drug",3,32
+"432",84867,"Male","Public Order",7,12.1
+"433",11872,"Male","Public Order",7,20.2
+"434",65969,"Male","Public Order",6,17.9
+"435",39126,"Female","Violent",1,36.6
+"436",33052,"Male","Property",5,44.6
+"437",30875,"Male","Property",3,30.1
+"438",48287,"Male","Drug",8,43.3
+"439",63509,"Male","Property",2,41.2
+"440",74592,"Male","Violent",3,35.7
+"441",51310,"Male","Drug",4,26.6
+"442",66106,"Female","Drug",1,16
+"443",42726,"Male","Property",7,36.2
+"444",32509,"Female","Drug",2,21.7
+"445",95043,"Male","Violent",3,53.5
+"446",47134,"Male","Drug",4,36.6
+"447",16876,"Male","Property",4,33.6
+"448",69989,"Female","Violent",4,40.8
+"449",69279,"Male","Drug",5,30.3
+"450",20955,"Male","Property",6,27
+"451",83288,"Male","Drug",7,40
+"452",37948,"Male","Drug",4,36.5
+"453",40695,"Male","Drug",5,38.4
+"454",59723,"Male","Violent",3,57.8
+"455",65546,"Male","Drug",2,41.8
+"456",87513,"Male","Violent",7,66.4
+"457",10969,"Male","Violent",3,28.3
+"458",62170,"Male","Violent",1,70.2
+"459",16667,"Female","Violent",1,52.3
+"460",44647,"Female","Violent",1,44.5
+"461",83283,"Male","Drug",4,44.2
+"462",70399,"Male","Violent",5,63.9
+"463",40246,"Female","Property",2,27
+"464",28906,"Male","Violent",2,63.7
+"465",93956,"Male","Property",5,36.5
+"466",99305,"Male","Public Order",4,18.6
+"467",66570,"Male","Property",3,34.1
+"468",79823,"Male","Property",2,27.6
+"469",95838,"Male","Violent",3,59.2
+"470",74066,"Female","Property",1,26.7
+"471",48268,"Male","Drug",5,52.4
+"472",76148,"Male","Drug",2,19
+"473",69493,"Female","Violent",2,47.9
+"474",40503,"Female","Drug",3,36.2
+"475",52841,"Male","Property",3,20.3
+"476",68454,"Male","Property",4,26.1
+"477",46516,"Male","Property",6,32.1
+"478",80359,"Female","Drug",1,46.2
+"479",49738,"Male","Violent",4,61.7
+"480",72024,"Female","Property",3,21.6
+"481",64221,"Male","Drug",2,30.1
+"482",18560,"Male","Property",10,37.3
+"483",74764,"Female","Drug",5,17.3
+"484",56599,"Male","Violent",4,67.2
+"485",35355,"Female","Drug",0,32.7
+"486",34055,"Male","Property",4,31.1
+"487",24129,"Female","Public Order",0,5.2
+"488",46996,"Male","Property",8,43.1
+"489",34246,"Male","Property",0,32.4
+"490",65662,"Male","Public Order",4,18.3
+"491",27160,"Female","Violent",3,56.2
+"492",23072,"Male","Property",2,33.9
+"493",27769,"Female","Violent",1,46.7
+"494",77940,"Male","Public Order",4,19.4
+"495",36556,"Male","Property",3,32.5
+"496",71023,"Male","Property",5,25.1
+"497",23595,"Female","Drug",2,29.2
+"498",31726,"Male","Property",5,25.8
+"499",71197,"Male","Drug",3,17.5
+"500",34798,"Male","Property",2,20.7
