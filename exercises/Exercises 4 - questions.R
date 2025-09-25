@@ -1,4 +1,4 @@
-# Exercises 4
+# Exercises 4 - questions
 # Crim 1200 - Fall 2025
 
 
