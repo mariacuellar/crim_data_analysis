@@ -142,6 +142,9 @@ mpg %>% ggplot(aes(x=cty, fill=drv)) + geom_histogram() + scale_fill_brewer(pale
 
 ## Quantitative varible: 
 
+
+*Visual EDA*
+
 **Histogram**
 
 Plot a histogram to visualize a single quantitative variable.
@@ -159,8 +162,32 @@ mpg %>% ggplot(aes(y=cty)) + geom_boxplot()
 ```
 
 
+*Quantitative EDA*
+
+To summarize a quantitative variable, first determine how many modes the distribution has. If it's uniform, then report the range of the variable.
+
+```{r}
+# If uniform (which is not the case for cty, but I'll show you how to calculate a range with it anyway):
+range(mpg$cty)
+```
+
+If it's multimodal, then see if you can split up the distribution into its modes, by using a categorical variable. If not, then you can just report where the modes are.
+
+If it's unimodal, then you can give measures of its centrality and spread. If it's symmetric, then give the mean and standard deviation, and if it's asymmetric, give the median and IQR. Note that if the mean and the median are equal, then this shows you that the distribution is symmetric.
+
+```{r}
+# If unimodal and symmetric:
+mpg %>% summarize(mean=mean(cty), sd=sd(cty))
+
+# If unimodal and assymetric: 
+mpg %>% summarize(median=median(cty), IQR=IQR(cty))
+```
+
+
 
 ## Categorical variable
+
+*Visual EDA*
 
 **Barplot**
 
@@ -180,16 +207,35 @@ mpg %>% ggplot(aes(x=drv)) + geom_bar()
 
 
 
+*Quantitative EDA*
+
+How to make a table to summarize a categorical variable:
+
+```{r}
+dat_students <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/students.csv")
+dat_students %>% count(year_in_college)
+```
+
+How to add proportions:
+
+```{r}
+dat_students %>% 
+  count(year_in_college) %>% 
+  mutate(prop = n / sum(n))
+```
+
+
 
 
 # Two variable EDA
 
 ## Two categorical variables
 
+*Visual EDA*
+
 **Side-by-side barplots**
 
 ```{r, fig.width=4, fig.height=3}
-library(tidyverse)
 mpg %>% ggplot(aes(x=cyl)) + geom_bar() + facet_wrap(~drv)
 ```
 
@@ -207,11 +253,34 @@ mpg %>% ggplot(aes(x=cyl, fill=factor(drv))) + geom_bar(position="dodge")
 ```
 
 
+*Quantitative EDA*
+
+You can make a two-way contingency table. (For higher dimensions, let's say you want to compare three categorical variables, then you can also do a three-way contingency table.)
+
+```{r}
+
+# in tidyverse
+mpg %>%
+  count(cyl, drv) %>% 
+  pivot_wider(
+    names_from = drv,
+    values_from = n,
+    values_fill = 0
+  )
+
+# the code is simpler in base R...
+table(mpg$cyl, mpg$drv) 
+
+```
+
+
 
 
 
 ## A quantitative variable and a categorical variable
 
+
+*Visual EDA*
 
 **Side-by-side histograms**
 
@@ -233,7 +302,17 @@ mpg %>% ggplot(aes(x=cty, fill=factor(drv))) + geom_histogram(alpha=.7)
 
 
 
+*Quantitative EDA*
+
+You can give the summary statistics (same as for a histogram), but for each histogram. 
+
+
+
+
+
 ## Two quantitative variables
+
+*Visual EDA*
 
 **Scatterplot**
 
@@ -247,6 +326,17 @@ mpg %>% ggplot(aes(x=cty, y=hwy)) + geom_point()
 
 ## Three categorical variables
 
+*Visual EDA* 
+
+
+
+*Quantitative EDA* 
+
+Three-way contingency table.
+
+
+
+
 ## Two quantitative variables and a categorical variable
 
 **Scatterplot with different colors by the categories**
@@ -257,9 +347,9 @@ mpg %>% ggplot(aes(x=cty, y=hwy, color=drv)) + geom_point()
 
 
 
-### Three quantitative variables
+## Three quantitative variables
 
-**Scatterplot with different colors by the shade of the third quant variable**
+**Scatterplot with different colors by the shade of the third quantitative variable**
 
 ```{r, fig.width=4, fig.height=3}
 mpg %>% ggplot(aes(x=cty, y=hwy, color=displ)) + geom_point()

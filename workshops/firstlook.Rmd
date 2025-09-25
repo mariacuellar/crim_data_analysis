@@ -99,6 +99,27 @@ dim(dat_kentucky)
 *Note*: the commands let me see what you did.
 
 
+# Categorical variable as factor
+
+In R, a factor is a special data type used to represent categorical variables, which are variables that take on a limited set of values such as "Male"/"Female" or "Low"/"Medium"/"High". Factors are stored internally as integers with associated labels, making them both memory-efficient and useful for analysis. 
+
+Unlike plain character variables, factors explicitly tell R and tidyverse packages (like ggplot2 and dplyr) that a variable is categorical, which allows for better control over ordering and visualization. You can create factors with the factor() function, customize the level order with the levels argument, or specify an ordered factor when categories have a natural ranking (e.g., "Low" < "Medium" < "High"). See the code below.
+
+Factors are essential for working with categorical data, ensuring correct ordering in plots and statistical models, and preventing unintended numeric operations.
+
+
+```{r}
+library(tidyverse)
+
+# This is the simplest way to make a categorical variable into a factor
+dat_students <- dat_students %>% mutate(year_in_college = as.factor(year_in_college))
+
+
+# This allows you to set the order of the levels.
+dat_students <- dat_students %>%
+  mutate(year_in_college = factor(year_in_college, levels = c("1", "2", "3", "4")))
+
+```
 
 
 # Summarize categorical variable
@@ -218,4 +239,7 @@ barplot(table(dat_students$year_in_college))
 ```{r}
 dat_students %>% ggplot(aes(x = year_in_college)) + geom_bar()
 ```
+
+
+
 

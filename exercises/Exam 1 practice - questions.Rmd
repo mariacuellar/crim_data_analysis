@@ -26,7 +26,7 @@ library(tidyverse)
 **Your code (5 points):** 
 
 ```{r load-data, message=FALSE}
-2+2
+dat_pretrial <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/pretrial_df.csv")
 ```
 
 

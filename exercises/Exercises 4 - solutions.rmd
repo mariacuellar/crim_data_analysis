@@ -1,0 +1,40 @@
+---
+title: "Exercises 4 - solutions"
+author: "Maria Cuellar"
+date: "2025-09-22"
+output:
+  html_document:
+  self_contained: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r preamble}
+library(tidyverse)
+```
+
+# 1. A summary statistic, mean of disp
+
+```{r}
+mtcars %>% summarize(mean=mean(disp))
+```
+
+# 2. A histogram of disp
+```{r, fig.width=5, fig.height=3}
+mtcars %>% ggplot(aes(x=disp)) + geom_histogram()
+```
+
+
+# 3. A short paragraph explaining what you found
+
+This histogram is difficult to describe because it does not seem to be part of a clear, continuous distribution. Even if we play around with the number of bins (using bins=10, or bins=50). You can give the modes (one, or three), say it's skewed, and that there are no clear outliers. There is no correct answer: you just need to describe what you see. 
+
+This is exploratory data analysis, and the goal is to generate hypotheses that we will test statistically.
+
+# Submit the html file on canvas.
+
+*Note that the "self_contained: true" section makes it so that you produce an HTML file that contains all the graphics and everything needed to see your results. And that's what you'll submit on canvas.*

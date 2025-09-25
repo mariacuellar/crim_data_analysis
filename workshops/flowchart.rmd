@@ -1,0 +1,236 @@
+---
+title: "flowchart"
+author: "Maria Cuellar"
+date: "2025-09-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zoomable EDA Flowchart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    svg {
+      width: 100vw;
+      height: 100vh;
+      background: #f8f8f8;
+      cursor: grab;
+    }
+
+    #tooltip {
+      position: fixed;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      max-width: 350px;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    #tooltip.show {
+      opacity: 1;
+    }
+
+    rect {
+      cursor: pointer;
+      stroke: #333;
+      stroke-width: 1px;
+    }
+
+    path.link {
+      fill: none;
+      stroke: #999;
+      stroke-width: 1.5px;
+      marker-end: url(#arrow);
+    }
+
+    text {
+      font-size: 12px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<svg></svg>
+<div id="tooltip"></div>
+
+<script>
+  const data = {
+    name: "Pick variable",
+    children: [
+      {
+        name: "Missing values?",
+        children: [
+          {
+            name: "Yes → Remove",
+            code: "dat %>% filter(!is.na(var))"
+          },
+          {
+            name: "No → What type?",
+            children: [
+              {
+                name: "Quantitative",
+                children: [
+                  {
+                    name: "Visual EDA",
+                    children: [
+                      { name: "Histogram", code: "ggplot(dat, aes(x=Time)) + geom_histogram()" },
+                      { name: "Density", code: "ggplot(dat, aes(x=Time)) + geom_density()" },
+                      { name: "Boxplot", code: "ggplot(dat, aes(x=Time)) + geom_boxplot()" }
+                    ]
+                  },
+                  {
+                    name: "Summary Stats",
+                    children: [
+                      { name: "Mean / SD", code: "summarize(mean = mean(Time), sd = sd(Time))" },
+                      { name: "Median / IQR", code: "summarize(median = median(Time), IQR = IQR(Time))" },
+                      { name: "Range", code: "summarize(range = range(Time))" }
+                    ]
+                  },
+                  {
+                    name: "Outliers?",
+                    children: [
+                      { name: "Visual Outliers", code: "filter(Time > 140)\nfilter(Time < 130)" },
+                      { name: "Remove Outlier", code: "filter(Time != 135)" }
+                    ]
+                  }
+                ]
+              },
+              {
+                name: "Categorical",
+                children: [
+                  {
+                    name: "Barplot",
+                    code: "ggplot(dat, aes(Employment)) + geom_bar()"
+                  },
+                  {
+                    name: "Frequency Table",
+                    code: "dat %>% count(Employment) %>% mutate(prop = prop.table(n))"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  };
+
+  const svg = d3.select("svg");
+  const tooltip = d3.select("#tooltip");
+
+  // Create zoomable group
+  const g = svg.append("g");
+
+  svg.call(
+    d3.zoom()
+      .scaleExtent([0.3, 2])
+      .on("zoom", (event) => g.attr("transform", event.transform))
+  );
+
+  const root = d3.hierarchy(data);
+  const treeLayout = d3.tree().nodeSize([160, 100]);
+  treeLayout(root);
+
+  // Arrow marker
+  svg.append("defs").append("marker")
+    .attr("id", "arrow")
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 10)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("d", "M0,-5L10,0L0,5")
+    .attr("fill", "#999");
+
+  // Draw edges
+  g.selectAll("path.link")
+    .data(root.links())
+    .enter()
+    .append("path")
+    .attr("class", "link")
+    .attr("d", d => {
+      const startX = d.source.x + 50;
+      const startY = d.source.y + 50;
+      const endX = d.target.x + 50;
+      const endY = d.target.y;
+
+      return `M${startX},${startY}
+              V${(startY + endY) / 2}
+              H${endX}
+              V${endY}`;
+    });
+
+  // Node groups
+  const nodeGroups = g.selectAll("g.node")
+    .data(root.descendants())
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .attr("transform", d => `translate(${d.x},${d.y})`);
+
+  // Draw boxes
+  nodeGroups.append("rect")
+    .attr("x", 0)
+    .attr("y", 0)
+    .attr("width", 100)
+    .attr("height", 50)
+    .attr("rx", 8)
+    .attr("ry", 8)
+    .style("fill", d => d.children ? "#69b3a2" : "#ffcc66");
+
+  // Add text
+  nodeGroups.append("text")
+    .attr("x", 50)
+    .attr("y", 25)
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "middle")
+    .text(d => d.data.name);
+
+  // Tooltip
+  nodeGroups
+    .on("mouseover", function(event, d) {
+      if (!d.children && d.data.code) {
+        tooltip
+          .style("display", "block")
+          .classed("show", true)
+          .text(d.data.code);
+      }
+    })
+    .on("mousemove", function(event) {
+      tooltip
+        .style("left", (event.clientX + 10) + "px")
+        .style("top", (event.clientY + 10) + "px");
+    })
+    .on("mouseout", function() {
+      tooltip
+        .style("display", "none")
+        .classed("show", false);
+    });
+</script>
+
+</body>
+</html>

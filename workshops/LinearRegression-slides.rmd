@@ -1,13 +1,11 @@
 ---
 title: "Linear regression"
 output:
-  html_document:
-    toc: true
-    toc_float: true
-    collapsed: false
-    number_sections: false
-    toc_depth: 2
-    #code_folding: hide
+  xaringan::moon_reader:
+    css: [default, metropolis]
+    lib_dir: libs
+    self_contained: true
+    seal: false
 ---
 
 ```{r setup, include=FALSE}
@@ -30,7 +28,7 @@ Of course, no line will go through all the points, but a linear model can summar
 Like all models of the real world, the line will be wrong in the sense that it can't match reality *exactly*, but it can help us understand how the variables are associated.
 
 
-
+---
 
 ## Predicted values {.unlisted .unnumbered}
 
@@ -112,7 +110,7 @@ Inference is about what is the relationship between x and y, and prediction is a
 
 
 
-
+---
 
 ## Visualizing assumption 1: Homoscedasticity {.unlisted .unnumbered}
 
@@ -122,6 +120,7 @@ The assumption is that the data is homoscedastic.
 
 
 
+---
 
 ## Visualizing assumption 2: Independence of observations {.unlisted .unnumbered}
 
@@ -130,24 +129,20 @@ We do not want connections like the ones in this social network:
 ![](images/socialnetwork.jpeg) 
 
 
-
+---
 
 ## Visualizing assumption 3: Normality {.unlisted .unnumbered}
 
-Now we visualize assumption 3.
-
 ![](images/normality.png) 
-
-
+---
 
 
 ## Visualizing assumption 4: Linearity {.unlisted .unnumbered}
 
 Actually, this is linearity, homoscedasticity, and normality.
 
-
 ![](images/allassumptions.png) 
-
+---
 
 
 
@@ -230,7 +225,7 @@ This plot helps us to find influential cases, if there are any. Not all outliers
 Look for cases outside of a dashed line, Cook’s distance. When cases are outside of the Cook’s distance (meaning they have high Cook’s distance scores), the cases are influential to the regression results. The regression results will be altered if we exclude those cases.
 
 ![](images/residualsvsleverage.png)
-
+---
 
 ## Residuals vs. leverage plot {.unlisted .unnumbered}
 
@@ -505,8 +500,7 @@ plot(reg.output, which=3)
 
 - **How to check?** Nearly normal condition (qq plot) and outlier condition (Cook's distance). 
 
-
-
+---
 
 # (Residuals vs. Leverage plot)
 
