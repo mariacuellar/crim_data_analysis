@@ -56,7 +56,10 @@ analyses beyond the scope of this course.
   [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%203%20-%20solutions.R)
 - [Exercises 4: Using R
   Markdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20questions.R)
-  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20solutions.rmd)
+  [(Rmd
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20solutions.rmd)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-4---solutions.html)
 - [Practice exercises for Exam 1 - in
   RMarkdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
   (Solutions - I will post these on Saturday night)
