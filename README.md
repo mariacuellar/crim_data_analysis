@@ -62,7 +62,7 @@ analyses beyond the scope of this course.
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-4---solutions.html)
 - [Practice exercises for Exam 1 - in
   RMarkdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
-  (Solutions - I will post these on Saturday night)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20solutions.Rmd)
 
 ## Datasets
 
