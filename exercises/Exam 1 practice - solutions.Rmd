@@ -3,8 +3,8 @@ title: "Exam 1 Practice - Solutions"
 author: "Maria Cuellar"
 date: "2024-09-30"
 output:
-  html_document: default
-  pdf_document: default
+  html_document:
+  self_contained: true
 ---
 
 ```{r setup, include=FALSE}
@@ -208,13 +208,13 @@ Find the summary statistics (centrality and spread) of bail_amount for each race
 
 **Code (3 points):**
 ```{r}
-dat %>% group_by(race) %>% summarize(mean=mean(bail_amount),
-                                     median=median(bail_amount))
+dat %>% group_by(race) %>% summarize(median = median(bail_amount),
+                                     IQR = IQR(bail_amount))
 ```
 
 **Text answer (2 points):**
 
-Black individuals have a median bail amount of \$1,237.97 and White individuals have a median bail amount of \$9,078.23. This is a large difference. Hispanic individuals also have a low median bail amount at $2,793.94. Other is somewhere in between, but it's difficult to say more about this groups since we do not know its composition. 
+Black individuals have a median bail amount of \$1,237.97 and White individuals have a median bail amount of \$9,078.23. This is a large difference. Hispanic individuals also have a low median bail amount at $2,793.94. Other is somewhere in between, but it's difficult to say more about this groups since we do not know its composition. The spread is similar for all except it is lower for Black individuals.
 
 
 
