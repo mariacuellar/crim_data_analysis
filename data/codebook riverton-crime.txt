@@ -1,0 +1,17 @@
+Dataset Codebook:
+
+The dataset comes from anonymized court records in the fictional U.S. city of Riverton, a mid-sized urban area with a population of about 400,000. Riverton is located in the Midwest and has a mix of urban and suburban neighborhoods.
+
+The data were collected as part of a research project on sentencing practices and criminal history, and include individuals convicted of non-federal offenses between 2018 and 2022.
+
+All individuals in the dataset were sentenced during this period and have complete records on offense type, gender, number of prior arrests, and time served. The dataset is designed to explore potential disparities in sentencing and criminal history, especially across gender and offense types.
+
+The variables in the data are:
+
+- id: Unique 5-digit identifier for each individual
+- gender: Gender of the individual (Male or Female)
+- offense_type: Type of offense committed (Property, Violent, Drug, or Public Order)
+- num_prior_arrests: Number of prior arrests before the current offense (non-negative integer)
+- time_served_months: Number of months actually served for the current offense (continuous numeric variable)
+
+
