@@ -3,8 +3,8 @@ title: "Exam 1 Questions"
 author: "Maria Cuellar"
 date: "2024-09-30"
 output:
-  html_document: default
-  pdf_document: default
+  html_document:
+  self_contained: true
 ---
 
 ```{r setup, include=FALSE}
