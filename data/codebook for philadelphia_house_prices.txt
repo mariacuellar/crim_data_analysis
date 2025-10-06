@@ -1,0 +1,21 @@
+PHILADELPHIA HOUSE PRICES DATASET
+---------------------------------
+
+This dataset contains 150 simulated houses sold in Philadelphia.
+You’ll use it to learn about linear regression: interpreting slopes,
+using categorical variables, and checking model assumptions.
+
+VARIABLES
+---------
+
+Variable         | Description
+-----------------|------------------------------------------------------------
+price            | Sale price of the house (in $1,000s). Example: 320.5 = $320,500
+sqft             | Size of the house in square feet. Example: 2100
+bedrooms         | Number of bedrooms. Example: 3
+bathrooms        | Number of bathrooms. Example: 2
+distance_center  | Distance from Philadelphia City Hall (in miles). Example: 4.2
+crime_rate       | Local crime rate per 1,000 residents. Example: 7.5
+has_garage       | Whether the house has a garage (1 = yes, 0 = no)
+neighborhood     | Neighborhood name (Center City, West Philly, South Philly, Germantown)
+

@@ -1,0 +1,34 @@
+---
+title: "Exercises 5 - questions"
+author: "Maria Cuellar"
+date: "2025-10-06"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r preamble, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+Note: Use philadelphia_house_prices.csv.
+
+
+**1. Question:** Do visual EDA on price, and do visual EDA on square footage. Describe what you see.
+
+**2. Question:** Could there be a categorical variable that explains the strange features observed in price? Look for it in the data.
+
+**3. Question** Do quantitative EDA on price and square footage, separately. Describe.
+
+**4. Question** Do visual EDA on price and square footage, together. Describe what you see.
+
+**5. Question** Do quantitative EDA on price and square footage, together. Describe.
+
+**6. Question**  Repeat 3, but now add a color for the categorical variable you found in 2. Describe what you see.
+
+**7. Question**  Fit a simple linear regression for price and square footage. What is your null hypothesis? Look at the summary. For now, don't interpret the coefficients and don't test for the assumptions.
+
