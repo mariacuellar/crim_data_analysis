@@ -83,7 +83,8 @@ analyses beyond the scope of this course.
 - [Practice exercises for Exam 1 - in RMarkdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam 1 practice - questions.Rmd) 
 [(Rmd Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20solutions.Rmd)
 [(HTML Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-practice---solutions.html)
-- [Exercises 5: Comparing two quantitative variables]()
+- [Exercises 5: Starting linear regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%205%20-%20questions.rmd)
+
 
 ## Datasets
 
