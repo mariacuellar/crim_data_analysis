@@ -82,3 +82,4 @@ Save the data into the folder of your choice.
 4.  [pretrial_df](data/pretrial_df.csv) [(Codebook for
     pretrial_df)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20pretrial_df.txt)
 5.  [philadelphia_house_prices.csv](data/philadelphia_house_prices.csv)
+6.  [city_crime_spending.csv](data/city_crime_spending.csv)
