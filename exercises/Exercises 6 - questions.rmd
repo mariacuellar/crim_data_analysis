@@ -15,10 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-Note: Continue using philadelphia_house_prices.csv.
-```{r loading-data}
-dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/philadelphia_house_prices.csv")
-```
+Note: use city_crime_spending.csv.
 
 
 **1. Question** For two quantitative variables (x and y): Write down the requirements for each of these steps.
@@ -31,7 +28,7 @@ dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/philadelphia
 
 
 
-**Instructions** Fit a simple linear regression for price regressed onto square footage. 
+**Instructions** Fit a simple linear regression for police_spending regressed onto population.
 
 **2. Question** What is the null hypothesis for doing inference? What is the research question you could ask here?
 
