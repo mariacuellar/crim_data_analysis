@@ -1,0 +1,54 @@
+---
+title: "Exercises 6 - questions"
+author: "Maria Cuellar"
+date: "2025-10-13"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r preamble, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+Note: Continue using philadelphia_house_prices.csv.
+```{r loading-data}
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/philadelphia_house_prices.csv")
+```
+
+
+**1. Question** For two quantitative variables (x and y): Write down the requirements for each of these steps.
+
+- Do visual EDA:
+- Do quantitative EDA:
+- Fit a linear model:
+- Test assumptions of linear regression:
+- Interpret coefficient of x to do inference:
+
+
+
+**Instructions** Fit a simple linear regression for price regressed onto square footage. 
+
+**2. Question** What is the null hypothesis for doing inference? What is the research question you could ask here?
+
+**3. Question** What is the coefficient of determination? (The one called Multiple R-squared. The other one has a penalty for adding more covariates, so we won't need it here.) What does this mean?
+
+**4. Question** Test the assumptions of the linear regression. 
+
+a) Linear relationship between x and y:
+b) Independence between observations:
+c) Homoscedasticity of errors:
+d) Normality of y for a given x: 
+
+
+**5. Question** Should you interpret the coefficients? If so, go ahead and interpret the coefficients. If not, then give a satatement for why you should not interpret them.
+
+
+
+
+
+

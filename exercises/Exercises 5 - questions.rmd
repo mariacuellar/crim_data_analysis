@@ -22,13 +22,37 @@ Note: Use philadelphia_house_prices.csv.
 
 **2. Question:** Could there be a categorical variable that explains the strange features observed in price? Look for it in the data.
 
-**3. Question** Do quantitative EDA on price and square footage, separately. Describe.
+**3. Question** Do visual EDA on price and square footage, together. Describe what you see.
 
-**4. Question** Do visual EDA on price and square footage, together. Describe what you see.
+**4. Question** Do quantitative EDA on price and square footage, together. Describe.
 
-**5. Question** Do quantitative EDA on price and square footage, together. Describe.
+**5. Question**  Repeat 3, but now add a color for the categorical variable you found in 2. Describe what you see.
 
-**6. Question**  Repeat 3, but now add a color for the categorical variable you found in 2. Describe what you see.
+**7. Question**  Fit a simple linear regression for price and square footage using the syntax I provided below. What is your null hypothesis? Look at the summary. For now, don't interpret the coefficients and don't test for the assumptions.
+```{r, fig.width=7, fig.height=7}
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/philadelphia_house_prices.csv")
+out <- lm(price ~ sqft, data=dat)
+summary(out)
 
-**7. Question**  Fit a simple linear regression for price and square footage. What is your null hypothesis? Look at the summary. For now, don't interpret the coefficients and don't test for the assumptions.
+par(mfrow = c(2, 2))
+plot(out)
+par(mfrow = c(1, 1))
+
+library(tidymodels)
+library(ggfortify)
+library(performance)
+library(see)
+library(tidyverse)
+
+
+
+fit <- linear_reg() %>% set_engine("lm") %>% fit(price ~ sqft, data = dat)
+
+lm_object <- extract_fit_engine(fit)
+check_model(lm_object)
+
+```
+
+
+
 
