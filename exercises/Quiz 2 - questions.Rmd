@@ -1,0 +1,106 @@
+---
+title: "Quiz 2  - Questions"
+author: "Your name"
+date: "2025-10-15"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+> Use the pretrial_df dataset. 
+
+```{r load-data, echo=FALSE, message=FALSE}
+library(tidyverse)
+2+2
+```
+
+
+---
+
+
+### 1. Visual EDA (5 points)
+
+> Do visual EDA on the variables bail_amount and days_until_trial, jointly.
+
+**Your code answer (5 points):**
+
+```{r fig.width=4, fig.height=3}
+2+2
+```
+
+**Your text answer (5 points):**
+
+
+
+
+
+---
+
+
+### 2. Quantitative EDA (5 points)
+
+> Do quantitative EDA on the variables bail_amount and days_until_trial, jointly.
+
+**Your code answer (5 points):**
+
+```{r}
+2+2
+```
+
+
+**Your text answer (5 points):**
+
+
+
+
+---
+
+
+
+
+
+### 3. Linear model fit (5 points)
+
+> Fit a linear model that regresses bail_amount onto days_until_trial. Are the assumptions of linear regression met? Are there any influential outliers?
+
+**Your code answer (5 points):**
+
+```{r, fig.width=8, fig.height=6}
+2+2
+```
+
+
+
+**Your text answer (5 points):**
+
+-
+-
+-
+-
+- 
+
+---
+
+
+
+
+
+### 4. Slope coefficient interpretation (5 points)
+
+> Should you interpret the slope coefficient of the linear model?
+
+**Your text answer (5 points):**
+
+
+
+---
+
+
+
+

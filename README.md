@@ -72,7 +72,9 @@ analyses beyond the scope of this course.
 - [Exercises 6: Continuing linear
   regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%206%20-%20questions.rmd)
   (HTML Solutions)
-- \[Practice exercises for Quiz 2\] (HTML Solutions)
+- [Practice exercises for Quiz
+  2](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Quiz%202%20practice%20-%20questions.Rmd)
+  (HTML Solutions)
 
 ## Datasets
 

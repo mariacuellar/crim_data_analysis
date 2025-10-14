@@ -87,14 +87,13 @@ analyses beyond the scope of this course.
 (HTML Solutions)
 - [Exercises 6: Continuing linear regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%206%20-%20questions.rmd)
 (HTML Solutions)
-- [Practice exercises for Quiz 2]
+- [Practice exercises for Quiz 2](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Quiz%202%20practice%20-%20questions.Rmd)
 (HTML Solutions)
 
 
 ## Datasets
 
-To download the data, right-click the link and choose “Save Link As…”.
-Save the data into the folder of your choice.
+To download the data, right-click the link and choose “Save Link As…”. Save the data into the folder of your choice.
 
 1.  [kentucky-derby-2018.csv](data/kentucky-derby-2018.csv)
 2.  [students.csv](data/students.csv)
