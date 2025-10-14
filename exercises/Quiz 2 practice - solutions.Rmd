@@ -1,0 +1,115 @@
+---
+title: "Quiz 2 Practice - Questions"
+author: "Your name"
+date: "2025-10-15"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+> Use the pretrial_df dataset. 
+
+```{r load-data, echo=FALSE, message=FALSE}
+library(tidyverse)
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/pretrial_df.csv")
+```
+
+
+---
+
+
+### 1. Visual EDA (5 points)
+
+> Do visual EDA on the variables bail_amount and days_until_trial, jointly.
+
+**Your code answer (5 points):**
+
+```{r fig.width=4, fig.height=3}
+dat %>% ggplot(aes(x=bail_amount, y=days_until_trial)) + geom_point()
+```
+
+**Your text answer (5 points):**
+
+The scatterplot shows that the two variables have a positive association, a linear form (except for the truncation at 0), the relationship is not that strong, and there are some outliers, especially in high days until trial. 
+
+
+
+
+---
+
+
+### 2. Quantitative EDA (5 points)
+
+> Do quantitative EDA on the variables bail_amount and days_until_trial, jointly.
+
+**Your code answer (5 points):**
+
+```{r}
+dat %>% summarize(correlation = cor(bail_amount, days_until_trial))
+
+dat %>% filter(days_until_trial < 200) %>% summarize(correlation = cor(bail_amount, days_until_trial))
+```
+
+
+**Your text answer (5 points):**
+
+After checking that we are working with two quantitative variables, the relationship between the two variables is straight enough, we fit a correlation. There is at least an outlier in days_until_trial, so we provide the correlation with and without the outliers. The correlation went from 48.5% to 48.2%, so the outlier was not making a big difference. 
+
+
+
+---
+
+
+
+
+
+### 3. Linear model fit (5 points)
+
+> Fit a linear model that regresses bail_amount onto days_until_trial. Are the assumptions of linear regression met? Are there any influential outliers?
+
+**Your code answer (5 points):**
+
+```{r, fig.width=8, fig.height=6}
+out <- lm(bail_amount~days_until_trial, data=dat)
+par(mfrow = c(2,2))
+plot(out)
+par(mfrow = c(1,1))
+```
+
+
+
+**Your text answer (5 points):**
+
+- Linearity: Not really. The truncation at 0 makes it hard to tell. There is clearly a trend that is not being captured by the model.
+- Independence of observations: We have no reason to think that there are hidden dependencies in the data.
+- Normality of errors: The points are mostly on the diagonal in the q-q plot, except for the tails. So, normality is mostly met.
+- Homoscedasticity: This is mostly fine except for the high tail. We don't know if there really is lower variance, or just fewer data points at the extreme.
+- Influential outliers: None according to the Cook's distance.
+
+
+---
+
+
+
+
+
+### 4. Slope coefficient interpretation (5 points)
+
+> Should you interpret the slope coefficient of the linear model?
+
+**Your text answer (5 points):**
+
+No because the model assumptions are not met. A linear regression is not the right model to fit here.
+
+
+---
+
+
+
+
