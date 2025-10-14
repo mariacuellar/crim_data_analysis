@@ -1,0 +1,46 @@
+city_crime_spending_logfix.csv - Codebook
+-----------------------------------------
+
+Overview:
+This dataset simulates criminology-style city-level data for teaching regression diagnostics. 
+It is designed so that the relationship between city population and police spending violates 
+linear regression assumptions (nonlinearity and heteroskedasticity), but improves after applying 
+a log transformation to police_spending.
+
+Variables:
+
+id
+  - Description: Unique identifier for each city
+  - Type: Integer
+  - Range: 1–500
+
+region
+  - Description: U.S. Census region of the city
+  - Type: Categorical (Northeast, Midwest, South, West)
+
+population
+  - Description: Total population of the city
+  - Type: Integer
+  - Units: People
+  - Range: Approximately 20,000 to 1,000,000
+
+violent_crime_rate
+  - Description: Reported violent crime rate per 100,000 residents
+  - Type: Numeric
+  - Units: Crimes per 100,000 residents
+  - Range: Approximately 200–800
+  - Notes: Increases mildly with city size with random noise
+
+unemployment_rate
+  - Description: Unemployment rate in the city
+  - Type: Numeric
+  - Units: Percent (%)
+  - Range: 3–12
+
+police_spending
+  - Description: Annual city spending on police (in millions of dollars)
+  - Type: Numeric
+  - Units: Millions of USD
+  - Range: Roughly 100–900 (varies by simulation)
+  - Notes: Positively related to population, with nonlinear and heteroskedastic structure.
+    After applying log(police_spending), the model assumptions of linear regression improve.
