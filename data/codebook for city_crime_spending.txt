@@ -2,10 +2,14 @@ city_crime_spending_logfix.csv - Codebook
 -----------------------------------------
 
 Overview:
-This dataset simulates criminology-style city-level data for teaching regression diagnostics. 
-It is designed so that the relationship between city population and police spending violates 
-linear regression assumptions (nonlinearity and heteroskedasticity), but improves after applying 
-a log transformation to police_spending.
+This (simulated) dataset contains information from a sample of 500 cities across the United States. The data were compiled as part of a study examining relationships between city demographics, economic conditions, and public safety expenditures.
+
+Each observation represents a single city, with information on population size, violent crime rate, unemployment rate, and annual spending on policing. The figures are meant to reflect general trends observed in municipal data from recent years, though the individual city names and values have been anonymized for privacy.
+
+Police spending refers to total municipal expenditures dedicated to police departments, including salaries, equipment, and operations, expressed in millions of U.S. dollars. Population counts come from recent census estimates. Violent crime rates indicate the number of reported violent crimes per 100,000 residents, and unemployment rates represent the percentage of the civilian labor force without employment. Cities are categorized by region (Northeast, Midwest, South, or West) based on U.S. Census divisions.
+
+The dataset can be used to explore how urban characteristics and regional differences relate to variation in policing resources and public safety outcomes.
+
 
 Variables:
 
