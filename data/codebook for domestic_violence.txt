@@ -1,0 +1,56 @@
+domestic_violence.csv - Codebook
+---------------------------------
+
+Overview:
+This dataset contains anonymized individual-level survey responses collected as part of a study on the prevalence and correlates of domestic violence among adults. 
+Respondents provided demographic and socioeconomic information, along with self-reported experiences of domestic violence. 
+The survey aimed to understand how factors such as age, education, employment, income, and marital status relate to experiences of violence within intimate relationships.
+
+File: domestic_violence.csv
+Observations: 347 individuals
+Variables: 7
+
+Variables:
+
+SL. No
+  - Description: Serial number or respondent identifier.
+  - Type: Integer
+  - Range: 1–347
+  - Notes: Arbitrary index, not meaningful analytically.
+
+Age
+  - Description: Age of the respondent (in years).
+  - Type: Numeric (integer)
+  - Range: Approximately 18–70
+  - Units: Years
+
+Education
+  - Description: Highest level of formal education completed by the respondent.
+  - Type: Categorical (string)
+  - Common values: primary, secondary, tertiary, none
+  - Notes: Indicates general educational attainment.
+
+Employment
+  - Description: Current employment status of the respondent.
+  - Type: Categorical (string)
+  - Common values: employed, unemployed, self-employed, student, homemaker
+  - Notes: May include informal or temporary work.
+
+Income
+  - Description: Reported personal monthly income.
+  - Type: Numeric (integer)
+  - Units: Local currency (unspecified)
+  - Range: 0–variable
+  - Notes: Zero indicates no personal income at the time of the survey.
+
+Marital status
+  - Description: Current marital or partnership status.
+  - Type: Categorical (string)
+  - Common values: married, unmarried, divorced, widowed, separated
+  - Notes: Spelling variation in some responses (e.g., “unmarred”) should be standardized prior to analysis.
+
+Violence
+  - Description: Whether the respondent reported experiencing domestic or intimate partner violence.
+  - Type: Categorical (binary)
+  - Values: yes, no
+  - Notes: Based on self-report; may include physical, emotional, or psychological forms of violence.
