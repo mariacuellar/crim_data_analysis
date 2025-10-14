@@ -1,7 +1,7 @@
 PHILADELPHIA HOUSE PRICES DATASET
 ---------------------------------
 
-This dataset contains 150 simulated houses sold in Philadelphia.
+This (simulated) dataset contains 150 simulated houses sold in Philadelphia.
 You’ll use it to learn about linear regression: interpreting slopes,
 using categorical variables, and checking model assumptions.
 

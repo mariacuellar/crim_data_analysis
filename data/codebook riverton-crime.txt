@@ -1,6 +1,6 @@
 Dataset Codebook:
 
-The dataset comes from anonymized court records in the fictional U.S. city of Riverton, a mid-sized urban area with a population of about 400,000. Riverton is located in the Midwest and has a mix of urban and suburban neighborhoods.
+The (simulated) dataset comes from anonymized court records in the fictional U.S. city of Riverton, a mid-sized urban area with a population of about 400,000. Riverton is located in the Midwest and has a mix of urban and suburban neighborhoods.
 
 The data were collected as part of a research project on sentencing practices and criminal history, and include individuals convicted of non-federal offenses between 2018 and 2022.
 

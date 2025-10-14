@@ -8,14 +8,14 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-
 ---
+
+<a href="index.html" class="home-button">🏠 Home</a>
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
 
 
 # Change appearance colors in RStudio

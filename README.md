@@ -68,8 +68,11 @@ analyses beyond the scope of this course.
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-practice---solutions.html)
 - [Exercises 5: Starting linear
   regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%205%20-%20questions.rmd)
+  (HTML Solutions)
 - [Exercises 6: Continuing linear
   regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%206%20-%20questions.rmd)
+  (HTML Solutions)
+- \[Practice exercises for Quiz 2\] (HTML Solutions)
 
 ## Datasets
 
@@ -79,6 +82,7 @@ Save the data into the folder of your choice.
 1.  [kentucky-derby-2018.csv](data/kentucky-derby-2018.csv)
 2.  [students.csv](data/students.csv)
 3.  [domestic_violence.csv](data/domestic_violence.csv)
+    [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20domestic_violence.txt)
 4.  [pretrial_df](data/pretrial_df.csv)
     [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20pretrial_df.txt)
 5.  [philadelphia_house_prices.csv](data/philadelphia_house_prices.csv)
