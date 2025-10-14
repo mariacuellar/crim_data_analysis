@@ -68,6 +68,8 @@ analyses beyond the scope of this course.
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-practice---solutions.html)
 - [Exercises 5: Starting linear
   regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%205%20-%20questions.rmd)
+  [(Rmd
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%205%20-%20solutions.rmd)
   [(HTML
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-5---solutions.html)
 - [Exercises 6: Continuing linear
@@ -75,7 +77,7 @@ analyses beyond the scope of this course.
   (HTML Solutions)
 - [Practice exercises for Quiz
   2](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Quiz%202%20practice%20-%20questions.Rmd)
-  (HTML Solutions)
+  (HTML Solutions - will be posted on the night of the 17th)
 
 ## Datasets
 
