@@ -1,0 +1,69 @@
+---
+title: "Exercises 5 - solutions"
+author: "Maria Cuellar"
+date: "2025-10-06"
+output:
+  html_document: 
+  self_contained: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r preamble, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+```{r}
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/philadelphia_house_prices.csv")
+dat
+```
+
+
+
+# 1. Do visual EDA on price, and do visual EDA on square footage. Describe what you see.
+
+```{r, fig.width=3, fig.height=3}
+dat %>% ggplot(aes(x=price)) + geom_histogram()
+dat %>% ggplot(aes(x=sqft)) + geom_histogram()
+```
+
+# 2. Could there be a categorical variable that explains the strange features observed in price? Look for it in the data.
+
+```{r}
+dat %>% ggplot(aes(x=price, fill=neighborhood)) + geom_histogram()
+```
+
+# 3. Do quantitative EDA on price and square footage, separately. Describe.
+```{r}
+dat %>%
+  summarize(
+    mean_price = mean(price, na.rm = TRUE),
+    sd_price   = sd(price, na.rm = TRUE),
+    mean_sqft  = mean(sqft, na.rm = TRUE),
+    sd_sqft    = sd(sqft, na.rm = TRUE)
+  )
+```
+
+# 4. Do visual EDA on price and square footage, together. Describe what you see.
+```{r}
+dat %>% ggplot(aes(x=price, y=sqft)) + geom_point()
+```
+
+# 5. Do quantitative EDA on price and square footage, together. Describe.
+```{r}
+dat %>% summarize(correlation = cor(price, sqft))
+```
+
+# 6. Repeat 3, but now add a color for the categorical variable you found in 2. Describe what you see.
+```{r}
+dat %>% ggplot(aes(x=price, y=sqft, color=neighborhood)) + geom_point()
+```
+
+# 7. Fit a simple linear regression for price and square footage. What is your null hypothesis? Look at the summary. For now, don't interpret the coefficients and don't test for the assumptions.
+```{r}
+out <- lm(price ~ sqft, data=dat)
+summary(out)
+```
+
