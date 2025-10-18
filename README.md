@@ -77,7 +77,8 @@ analyses beyond the scope of this course.
   (HTML Solutions)
 - [Practice exercises for Quiz
   2](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Quiz%202%20practice%20-%20questions.Rmd)
-  (HTML Solutions - will be posted on the night of the 17th)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Quiz-2-practice---solutions.html)
 
 ## Datasets
 
