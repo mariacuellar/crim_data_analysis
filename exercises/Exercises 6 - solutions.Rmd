@@ -17,49 +17,38 @@ library(tidyverse)
 
 Note: use city_crime_spending.csv.
 
-
-**1. Question** For two quantitative variables (x and y): Write down the requirements for each of these steps.
-
 ```{r load-data, message=FALSE, warnins=FALSE}
 library(tidyverse)
 dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/city_crime_spending.csv")
 ```
 
-- Do visual EDA:
-- Do quantitative EDA:
-- Fit a linear model:
-- Test assumptions of linear regression:
-- Interpret coefficient of x to do inference:
 
-- For visual EDA: I draw a scatterplot. The scatterplot shows that the two variables have a positive association, a linear form, the relationship is strong (although I do notice changing variance throughout "population"), and there are no clear outliers. 
+**1. Question** For two quantitative variables (x and y): Write down the requirements for each of these steps.
 
 
-```{r visual-EDA, fig.width=4, fig.height=3}
-dat %>% ggplot(aes(x=population, y=police_spending)) + geom_point()
-```
+- Do visual EDA: Draw a scatterplot and describe the association, form, strengh, and outliers.
+- Do quantitative EDA: Check whether the two variables are quantitative, whether their relationship is straight enough, and whether there are any outliers.
+- Fit a linear model: Check assumptions of linear regression.
+- Test assumptions of linear regression: Linear relationship between x and y, Independence between observations, Homoscedasticity of errors, and Normality of y for a given x. Also, check that there are no influential outliers.
+- Interpret coefficient of x to do inference: Only if the assumptions of linear regression are satisfied.
 
 
-For quantitative EDA, I check the conditions for correlation: x and y are quantitative variables, the relationship between x and y is straight enough, and there are no noticeable outliers. Therefore, I go ahead and calculate the correlation. 
-
-```{r quantitative-EDA}
-dat %>% summarize(correlation = cor(population, police_spending))
-```
-
-
-- I fit a linear model:
-
-```{r linear-model}
-out <- lm(police_spending ~ population, data=dat)
-par(mfrow=c(2,2))
-plot(out)
-par(mfrow=c(1,1))
-```
+**Instructions** Fit a simple linear regression for police_spending regressed onto population.
 
 **2. Question** What is the null hypothesis for doing inference? What is the research question you could ask here?
 
 The null hypothesis is that there is no relationship between population and police_spending. 
 
+
 **3. Question** What is the coefficient of determination? (The one called Multiple R-squared. The other one has a penalty for adding more covariates, so we won't need it here.) What does this mean?
+
+I fit a linear model:
+
+```{r linear-model}
+out <- lm(police_spending ~ population, data=dat)
+```
+
+And look at the R squared.
 
 ```{r r-squared}
 summary(out)
@@ -68,13 +57,44 @@ summary(out)
 The (Multiple) R-squared is 0.8258. This means that there is a strong association between population and police_spending.
 
 
+
+
+
+
+
+
 **4. Question** Test the assumptions of the linear regression. 
+
+First, draw a scatterplot.
+
+```{r visual-EDA, fig.width=4, fig.height=3}
+dat %>% ggplot(aes(x=population, y=police_spending)) + geom_point()
+```
+
+For quantitative EDA, I check the conditions for correlation: x and y are quantitative variables, the relationship between x and y is straight enough, and there are no noticeable outliers. Therefore, I go ahead and calculate the correlation. 
+
+```{r quantitative-EDA}
+dat %>% summarize(correlation = cor(population, police_spending))
+```
+
+
+I draw the diagnostic plots:
+
+```{r diagnostic-plots}
+par(mfrow=c(2,2))
+plot(out)
+par(mfrow=c(1,1))
+```
+
+And then test assumptions:
 
 a) Linear relationship between x and y: There is a linear relationship between x and y, shown in the scatterplot. 
 b) Independence between observations: I cannot test for independence between observations, but I don't see any evidence of clumping to suggest strong dependencies.
 c) Homoscedasticity of errors: Homoscedasticity: There is a clear difference in variance of the errors shown in the scale-location plot, as well as in the residuals vs. fitted plot and the scatterplot. This assumption is NOT met.
 d) Normality of y for a given x: The q-q plot shows the points mostly on the diagonal, except for the ends. This shows me the assumption is mostly (sufficiently) met.
 e) There are no influential outliers.
+- For visual EDA: I draw a scatterplot. The scatterplot shows that the two variables have a positive association, a linear form, the relationship is strong (although I do notice changing variance throughout "population"), and there are no clear outliers. 
+
 
 
 
