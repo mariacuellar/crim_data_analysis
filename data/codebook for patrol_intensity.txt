@@ -1,0 +1,38 @@
+CODEBOOK: Criminology Nonlinear Patrol–Crime Dataset
+
+File: criminology_nonlinear_patrol_crime.csv Observations: 250
+neighborhoods Unit of analysis: Neighborhood
+
+  -----------------------------------------------------------------------
+  Variable Type Description Range / Units
+  -----------------------------------------------------------------------
+  neighborhood_id Integer Unique ID for each neighborhood 1–250
+  population Integer Number of residents 1,500–8,000 poverty_rate Numeric
+  Proportion below poverty line 0.02–0.60 youth_pct Numeric Proportion
+  age 15–29 0.05–0.50 vacancy_rate Numeric Housing units vacant
+  (proportion) 0.00–0.35 downtown Binary Downtown indicator 0=No, 1=Yes
+  patrol_intensity Numeric Weekly patrol hours per sq. mile 5–120 hours
+  property_crime_rate Numeric Property crimes per 1,000 residents ≥5
+  cctv_density Numeric Cameras per square mile 0–60 theft_rate Numeric
+  Thefts per 1,000 residents ≥2
+
+  -----------------------------------------------------------------------
+
+Conceptual Overview
+
+U-shaped relationship: patrol_intensity → property_crime_rate - Low
+patrols = weak deterrence → higher crime - Moderate patrols = strongest
+deterrence → lowest crime - Very high patrols = reactive deployment in
+already high-crime areas → higher crime again
+
+S-shaped relationship: cctv_density → theft_rate - Low CCTV coverage =
+minimal effect - Moderate levels = strong deterrence - High levels =
+saturation / plateau due to adaptation
+
+Teaching Notes
+
+Students can: - Fit linear, quadratic, or spline regressions to
+visualize nonlinearity. - Examine residuals to detect curvature. -
+Interpret patterns in criminological context (reactive policing,
+deterrence saturation). - Discuss endogeneity and causal inference
+limits when patrols respond to crime levels.

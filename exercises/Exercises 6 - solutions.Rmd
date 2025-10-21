@@ -90,7 +90,7 @@ And then test assumptions:
 
 a) Linear relationship between x and y: There is a linear relationship between x and y, shown in the scatterplot. 
 b) Independence between observations: I cannot test for independence between observations, but I don't see any evidence of clumping to suggest strong dependencies.
-c) Homoscedasticity of errors: Homoscedasticity: There is a clear difference in variance of the errors shown in the scale-location plot, as well as in the residuals vs. fitted plot and the scatterplot. This assumption is NOT met.
+c) Homoscedasticity of errors: There is a clear difference in variance of the errors shown in the scale-location plot, as well as in the residuals vs. fitted plot and the scatterplot. This assumption is NOT met.
 d) Normality of y for a given x: The q-q plot shows the points mostly on the diagonal, except for the ends. This shows me the assumption is mostly (sufficiently) met.
 e) There are no influential outliers.
 - For visual EDA: I draw a scatterplot. The scatterplot shows that the two variables have a positive association, a linear form, the relationship is strong (although I do notice changing variance throughout "population"), and there are no clear outliers. 
