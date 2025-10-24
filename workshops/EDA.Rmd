@@ -291,7 +291,7 @@ mpg %>% ggplot(aes(x=cty)) + geom_histogram() + facet_grid(~drv)
 **Side-by-side boxplots**
 
 ```{r, fig.width=4, fig.height=3}
-mpg %>% ggplot(aes(y=cyl)) + geom_boxplot() + facet_grid(~drv)
+mpg %>% ggplot(aes(y=cyl, x=drv)) + geom_boxplot()
 ```
 
 **Different color histograms**
