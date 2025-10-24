@@ -15,10 +15,35 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-Note: Use xxx.csv.
+Note: Use community_center_crime.csv.
+
+```{r}
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/community_center_crime.csv")
+```
+
+**2. Question:** You are analyzing data from 20 neighborhoods in a city. Ten of them have a community center, and ten do not. You want to test whether neighborhoods with community centers have a lower average property crime rate (per 1,000 residents) than those without community centers. 
+
+Variables:
+
+community_center: 1 = Yes, 0 = No
+
+crime_rate: property crimes per 1,000 residents
+
+Using a two-sample t-test, test whether the mean crime rate differs between neighborhoods with and without community centers.
 
 
-**1. Question:** 
+State the hypotheses (both null and alternative).
 
-**2. Question:** 
+Check assumptions (independence, approximate normality, similar variance).
+
+Perform the t-test in R:
+
+```{r}
+t.test(crime_rate ~ community_center, data = dat, var.equal = TRUE)
+```
+
+Interpret the p-value in context.
+
+Write one sentence about what the result means for crime prevention policy.
+
 

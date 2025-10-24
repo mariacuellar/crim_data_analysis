@@ -57,6 +57,8 @@ Testing diff. in means: Two-sample t-test
 
 # t-test
 
+- A t-test is a type of hypothesis test used to compare means between groups when the population standard deviation is unknown. It helps us decide whether the difference we see between sample means is likely due to random variation or reflects a real difference in the populations.
+
 - The t-test is used to determine if the means of two sets of data are significantly different from each other.
 
 - It is mostly used when the data sets, like the data set recorded as the outcome from flipping a coin 100 times, would follow a normal distribution and may have unknown variances. A t-test is used as a hypothesis testing tool, which allows testing of an assumption applicable to a population. 
@@ -64,6 +66,34 @@ Testing diff. in means: Two-sample t-test
 - A t-test looks at the t-statistic, the t-distribution values, and the degrees of freedom to determine the statistical significance. To conduct a test with three or more means, one must use an analysis of variance.
 
 
+## Why “t”?
+
+The test statistic follows a t-distribution, which looks similar to the normal distribution but has heavier tails. This accounts for the extra uncertainty that comes from estimating the standard deviation using sample data instead of knowing the true population value.
+
+
+
+
+## When to use a t-test
+
+Use a t-test when:
+
+- Your outcome variable is quantitative (e.g., crime rate, sentence length, years of education).
+- You want to compare means (average values).
+- Your data come from independent random samples or paired observations.
+- The data are approximately normally distributed (especially important for small samples).
+
+
+
+![](graphics/ttesttable.png)
+
+
+
+## Logic of a t-test
+
+- State hypotheses $H_0$ and $H_1$.
+- Compute the t-statistic: $t=\frac{\overline{X}_1- \overline{X}_2}{SE_{difference}}$.
+- Find the p-value using the t-distribution with appropriate degrees of freedom.
+- Interpret: If p is less than alpha, e.g., 0.05, then reject $H_0$.
 
 
 
