@@ -43,12 +43,12 @@ knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE, digits=2)
 
 
 
-# Testing diff. in means: Single-sample t-test
+Testing diff. in means: Single-sample t-test
 
 <img src="graphics/ttest-single.png" width="400">
 
 
-# Testing diff. in means: Two-sample t-test
+Testing diff. in means: Two-sample t-test
 
 <img src="graphics/ttest-two.png" width="400">
 
@@ -59,11 +59,7 @@ knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE, digits=2)
 
 - The t-test is used to determine if the means of two sets of data are significantly different from each other.
 
-
-
 - It is mostly used when the data sets, like the data set recorded as the outcome from flipping a coin 100 times, would follow a normal distribution and may have unknown variances. A t-test is used as a hypothesis testing tool, which allows testing of an assumption applicable to a population. 
-
-
 
 - A t-test looks at the t-statistic, the t-distribution values, and the degrees of freedom to determine the statistical significance. To conduct a test with three or more means, one must use an analysis of variance.
 
@@ -71,7 +67,7 @@ knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE, digits=2)
 
 
 
-# Hypothesis test for linear regression slope
+## Hypothesis test for linear regression slope
 
 If there is a significant linear relationship between the independent quantitative variable $x$ and the dependent quantitative variable $y$, the slope will not equal zero.
 
@@ -90,7 +86,7 @@ The null hypothesis states that the slope is equal to zero, and the alternative 
 
 
 
-# Significance level
+## Significance level
 
 Select a significance level, $\alpha$. The most common one is 5%. Some scientific questions (e.g. elementary particles) and medical questions (e.g. vaccines) require lower significance levels (e.g. 1% or 0.1%). This means the test is more conservative, so it's harder to get significance by chance.  
 
@@ -117,8 +113,6 @@ where $y_i$ is the value of the dependent variable for observation $i$, $\hat{y}
 
 
 
-# How to run the test?
-
 - ii) **Slope**: Given by R.
 
 - iii) **Degrees of freedom**: For simple linear regression (one independent and one dependent variable), the degrees of freedom (DF) is equal to: $DF = n - 2$, where $n$ is the number of observations in the sample.
@@ -134,7 +128,7 @@ where $b_1$ is the slope of the sample regression line, and $SE$ is the standard
 
 
 
-# Conclusion from test
+## Conclusion from test
 
 - If the sample findings are unlikely, given the null hypothesis, the researcher rejects the null hypothesis. Typically, this involves comparing the $p$-value to the significance level, and rejecting the null hypothesis when the $p$-value is less than the significance level.
 
@@ -146,47 +140,12 @@ where $b_1$ is the slope of the sample regression line, and $SE$ is the standard
 
 
 
-# Testing differences in means
+## Testing differences in means
 
 One of the most common statistical tasks is to compare an outcome between two groups. The example here looks at comparing birth weight between smoking and non-smoking mothers.
 
 To start, it always helps to plot things. 
 
-For this example, we use the same dataset as in Exercises 5, on Philadelphia housing prices. 
-
-```{r}
-library(tidyverse)
-dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/philadelphia_house_prices.csv")
-```
-
-
-Although, we filter out the outliers, just so we can focus on the hypothesis testing for now.
-```{r}
-dat_no_outliers <- dat %>% filter(price<500)
-```
-
-We draw the scatterplot to see the relationship between square footage and price. 
-```{r, fig.width=3, fig.height=3}
-dat_no_outliers %>% ggplot(aes(x=price, y=sqft)) + geom_point()
-```
-We see that there is a positive, strong, linear association, with no outliers.
-
-Then, we fit the linear regression model, and check the diagnostic plots.
-```{r, fig.width=7, fig.height=7}
-out <- lm(sqft~price, data=dat_no_outliers)
-par(mfrow=c(2,2))
-plot(out)
-par(mfrow=c(1,1))
-```
-The four assumptions of linear regression are satisfied: Linearity, independence of errors, normality of errors, and homoscedasticity.
-
-
-
-
-
-
-
-# Testing differences in means
 
 One of the most common statistical tasks is to compare an outcome between two groups. The example here looks at comparing birth weight between smoking and non-smoking mothers.
 
@@ -231,7 +190,7 @@ birthwt %>% ggplot(aes(x=mother.smokes, y=birthwt.grams)) +
 This plot suggests that smoking is associated with lower birth weight. But how can we assess whether this difference is statistically significant?
 
 
-# A table
+## A summary table
 
 Let’s compute a summary table.
 
@@ -294,6 +253,8 @@ conf.level <- attr(birthwt.t.test$conf.int, "conf.level") * 100
 ```
 
 
+### Conclusion: 
+
 Our study finds that birth weights are on average `r birthwt.smoke.diff`g higher in the non-smoking group compared to the smoking group (t-statistic `r round(birthwt.t.test$statistic,2)`, p=`r round(birthwt.t.test$p.value, 3)`, `r conf.level`% CI [`r round(birthwt.t.test$conf.int,1)`]g)
 
 
@@ -309,5 +270,46 @@ Our study finds that birth weights are on average `r birthwt.smoke.diff`g higher
 
 
 
+# Example with linear regression
 
+For this example, we use the same dataset as in Exercises 5, on Philadelphia housing prices. 
+
+```{r}
+library(tidyverse)
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/philadelphia_house_prices.csv")
+```
+
+
+Although, we filter out the outliers, just so we can focus on the hypothesis testing for now.
+```{r}
+dat_no_outliers <- dat %>% filter(price<500)
+```
+
+We draw the scatterplot to see the relationship between square footage and price. 
+```{r, fig.width=3, fig.height=3}
+dat_no_outliers %>% ggplot(aes(x=price, y=sqft)) + geom_point()
+```
+We see that there is a positive, strong, linear association, with no outliers.
+
+Then, we fit the linear regression model, and check the diagnostic plots.
+```{r, fig.width=7, fig.height=7}
+out <- lm(sqft~price, data=dat_no_outliers)
+par(mfrow=c(2,2))
+plot(out)
+par(mfrow=c(1,1))
+```
+The four assumptions of linear regression are satisfied: Linearity, independence of errors, normality of errors, and homoscedasticity.
+
+Now we test whether the slope coefficient of the linear regression is statistically significant. The null hypothesis is that the two variables, price and square footage, are not associated with each other. 
+```{r}
+summary(out)
+```
+
+We can read the coefficient and its corresponding se, t-statistic, and p-value in the line that starts with "## price..."
+
+We see that, indeed, there is a statistically significant association between price and square footage in Philadelphia. The three stars represent statistical significance at a value lower than 0.001. We usually use a p-value of 0.05 in social science. Therefore, we can interpret the coefficient as follows:
+
+### Conclusion:
+
+An additional US dollar is associated with an additional 4.92 square feet, and this is statistically significant at the 0.05 level.
 
