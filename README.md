@@ -82,6 +82,8 @@ analyses beyond the scope of this course.
   2](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Quiz%202%20practice%20-%20questions.Rmd)
   [(HTML
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Quiz-2-practice---solutions.html)
+- [Exercises 7: Hypothesis
+  testing](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%207%20-%20questions.rmd)
 
 ## Datasets
 

@@ -1,0 +1,24 @@
+---
+title: "Exercises 7 - questions"
+author: "Maria Cuellar"
+date: "2025-10-24"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r preamble, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+Note: Use xxx.csv.
+
+
+**1. Question:** 
+
+**2. Question:** 
+

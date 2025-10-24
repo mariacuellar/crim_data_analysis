@@ -1,4 +1,4 @@
----
+
 title: "Hypothesis testing"
 output:
   html_document:
@@ -8,7 +8,7 @@ output:
     number_sections: false
     toc_depth: 2
     #code_folding: hide
----
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
@@ -19,55 +19,57 @@ knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 
 - **Definition**: The process of analyzing data to infer properties of a population, for example by testing hypotheses and deriving estimates. It is assumed that the observed data set is sampled from a larger population.
 
-.center[![](graphics/inference.png)]
+
+
+![](graphics/inference.png)
 
 
 
----
+
 
 # Hypothesis testing
 
 - **Definition**: The process of drawing conclusions on the basis of statistical testing of collected data.
 
---
+
 
 - **Goal**: To draw conclusions about a population on the basis of data obtained from a sample of that population.
 
 
---
+
 
 
 - **How it works**: In hypothesis testing, we start with some default theory — called a null hypothesis — and we ask if the data provide sufficient evidence (via a test statistic) to reject the theory. If not we retain the null hypothesis.
 
----
+
 
 # Testing diff. in means: Single-sample t-test
 
-.center[![](graphics/ttest-single.png)]
+<img src="graphics/ttest-single.png" width="400">
 
----
 
 # Testing diff. in means: Two-sample t-test
 
-.center[![](graphics/ttest-two.png)]
+<img src="graphics/ttest-two.png" width="400">
 
----
+
+
 
 # t-test
 
 - The t-test is used to determine if the means of two sets of data are significantly different from each other.
 
---
+
 
 - It is mostly used when the data sets, like the data set recorded as the outcome from flipping a coin 100 times, would follow a normal distribution and may have unknown variances. A t-test is used as a hypothesis testing tool, which allows testing of an assumption applicable to a population. 
 
---
+
 
 - A t-test looks at the t-statistic, the t-distribution values, and the degrees of freedom to determine the statistical significance. To conduct a test with three or more means, one must use an analysis of variance.
 
 
 
----
+
 
 # Hypothesis test for linear regression slope
 
@@ -86,7 +88,7 @@ The null hypothesis states that the slope is equal to zero, and the alternative 
 
 
 
----
+
 
 # Significance level
 
@@ -95,9 +97,9 @@ Select a significance level, $\alpha$. The most common one is 5%. Some scientifi
 $\alpha$ is also the probability of obtaining a Type I error, and $\beta$ is the probability of obtaining a Type II error. 
 
 
-.center[![](graphics/type-i-and-ii-error-2.png)]
+![](graphics/type-i-and-ii-error-2.png)
 
----
+
 
 # How to run the test?
 
@@ -105,7 +107,7 @@ In practice, use R. But what does R do?
 
 Using sample data, it finds the i) standard error of the slope, ii) the slope of the regression line, iii) the degrees of freedom, iv) the test statistic, and the v) $p$-value associated with the test statistic.
 
---
+
 
 - i) **Standard error**: If you need to calculate the standard error of the slope (SE) by hand, use the following formula:
 $$
@@ -114,7 +116,7 @@ $$
 
 where $y_i$ is the value of the dependent variable for observation $i$, $\hat{y}_i$ is estimated value of the dependent variable for observation $i$, $x_i$ is the observed value of the independent variable for observation $i$, $x$ is the mean of the independent variable, and $n$ is the number of observations.
 
----
+
 
 # How to run the test?
 
@@ -131,7 +133,7 @@ where $b_1$ is the slope of the sample regression line, and $SE$ is the standard
 
 - v) **p-value**: The $p$-value is the probability of observing a sample statistic as extreme as the test statistic, given that the null hypothesis is true. Since the test statistic is a $t$-statistic, use the [t Distribution Calculator](https://stattrek.com/online-calculator/t-distribution.aspx) to assess the probability associated with the test statistic. Use the degrees of freedom computed above.
 
----
+
 
 # Conclusion from test
 
@@ -143,7 +145,7 @@ where $b_1$ is the slope of the sample regression line, and $SE$ is the standard
 
 
 
----
+
 
 # Testing differences in means
 
@@ -190,7 +192,7 @@ qplot(x = mother.smokes, y = birthwt.grams,
 
 This plot suggests that smoking is associated with lower birth weight. But how can we assess whether this difference is statistically significant?
 
----
+
 
 # A table
 
@@ -209,7 +211,7 @@ birthwt %>%
 The standard deviation is good to have, but to assess statistical significance we really want to have the standard error (which the standard deviation adjusted by the group size).
 
 
----
+
 
 # A table
 
@@ -224,7 +226,7 @@ birthwt %>%
 
 This difference is looking quite significant. But let's do this with a test.
 
----
+
 
 # t-test via `t.test()`
 
@@ -237,7 +239,7 @@ birthwt.t.test
 
 We see from this output that the difference is highly significant. The t.test() function also outputs a confidence interval for us.
 
----
+
 
 # t-test via `t.test()`
 
@@ -250,7 +252,7 @@ birthwt.t.test$p.value   # p-value
 birthwt.t.test$estimate  # group means
 ```
 
----
+
 
 # t-test via `t.test()`
 
@@ -259,7 +261,7 @@ birthwt.t.test$conf.int  # confidence interval for difference
 attr(birthwt.t.test$conf.int, "conf.level")  # confidence level
 ```
 
----
+
 
 # Writing output as Rmd code
 
@@ -278,15 +280,17 @@ conf.level <- attr(birthwt.t.test$conf.int, "conf.level") * 100
 Our study finds that birth weights are on average `r birthwt.smoke.diff`g higher in the non-smoking group compared to the smoking group (t-statistic `r round(birthwt.t.test$statistic,2)`, p=`r round(birthwt.t.test$p.value, 3)`, `r conf.level`% CI [`r round(birthwt.t.test$conf.int,1)`]g)
 
 
----
+
 
 
 # R results from lec 11
 
-.center[![](graphics/r results from lec 11.png)]
 
 
----
+![](graphics/r results from lec 11.png)
+
+
+
 
 # Reference
 
