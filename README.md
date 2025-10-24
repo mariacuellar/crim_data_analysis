@@ -43,7 +43,7 @@ analyses beyond the scope of this course.
 - [Linear
   regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
 - [Hypothesis
-  testing](https://mariacuellar.github.io/crim_data_analysis/workshops/Hypothesis-Testing.html)
+  testing](https://mariacuellar.github.io/crim_data_analysis/workshops/Hypothesis-testing.html)
 
 ## Exercises
 
