@@ -103,5 +103,5 @@ Save the data into the folder of your choice.
 - [city_crime_spending.csv](data/city_crime_spending.csv)
   [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20city_crime_spending.txt)
 - [t-test problem 1](data/problem1_arrests.csv)
-- [t-test problem 2](data/problem2_arrests.csv)
-- [t-test problem 3](data/problem3_arrests.csv)
+- [t-test problem 2](data/problem2_judges.csv)
+- [t-test problem 3](data/problem3_cadets.csv)

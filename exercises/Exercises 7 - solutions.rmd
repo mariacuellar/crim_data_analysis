@@ -64,8 +64,11 @@ A criminologist believes that the average daily number of arrests in a city is l
 - Write a short paragraph interpreting the results in context.
 
 ```{r}
-arrests <- c(21,23,18,27,25,22,24,20,21,19,26,18,23,20,19)
-t.test(arrests, mu = 25, alternative = "less")
+library(tidyverse)
+dat1 <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/problem1_arrests.csv")
+
+t.test(dat1$Arrests, mu = 25, alternative = "less")
+
 
 ```
 
