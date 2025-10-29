@@ -16,7 +16,11 @@ library(tidyverse)
 ```
 
 
-**Note**: The function `pnorm()` gives the cumulative probability for a **normal distribution** up to a certain value. That is, it tells you \( P(X \leq x) \). Use the problems below to practice computing and interpreting probabilities with the normal distribution.
+## Overview
+
+The function `pnorm()` gives the cumulative probability for a **normal distribution** up to a certain value. That is, it tells you \( P(X \leq x) \).
+
+Use the problems below to practice computing and interpreting probabilities with the normal distribution.
 
 
 
@@ -40,9 +44,6 @@ Compute the probability that Z lies between -1.5 and 1.5.
 ```
 
 
-
-**Note**: The rest of the problems are about t-tests.
-
 ## Problem 3: t-test 
 
 - What is a t-test for?
@@ -63,7 +64,9 @@ A criminologist believes that the average daily number of arrests in a city is l
 - Write a short paragraph interpreting the results in context.
 
 ```{r}
-2+2
+arrests <- c(21,23,18,27,25,22,24,20,21,19,26,18,23,20,19)
+t.test(arrests, mu = 25, alternative = "less")
+
 ```
 
 
@@ -81,7 +84,11 @@ Researchers compare the mean sentence length (in months) given by two judges. Ra
 - Interpret in context.
 
 ```{r}
-2+2
+judgeA <- c(24,30,22,28,26,32)
+judgeB <- c(35,31,29,33,37,30)
+t.test(judgeA, judgeB, var.equal = TRUE)   # pooled
+t.test(judgeA, judgeB, var.equal = FALSE)  # Welch
+
 ```
 
 
@@ -98,16 +105,9 @@ Police cadets are tested on physical fitness before and after a 10-week training
 
 
 ```{r}
-2+2
+
+before <- c(65,70,68,60,72,66)
+after  <- c(72,74,70,65,75,71)
+t.test(after, before, paired = TRUE)
+
 ```
-
-
-
-## Problem 7: Inference with linear regression
-
-Do inference on the slope coefficient for the regression you performed in Exercises 5, lm(price ~ sqft, data=dat), using philadelphia_house_prices.csv.
-
-
-
-
-

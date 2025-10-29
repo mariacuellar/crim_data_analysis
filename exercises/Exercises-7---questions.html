@@ -357,9 +357,90 @@ display: none;
 </div>
 
 
-<p>Note: Use xxx.csv.</p>
-<p><strong>1. Question:</strong></p>
-<p><strong>2. Question:</strong></p>
+<p><strong>Note</strong>: The function <code>pnorm()</code> gives the
+cumulative probability for a <strong>normal distribution</strong> up to
+a certain value. That is, it tells you <span class="math inline">\(P(X
+\leq x)\)</span>. Use the problems below to practice computing and
+interpreting probabilities with the normal distribution.</p>
+<div id="problem-1-basic-standard-normal-probability" class="section level2">
+<h2>Problem 1: Basic Standard Normal Probability</h2>
+<p>Find the probability that a standard normal variable <span class="math inline">\(Z\)</span> is less than 1.25. What does this
+number represent?</p>
+<pre class="r"><code>2+2</code></pre>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="problem-2-two-sided-probability" class="section level2">
+<h2>Problem 2: Two-Sided Probability</h2>
+<p>Compute the probability that Z lies between -1.5 and 1.5.</p>
+<pre class="r"><code>2+2</code></pre>
+<pre><code>## [1] 4</code></pre>
+<p><strong>Note</strong>: The rest of the problems are about
+t-tests.</p>
+</div>
+<div id="problem-3-t-test" class="section level2">
+<h2>Problem 3: t-test</h2>
+<ul>
+<li>What is a t-test for?</li>
+<li>What types of t-tests are there?</li>
+<li>What are the assumptions for t-tests?</li>
+</ul>
+</div>
+<div id="problem-4-perform-a-one-sample-t-test" class="section level2">
+<h2>Problem 4: Perform a one-sample t-test</h2>
+<p>A criminologist believes that the average daily number of arrests in
+a city is less than 25. She collects a random sample of 15 days and
+finds the data in problem1_arrests.csv.</p>
+<ul>
+<li>State the null and alternative hypotheses.</li>
+<li>Check assumptions for a one-sample t-test (random sample,
+approximate normality).</li>
+<li>Perform the t-test.</li>
+<li>Report and interpret the test statistic, degrees of freedom, and
+p-value.</li>
+<li>Write a short paragraph interpreting the results in context.</li>
+</ul>
+<pre class="r"><code>2+2</code></pre>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="problem-5-perform-a-two-sample-t-test" class="section level2">
+<h2>Problem 5: Perform a two-sample t-test</h2>
+<p>Researchers compare the mean sentence length (in months) given by two
+judges. Random samples of sentences are recorded in
+problem2_judges.csv.</p>
+<ul>
+<li>State H0 and Ha.</li>
+<li>Check assumptions (independence, approximate normality, equal
+variances if needed).</li>
+<li>Conduct both:
+<ul>
+<li>a pooled (equal variances) t-test, and</li>
+<li>a Welch (unequal variances) t-test.</li>
+</ul></li>
+<li>Compare results. Which test seems more appropriate?</li>
+<li>Interpret in context.</li>
+</ul>
+<pre class="r"><code>2+2</code></pre>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="problem-6-perform-a-paired-t-test" class="section level2">
+<h2>Problem 6: Perform a Paired t-test</h2>
+<p>Police cadets are tested on physical fitness before and after a
+10-week training program: see problem3_cadets.csv.</p>
+<ul>
+<li>Why is this a paired design?</li>
+<li>Conduct a paired t-test.</li>
+<li>Report the t statistic, df, and p-value.</li>
+<li>Interpret whether the training improved fitness.</li>
+</ul>
+<pre class="r"><code>2+2</code></pre>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="problem-7-inference-with-linear-regression" class="section level2">
+<h2>Problem 7: Inference with linear regression</h2>
+<p>Do inference on the slope coefficient for the regression you
+performed in Exercises 5, lm(price ~ sqft, data=dat), using
+philadelphia_house_prices.csv.</p>
+</div>
 
 
 

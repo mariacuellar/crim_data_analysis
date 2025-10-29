@@ -107,4 +107,6 @@ To download the data, right-click the link and choose “Save Link As…”. Sav
 - [philadelphia_house_prices.csv](data/philadelphia_house_prices.csv) [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20philadelphia_house_prices.txt)
 - [riverton_crime.csv](data/riverton-crime.csv) [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20riverton-crime.txt)
 - [city_crime_spending.csv](data/city_crime_spending.csv) [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20city_crime_spending.txt)
-
+- [t-test problem 1](data/problem1_arrests.csv)
+- [t-test problem 2](data/problem2_arrests.csv)
+- [t-test problem 3](data/problem3_arrests.csv)
