@@ -3,8 +3,8 @@ title: "Exercises 7 - questions"
 author: "Maria Cuellar"
 date: "2025-10-24"
 output:
-  html_document: default
-  pdf_document: default
+  html_document: 
+  self_contained: true
 ---
 
 ```{r setup, include=FALSE}
@@ -25,20 +25,10 @@ library(tidyverse)
 Find the probability that a standard normal variable \( Z \) is less than 1.25.
 What does this number represent?
 
-```{r}
-2+2
-```
-
 
 ## Problem 2: Two-Sided Probability
 
-
 Compute the probability that Z lies between -1.5 and 1.5.
-
-```{r}
-2+2
-```
-
 
 
 **Note**: The rest of the problems are about t-tests.
@@ -48,8 +38,6 @@ Compute the probability that Z lies between -1.5 and 1.5.
 - What is a t-test for?
 - What types of t-tests are there? 
 - What are the assumptions for t-tests?
-
-
 
 
 ## Problem 4: Perform a one-sample t-test
@@ -62,9 +50,6 @@ A criminologist believes that the average daily number of arrests in a city is l
 - Report and interpret the test statistic, degrees of freedom, and p-value.
 - Write a short paragraph interpreting the results in context.
 
-```{r}
-2+2
-```
 
 
 
@@ -80,11 +65,6 @@ Researchers compare the mean sentence length (in months) given by two judges. Ra
 - Compare results. Which test seems more appropriate?
 - Interpret in context.
 
-```{r}
-2+2
-```
-
-
 
 
 ## Problem 6: Perform a Paired t-test
@@ -97,17 +77,9 @@ Police cadets are tested on physical fitness before and after a 10-week training
 - Interpret whether the training improved fitness.
 
 
-```{r}
-2+2
-```
-
-
 
 ## Problem 7: Inference with linear regression
 
 Do inference on the slope coefficient for the regression you performed in Exercises 5, lm(price ~ sqft, data=dat), using philadelphia_house_prices.csv.
-
-
-
 
 

@@ -1,0 +1,236 @@
+---
+title: "Exam 2 Practice - Questions"
+author: "Your name"
+date: "2024-10-30"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+*Note: For this exam, please include the correct labels and titles for the plots.*
+
+```{r preamble, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+### 0. Loading data
+
+> Load the data called ____
+
+---
+
+**Your code (1 point):** 
+
+```{r load-data, message=FALSE}
+2+2
+```
+
+
+
+---
+
+
+### 1. Variable types (5 points)
+
+> Read the codebook. What types of (stat) variables are these? Variables: race, court_type, bail_amount, days_until_trial.
+
+---
+a
+
+**Your text answer (5 points):**
+
+- race: 
+- court_type: 
+- bail_amount: 
+- days_until_trial: 
+
+
+---
+
+
+
+
+
+### 3. Data dimensions (5 points)
+
+> How many observations and variables are there in the data? 
+
+---
+
+**Your code (3 points):**
+
+```{r}
+2+2
+```
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+
+
+---
+
+
+
+
+
+### 4. Quantitative EDA (5 points)
+
+> What percentage of the sample is Black and what percentage is white?
+
+---
+
+**Your code (3 points):**
+
+```{r}
+2+2
+```
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+
+---
+
+
+
+
+### 5. Visual EDA (5 points)
+
+> Make a histogram for bail_amount. Describe this histogram.
+
+---
+
+**Your code (3 points):**
+
+```{r, fig.width=3, fig.height=3}
+2+2
+```
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+
+
+
+---
+
+### 6. Quantitative EDA (5 points) 
+
+> Describe the centrality and spread of this variable. 
+
+*Notice that if the median and mean are very different from each other, that is one way of telling that the distribution is skewed, if you didn't already know from visual inspection.*
+
+---
+
+
+**Your code (3 points):**
+
+```{r}
+2+2
+```
+
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+
+---
+
+
+### 7. Visual EDA (5 points) 
+
+
+> Make a barplot for race and describe it.
+
+---
+
+**Your code (3 points):**
+
+```{r, fig.width=5, fig.height=3}
+2+2
+```
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+
+---
+
+
+
+
+### 8. Visual EDA (5 points)
+
+> Split up the histogram of bail_amount by race. Describe what you see.
+
+---
+
+
+**Your code (3 points):**
+
+```{r, fig.width=5, fig.height=3}
+2+2
+```
+
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+
+---
+
+
+### 9. Quantitative EDA (5 points)
+
+> Find the summary statistics (centrality and spread) of bail_amount for each race. 
+
+*Note, you can use the group_by command for this.*
+
+
+---
+
+
+**Your code (3 points):**
+```{r}
+2+2
+```
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+---
+
+
+
+### Extra credit. Visual EDA (5 points)
+
+> Let's explore the low peak for Black individuals in the histogram of bail_amount. Do individuals of a certain race tend to go to a specific type of court, and do those have lower bail amounts? For instance, do Black individuals tend to go to municipal court, and is that where all those super low bail amounts come from? 
+
+To answer this question, you can make a histogram for bail_amount, and then split it up by court_type *and* race (one way to do this is by faceting by court_type~race, and another is by using fill or color).
+
+---
+
+
+**Your code (3 points):**
+
+```{r, fig.width=5, fig.height=3}
+2+2
+```
+
+**Your text answer (2 points):**
+
+Your answer here.
+
+---
