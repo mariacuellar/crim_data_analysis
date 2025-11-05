@@ -87,7 +87,7 @@ analyses beyond the scope of this course.
   [(HTML
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-7---solutions.html)
   [(Rmd
-  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-7---solutions.Rmd)
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%207%20-%20solutions.rmd)
 
 ## Datasets
 
