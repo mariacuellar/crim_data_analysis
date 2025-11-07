@@ -426,7 +426,8 @@ after - before) are approximately normally distributed.</p>
 Theorem makes this less critical. For small samples, you should check
 normality using plots. This is all you need for this class: histogram or
 qq plot:</p>
-<p>qqnorm(x) qqline(x, col = “red”)</p>
+<p>qqnorm(cars<span class="math inline">\(dist)
+qqline(cars\)</span>dist, col = “red”)</p>
 <p>There are statistical tests for this as well, but we will not cover
 them: Shapiro–Wilk test and Kolmogorov–Smirnov test.</p>
 </div>
@@ -619,10 +620,8 @@ t.test(sentencelengthA, sentencelengthB, var.equal = FALSE)</code></pre>
 ##      27.0      32.5</code></pre>
 <p>The test results are similar. The equal variance one seems more
 appropriate.</p>
-<p>The mean sentence length given by male judges was statistically
-significantly higher than that of female judges. This suggests that male
-judges tend to give longer sentences, on average, than female
-judges.</p>
+<p>The mean sentence length given by judge A was statistically
+significantly different from that of judge B.</p>
 </div>
 <div id="problem-6-perform-a-paired-t-test" class="section level2">
 <h2>Problem 6: Perform a Paired t-test</h2>

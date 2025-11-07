@@ -79,10 +79,11 @@ Paired t-test:
 
 For large samples (with more than 30 points), the Central Limit Theorem makes this less critical. For small samples, you should check normality using plots. This is all you need for this class: histogram or qq plot:
 
-qqnorm(x)
-qqline(x, col = "red")
+qqnorm(cars$dist)
+qqline(cars$dist, col = "red")
 
 There are statistical tests for this as well, but we will not cover them: Shapiro–Wilk test and Kolmogorov–Smirnov test.
+
 
 ## Problem 4: Perform a one-sample t-test
 
@@ -224,7 +225,8 @@ t.test(sentencelengthA, sentencelengthB, var.equal = FALSE)
 ```
 The test results are similar. The equal variance one seems more appropriate. 
 
-The mean sentence length given by male judges was statistically significantly higher than that of female judges. This suggests that male judges tend to give longer sentences, on average, than female judges.
+The mean sentence length given by judge A was statistically significantly different from that of judge B.
+
 
 
 
