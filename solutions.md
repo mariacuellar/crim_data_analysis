@@ -1,0 +1,111 @@
+# Crim 1200 Statistics for the Social Sciences
+
+
+Instructor website: https://web.sas.upenn.edu/mcuellar/
+
+## Course description
+
+Statistics is the science of developing and studying methods for
+collecting, analyzing, interpreting, and presenting empirical data. A
+common challenge in statistics is dealing with incomplete information:
+when the entire picture is not visible, how can findings from a small
+sample be generalized to a broader population, and should they be?
+
+This course offers an introduction to statistics with a focus on careful
+and systematic data analysis. Students will learn to critically assess
+how datasets are collected, approach them thoughtfully, and decide on
+the appropriate analyses to answer specific research questions. Rather
+than simply following a set procedure, students will gain the tools to
+determine which methods are best suited for the data—and understand the
+implications when ideal procedures aren’t feasible. They will also learn
+to identify the assumptions needed to make credible claims and draw
+valid conclusions.
+
+Designed as a foundational course in statistics for the social sciences,
+this class is suitable for students pursuing a bachelor’s degree in
+criminology or related fields. It requires minimal mathematical or
+statistical background. By the end of the course, students should be
+able to explore datasets using visualization techniques, select and
+perform the appropriate statistical analyses for research, accurately
+interpret the results of analyses and effectively communicate them to
+others and identify when to seek additional help with designs or
+analyses beyond the scope of this course.
+
+## Workshops
+
+- [Downloading R (up to section
+  1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
+- [First look at the
+  data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
+- [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
+- [R
+  Markdown](https://mariacuellar.github.io/crim_data_analysis/workshops/Rmarkdown.html)
+- [Linear
+  regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
+- [Hypothesis
+  testing](https://mariacuellar.github.io/crim_data_analysis/workshops/Hypothesis-testing.html)
+
+## Exercises
+
+- [Exercises 1: Reading data in
+  RStudio](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%201%20-%20questions.R)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%201%20-%20solutions.R)
+- [Exercises 2: First look at the
+  data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%202%20-%20questions.R)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%202%20-%20solutions.R)
+- [Exercises 3: Visual summary of quantitative and categorical
+  data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%203%20-%20questions.R)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%203%20-%20solutions.R)
+- [Exercises 4: Using R
+  Markdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20questions.R)
+  [(Rmd
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%204%20-%20solutions.rmd)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-4---solutions.html)
+- [Practice exercises for Exam 1 - in
+  RMarkdown](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
+  [(Rmd
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20solutions.Rmd)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-practice---solutions.html)
+- [Exercises 5: Starting linear
+  regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%205%20-%20questions.rmd)
+  [(Rmd
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%205%20-%20solutions.rmd)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-5---solutions.html)
+- [Exercises 6: Continuing linear
+  regression](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%206%20-%20questions.rmd)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-6---solutions.html)
+- [Practice exercises for Quiz
+  2](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Quiz%202%20practice%20-%20questions.Rmd)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Quiz-2-practice---solutions.html)
+- [Exercises 7: Hypothesis
+  testing](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%207%20-%20questions.rmd)
+  [(HTML
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exercises-7---solutions.html)
+  [(Rmd
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%207%20-%20solutions.rmd)
+
+## Datasets
+
+To download the data, right-click the link and choose “Save Link As…”.
+Save the data into the folder of your choice.
+
+- [kentucky-derby-2018.csv](data/kentucky-derby-2018.csv)
+- [students.csv](data/students.csv)
+- [domestic_violence.csv](data/domestic_violence.csv)
+  [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20domestic_violence.txt)
+- [pretrial_df](data/pretrial_df.csv)
+  [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20pretrial_df.txt)
+- [philadelphia_house_prices.csv](data/philadelphia_house_prices.csv)
+  [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20philadelphia_house_prices.txt)
+- [riverton_crime.csv](data/riverton-crime.csv)
+  [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20riverton-crime.txt)
+- [city_crime_spending.csv](data/city_crime_spending.csv)
+  [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20city_crime_spending.txt)
+- [t-test problem 1](data/problem1_arrests.csv)
+- [t-test problem 2](data/problem2_judges.csv)
+- [t-test problem 3](data/problem3_cadets.csv)
