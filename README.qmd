@@ -60,9 +60,7 @@ analyses beyond the scope of this course.
 -   [Downloading R (up to section
     1.2.1)](https://moderndive.netlify.app/1-getting-started.html)
 -   [Loading
-    data](https://mariacuellar.github.io/crim_data_analysis/workshops/Loading data/loading-data.R)
--  [Loading
-    data1](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/Loading data/loading-data.R)
+    data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/Loading data/loading-data.R)
 -   [First look at the
     data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 -   [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
