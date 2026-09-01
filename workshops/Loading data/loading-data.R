@@ -21,8 +21,6 @@ dat <- read_csv(file = "domestic_violence.csv")
 
 --
 # Look at the data:
-
-# Look at the data. 
 dat
 
 # This shows: 
