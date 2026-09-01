@@ -1,0 +1,66 @@
+CODEBOOK: CRIMINAL JUSTICE EDA DATASET
+======================================
+
+This is a fictional dataset created for teaching purposes.
+Each row represents one hypothetical criminal case.
+
+
+VARIABLE: id
+------------
+Description: Unique case identification number
+Values: 1–30
+Type: Identifier
+Note: Although stored as a number, this is not a quantitative variable.
+
+
+VARIABLE: age
+-------------
+Description: Age of the individual, in years
+Values: 18–55
+Type: Quantitative
+
+
+VARIABLE: gender
+----------------
+Description: Gender category
+Values: Female, Male, Other
+Type: Categorical (nominal)
+
+
+VARIABLE: neighborhood
+----------------------
+Description: Neighborhood where the individual resides
+Values: North, South, West
+Type: Categorical (nominal)
+
+
+VARIABLE: prior_arrests
+-----------------------
+Description: Number of prior arrests
+Values: 0–5
+Type: Quantitative (discrete count)
+
+
+VARIABLE: detained
+------------------
+Description: Whether the individual was detained before trial
+Values:
+  Yes = Detained before trial
+  No  = Not detained before trial
+Type: Categorical (binary)
+
+
+VARIABLE: charge_level
+----------------------
+Description: Seriousness of the current charge
+Values:
+  1 = Misdemeanor
+  2 = Low-level felony
+  3 = Serious felony
+Type: Categorical (ordinal)
+Note: Although stored as a number, charge_level represents ordered categories.
+
+
+MISSING DATA
+------------
+There are no missing values in this dataset.
