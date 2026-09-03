@@ -59,7 +59,5 @@ analyses beyond the scope of this course.
 To download the data, right-click the link and choose “Save Link As…”.
 Save the data into the folder of your choice.
 
-- [kentucky-derby-2018.csv](data/kentucky-derby-2018.csv)
-- [students.csv](data/students.csv)
-- [domestic_violence.csv](data/domestic_violence.csv)
-  [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook%20for%20domestic_violence.txt)
+- [pretrial_detention_teaching_data.csv](data/pretrial_detention_teaching_data.csv)
+  [(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
