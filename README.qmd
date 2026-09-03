@@ -81,5 +81,9 @@ analyses beyond the scope of this course.
 
 To download the data, right-click the link and choose “Save Link As…”. Save the data into the folder of your choice.
 
--  [pretrial_detention_teaching_data.csv](data/pretrial_detention_teaching_data.csv)
-[(Codebook)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
+-  <a href="data/pretrial_detention_teaching_data.csv" download="pretrial_detention_teaching_data.csv">
+  Download pretrial_detention_teaching_data.csv
+</a>
+  - [(Codebook for pretrial_detention_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
+
+
