@@ -39,6 +39,9 @@ analyses beyond the scope of this course.
   data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/loading-data.R)
 - [EDA categorical
   variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-categorical-var.R)
+
+Old workshops from 2025:
+
 - [First look at the
   data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
@@ -51,8 +54,8 @@ analyses beyond the scope of this course.
 
 ## Exercises
 
-- [Exercises 1: Reading data in
-  RStudio](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exercises%201%20-%20questions.R)
+- [2026 Exercises 1 -
+  questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_questions.R)
 
 ## Datasets
 
@@ -61,5 +64,12 @@ Save the data into the folder of your choice.
 
 - <a href="data/pretrial_detention_teaching_data.csv" download="pretrial_detention_teaching_data.csv">
   Download pretrial_detention_teaching_data.csv </a>
-- [(Codebook for
-  pretrial_detention_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
+
+  - [(Codebook for
+    pretrial_detention_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
+
+- <a href="data/court_cases_teaching_data.csv" download="court_cases_teaching_data.csv">
+  Download court_cases_teaching_data.csv </a>
+
+  - [(Codebook for
+    court_cases_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/court_cases_codebook.txt)
