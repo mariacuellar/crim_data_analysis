@@ -39,6 +39,8 @@ analyses beyond the scope of this course.
   data](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/loading-data.R)
 - [EDA categorical
   variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-categorical-var.R)
+- [EDA quantitative
+  variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-quantitative-var.R)
 
 Old workshops from 2025:
 
