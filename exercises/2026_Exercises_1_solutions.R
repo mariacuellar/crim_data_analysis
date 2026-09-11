@@ -33,6 +33,7 @@
 # 1. LOAD PACKAGES
 # ------------------------------------------------------------
 
+library(tidyverse)
 
 
 
@@ -63,38 +64,45 @@
 # Load the pretrial detention dataset (call it pretrial).
 # Change the working directory first if necessary.
 
+setwd("/Users/mariacuellar/Github/crim_data_analysis/data/")
+pretrial <- read_csv("pretrial_detention_teaching_data.csv")
+
 
 # Load the court cases dataset (call it court_cases).
 # We give it a different object name so that BOTH datasets remain available.
 
+court_cases <- read_csv("court_cases_teaching_data.csv")
 
 
 # Print the first dataset, pretrial.
 
 # YOUR CODE:
+pretrial
 
 
 
 # Print the second dataset, court_cases.
 
-
 # YOUR CODE:
+court_cases
 
 
 
 # How many rows and columns are in pretrial?
 
 # YOUR CODE:
+dim(pretrial)
 
-# Answer:
+# Answer: 30 rows, 7 columns
 
 
 
 # How many rows and columns are in court_cases?
 
 # YOUR CODE:
+dim(court_cases)
 
-# Answer: 
+# Answer: 300 rows, 6 columns
 
 
 
@@ -106,7 +114,8 @@
 # Using pretrial, count the number of observations in each gender category.
 
 # YOUR CODE: 
-
+pretrial %>% 
+  count(gender)
 
 
 
@@ -114,19 +123,25 @@
 # gender category.
 
 # YOUR CODE:
-
+pretrial %>% 
+  count(gender) %>% 
+  mutate(proportion = n / sum(n))
 
 
 
 # Using pretrial, make a bar plot of gender.
 
 # YOUR CODE:
+pretrial %>% 
+  ggplot(aes(x = gender)) + 
+  geom_bar()
 
 
 
 # In words, describe the distribution of gender.
 
-# Answer: 
+# Answer: There are more male than female observations, and a few Other.
+
 
 
 # ------------------------------------------------------------
@@ -140,10 +155,10 @@
 # What statistical type of variable is it?
 
 # YOUR CODE:
-
+court_cases$wait_time_minutes
 
 # Answer:
-
+# It is a quantitative continuous variable.
 
 
 
@@ -151,29 +166,55 @@
 # Start with the default bins.
 
 # YOUR CODE:
-
+court_cases %>% 
+  ggplot(aes(x = wait_time_minutes)) + 
+  geom_histogram()
 
 
 
 # Make the histogram again, but set bins = 10.
 
-
-
 # YOUR CODE:
+court_cases %>% 
+  ggplot(aes(x = wait_time_minutes)) + 
+  geom_histogram(bins = 10)
 
+p_10bins <- court_cases %>% 
+  ggplot(aes(x = wait_time_minutes)) + 
+  geom_histogram(bins = 10)
 
 
 
 # Make the histogram again, but set bins = 50.
 
 # YOUR CODE:
+court_cases %>% 
+  ggplot(aes(x = wait_time_minutes)) + 
+  geom_histogram(bins = 50)
+
+p_50bins <- court_cases %>% 
+  ggplot(aes(x = wait_time_minutes)) + 
+  geom_histogram(bins = 50)
+
+
+# Display the two histograms side by side.
+
+#install.packages("patchwork")
+library(patchwork)
+
+p_10bins + p_50bins
 
 
 
 # How does changing the number of bins change the appearance of the histogram?
 # Does the underlying dataset change?
 
-# Answer: 
+# Answer: The histogram shows the same data, but it looks a little different
+# with more or fewer bins. We can see how the higher values are distributed
+# across just a few different numbers, and there are many gaps there. We can
+# also see that there's a bit of a gap left of the mode in the 50-bin
+# histogram that we don't see in the 10-bin histogram. The underlying dataset
+# does not change.
 
 
 
@@ -183,15 +224,20 @@
 
 
 # Make a density plot of wait_time_minutes.
-#
+
 # YOUR CODE:
+court_cases %>% 
+  ggplot(aes(x = wait_time_minutes)) +
+  geom_density()
 
 
 
 # What does a density plot show?
 # What does the total area under the density curve equal?
 
-# Answer:
+# Answer: A density plot shows the shape of the distribution of a quantitative
+# variable. Higher density means observations are more concentrated around
+# those values. The total area under the curve equals 1.
 
 
 
@@ -207,7 +253,10 @@
 # - Is it symmetric, right-skewed, or left-skewed?
 # - Are there any unusual observations?
 
-# Answer: 
+# Answer: It looks unimodal, right-skewed, and doesn't seem to have any unusual
+# observations. Because it's a wait time, there can be no negative numbers,
+# so we'd expect the distribution to be skewed.
+
 
 
 # ------------------------------------------------------------
@@ -217,12 +266,16 @@
 # Calculate the median of wait_time_minutes.
 
 # YOUR CODE:
+court_cases %>% 
+  summarize(median = median(wait_time_minutes))
 
 
 
 # Calculate the mean of wait_time_minutes.
 
 # YOUR CODE:
+court_cases %>% 
+  summarize(mean = mean(wait_time_minutes))
 
 
 
@@ -230,7 +283,10 @@
 # Based on the shape of the distribution, does the difference make sense?
 # Explain briefly.
 
-# Answer: 
+# Answer: The median is lower than the mean. This is because the distribution
+# is right-skewed. The difference does make sense. It is not extremely skewed,
+# meaning that there are not a large number of observations in the right tail.
+
 
 
 # ------------------------------------------------------------
@@ -241,40 +297,47 @@
 # Calculate the minimum and maximum wait_time_minutes.
 
 # YOUR CODE:
-
+court_cases %>% 
+  summarize(
+    min = min(wait_time_minutes), 
+    max = max(wait_time_minutes)
+  )
 
 
 
 # Calculate the range of wait_time_minutes.
 
-
 # YOUR CODE:
+court_cases %>% 
+  summarize(range = max(wait_time_minutes) - min(wait_time_minutes))
 
 
 
 # Calculate Q1, the median, and Q3 for wait_time_minutes.
-#
 
 # YOUR CODE:
+summary(court_cases$wait_time_minutes)
 
 
 
 # Calculate the interquartile range (IQR) of wait_time_minutes.
 
 # YOUR CODE:
+court_cases %>% 
+  summarize(IQR = IQR(wait_time_minutes))
 
-
-# Answer: 
-
+# Answer: The interquartile range is 17.3 minutes.
 
 
 
 # Calculate the standard deviation of wait_time_minutes.
 
 # YOUR CODE: 
+court_cases %>% 
+  summarize(sd = sd(wait_time_minutes))
 
-
-# Answer: 
+# Answer: The standard deviation is 12.9 minutes. It is lower than the IQR,
+# as expected.
 
 
 
@@ -288,7 +351,8 @@
 # A. Mean and standard deviation
 # B. Median and IQR
 #
-# Answer: 
+# Answer: B.
 #
-# Explain why: 
-
+# Explain why: The distribution is asymmetric, and the mean is sensitive to
+# the long right tail, so the median and IQR better describe the center and
+# spread of this distribution.
