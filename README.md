@@ -41,14 +41,14 @@ analyses beyond the scope of this course.
   variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-categorical-var.R)
 - [EDA quantitative
   variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-quantitative-var.R)
+- [R
+  Markdown](https://mariacuellar.github.io/crim_data_analysis/workshops/Rmarkdown.html)
 
 Old workshops from 2025:
 
 - [First look at the
   data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 - [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
-- [R
-  Markdown](https://mariacuellar.github.io/crim_data_analysis/workshops/Rmarkdown.html)
 - [Linear
   regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
 - [Hypothesis
@@ -59,6 +59,8 @@ Old workshops from 2025:
 - [2026 Exercises 1 -
   questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_questions.R)
   [(Solutions.R)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_solutions.R)
+- [2026 Exam 1 - practice
+  questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
 
 ## Datasets
 
