@@ -58,6 +58,7 @@ Old workshops from 2025:
 
 - [2026 Exercises 1 -
   questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_questions.R)
+  [(Solutions.R)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_solutions.R)
 
 ## Datasets
 

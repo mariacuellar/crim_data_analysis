@@ -197,7 +197,7 @@ p_50bins <- court_cases %>%
   geom_histogram(bins = 50)
 
 
-# Display the two histograms side by side.
+# Optional: Display the two histograms side by side.
 
 #install.packages("patchwork")
 library(patchwork)

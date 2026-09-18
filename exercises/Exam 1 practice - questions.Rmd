@@ -13,6 +13,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 *Note: For this exam, don't worry about including the correct labels and titles for the plots. Using the variable names and no title is ok.*
 
+```{r}
+2+2
+
+# comments in the code
+
+```
+
+comments in the code
+
+
 ```{r preamble, echo=FALSE, message=FALSE}
 library(tidyverse)
 ```
