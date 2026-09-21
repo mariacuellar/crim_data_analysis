@@ -1,0 +1,36 @@
+PRETRIAL DATA CODEBOOK
+
+Dataset: pretrial_df.csv
+Number of observations: 500
+Number of variables: 4
+
+VARIABLES
+
+1. race
+Description: Race/ethnicity category recorded for the defendant.
+Type: Categorical (nominal)
+Values: Black, Hispanic, Other, White
+Missing values: None observed
+
+2. court_type
+Description: Type of court handling the case.
+Type: Categorical (nominal)
+Values: Federal, Municipal, State
+Missing values: None observed
+
+3. bail_amount
+Description: Bail amount set for the case.
+Type: Numeric (continuous)
+Units: U.S. dollars
+Observed range: $500.00 to $39,317.95
+Missing values: None observed
+Note: The interpretation and currency are inferred from the variable name and should be confirmed with the data source if necessary.
+
+4. days_until_trial
+Description: Number of days from the relevant pretrial starting point until trial.
+Type: Numeric (continuous)
+Units: Days
+Observed range: 1.0 to 224.2
+Missing values: None observed
+Note: The dataset does not specify whether the starting point is arrest, filing, bail decision, or another event.
+

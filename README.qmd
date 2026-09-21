@@ -94,8 +94,11 @@ To download the data, right-click the link and choose “Save Link As…”. Sav
     - [(Codebook for pretrial_detention_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
 
 -  <a href="data/court_cases_teaching_data.csv" download="court_cases_teaching_data.csv">
-  Download court_cases_teaching_data.csv
-</a>
+  Download court_cases_teaching_data.csv </a>
 
     - [(Codebook for court_cases_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/court_cases_codebook.txt)
 
+-  <a href="data/pretrial_df.csv" download="pretrial_df.csv">
+  Download pretrial_df.csv </a>
+
+    - [(Codebook for pretrial_df.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_df_codebook.txt)

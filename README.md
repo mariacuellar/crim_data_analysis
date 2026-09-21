@@ -78,3 +78,9 @@ Save the data into the folder of your choice.
 
   - [(Codebook for
     court_cases_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/court_cases_codebook.txt)
+
+- <a href="data/pretrial_df.csv" download="pretrial_df.csv"> Download
+  pretrial_df.csv </a>
+
+  - [(Codebook for
+    pretrial_df.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_df_codebook.txt)
