@@ -8,7 +8,6 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-
 ---
 
 ```{r setup, include=FALSE}
@@ -84,7 +83,6 @@ Plots can be added using the same 'chunk' syntax:
 
 ```{r}
 # Make a simple scatterplot
-
 plot(mtcars$mpg, mtcars$wt,
      xlab = "Miles per Gallon",
      ylab = "Weight",
