@@ -1,0 +1,42 @@
+Riverton Crime Dataset Codebook
+
+DATA GENERATION STORY
+
+(Note: The Riverton Crime Dataset is a simulated dataset created for classroom use. It is intended to look like a simplified version of administrative data that a local criminal justice agency might maintain.)
+
+Riverton is a mid-sized U.S. city. The Riverton Department of Public Safety created a dataset of 500 individuals whose criminal cases were resolved between 2022 and 2025.
+
+The department combined information from several administrative sources. Basic identifying information and the current offense category came from court case records. The number of prior arrests came from the city's arrest-history database. Time served was calculated from jail and correctional records for the sentence associated with the current case.
+
+To protect privacy, the dataset used for this class does not contain real records. All observations were simulated. The names, identification numbers, offense histories, and time-served values are fictional, but the variables were chosen to resemble information that might appear in real criminal justice administrative data.
+
+VARIABLES
+
+id
+Unique identification number assigned to each individual in the dataset.
+
+gender
+Gender recorded in the administrative record.
+
+Values:
+- Female
+- Male
+
+offense_type
+Category of the individual's current offense.
+
+Values:
+- Drug
+- Property
+- Public Order
+- Violent
+
+num_prior_arrests
+Number of arrests recorded for the individual before the current case.
+
+Observed values range from 0 to 10.
+
+time_served_months
+Total amount of time served for the current case, measured in months.
+
+Observed values range from 2.4 to 86.6 months.

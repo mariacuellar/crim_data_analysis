@@ -58,9 +58,14 @@ Old workshops from 2025:
 
 - [2026 Exercises 1 -
   questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_questions.R)
-  [(Solutions.R)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_solutions.R)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_solutions.R)
 - [2026 Exam 1 - practice
-  questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
+  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20solutions.Rmd)
+
+## Exams
+
+- \[2026 Exam 1 - questions.Rmd (will be updated on 9/28)\]
 
 ## Datasets
 
@@ -68,7 +73,7 @@ To download the data, right-click the link and choose “Save Link As…”.
 Save the data into the folder of your choice.
 
 - <a href="data/pretrial_detention_teaching_data.csv" download="pretrial_detention_teaching_data.csv">
-  Download pretrial_detention_teaching_data.csv </a>
+  Download pretrial_detention_teaching_data.csv</a>
 
   - [(Codebook for
     pretrial_detention_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
@@ -84,3 +89,9 @@ Save the data into the folder of your choice.
 
   - [(Codebook for
     pretrial_df.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_df_codebook.txt)
+
+- <a href="data/riverton-crime1.csv" download="riverton-crime1.csv">
+  Download riverton-crime1.csv </a>
+
+  - [(Codebook for
+    riverton-crime1.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook_riverton-crime.txt)
