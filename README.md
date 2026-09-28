@@ -68,7 +68,8 @@ Old workshops from 2025:
 
 ## Exams
 
-- \[2026 Exam 1 - questions.Rmd (will be updated on 9/28)\]
+- [2026 Exam 1 - questions.Rmd (will be updated on
+  9/28)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20-%20questions.Rmd)
 
 ## Datasets
 

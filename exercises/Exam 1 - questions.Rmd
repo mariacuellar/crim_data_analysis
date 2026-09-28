@@ -1,0 +1,208 @@
+---
+title: "Exam 1 Questions"
+author: "Your name"
+date: "2026-09-28"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+*Note: For this exam, don't worry about including the correct labels and titles for the plots.*
+
+```{r preamble, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+(30 possible points)
+
+### Question 1.
+
+Load the data called riverton-crime.csv using the proper R command and file path. What is this dataset about, according to the codebook? (Keep it short.)
+
+**Your code (2 points):** 
+
+```{r load-data, message=FALSE}
+2+2
+```
+
+**Your text answer (2 points):**
+
+
+
+
+
+
+---
+
+### Question 2.
+
+What types of variables are these? Variables: id, gender, offense_type, num_prior_arrests, and time_served_months.
+
+**Your text answer (2 points):**
+
+- id: 
+- gender: 
+- offense_type: 
+- num_prior_arrests: 
+- time_served_months: 
+
+
+
+---
+
+### Question 3.
+
+What percentage of the sample is male? How many females, males, and total individuals are there in this sample?
+
+
+
+**Your code (2 points):**
+
+```{r male}
+2+2
+```
+
+
+
+**Your text answer (2 points):**
+
+
+
+
+
+
+
+---
+
+### Question 4. 
+
+Draw a plot to study the variable offense_type and describe it.
+
+
+
+**Your code (2 points):**
+
+```{r offense_type}
+2+2
+```
+
+
+
+**Your text answer (2 points):**
+
+
+
+
+
+
+---
+
+### Question 5.
+
+Now we are going to study the variable num_prior_arrests. 
+
+Perform visual EDA on num_prior_arrests. Adjust the number of bins so that the shape of the distribution is reasonably clear.
+
+
+
+**Your code (2 points):**
+
+```{r num_prior_arrests, fig.width=3, fig.height=3}
+2+2
+```
+
+
+---
+
+### Question 6.
+
+Describe this plot.
+
+
+**Your text answer (2 points):**
+
+
+
+
+
+---
+
+### Question 7.
+
+Find summary statistics to describe the centrality and spread of the variable num_prior_arrests. Which is the centrality and which is the spread? Explain what these values mean for this variable.
+
+
+
+**Your code (2 points):**
+
+```{r num_prior_arrests_stats}
+2+2
+```
+
+
+**Your text answer (2 points):**
+
+
+
+
+
+
+---
+
+### Question 8.
+
+Now we will study the variable time_served_months. What is this variable measuring? Visualize this variable by drawing a plot.
+
+**Your code (2 points):**
+
+```{r time_served_months}
+2+2
+```
+
+**Your text answer (2 points):**
+
+
+
+
+
+
+---
+
+### Question 9.
+
+Describe the shape of the distribution. Then perform quantitative EDA on it.
+
+**Your code (2 points):**
+
+```{r time_served_months-quant}
+2+2
+```
+
+**Your text answer (2 points):**
+
+
+
+
+
+---
+
+### Extra credit:
+
+Describe what this code does. Why do the points appear in vertical columns rather than being spread continuously across the x-axis?
+
+**Your code (1 point):**
+
+```{r scatterplot}
+2+2
+```
+
+**Your text answer (1 point):**
+
