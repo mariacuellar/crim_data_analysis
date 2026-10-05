@@ -1,0 +1,100 @@
+---
+title: "Linear Regression In-Class Exercises"
+author: "Maria Cuellar"
+date: "2026-10-05"
+output: html_document
+---
+
+```{r setup, message=FALSE}
+library(tidyverse)
+
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/riverton-crime.csv")
+```
+
+# Linear Regression
+
+We will examine the relationship between the number of prior arrests and time served.
+
+## Question 1
+
+Create a scatterplot with `num_prior_arrests` on the x-axis and `time_served_months` on the y-axis.
+
+```{r}
+
+
+```
+
+Describe the relationship. Is it positive or negative? Does it look approximately linear?
+
+**Answer:**
+
+
+
+## Question 2
+
+Fit a linear regression where you regress time served onto number of prior arrests.
+
+```{r}
+
+```
+
+Which variable is the outcome/dependent variable?
+
+**Answer:**
+
+Which variable is the explanatory/independent variable?
+
+**Answer:**
+
+
+## Question 3
+
+Use the regression output to write the regression equation.
+
+Predicted time served = ______ + ______ × number of prior arrests
+
+Interpret the slope in words.
+
+**Answer:**
+
+
+## Question 4
+
+Add the regression line to the scatterplot.
+
+```{r}
+
+
+```
+
+Does the regression line seem like a reasonable summary of the relationship?
+
+**Answer:**
+
+
+## Question 5
+
+Use the model to predict time served for a person with 5 prior arrests.
+
+```{r}
+```
+
+Predicted time served = ______ months
+
+
+## Question 6
+
+Look at the R-squared value in the regression output.
+
+```{r}
+
+```
+
+R-squared = ______
+
+Interpret the R-squared in words.
+
+Can we conclude that having more prior arrests **causes** a person to serve more time? Why or why not?
+
+**Answer:**
+
