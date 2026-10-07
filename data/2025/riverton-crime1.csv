@@ -1,0 +1,501 @@
+Unnamed: 0,id,gender,offense_type,num_prior_arrests,time_served_months
+1,59407,Female,Property,3,3.7
+2,38998,Female,Property,0,17.9
+3,27710,Male,Drug,6,57.1
+4,83170,Female,Violent,2,26.4
+5,57504,Male,Property,4,86.3
+6,17788,Male,Public Order,1,9.5
+7,22446,Male,Drug,4,23.3
+8,84555,Male,Property,5,15.2
+9,14297,Male,Public Order,2,29.2
+10,35947,Male,Property,6,36.5
+11,57533,Male,Property,3,16.7
+12,75504,Male,Violent,4,23.2
+13,82883,Female,Property,1,82.4
+14,78702,Male,Drug,2,64.0
+15,10755,Male,Drug,2,78.2
+16,23156,Female,Drug,3,21.6
+17,38675,Female,Property,0,58.1
+18,74749,Male,Property,3,36.8
+19,90649,Male,Drug,6,11.2
+20,24599,Male,Drug,3,71.4
+21,37524,Female,Violent,4,33.1
+22,34933,Male,Public Order,1,22.1
+23,88081,Female,Violent,1,16.9
+24,10886,Female,Property,1,49.5
+25,38359,Male,Violent,2,65.3
+26,10913,Male,Violent,3,28.4
+27,24404,Male,Property,4,83.1
+28,55532,Female,Public Order,0,9.7
+29,91920,Male,Drug,9,52.5
+30,90733,Female,Property,4,13.4
+31,46233,Male,Public Order,9,34.5
+32,93711,Female,Property,1,13.9
+33,73966,Male,Violent,1,13.5
+34,15798,Male,Violent,2,29.4
+35,30873,Male,Drug,3,26.0
+36,94188,Female,Property,2,8.1
+37,30473,Male,Property,7,57.9
+38,24477,Male,Drug,5,67.5
+39,20942,Female,Drug,2,64.7
+40,11788,Male,Property,1,58.8
+41,33505,Male,Violent,7,43.9
+42,42637,Male,Public Order,3,60.8
+43,15482,Male,Drug,3,42.9
+44,82382,Female,Property,2,44.8
+45,51124,Male,Drug,5,30.2
+46,32848,Female,Violent,1,18.6
+47,68126,Female,Violent,2,3.6
+48,48853,Male,Property,6,34.8
+49,14960,Female,Drug,8,68.5
+50,87223,Male,Drug,0,36.1
+51,94795,Male,Public Order,6,64.8
+52,83716,Male,Property,2,69.1
+53,13003,Male,Violent,2,17.4
+54,18389,Female,Property,3,38.0
+55,40773,Male,Property,3,46.1
+56,57867,Male,Property,6,3.9
+57,74789,Male,Public Order,5,39.5
+58,98177,Male,Property,4,72.3
+59,25016,Male,Public Order,1,65.5
+60,77100,Male,Violent,3,81.0
+61,60107,Male,Violent,1,12.0
+62,87783,Female,Property,4,43.2
+63,43036,Female,Property,0,51.2
+64,68459,Male,Property,1,17.6
+65,92411,Female,Property,1,5.8
+66,62242,Male,Drug,5,77.2
+67,64334,Male,Violent,7,80.9
+68,71594,Female,Property,1,26.7
+69,82069,Male,Drug,3,7.6
+70,57331,Male,Violent,4,79.3
+71,35081,Male,Violent,4,10.8
+72,68011,Male,Property,1,32.8
+73,61395,Male,Public Order,4,57.2
+74,12436,Male,Property,8,12.4
+75,36218,Male,Property,3,41.2
+76,28770,Male,Violent,5,4.1
+77,53024,Male,Property,7,75.5
+78,51512,Male,Property,1,60.3
+79,28670,Male,Violent,2,13.0
+80,31555,Male,Drug,2,32.4
+81,12314,Male,Property,3,27.4
+82,49112,Male,Public Order,8,71.2
+83,80994,Male,Violent,3,46.8
+84,67333,Male,Violent,5,22.5
+85,65240,Female,Property,3,47.1
+86,52774,Male,Drug,1,51.5
+87,87840,Male,Public Order,7,39.0
+88,81111,Male,Public Order,4,64.3
+89,50331,Male,Drug,5,7.8
+90,14175,Male,Violent,1,35.0
+91,67246,Male,Drug,7,42.1
+92,71972,Male,Violent,1,86.6
+93,82731,Male,Drug,5,52.9
+94,30569,Female,Public Order,2,45.6
+95,61113,Female,Violent,1,76.1
+96,88456,Male,Drug,4,70.4
+97,39277,Male,Drug,4,6.3
+98,49403,Male,Drug,1,24.3
+99,63041,Male,Property,7,47.6
+100,10351,Male,Drug,4,15.1
+101,75919,Male,Drug,1,85.4
+102,61259,Male,Property,5,74.8
+103,34162,Male,Violent,4,69.9
+104,50817,Male,Drug,1,54.4
+105,42762,Female,Drug,2,82.2
+106,71327,Female,Drug,2,52.2
+107,11190,Male,Violent,6,63.8
+108,32659,Male,Property,3,37.8
+109,69554,Male,Drug,5,59.6
+110,49395,Male,Drug,6,27.0
+111,92242,Male,Drug,4,24.0
+112,40932,Female,Drug,1,74.5
+113,27831,Female,Violent,4,20.5
+114,50196,Male,Drug,5,57.4
+115,14587,Male,Violent,1,84.2
+116,99670,Male,Public Order,2,72.8
+117,12303,Male,Property,6,14.4
+118,31770,Male,Property,6,54.5
+119,43441,Male,Drug,1,76.8
+120,78812,Female,Drug,4,49.1
+121,49149,Male,Drug,5,54.0
+122,55173,Male,Drug,7,31.4
+123,40535,Male,Property,4,80.4
+124,39443,Male,Violent,3,53.5
+125,75838,Male,Property,6,37.2
+126,66986,Male,Violent,6,56.7
+127,67776,Female,Property,2,24.5
+128,67765,Female,Drug,3,82.9
+129,42816,Male,Violent,1,65.2
+130,89172,Male,Drug,4,24.2
+131,30695,Female,Drug,0,80.2
+132,96159,Male,Property,5,57.7
+133,61050,Male,Property,5,40.4
+134,41565,Female,Property,0,33.6
+135,60877,Female,Drug,2,78.8
+136,11002,Male,Violent,4,12.9
+137,90925,Female,Property,1,18.1
+138,94908,Male,Drug,1,63.1
+139,80211,Female,Public Order,1,81.5
+140,47983,Male,Violent,4,14.2
+141,97508,Male,Drug,3,26.5
+142,66784,Male,Property,7,28.9
+143,24631,Male,Drug,4,66.0
+144,68084,Female,Violent,3,60.6
+145,63546,Male,Drug,2,29.9
+146,34225,Female,Violent,1,2.6
+147,19007,Male,Drug,1,61.6
+148,98319,Female,Drug,1,39.4
+149,84883,Male,Public Order,3,84.9
+150,91625,Male,Public Order,2,74.3
+151,61416,Male,Property,6,84.4
+152,35680,Male,Public Order,0,55.4
+153,49459,Female,Public Order,5,30.7
+154,74934,Male,Violent,6,7.3
+155,58186,Male,Drug,4,10.5
+156,46572,Female,Drug,4,85.3
+157,64046,Male,Property,4,10.2
+158,27954,Male,Property,4,10.3
+159,67136,Male,Drug,6,71.1
+160,46090,Male,Drug,2,6.6
+161,50268,Female,Violent,2,38.7
+162,51193,Male,Public Order,4,61.8
+163,15391,Male,Drug,3,25.5
+164,55029,Male,Violent,4,73.6
+165,19562,Male,Property,1,51.3
+166,42709,Male,Violent,3,71.8
+167,34789,Male,Drug,2,55.7
+168,80404,Male,Drug,3,77.5
+169,38649,Male,Violent,5,29.6
+170,12472,Male,Property,3,4.9
+171,86084,Male,Drug,1,75.6
+172,62817,Male,Violent,5,43.1
+173,28936,Male,Property,6,54.2
+174,53800,Male,Drug,6,44.6
+175,92421,Male,Property,1,80.7
+176,60035,Male,Property,0,81.4
+177,93097,Female,Property,2,48.5
+178,41071,Male,Property,8,12.5
+179,60813,Female,Property,2,30.6
+180,20173,Female,Drug,6,85.1
+181,26020,Female,Drug,2,56.6
+182,23938,Female,Public Order,0,53.0
+183,99104,Male,Violent,4,83.4
+184,78445,Male,Public Order,3,15.7
+185,67538,Male,Drug,5,84.6
+186,45543,Male,Violent,6,59.4
+187,52458,Female,Property,2,78.3
+188,96614,Female,Property,2,55.2
+189,22333,Male,Violent,3,18.8
+190,40091,Male,Drug,7,72.9
+191,23447,Male,Violent,4,5.9
+192,19045,Female,Property,3,27.9
+193,91996,Male,Public Order,3,23.5
+194,20846,Male,Violent,2,69.2
+195,85795,Male,Property,7,28.2
+196,68551,Male,Violent,5,62.5
+197,19470,Male,Drug,0,33.4
+198,43713,Male,Public Order,2,80.5
+199,13648,Male,Public Order,6,71.6
+200,90074,Male,Drug,4,22.0
+201,27520,Female,Violent,1,2.9
+202,22529,Male,Drug,3,42.4
+203,25885,Female,Property,2,79.9
+204,75767,Male,Violent,2,66.7
+205,22892,Male,Violent,6,35.1
+206,91968,Male,Violent,7,19.4
+207,47855,Female,Property,3,14.5
+208,24609,Male,Property,4,52.0
+209,58267,Male,Drug,3,65.0
+210,72338,Male,Drug,5,35.6
+211,58813,Male,Public Order,7,33.8
+212,86990,Male,Public Order,9,78.0
+213,88627,Male,Drug,1,18.9
+214,41388,Male,Violent,3,16.4
+215,16332,Male,Violent,6,63.5
+216,86201,Female,Violent,2,13.7
+217,83909,Male,Drug,3,4.3
+218,65790,Male,Property,3,19.1
+219,64815,Male,Property,1,43.6
+220,10673,Female,Violent,3,64.5
+221,27673,Male,Property,1,25.2
+222,71188,Male,Violent,5,76.6
+223,69856,Male,Property,4,66.2
+224,36233,Female,Drug,1,46.6
+225,35854,Male,Drug,9,67.0
+226,78746,Female,Violent,3,79.2
+227,17102,Male,Drug,4,5.6
+228,96200,Male,Drug,2,17.2
+229,95278,Male,Drug,6,45.1
+230,11761,Male,Violent,4,16.6
+231,37250,Male,Drug,6,15.9
+232,79960,Male,Public Order,1,66.9
+233,98697,Male,Public Order,3,18.3
+234,73161,Male,Public Order,5,38.3
+235,23343,Female,Property,3,75.8
+236,93955,Female,Drug,2,11.5
+237,89942,Male,Drug,5,70.9
+238,11606,Female,Violent,2,7.0
+239,53390,Male,Violent,4,36.3
+240,24302,Male,Public Order,2,21.3
+241,77146,Male,Public Order,6,48.3
+242,71033,Male,Drug,3,28.0
+243,19812,Male,Drug,5,81.7
+244,87390,Male,Public Order,8,15.4
+245,78806,Male,Public Order,3,5.1
+246,82041,Male,Drug,6,31.9
+247,56338,Male,Property,5,58.6
+248,20556,Male,Violent,6,81.2
+249,29806,Male,Public Order,2,48.8
+250,83690,Female,Drug,3,60.4
+251,56128,Male,Property,5,45.9
+252,75307,Male,Property,5,49.6
+253,38622,Male,Drug,3,59.9
+254,37954,Male,Property,1,70.6
+255,13301,Male,Property,5,56.4
+256,65208,Female,Property,0,32.9
+257,61896,Male,Drug,5,8.3
+258,11846,Male,Property,3,46.9
+259,21275,Male,Public Order,3,44.9
+260,70971,Male,Public Order,7,46.4
+261,18411,Male,Public Order,5,77.8
+262,56970,Male,Violent,5,21.8
+263,76736,Male,Property,5,75.1
+264,56354,Female,Property,1,49.0
+265,28534,Male,Violent,3,68.2
+266,17110,Male,Violent,4,34.3
+267,82299,Female,Public Order,4,47.3
+268,51938,Male,Drug,4,48.6
+269,95559,Female,Drug,4,28.7
+270,13365,Female,Drug,1,41.7
+271,76983,Male,Drug,3,31.3
+272,97077,Female,Property,3,62.3
+273,22082,Male,Drug,2,54.7
+274,66285,Male,Property,4,14.0
+275,52480,Female,Violent,3,62.8
+276,91622,Male,Property,5,8.0
+277,52867,Male,Public Order,2,76.0
+278,73520,Male,Public Order,5,37.0
+279,61185,Male,Violent,3,20.6
+280,28969,Male,Public Order,3,27.5
+281,74686,Male,Violent,6,7.5
+282,59956,Male,Violent,3,7.1
+283,91018,Male,Drug,3,84.1
+284,32311,Female,Property,1,40.5
+285,74352,Male,Violent,1,45.8
+286,83795,Male,Property,5,20.1
+287,76843,Male,Property,5,83.9
+288,92486,Male,Violent,5,42.7
+289,30438,Male,Drug,1,14.9
+290,77537,Male,Property,4,22.8
+291,39707,Female,Public Order,0,9.1
+292,13287,Male,Drug,3,81.9
+293,21158,Male,Violent,0,33.3
+294,82777,Male,Property,5,23.8
+295,37643,Male,Drug,6,32.6
+296,91146,Male,Property,2,82.6
+297,67435,Female,Drug,2,27.7
+298,50702,Male,Property,3,17.1
+299,22466,Male,Violent,5,48.1
+300,96871,Male,Property,3,48.0
+301,75863,Male,Public Order,6,69.7
+302,53473,Male,Public Order,9,55.0
+303,48460,Male,Property,4,8.5
+304,44621,Male,Drug,1,16.1
+305,55775,Female,Drug,0,67.4
+306,25126,Female,Property,4,47.5
+307,15189,Male,Drug,5,68.7
+308,23834,Male,Property,6,11.8
+309,56987,Male,Property,7,62.0
+310,14797,Male,Drug,4,23.7
+311,70388,Male,Property,1,73.1
+312,20246,Female,Public Order,3,8.8
+313,80344,Male,Drug,3,20.3
+314,33947,Male,Violent,3,37.5
+315,63979,Male,Violent,3,31.6
+316,57839,Female,Violent,1,76.5
+317,14342,Male,Public Order,2,52.3
+318,91106,Male,Property,4,11.3
+319,37681,Female,Property,3,77.0
+320,56775,Female,Drug,2,77.7
+321,68699,Male,Property,3,18.4
+322,92761,Male,Violent,4,5.3
+323,53535,Male,Drug,7,86.4
+324,36817,Male,Property,7,36.0
+325,40855,Male,Property,4,75.0
+326,26224,Female,Public Order,3,9.0
+327,40551,Male,Property,5,35.8
+328,10527,Female,Property,3,40.7
+329,84685,Male,Property,7,83.7
+330,10662,Female,Property,2,50.2
+331,75227,Female,Property,2,34.6
+332,69055,Male,Drug,2,23.0
+333,70042,Male,Property,6,35.3
+334,96010,Male,Drug,7,62.6
+335,40480,Male,Drug,4,21.1
+336,76328,Male,Violent,5,9.3
+337,16600,Male,Property,1,6.8
+338,38475,Male,Violent,3,40.0
+339,32231,Female,Public Order,2,53.4
+340,42488,Male,Property,4,59.8
+341,65438,Male,Violent,5,63.7
+342,35604,Male,Violent,3,53.9
+343,54287,Female,Property,3,39.7
+344,26006,Male,Drug,4,65.8
+345,13801,Male,Drug,3,61.5
+346,64614,Male,Property,6,73.4
+347,13631,Female,Property,0,17.8
+348,48025,Male,Drug,3,72.6
+349,97835,Female,Violent,3,82.0
+350,74747,Female,Property,2,42.6
+351,26647,Male,Drug,2,10.0
+352,39531,Male,Violent,5,26.9
+353,49727,Male,Property,2,12.7
+354,88589,Male,Drug,3,2.7
+355,32252,Male,Violent,5,70.1
+356,16501,Male,Property,1,56.1
+357,13102,Male,Drug,2,22.3
+358,21371,Female,Public Order,2,82.7
+359,48556,Male,Drug,4,53.2
+360,42410,Male,Public Order,2,73.9
+361,21079,Male,Public Order,4,19.6
+362,30991,Male,Violent,6,50.3
+363,30315,Male,Property,2,37.3
+364,92215,Female,Property,2,28.6
+365,19722,Male,Drug,6,44.1
+366,27193,Male,Public Order,4,43.4
+367,94845,Male,Property,3,45.3
+368,84826,Female,Property,0,56.9
+369,96162,Male,Drug,6,16.2
+370,61496,Male,Drug,2,40.2
+371,44564,Male,Violent,3,68.0
+372,93205,Male,Public Order,5,85.9
+373,91104,Female,Property,1,38.5
+374,51099,Male,Violent,3,34.0
+375,51569,Male,Drug,4,30.1
+376,97169,Female,Violent,1,70.2
+377,21721,Male,Property,3,74.6
+378,73092,Male,Drug,1,3.1
+379,80618,Male,Public Order,3,39.2
+380,72241,Female,Drug,5,51.7
+381,46007,Male,Public Order,2,10.7
+382,42797,Male,Violent,6,60.1
+383,81560,Male,Violent,2,71.9
+384,61263,Male,Violent,2,59.1
+385,69084,Male,Public Order,5,66.4
+386,20074,Female,Property,1,4.8
+387,72716,Male,Property,2,63.0
+388,22780,Female,Property,2,84.7
+389,85720,Male,Violent,1,79.7
+390,46903,Male,Violent,4,38.2
+391,88141,Female,Property,1,64.2
+392,90773,Male,Drug,7,52.7
+393,38437,Male,Violent,2,46.3
+394,95795,Male,Drug,4,85.6
+395,63936,Male,Drug,0,27.2
+396,44887,Male,Public Order,4,50.5
+397,39781,Female,Drug,1,19.3
+398,12037,Female,Property,0,51.8
+399,80616,Male,Violent,4,3.2
+400,81938,Male,Violent,4,22.6
+401,84921,Male,Property,4,50.8
+402,47022,Male,Property,1,58.9
+403,35196,Male,Drug,5,25.9
+404,82348,Male,Property,3,72.4
+405,65188,Female,Drug,1,51.0
+406,60938,Male,Public Order,2,41.4
+407,29459,Female,Drug,1,63.3
+408,68063,Male,Property,5,50.7
+409,20354,Male,Drug,2,30.4
+410,22198,Male,Property,3,75.3
+411,32053,Male,Drug,3,35.5
+412,36364,Male,Drug,3,69.4
+413,58513,Male,Public Order,2,53.7
+414,85556,Male,Public Order,3,49.8
+415,43414,Male,Violent,2,86.1
+416,20869,Male,Violent,4,58.3
+417,12945,Male,Public Order,5,5.4
+418,58908,Female,Drug,0,67.7
+419,16439,Male,Property,3,13.2
+420,71928,Male,Property,6,41.5
+421,21620,Male,Violent,3,74.1
+422,92624,Male,Public Order,4,41.9
+423,80273,Female,Public Order,5,62.1
+424,67708,Female,Property,3,25.3
+425,10742,Male,Violent,4,61.3
+426,49797,Male,Public Order,9,26.2
+427,27889,Male,Property,3,15.6
+428,21682,Male,Drug,2,47.8
+429,54849,Male,Property,5,57.6
+430,83863,Male,Drug,6,37.7
+431,86392,Male,Drug,3,69.6
+432,84867,Male,Public Order,7,85.8
+433,11872,Male,Public Order,7,25.7
+434,65969,Male,Public Order,6,79.0
+435,39126,Female,Violent,1,59.3
+436,33052,Male,Property,5,44.2
+437,30875,Male,Property,3,31.1
+438,48287,Male,Drug,8,49.3
+439,63509,Male,Property,2,4.4
+440,74592,Male,Violent,3,24.7
+441,51310,Male,Drug,4,78.7
+442,66106,Female,Drug,1,39.9
+443,42726,Male,Property,7,40.9
+444,32509,Female,Drug,2,9.8
+445,95043,Male,Violent,3,79.5
+446,47134,Male,Drug,4,55.6
+447,16876,Male,Property,4,67.2
+448,69989,Female,Violent,4,41.0
+449,69279,Male,Drug,5,32.1
+450,20955,Male,Property,6,19.9
+451,83288,Male,Drug,7,54.9
+452,37948,Male,Drug,4,61.0
+453,40695,Male,Drug,5,30.9
+454,59723,Male,Violent,3,78.5
+455,65546,Male,Drug,2,66.5
+456,87513,Male,Violent,7,3.4
+457,10969,Male,Violent,3,80.0
+458,62170,Male,Violent,1,83.2
+459,16667,Female,Violent,1,58.4
+460,44647,Female,Violent,1,77.3
+461,83283,Male,Drug,4,21.0
+462,70399,Male,Violent,5,45.4
+463,40246,Female,Property,2,68.4
+464,28906,Male,Violent,2,73.8
+465,93956,Male,Property,5,76.3
+466,99305,Male,Public Order,4,29.1
+467,66570,Male,Property,3,24.8
+468,79823,Male,Property,2,72.1
+469,95838,Male,Violent,3,83.6
+470,74066,Female,Property,1,44.4
+471,48268,Male,Drug,5,12.2
+472,76148,Male,Drug,2,25.0
+473,69493,Female,Violent,2,21.5
+474,40503,Female,Drug,3,4.6
+475,52841,Male,Property,3,36.7
+476,68454,Male,Property,4,6.4
+477,46516,Male,Property,6,11.7
+478,80359,Female,Drug,1,34.1
+479,49738,Male,Violent,4,32.3
+480,72024,Female,Property,3,61.1
+481,64221,Male,Drug,2,43.7
+482,18560,Male,Property,10,31.8
+483,74764,Female,Drug,5,73.3
+484,56599,Male,Violent,4,56.2
+485,35355,Female,Drug,0,38.8
+486,34055,Male,Property,4,68.9
+487,24129,Female,Public Order,0,19.8
+488,46996,Male,Property,8,6.1
+489,34246,Male,Property,0,29.7
+490,65662,Male,Public Order,4,11.0
+491,27160,Female,Violent,3,50.0
+492,23072,Male,Property,2,67.9
+493,27769,Female,Violent,1,20.8
+494,77940,Male,Public Order,4,8.6
+495,36556,Male,Property,3,2.4
+496,71023,Male,Property,5,70.7
+497,23595,Female,Drug,2,65.7
+498,31726,Male,Property,5,55.9
+499,71197,Male,Drug,3,42.2
+500,34798,Male,Property,2,14.7

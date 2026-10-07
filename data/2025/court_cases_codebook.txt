@@ -1,0 +1,24 @@
+COURT CASES TEACHING DATA: CODEBOOK
+
+This is a simulated dataset created for instructional purposes. The
+observations do not represent real people or court cases.
+
+Variable: person_id Description: Unique identifier for each person
+Variable type: ID Values/units: P001-P300
+
+Variable: age Description: Age of the person Variable type:
+Quantitative, discrete Values/units: Years
+
+Variable: wait_time_minutes Description: Time the person waited before
+their case was processed Variable type: Quantitative, continuous
+Values/units: Minutes
+
+Variable: case_duration_days Description: Length of time from case
+opening to case resolution Variable type: Quantitative, continuous
+Values/units: Days
+
+Variable: charge_level Description: Level of the charge Variable type:
+Categorical, binary Values/units: Misdemeanor, Felony
+
+Variable: detained Description: Whether the person was detained Variable
+type: Categorical, binary Values/units: Yes, No

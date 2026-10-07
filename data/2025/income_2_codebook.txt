@@ -1,0 +1,39 @@
+INCOME AND HAPPINESS DATASET — CODEBOOK
+
+This dataset is intended for classroom practice with linear regression and regression diagnostics.
+
+Variables
+---------
+
+Unnamed: 0
+Original row identifier from the source dataset.
+
+income
+Quantitative measure of income.
+
+happiness
+Quantitative measure of happiness.
+
+education
+Categorical measure of education level.
+
+gender
+Categorical variable for gender.
+
+Teaching note
+-------------
+For the model
+
+lm(happiness ~ income, data = dat)
+
+the dataset includes a small number of deliberately extreme observations added for teaching purposes. These points have both unusual income values and large residuals, producing very high Cook's distance values.
+
+They are intended to help students identify influential observations using tools such as:
+
+cooks.distance(model)
+
+and
+
+plot(model, which = 4)
+
+The added observations are synthetic teaching cases and should not be interpreted substantively.
