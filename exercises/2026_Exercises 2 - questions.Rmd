@@ -98,3 +98,22 @@ Can we conclude that having more prior arrests **causes** a person to serve more
 
 **Answer:**
 
+
+
+
+
+
+## Question 7
+
+
+Now let's look at the income_2.csv dataset. 
+a. Load the data
+b. Draw the scatterplot (without a line of best fit) (2 points)
+c. Describe the scatterplot, calculate correlation if appropriate (5 points)
+d. Fit a linear model and report the estimated i) slope, y-intercept, and iii) p-value for the slope. (5 points)
+e. Test the assumptions of linear regression and assess the goodness of fit. (5 points)
+
+
+
+
+
