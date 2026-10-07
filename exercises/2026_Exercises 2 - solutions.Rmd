@@ -1,17 +1,22 @@
 ---
-title: "Linear Regression In-Class Exercises"
+title: "Linear Regression In-Class Exercises - Solutions"
 author: "Maria Cuellar"
-date: "2026-10-05"
+date: "2026-10-06"
 output: html_document
 ---
+
+
 
 ```{r setup, message=FALSE}
 library(tidyverse)
 
 dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/riverton-crime.csv")
+dat
 ```
 
 # Linear Regression
+
+Use riverton-crime.csv.
 
 We will examine the relationship between the number of prior arrests and time served.
 
@@ -27,9 +32,8 @@ dat %>%
 
 Describe the relationship. Is it positive or negative? Does it look approximately linear?
 
-**Answer:**
+**Answer:** There is a weak positive relationship: people with more prior arrests tend to have somewhat higher time served. The relationship is approximately linear, but there is a lot of variation around the general trend.
 
-Positive, kind of linear but maybe a little curved down.
 
 ## Question 2
 
@@ -43,22 +47,22 @@ summary(model)
 
 Which variable is the outcome/dependent variable?
 
-**Answer:**
+**Answer:** `time_served_months`
 
 Which variable is the explanatory/independent variable?
 
-**Answer:**
+**Answer:** `num_prior_arrests`
 
 
 ## Question 3
 
 Use the regression output to write the regression equation.
 
-Predicted time served = ______ + ______ × number of prior arrests
+Predicted time served = 31.82 + 0.86 × number of prior arrests
 
 Interpret the slope in words.
 
-**Answer:**
+**Answer:** For each additional prior arrest, predicted time served increases by about 0.86 months, on average.
 
 
 ## Question 4
@@ -74,7 +78,7 @@ dat %>%
 
 Does the regression line seem like a reasonable summary of the relationship?
 
-**Answer:**
+**Answer:** It captures the slight positive trend in the data, but the observations are widely scattered around the line. So the line is a reasonable summary of the average trend, but number of prior arrests alone does not explain very much of the variation in time served.
 
 
 ## Question 5
@@ -86,7 +90,7 @@ predict(model,
         newdata = data.frame(num_prior_arrests = 5))
 ```
 
-Predicted time served = ______ months
+Predicted time served = **36.14 months**
 
 
 ## Question 6
@@ -97,11 +101,46 @@ Look at the R-squared value in the regression output.
 summary(model)
 ```
 
-R-squared = ______
+R-squared = **0.014**
 
 Interpret the R-squared in words.
 
+**Answer:** About 1.4% of the variation in time served is explained by its linear relationship with number of prior arrests. This is a very small proportion, so prior arrests alone are not a strong predictor of time served in this dataset.
+
 Can we conclude that having more prior arrests **causes** a person to serve more time? Why or why not?
 
-**Answer:**
+**Answer:** No. This regression shows an association between prior arrests and time served, not a causal effect. Other factors, such as offense type or seriousness, could be related to both prior arrests and time served. Establishing causation would require an appropriate research design, not just a regression.
+
+
+
+
+
+## Question 6
+
+
+Now let's look at the income_2.csv dataset. 
+- Load the data
+- Draw the scatterplot (without a line of best fit) (2 points)
+- Describe the scatterplot, calculate correlation if appropriate (5 points)
+- Fit a linear model and report the estimated i) slope, y-intercept, and iii) p-value for the slope. (5 points)
+- Test the assumptions of linear regression and assess the goodness of fit. (5 points)
+
+```{r}
+
+income_dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/income_2.csv")
+
+income_dat %>% summarise(cor=cor(income,happiness))
+
+income_dat %>%
+  ggplot(aes(x = income, y = happiness)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+
+model <- lm(happiness~income, data=income_dat)
+
+summary(model)
+
+plot(model)
+
+```
 

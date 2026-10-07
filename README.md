@@ -67,13 +67,15 @@ Old workshops from 2025:
   [(html
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-practice---solutions.html)
 
-- [2026 Exercises 2 -
-  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises%202%20-%20questions.Rmd)
+- [2026 Exercises 2 - questions.Rmd
+  (updated)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026%20Exam-1---solutions.html)
 
 ## Exams
 
-- [2026 Exam 1 - questions.Rmd (don’t open
-  yet!!)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20-%20questions.Rmd)
+- [2026 Exam 1 -
+  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20-%20questions.Rmd)
+  [(html
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-solutions.html)
 
 ## Datasets
 
@@ -103,3 +105,9 @@ Save the data into the folder of your choice.
 
   - [(Codebook for
     riverton-crime1.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook_riverton-crime.txt)
+
+- <a href="data/income_2.csv" download="income_2.csv"> Download
+  income_2.csv </a>
+
+  - [(Codebook for
+    income_2.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/income_2_codebook.txt)
