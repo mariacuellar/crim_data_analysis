@@ -1,0 +1,200 @@
+---
+title: "other stat tests"
+author: "Maria Cuellar"
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 2
+    code_download: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 4.5)
+```
+
+# Getting started
+
+This workshop covers one-sample, independent two-sample, and paired t-tests; one-way ANOVA; and the chi-squared test of independence. Each example includes a question, null hypothesis, runnable R code, and interpretation guidance. All data are **fictional teaching data**. Only base R is needed.
+
+[Download the R Markdown source](other-stat-tests.Rmd). Open it in RStudio and run the code chunks in order, or click **Knit** to create an HTML report. Knitting requires the `rmarkdown` package; the analyses themselves use only base R. You can also copy a complete example into your own script.
+
+# Choose a test
+
+| Question | Data structure | R function |
+|---|---|---|
+| Is a population mean different from a benchmark? | One quantitative sample | `t.test(x, mu = ...)` |
+| Do two independent groups have different means? | Quantitative outcome; two groups | `t.test(y ~ group, data = ...)` |
+| Is the mean within-person change different from zero? | Two measurements per person | `t.test(after, before, paired = TRUE)` |
+| Do three or more independent groups have different means? | Quantitative outcome; several groups | `aov(y ~ group, data = ...)` |
+| Are two categorical variables associated? | Counts in a contingency table | `chisq.test(table)` |
+
+For these examples, choose a significance level of 0.05 before looking at results and use two-sided alternatives. A p-value is the probability, assuming the null hypothesis and test assumptions, of results at least as extreme as those observed. It is not the probability that the null is true. A large p-value means we fail to reject the null, not that we have proved it true. Always consider effect sizes, uncertainty, and the sampling design.
+
+# One-sample t-test
+
+**Question:** Is the population mean court waiting time different from 30 minutes? The benchmark is specified in advance.
+
+**Null:** population mean = 30 minutes. **Alternative:** population mean differs from 30 minutes.
+
+```{r one-sample}
+wait_minutes <- c(24, 31, 28, 42, 36, 33, 27, 39, 35, 30, 38, 32)
+mean(wait_minutes)
+sd(wait_minutes)
+length(wait_minutes)
+boxplot(wait_minutes, ylab = "Waiting time (minutes)")
+qqnorm(wait_minutes)
+qqline(wait_minutes)
+
+one_sample <- t.test(wait_minutes, mu = 30, conf.level = 0.95)
+one_sample
+mean(wait_minutes) - 30
+```
+
+The output includes the estimated mean, t statistic, degrees of freedom, p-value, and confidence interval for the **population mean**. Subtracting 30 from the sample mean gives the estimated difference from the benchmark. With these data, p = `r signif(one_sample$p.value, 3)`; at 0.05 we fail to reject the null. This does not establish that the mean equals 30.
+
+Assume independent observations and, for a small sample, an approximately normal population without severe outliers. A convenience sample may not represent the population of interest.
+
+# Independent two-sample t-test
+
+**Question:** Do mean waiting times differ between two courts, using different people in each court?
+
+**Null:** the two population means are equal. **Alternative:** they differ.
+
+```{r two-sample}
+court_waits <- data.frame(
+  court = factor(rep(c("A", "B"), each = 12), levels = c("A", "B")),
+  minutes = c(24, 31, 28, 42, 36, 33, 27, 39, 35, 30, 38, 32,
+              32, 40, 35, 49, 41, 38, 34, 45, 43, 37, 46, 39)
+)
+tapply(court_waits$minutes, court_waits$court, mean)
+tapply(court_waits$minutes, court_waits$court, sd)
+boxplot(minutes ~ court, data = court_waits,
+        xlab = "Court", ylab = "Waiting time (minutes)")
+
+# Welch's t-test is R's default: equal variances are not required.
+two_sample <- t.test(minutes ~ court, data = court_waits)
+two_sample
+
+# The confidence interval in the test is for A minus B.
+with(court_waits, mean(minutes[court == "A"]) - mean(minutes[court == "B"]))
+```
+
+The estimated difference is A minus B, so a negative value means shorter waits in court A. With p = `r signif(two_sample$p.value, 3)`, we reject equal population means at 0.05 under the assumptions. Report the difference in minutes and its confidence interval, not just the p-value.
+
+Assume independent people within and between groups and approximately normal outcomes in each group for these small samples. Welch's test allows unequal variances. Differences between courts do not establish why the courts differ; people were not randomly assigned.
+
+# Paired t-test
+
+**Question:** Does the mean questionnaire score change after a program? The same 12 participants are measured twice; lower scores indicate less self-reported stress.
+
+**Null:** population mean change (after minus before) = 0. **Alternative:** it differs from zero.
+
+```{r paired}
+participants <- data.frame(
+  id = 1:12,
+  before = c(18, 22, 16, 25, 20, 17, 24, 19, 21, 15, 23, 20),
+  after = c(15, 21, 12, 23, 21, 14, 19, 17, 18, 15, 21, 16)
+)
+# Keep both measurements together. Never sort the columns separately.
+participants <- participants[complete.cases(participants[c("before", "after")]), ]
+participants$change <- participants$after - participants$before
+mean(participants$change)
+qqnorm(participants$change)
+qqline(participants$change)
+
+paired_result <- with(participants, t.test(after, before, paired = TRUE))
+paired_result
+
+# Equivalent: a one-sample t-test of the differences against zero.
+t.test(participants$change, mu = 0)
+```
+
+A negative mean change indicates lower scores after the program. The confidence interval is for the **population mean change**, and p = `r signif(paired_result$p.value, 3)`. Assume independent participants and approximately normal **differences**, not necessarily normal before and after scores separately. Without a comparison group or random assignment, a before/after change alone does not establish a program effect.
+
+# One-way ANOVA
+
+**Question:** Do mean processing times differ across three scheduling systems, with different cases in each system?
+
+**Null:** all three population means are equal. **Alternative:** at least one differs.
+
+```{r anova}
+scheduling <- data.frame(
+  system = factor(rep(c("A", "B", "C"), each = 10)),
+  minutes = c(28, 35, 31, 40, 33, 29, 37, 34, 30, 36,
+              35, 42, 38, 47, 40, 36, 44, 41, 37, 43,
+              30, 37, 33, 42, 35, 31, 39, 36, 32, 38)
+)
+tapply(scheduling$minutes, scheduling$system, mean)
+tapply(scheduling$minutes, scheduling$system, sd)
+boxplot(minutes ~ system, data = scheduling,
+        xlab = "Scheduling system", ylab = "Processing time (minutes)")
+
+anova_model <- aov(minutes ~ system, data = scheduling)
+summary(anova_model)
+
+# Check approximate normality and equal spread of residuals.
+plot(anova_model, which = 1)
+plot(anova_model, which = 2)
+
+# Follow-up pairwise differences, with multiple-comparison adjustment.
+TukeyHSD(anova_model)
+
+# Alternative if equal variances are not plausible: Welch's one-way test.
+oneway.test(minutes ~ system, data = scheduling, var.equal = FALSE)
+```
+
+The ANOVA F-test asks whether all means are equal; a significant result does not mean every pair differs. The Tukey output gives pairwise differences, confidence intervals, and adjusted p-values; `B-A` means B minus A. Use Tukey comparisons with the classical equal-variance ANOVA, not as follow-up to Welch's test. If using Welch's approach, follow-up comparisons also need to allow unequal variances and account for multiple testing.
+
+Classical ANOVA assumes independent observations, approximately normal within-group errors, and equal population variances. Check the design as well as the plots. Report group means and meaningful differences alongside the test result.
+
+# Chi-squared test of independence
+
+**Question:** Are charge category and pretrial detention status associated?
+
+**Null:** charge category and detention status are independent in the population. **Alternative:** they are associated.
+
+```{r chi-squared}
+# Entries are COUNTS of people, not percentages or category codes.
+counts <- matrix(c(40, 60, 65, 35), nrow = 2, byrow = TRUE,
+                 dimnames = list(
+                   charge = c("Misdemeanor", "Felony"),
+                   detained = c("Yes", "No")))
+counts
+addmargins(counts)
+prop.table(counts, margin = 1)  # Row proportions: detained within charge group.
+
+# Pearson chi-squared test; explicitly omit the optional 2x2 correction.
+chi_result <- chisq.test(counts, correct = FALSE)
+chi_result
+chi_result$expected
+
+barplot(t(prop.table(counts, margin = 1)), beside = TRUE,
+        legend.text = TRUE, ylim = c(0, 1),
+        xlab = "Charge category", ylab = "Proportion within charge group",
+        col = c("steelblue", "gray70"))
+
+# For individual-level data, first create the counts with:
+# counts <- table(dat$charge_level, dat$detained)
+
+# For a sparse 2x2 table, Fisher's exact test is an alternative.
+sparse_counts <- matrix(c(1, 7, 6, 2), nrow = 2, byrow = TRUE)
+fisher.test(sparse_counts)
+```
+
+Here, 40% of misdemeanor cases and 65% of felony cases are detained, a 25 percentage-point difference in the sample. The chi-squared p-value is `r signif(chi_result$p.value, 3)`, providing evidence of an association under the assumptions. This does not show that charge category causes detention.
+
+Each person must contribute to exactly one cell, observations must be independent, and expected cell counts must be sufficiently large for the chi-squared approximation. As an introductory rule, check that all expected counts are at least 5; these data meet that rule. Use expected counts, not just observed counts, for this check. Matched or repeated categorical observations need a different method.
+
+# Try it yourself
+
+1. Repeat the one-sample test with a prespecified benchmark of 35 minutes. What changes?
+2. Reverse the order of the paired test to `t.test(before, after, paired = TRUE)`. Explain what happens to the estimate, interval, and two-sided p-value.
+3. Use the ANOVA output and Tukey comparisons to describe which scheduling systems differ.
+4. In the detention example, explain the difference between a percentage-point difference and a p-value.
+
+# Reporting a test
+
+Name the test, state the null hypothesis and the observational unit, report the sample estimates, test statistic, degrees of freedom where applicable, and p-value. Include a confidence interval for a mean or difference when available. Discuss assumptions, practical importance, and limits on generalization or causal conclusions. Do not choose a test or change the hypothesis just to obtain a small p-value.
