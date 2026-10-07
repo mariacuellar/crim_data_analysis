@@ -3,7 +3,7 @@ title: "other stat tests"
 author: "Maria Cuellar"
 output:
   html_document:
-    toc: true
+    toc: false
     toc_float:
       collapsed: false
       smooth_scroll: false
