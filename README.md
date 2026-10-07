@@ -73,7 +73,7 @@ Linked File.”
 - [2026 Exam 1 - practice
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_questions.Rmd)
   [(Solutions in
-  html)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam_1_practice_solutions.html)
+  html)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exam_1_practice_solutions.html)
   [(Solutions in
   Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_solutions.Rmd)
 - [2026 Exercises 2 - questions.Rmd
