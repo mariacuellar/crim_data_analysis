@@ -59,23 +59,22 @@ analyses beyond the scope of this course.
 - [2026 Exercises 1 -
   questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_questions.R)
   [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_solutions.R)
-
 - [2026 Exam 1 - practice
-  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20questions.Rmd)
+  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_questions.Rmd)
   [(Rmd
-  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20practice%20-%20solutions.Rmd)
+  Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_solutions.Rmd)
   [(html
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-practice---solutions.html)
-
 - [2026 Exercises 2 - questions.Rmd
-  (updated)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exercises%202%20-%20questions.Rmd)
+  (updated)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exercises_2_questions.Rmd)
+  \[(Solutions)\]
 
 ## Exams
 
 - [2026 Exam 1 -
-  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/Exam%201%20-%20questions.Rmd)
+  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_questions.Rmd)
   [(html
-  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-solutions.html)
+  Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exam_1_solutions.html)
 
 ## Datasets
 
