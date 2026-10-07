@@ -3,7 +3,7 @@ title: "linear regression-1"
 author: "Maria Cuellar"
 output:
   html_document:
-    toc: true
+    toc: false
     toc_float:
       collapsed: false
       smooth_scroll: false

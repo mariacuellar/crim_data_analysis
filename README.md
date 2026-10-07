@@ -43,21 +43,22 @@ analyses beyond the scope of this course.
   variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-quantitative-var.R)
 - [R
   Markdown](https://mariacuellar.github.io/crim_data_analysis/workshops/Rmarkdown.html)
-- [Linear
-  regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
 - [Hypothesis
   testing](https://mariacuellar.github.io/crim_data_analysis/workshops/Hypothesis-testing.html)
-- [linear
-  regression-1](https://mariacuellar.github.io/crim_data_analysis/workshops/linear-regression-1.html)
-  ([R Markdown
+- [Linear
+  regression](https://mariacuellar.github.io/crim_data_analysis/workshops/linear-regression-1.html)
+  ([Rmd
   source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/linear-regression-1.Rmd))
 - [other stat
   tests](https://mariacuellar.github.io/crim_data_analysis/workshops/other-stat-tests.html)
-  ([R Markdown
+  ([Rmd
   source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/other-stat-tests.Rmd))
 
 <!-- Old workshops from 2025:
-&#10;-   [First look at the
+&#10;-   [Linear
+    regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
+-   [Hypothesis testing](https://mariacuellar.github.io/crim_data_analysis/workshops/Hypothesis-testing.html)
+-   [First look at the
     data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
 -   [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
 -->
@@ -70,12 +71,14 @@ Linked File.”
 
 - [2026 Exercises 1 -
   questions.R](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_questions.R)
-  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_solutions.R)
+  [(Solutions in
+  R)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_1_solutions.R)
 - [2026 Exam 1 - practice
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_questions.Rmd)
-  [(Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam_1_practice_solutions.html)
-  [(Rmd
-  source)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_solutions.Rmd)
+  [(Solutions in
+  html)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam_1_practice_solutions.html)
+  [(Solutions in
+  Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_solutions.Rmd)
 - [2026 Exercises 2 - questions.Rmd
   UPDATED](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_2_questions.Rmd)
   (Solutions)
@@ -84,10 +87,11 @@ Linked File.”
 
 - [2026 Exam 1 -
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_questions.Rmd)
-  [(Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exam_1_solutions.html)
-  [(Rmd
-  source)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_solutions.Rmd)
-- \[2026 Quiz 2 - questions.Rmd\] (Solutions) (Rmd source)
+  [(Solutions in
+  html)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exam_1_solutions.html)
+  [(Solutions in
+  Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_solutions.Rmd)
+- \[2026 Quiz 2 - questions.Rmd\] (Solutions in html) (Solutions in Rmd)
 
 ## Datasets
 
