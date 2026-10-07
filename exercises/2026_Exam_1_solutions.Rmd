@@ -1,0 +1,233 @@
+---
+title: "Exam 1 Solutions"
+author: "Your name"
+date: "2026-09-28"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+*Note: For this exam, don't worry about including the correct labels and titles for the plots.*
+
+```{r preamble, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+(30 possible points)
+
+### Question 1.
+
+Load the data called riverton-crime.csv using the proper R command and file path. What is this dataset about, according to the codebook? (Keep it short.)
+
+**Your code (2 points):** 
+
+```{r load-data, message=FALSE}
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/riverton-crime1.csv")
+```
+
+**Your text answer (2 points):**
+
+This dataset is about crime in Riverton, a mid-sized U.S. city. The Riverton Department of Public Safety created a dataset of 500 individuals whose criminal cases were resolved between 2022 and 2025. 
+
+
+
+
+
+---
+
+### Question 2.
+
+What types of variables are these? Variables: id, gender, offense_type, num_prior_arrests, and time_served_months.
+
+**Your text answer (2 points):**
+
+- id: Identifier
+- gender: Categorical
+- offense_type: Categorical
+- num_prior_arrests: Quantitative
+- time_served_months: Quantitative
+
+
+
+---
+
+### Question 3.
+
+What percentage of the sample is male? How many females, males, and total individuals are there in this sample?
+
+
+
+**Your code (2 points):**
+
+```{r male}
+dat %>% count(gender) %>% mutate(prop = prop.table(n))
+```
+
+
+
+**Your text answer (2 points):**
+
+75.6% of the sample is male. There are 122 females, 378 males, and 500 individuals total.
+
+
+
+
+
+
+---
+
+### Question 4. 
+
+Draw a plot to study the variable offense_type and describe it.
+
+
+
+**Your code (2 points):**
+
+```{r offense_type}
+dat %>% ggplot(aes(x=offense_type)) + geom_bar()
+```
+
+
+
+**Your text answer (2 points):**
+
+The most common offense type is Property crime, then drug, then violent, and then public order, which is about half the cases of property. 
+
+
+
+
+
+---
+
+### Question 5.
+
+Now we are going to study the variable num_prior_arrests. 
+
+Perform visual EDA on num_prior_arrests. Adjust the number of bins so that the shape of the distribution is reasonably clear.
+
+
+
+**Your code (2 points):**
+
+```{r num_prior_arrests, fig.width=3, fig.height=3}
+dat %>% ggplot(aes(x=num_prior_arrests)) + geom_histogram(bins=10)
+```
+
+
+---
+
+### Question 6.
+
+Describe this plot.
+
+
+**Your text answer (2 points):**
+
+Unimodal, asymmetric, skewed right, no outliers.
+
+
+
+
+---
+
+### Question 7.
+
+Find summary statistics to describe the centrality and spread of the variable num_prior_arrests. Which is the centrality and which is the spread? Explain what these values mean for this variable.
+
+
+
+**Your code (2 points):**
+
+```{r num_prior_arrests_stats}
+
+# It's a little difficult to see whether one tail is longer than the other, but it looks asymmetric. I'll check whether mean and median are different.
+summary(dat$num_prior_arrests)
+
+# The distribution is asymmetric, so I will use the median and IQR as measures of centrality and spread.
+dat %>% summarize(median = median(num_prior_arrests),
+                  IQR = IQR(num_prior_arrests))
+
+```
+
+
+**Your text answer (2 points):**
+
+The median is 3 prior arrests, meaning half of the individuals have 3 or fewer prior arrests and half have 3 or more. The IQR is 3 arrests, meaning the middle 50% of observations span a range of 3 prior arrests. Centrality is median and spread is IQR. 
+
+
+
+
+
+---
+
+### Question 8.
+
+Now we will study the variable time_served_months. What is this variable measuring? Visualize this variable by drawing a plot.
+
+**Your code (2 points):**
+
+```{r time_served_months}
+dat %>% ggplot(aes(x=time_served_months)) + geom_histogram()
+```
+
+**Your text answer (2 points):**
+
+The number of months the individual served for the current case.
+
+
+
+
+
+---
+
+### Question 9.
+
+Describe the shape of the distribution. Then perform quantitative EDA on it.
+
+
+**Your code (2 points):**
+
+```{r time_served_months-quant}
+dat %>% summarize(range = max(time_served_months) - min(time_served_months))
+```
+
+**Your text answer (2 points):**
+
+This variable has a uniform distribution with a range of 84.2 months.
+
+
+
+
+---
+
+### Extra credit:
+
+Describe what this code does. Why do the points appear in vertical columns rather than being spread continuously across the x-axis?
+
+**Your code (1 point):**
+
+```{r scatterplot}
+dat %>% 
+  ggplot(aes(x = num_prior_arrests, y = time_served_months)) + 
+  geom_point() +
+  scale_x_continuous(breaks = seq(
+    min(dat$num_prior_arrests),
+    max(dat$num_prior_arrests),
+    by = 1
+  ))
+```
+
+**Your text answer (1 point):**
+
+num_prior_arrests is a discrete quantitative variable that takes only whole-number values. Therefore, observations with the same number of prior arrests have the same x-coordinate and line up vertically.
+
+
