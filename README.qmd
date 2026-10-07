@@ -100,8 +100,8 @@ To download the file instead of opening it in a new tab, right-click the link (o
 
 ## Datasets
 
-- <a href="data/pretrial_detention_teaching_data.csv" download>Download pretrial_detention_teaching_data.csv </a> (<a href="data/pretrial_detention_teaching_data_codebook.txt" download>Codebook</a>)
-- <a href="data/court_cases_teaching_data.csv" download>Download court_cases_teaching_data.csv</a> (<a href="data/court_cases_codebook.txt" download>Codebook</a>)
-- <a href="data/pretrial_df.csv" download>Download pretrial_df.csv</a> (<a href="data/pretrial_df_codebook.txt" download>Codebook</a>)
-- <a href="data/riverton-crime1.csv" download>Download riverton-crime1.csv</a> (<a href="data/codebook_riverton-crime.txt" download>Codebook</a>)
-- <a href="data/income_2.csv" download>Download income_2.csv</a> (<a href="data/income_2_codebook.txt" download>Codebook</a>)
+- <a href="data/pretrial_detention_teaching_data.csv" download>pretrial_detention_teaching_data.csv </a> (<a href="data/pretrial_detention_teaching_data_codebook.txt" download>Codebook</a>)
+- <a href="data/court_cases_teaching_data.csv" download>court_cases_teaching_data.csv</a> (<a href="data/court_cases_codebook.txt" download>Codebook</a>)
+- <a href="data/pretrial_df.csv" download>pretrial_df.csv</a> (<a href="data/pretrial_df_codebook.txt" download>Codebook</a>)
+- <a href="data/riverton-crime1.csv" download>riverton-crime1.csv</a> (<a href="data/codebook_riverton-crime.txt" download>Codebook</a>)
+- <a href="data/income_2.csv" download>income_2.csv</a> (<a href="data/income_2_codebook.txt" download>Codebook</a>)
