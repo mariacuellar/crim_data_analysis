@@ -47,12 +47,10 @@ analyses beyond the scope of this course.
   source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/Rmarkdown.Rmd))
 - [Linear
   regression](https://mariacuellar.github.io/crim_data_analysis/workshops/linear-regression-1.html)
-  ([Rmd
-  source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/linear-regression-1.Rmd))
+  <!-- ([Rmd source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/linear-regression-1.Rmd)) -->
 - [Other stat
   tests](https://mariacuellar.github.io/crim_data_analysis/workshops/other-stat-tests.html)
-  ([Rmd
-  source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/other-stat-tests.Rmd))
+  <!-- ([Rmd source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/other-stat-tests.Rmd)) -->
 
 <!-- Old workshops from 2025:
 &#10;-   [Linear
