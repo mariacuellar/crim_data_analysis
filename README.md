@@ -43,16 +43,16 @@ analyses beyond the scope of this course.
   variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-quantitative-var.R)
 - [R
   Markdown](https://mariacuellar.github.io/crim_data_analysis/workshops/Rmarkdown.html)
-
-Old workshops from 2025:
-
-- [First look at the
-  data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
-- [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
 - [Linear
   regression](https://mariacuellar.github.io/crim_data_analysis/workshops/LinearRegression.html)
 - [Hypothesis
   testing](https://mariacuellar.github.io/crim_data_analysis/workshops/Hypothesis-testing.html)
+
+<!-- Old workshops from 2025:
+&#10;-   [First look at the
+    data](https://mariacuellar.github.io/crim_data_analysis/workshops/firstlook.html)
+-   [EDA](https://mariacuellar.github.io/crim_data_analysis/workshops/EDA.html)
+-->
 
 ## Exercises
 
