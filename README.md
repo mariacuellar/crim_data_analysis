@@ -43,8 +43,7 @@ analyses beyond the scope of this course.
   variable](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/eda-quantitative-var.R)
 - [R
   Markdown](https://mariacuellar.github.io/crim_data_analysis/workshops/Rmarkdown.html)
-  ([Rmd
-  source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/Rmarkdown.Rmd))
+  <!--([Rmd source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/Rmarkdown.Rmd))-->
 - [Linear
   regression](https://mariacuellar.github.io/crim_data_analysis/workshops/linear-regression-1.html)
   <!-- ([Rmd source](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/workshops/linear-regression-1.Rmd)) -->
