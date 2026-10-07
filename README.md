@@ -68,7 +68,7 @@ Old workshops from 2025:
   Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/Exam-1-practice---solutions.html)
 
 - [2026 Exercises 2 - questions.Rmd
-  (updated)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026%20Exam-1---solutions.html)
+  (updated)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exercises%202%20-%20questions.Rmd)
 
 ## Exams
 
