@@ -99,29 +99,8 @@ analyses beyond the scope of this course.
 
 To download the data, right-click the link and choose “Save Link As…”. Save the data into the folder of your choice.
 
--  <a href="data/pretrial_detention_teaching_data.csv" download="pretrial_detention_teaching_data.csv">
-  Download pretrial_detention_teaching_data.csv</a>
-
-    - [(Codebook for pretrial_detention_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_detention_teaching_data_codebook.txt)
-
--  <a href="data/court_cases_teaching_data.csv" download="court_cases_teaching_data.csv">
-  Download court_cases_teaching_data.csv </a>
-
-    - [(Codebook for court_cases_teaching_data.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/court_cases_codebook.txt)
-
--  <a href="data/pretrial_df.csv" download="pretrial_df.csv">
-  Download pretrial_df.csv </a>
-
-    - [(Codebook for pretrial_df.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/pretrial_df_codebook.txt)
-
--  <a href="data/riverton-crime1.csv" download="riverton-crime1.csv">
-  Download riverton-crime1.csv </a>
-
-    - [(Codebook for riverton-crime1.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/codebook_riverton-crime.txt)
-
--  <a href="data/income_2.csv" download="income_2.csv">
-  Download income_2.csv </a>
-
-    - [(Codebook for income_2.csv)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/data/income_2_codebook.txt)
-
-
+- <a href="data/pretrial_detention_teaching_data.csv" download>Download pretrial_detention_teaching_data.csv </a> (<a href="data/pretrial_detention_teaching_data_codebook.txt" download>Codebook</a>)
+- <a href="data/court_cases_teaching_data.csv" download>Download court_cases_teaching_data.csv</a> (<a href="data/court_cases_codebook.txt" download>Codebook</a>)
+- <a href="data/pretrial_df.csv" download>Download pretrial_df.csv</a> (<a href="data/pretrial_df_codebook.txt" download>Codebook</a>)
+- <a href="data/riverton-crime1.csv" download>Download riverton-crime1.csv</a> (<a href="data/codebook_riverton-crime.txt" download>Codebook</a>)
+- <a href="data/income_2.csv" download>Download income_2.csv</a> (<a href="data/income_2_codebook.txt" download>Codebook</a>)
