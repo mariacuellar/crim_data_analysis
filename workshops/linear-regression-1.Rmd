@@ -1,5 +1,5 @@
 ---
-title: "linear regression-1"
+title: "Linear regression"
 author: "Maria Cuellar"
 output:
   html_document:
