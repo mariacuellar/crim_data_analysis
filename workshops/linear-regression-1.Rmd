@@ -9,25 +9,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 4.5)
 ```
 
-# Workflow
 
-Use two quantitative variables: explanatory variable **x** and response **y**.
-
-```text
-Scatterplot → correlation (if the pattern is roughly linear)
-    ↓
-Fit the model on all observations: lm(y ~ x, data = dat)
-    ↓
-Check Cook's distance for influential observations
-    ├─ None: keep the full model
-    └─ Some: inspect them; if justified, make a second dataset and refit
-    ↓
-Compare correlations, slopes, and all four diagnostic plots
-    ↓
-If assumptions are reasonable: interpret the slope, p-value, and strength
-```
-
-Keep the full results. An influential observation is not automatically an error; explain any exclusion.
 
 # Example 1: Court caseload and waiting time
 

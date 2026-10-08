@@ -355,24 +355,6 @@ display: none;
 </div>
 
 
-<div id="workflow" class="section level1">
-<h1>Workflow</h1>
-<p>Use two quantitative variables: explanatory variable
-<strong>x</strong> and response <strong>y</strong>.</p>
-<pre class="text"><code>Scatterplot → correlation (if the pattern is roughly linear)
-    ↓
-Fit the model on all observations: lm(y ~ x, data = dat)
-    ↓
-Check Cook&#39;s distance for influential observations
-    ├─ None: keep the full model
-    └─ Some: inspect them; if justified, make a second dataset and refit
-    ↓
-Compare correlations, slopes, and all four diagnostic plots
-    ↓
-If assumptions are reasonable: interpret the slope, p-value, and strength</code></pre>
-<p>Keep the full results. An influential observation is not
-automatically an error; explain any exclusion.</p>
-</div>
 <div id="example-1-court-caseload-and-waiting-time" class="section level1">
 <h1>Example 1: Court caseload and waiting time</h1>
 <p>These are fictional courts. <strong>x</strong> is daily caseload;
