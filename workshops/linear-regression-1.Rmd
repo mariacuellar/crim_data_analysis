@@ -58,11 +58,9 @@ summary(model)
 coef(model)
 confint(model)
 
-plot(wait_minutes ~ caseload, data = courts,
-     pch = 19, col = "steelblue",
-     xlab = "Daily caseload (cases)",
-     ylab = "Average waiting time (minutes)")
-abline(model, col = "firebrick", lwd = 2)
+library(tidyverse)
+courts %>% ggplot(aes(x=caseload, y=wait_minutes)) + geom_point() + geom_smooth(method="lm", se=FALSE)
+
 ```
 
 The fitted equation is: predicted waiting time = intercept + slope × caseload.
@@ -113,11 +111,24 @@ abline(h = 0, lty = 2)
 qqnorm(resid(model))
 qqline(resid(model), col = "firebrick")
 
-# Large Cook's distances flag potentially influential courts to investigate.
+# Large Cook's distances flag potentially influential courts to investigate. Can make the Residuals vs Leverage plot or just look at the Cook's distances directly.
+plot(model, which = 5)
+
 plot(model, which = 4)
 ```
 
 Curvature suggests that a straight line may be inadequate; a funnel shape suggests unequal variance. Investigate unusual observations rather than automatically deleting them. These checks are limited with small samples.
+
+
+
+```{r}
+
+courts_dat_clean <- courts %>%
+  filter(cooks.distance(model) <= 0.05)
+
+```
+
+
 
 # Example 2: Neighborhood resources and reported incidents
 

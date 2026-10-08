@@ -9,10 +9,10 @@ Unnamed: 0
 Original row identifier from the source dataset.
 
 income
-Quantitative measure of income.
+Annual income in thousands of U.S. dollars (e.g., 50 = $50,000 per year).
 
 happiness
-Quantitative measure of happiness.
+Self-reported happiness score on a scale from 0 (least happy) to 10 (most happy).
 
 education
 Categorical measure of education level.
