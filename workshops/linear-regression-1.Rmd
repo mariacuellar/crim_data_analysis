@@ -121,13 +121,6 @@ Curvature suggests that a straight line may be inadequate; a funnel shape sugges
 
 
 
-```{r}
-
-courts_dat_clean <- courts %>%
-  filter(cooks.distance(model) <= 0.05)
-
-```
-
 
 
 # Example 2: Neighborhood resources and reported incidents
@@ -140,11 +133,10 @@ neighborhoods <- data.frame(
   incidents_per_1000 = c(38, 36, 39, 32, 35, 30, 33, 27, 29, 24, 27, 21)
 )
 model2 <- lm(incidents_per_1000 ~ recreation_hours, data = neighborhoods)
-plot(incidents_per_1000 ~ recreation_hours, data = neighborhoods,
-     pch = 19, col = "steelblue",
-     xlab = "Weekly recreation program hours",
-     ylab = "Reported incidents per 1,000 residents")
-abline(model2, col = "firebrick", lwd = 2)
+
+neighborhoods %>% ggplot(aes(x=recreation_hours, y=incidents_per_1000)) + geom_point() + geom_smooth(model="lm", se=FALSE)
+
+
 summary(model2)
 confint(model2)
 predict(model2, newdata = data.frame(recreation_hours = 12),
@@ -153,13 +145,19 @@ predict(model2, newdata = data.frame(recreation_hours = 12),
 
 Interpret the slope as the estimated difference in reported incidents per 1,000 residents associated with one additional weekly program hour. An association between neighborhoods does not establish that adding program hours causes a change in crime or that the same relationship holds for individuals. Check the assumptions as in Example 1 before relying on inference.
 
-# Try it yourself
 
-1. Use the first model to predict waiting time for a court with 35 daily cases. Compare its confidence and prediction intervals.
-2. Explain why predicting a court with 200 daily cases would be risky.
-3. Interpret the slope and its confidence interval in Example 2, including units.
-4. Give one potential confounder in each example.
+Look for influential outliers.
 
-# Reporting a regression
+```{r}
+plot(model2, which=5)
+```
 
-State the observational unit, outcome and predictor, slope with units and a confidence interval, and what the diagnostics suggest. Explain the limits of the design. Statistical significance does not measure the size or practical importance of an association.
+We don't see any here, but if you wanted to remove a point, you could do the following:
+
+```{r}
+
+# remove influential outliers
+courts_dat_clean <- courts %>%
+  filter(cooks.distance(model) <= 0.05)
+
+```
