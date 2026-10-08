@@ -1,0 +1,223 @@
+---
+title: "Linear Regression In-Class Exercises — Revised Solutions"
+author: "Maria Cuellar"
+date: "2026-10-08"
+output:
+  html_document:
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+# Linear Regression: Riverton Crime
+
+Use `riverton-crime.csv`. We will examine the relationship between number of prior arrests and time served.
+
+```{r riverton-data}
+dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/riverton-crime1.csv", show_col_types = FALSE)
+```
+
+## Question 1: Visual EDA
+
+**Question.** Create a scatterplot with `num_prior_arrests` on the x-axis and `time_served_months` on the y-axis. Describe the direction, form, and strength of the relationship.
+
+**Solution.**
+
+```{r riverton-scatter}
+ggplot(dat, aes(x = num_prior_arrests, y = time_served_months)) +
+  geom_point(alpha = 0.6) +
+  labs(x = "Number of prior arrests", y = "Time served (months)")
+```
+
+There is a **weak positive**, roughly linear association, with substantial variation in time served at each number of prior arrests. A scatterplot alone does not establish causation.
+
+## Question 2: Fit the initial model
+
+**Question.** Regress time served on number of prior arrests. Identify the outcome and explanatory variables.
+
+**Solution.**
+
+```{r riverton-model}
+model_riverton <- lm(time_served_months ~ num_prior_arrests, data = dat)
+summary(model_riverton)
+```
+
+Outcome (Y): `time_served_months`. Explanatory variable (X): `num_prior_arrests`.
+
+## Question 3: Equation and slope
+
+**Question.** Write the fitted regression equation and interpret its slope.
+
+**Solution.** From the original dataset supplied with these exercises, the fitted equation is approximately
+
+\[\widehat{\mathrm{time\ served\ (months)}}=31.82+0.864\times \mathrm{prior\ arrests}.\]
+
+For each additional prior arrest, the **predicted** time served increases by approximately **0.864 months on average**. This is an association, not a causal effect.
+
+## Question 4: Add a fitted line
+
+**Question.** Add the regression line to your scatterplot. Is the line a reasonable summary?
+
+**Solution.**
+
+```{r riverton-line}
+ggplot(dat, aes(x = num_prior_arrests, y = time_served_months)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = FALSE, color = "steelblue") +
+  labs(x = "Number of prior arrests", y = "Time served (months)")
+```
+
+The line summarizes the slight average positive trend, but individual points vary widely around it.
+
+## Question 5: Prediction
+
+**Question.** Predict time served for a person with five prior arrests.
+
+**Solution.**
+
+```{r riverton-prediction}
+predict(model_riverton, newdata = tibble(num_prior_arrests = 5))
+```
+
+The original model predicts approximately **36.14 months**. This is a predicted mean outcome, not the actual time served by any particular person.
+
+## Question 6: R-squared and causation
+
+**Question.** Report and interpret R-squared. Can we conclude prior arrests cause longer sentences?
+
+**Solution.** The original model's R-squared is approximately **0.014**, so roughly **1.4% of the observed variation** in time served is accounted for by the fitted linear relationship with prior arrests. No causal conclusion follows from this observational association; offense type and other variables may confound it.
+
+# Question 7 (20 points): Income and Happiness
+
+Use `income_2.csv` to study the association between **income** (X) and **happiness** (Y). Follow the full regression workflow, retaining both the original analysis and a sensitivity analysis excluding influential observations.
+
+## 7(a) Load and explore (4 points)
+
+**Question.** Load the dataset. Create a scatterplot without a fitted line, describe the direction/form/strength, and calculate Pearson's correlation if appropriate.
+
+**Solution.**
+
+```{r income-load}
+income_dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/income_2.csv", show_col_types = FALSE)
+
+# Limit to complete cases for the two analysis variables so that
+# Cook's distances and dataset rows remain aligned.
+income_complete <- income_dat %>%
+  filter(!is.na(income), !is.na(happiness)) %>%
+  mutate(obs_id = row_number())
+
+ggplot(income_complete, aes(x = income, y = happiness)) +
+  geom_point(alpha = 0.6) +
+  labs(x = "Income", y = "Happiness")
+
+cor(income_complete$income, income_complete$happiness)
+```
+
+In the original supplied solution, Pearson's correlation was **0.780**, suggesting a **strong positive linear association overall**. The scatterplot should also be checked for unusual observations that may affect this summary; correlation can be sensitive to them. Do not interpret this association causally.
+
+## 7(b) Fit the original regression model (4 points)
+
+**Question.** Fit the linear model predicting happiness from income. Report the intercept, slope, and p-value for the slope.
+
+**Solution.**
+
+```{r income-full-model}
+model_full <- lm(happiness ~ income, data = income_complete)
+summary(model_full)
+```
+
+In the original supplied solution, the estimated intercept was **0.5813**, the slope was **0.6291**, and the slope p-value was **p < 2 × 10^-16** (report simply as **p < 0.001**). The estimated equation was
+
+\[\widehat{\mathrm{happiness}}=0.5813+0.6291\times \mathrm{income}.\]
+
+The original R-squared was **0.6087**. These numerical results refer to the **full sample**.
+
+## 7(c) Investigate influential observations (4 points)
+
+**Question.** Plot Cook's distance for the first model. Use **Cook's distance > 0.05** as a *screening rule* to flag potentially influential observations. How many are flagged? Create a new dataset excluding them, then fit a second model. Do not overwrite the original model.
+
+**Solution.**
+
+```{r income-cooks}
+plot(model_full, which = 4)  # Cook's distance; R labels up to 3 points
+
+# Calculate Cook's distance for EVERY observation used by the model.
+income_with_cooks <- income_complete %>%
+  mutate(cooks_d = cooks.distance(model_full))
+
+# Flag however many exceed the chosen cutoff (possibly 0, 1, 3, ...).
+flagged <- income_with_cooks %>%
+  filter(cooks_d > 0.05)
+
+flagged %>% select(obs_id, income, happiness, cooks_d)
+nrow(flagged)
+
+# Make the sensitivity-analysis dataset.
+income_no_influential <- income_with_cooks %>%
+  filter(cooks_d <= 0.05)
+
+# Fit a separate model; retain model_full.
+model_reduced <- lm(happiness ~ income, data = income_no_influential)
+summary(model_reduced)
+```
+
+**Interpretation.** Observations with Cook's distance over 0.05 warrant investigation because they can affect the fitted regression coefficients. **They are not automatically errors and should not simply be discarded from the main analysis.** We fit a second model without them to find out whether the conclusions are sensitive to those observations. The cutoff 0.05 is a teaching convention for this exercise, *not* the default threshold represented by the reference lines on all R diagnostic plots. R typically labels at most three points in `plot(model_full, which = 4)`, but the number above a specified cutoff can be different.
+
+**Important:** This code deliberately constructs `income_complete` first, so Cook's distances correspond to the exact rows in `income_with_cooks`. This avoids row-alignment errors if the original CSV has missing data.
+
+## 7(d) Compare diagnostics and model fit (5 points)
+
+**Question.** Examine the diagnostic plots for **both** models. Discuss linearity, approximately constant error variance, and approximate normality of the residuals. Assess independence from the study design. Compare R-squared and the estimated slopes across models.
+
+**Solution.**
+
+```{r income-diagnostics, fig.width=7, fig.height=6}
+par(mfrow = c(2, 2))
+plot(model_full)       # All four standard plots
+par(mfrow = c(2, 2))
+plot(model_reduced)    # Four plots for reduced sample
+par(mfrow = c(1, 1))
+```
+
+How to interpret the plots:
+
+- **Residuals vs Fitted:** Look for no systematic curved pattern (linearity) and roughly similar vertical spread across the fitted values (constant variance).
+- **Normal Q-Q:** Points approximately following the reference line suggest errors are reasonably compatible with normality; strong tail departures indicate possible violations.
+- **Scale-Location:** A roughly horizontal pattern with no increasing/decreasing spread is consistent with constant variance.
+- **Residuals vs Leverage:** Helps identify high-leverage and influential observations. Re-check for influential observations after fitting the reduced model.
+- **Independence:** Cannot be verified by these four plots alone; consider whether observations were sampled independently or whether there are clusters/repeated measurements.
+
+R-squared describes **goodness of fit**, not whether the model assumptions are met. The original R-squared of 0.6087 does not by itself validate the regression model.
+
+```{r income-comparison}
+model_comparison <- tibble(
+  model = c("All observations", "Without flagged observations"),
+  n = c(nobs(model_full), nobs(model_reduced)),
+  intercept = c(coef(model_full)[1], coef(model_reduced)[1]),
+  slope = c(coef(model_full)[2], coef(model_reduced)[2]),
+  p_value_slope = c(coef(summary(model_full))[2, 4],
+                    coef(summary(model_reduced))[2, 4]),
+  r_squared = c(summary(model_full)$r.squared,
+                summary(model_reduced)$r.squared)
+)
+model_comparison
+```
+
+**Expected discussion:** State whether removing flagged points noticeably changes the slope, statistical significance, R-squared, or residual diagnostics. Whether the reduced model is preferable cannot be decided solely because its R-squared is higher. The answer should be based on the actual rendered results; numerical coefficients for the **reduced model** are intentionally calculated by the code rather than invented here.
+
+## 7(e) Interpret the slopes and conclusions (3 points)
+
+**Question.** Interpret the slopes from both models in context. For each slope, report whether the association is statistically significant at the 0.05 level and give the p-value. Did removing influential observations change the substantive conclusion?
+
+**Solution.**
+
+For the original model: **For each one-unit increase in income, predicted happiness increases by about 0.629 units on average. The association is statistically significant (p < 0.001).** The units of `income` and `happiness` should be taken from the dataset codebook; do not assume income is in dollars or happiness is a standard 1–10 scale without verification.
+
+For the reduced model, use the second row of `model_comparison` and write: **For each one-unit increase in income, predicted happiness [increases/decreases] by [estimated slope] units on average; [statistically significant/not statistically significant] (p = [p-value]).** Then compare the two models, explaining whether the result is sensitive to the flagged observations.
+
+**Teaching note:** Normality matters mainly for exact small-sample t-tests/confidence intervals, not for computing the least-squares line. Never remove observations *solely* to get a significant p-value or prettier diagnostics.
+
+---
+
+**Grading suggestion for Question 7:** (a) EDA 4; (b) original fit 4; (c) Cook's distance + sensitivity fit 4; (d) diagnostics + comparison 5; (e) interpretation/inference 3. **Total: 20 points.**

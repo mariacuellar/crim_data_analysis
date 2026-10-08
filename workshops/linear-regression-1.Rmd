@@ -3,161 +3,145 @@ title: "Linear regression"
 author: "Maria Cuellar"
 output:
   html_document:
-    toc: false
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
-    toc_depth: 2
-    code_download: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.width = 7, fig.height = 4.5)
 ```
 
-# Getting started
+# Workflow
 
-We will use simple linear regression to describe the association between two quantitative variables, interpret a fitted line, and make predictions. All data below are **fictional teaching examples**, not evidence about real courts or communities. Only base R is needed.
+Use two quantitative variables: explanatory variable **x** and response **y**.
 
-[Download the R Markdown source](linear-regression-1.Rmd). Open it in RStudio and run the code chunks in order, or click **Knit** to create an HTML report. Knitting requires the `rmarkdown` package; the analyses themselves use only base R. The code is also displayed throughout this page. Each row in these examples represents a different observational unit.
+```text
+Scatterplot → correlation (if the pattern is roughly linear)
+    ↓
+Fit the model on all observations: lm(y ~ x, data = dat)
+    ↓
+Check Cook's distance for influential observations
+    ├─ None: keep the full model
+    └─ Some: inspect them; if justified, make a second dataset and refit
+    ↓
+Compare correlations, slopes, and all four diagnostic plots
+    ↓
+If assumptions are reasonable: interpret the slope, p-value, and strength
+```
+
+Keep the full results. An influential observation is not automatically an error; explain any exclusion.
 
 # Example 1: Court caseload and waiting time
 
-Do courts with larger daily caseloads tend to have longer average waiting times? The explanatory variable, x, is daily caseload (cases); the response, y, is average waiting time (minutes).
+These are fictional courts. **x** is daily caseload; **y** is mean waiting time in minutes. Court 21 is deliberately unusual.
 
-```{r court-data}
-courts <- data.frame(
-  caseload = c(12, 15, 18, 20, 22, 25, 28, 30, 32, 35,
-               38, 40, 42, 45, 48, 50, 52, 55, 58, 60),
-  wait_minutes = c(23, 31, 26, 35, 29, 40, 38, 35, 46, 41,
-                   49, 43, 54, 48, 59, 53, 63, 57, 68, 62)
-)
-head(courts)
-summary(courts)
-```
+## 1. Explore the data
 
-## Plot the data
-
-Always look at the relationship before fitting a line. Look for curvature, unusual observations, and whether the vertical spread changes with x.
-
-```{r court-scatterplot}
-plot(wait_minutes ~ caseload, data = courts,
-     pch = 19, col = "steelblue",
-     xlab = "Daily caseload (cases)",
-     ylab = "Average waiting time (minutes)",
-     main = "Caseload and waiting time in fictional courts")
-```
-
-## Fit and inspect the model
-
-In R, the formula `y ~ x` means model y using x. `lm()` fits the line that minimizes the sum of squared residuals.
-
-```{r court-model}
-model <- lm(wait_minutes ~ caseload, data = courts)
-summary(model)
-coef(model)
-confint(model)
-
+```{r eda}
 library(tidyverse)
-courts %>% ggplot(aes(x=caseload, y=wait_minutes)) + geom_point() + geom_smooth(method="lm", se=FALSE)
+courts <- data.frame(
+  court_id = 1:21,
+  caseload = c(12, 15, 18, 20, 22, 25, 28, 30, 32, 35,
+               38, 40, 42, 45, 48, 50, 52, 55, 58, 60, 70),
+  wait_minutes = c(23, 31, 26, 35, 29, 40, 38, 35, 46, 41,
+                   49, 43, 54, 48, 59, 53, 63, 57, 68, 62, 20)
+)
 
+courts %>%
+  ggplot(aes(x = caseload, y = wait_minutes)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Daily caseload", y = "Mean waiting time (minutes)")
+
+cor(courts$caseload, courts$wait_minutes)
 ```
 
-The fitted equation is: predicted waiting time = intercept + slope × caseload.
+Describe direction, strength, shape, and unusual points. Correlation summarizes a **linear** association and is sensitive to outliers.
 
-- **Intercept:** predicted waiting time when caseload is zero. Zero is outside our observed range, so this is not a useful substantive prediction here.
-- **Slope:** the estimated difference in average waiting time, in minutes, associated with one additional daily case.
-- **Slope p-value:** tests the null hypothesis that the population slope is zero, under the model assumptions.
-- **95% confidence interval:** gives a range of plausible values for the population slope under those assumptions.
-- **R-squared:** the proportion of sample variation in waiting time explained by the fitted line. It does not establish causation.
+## 2. Fit the full model
 
-```{r court-interpretation}
-# Extract the quantities used in a written interpretation.
-slope <- unname(coef(model)["caseload"])
-slope_ci <- confint(model)["caseload", ]
-r_squared <- summary(model)$r.squared
-round(c(slope = slope, lower_95 = slope_ci[1],
-        upper_95 = slope_ci[2], R_squared = r_squared), 3)
+```{r full-model}
+model_full <- lm(wait_minutes ~ caseload, data = courts)
+summary(model_full)
 ```
 
-Here, one additional daily case is associated with an estimated **`r round(slope, 2)` extra minutes** of average waiting time (95% CI: `r round(slope_ci[1], 2)` to `r round(slope_ci[2], 2)`). Courts were not randomly assigned caseloads: staffing, case complexity, or other factors could help explain this association.
+In the coefficient table, use the `caseload` row for the slope and its p-value.
 
-## Make predictions
+## 3. Check influence and refit if justified
 
-Predict within the observed range. A confidence interval describes uncertainty about the mean response at a given x. A prediction interval describes uncertainty about the response for one new court at that x, so it is wider.
-
-```{r court-predictions}
-range(courts$caseload)
-new_courts <- data.frame(caseload = c(25, 45))
-predict(model, newdata = new_courts, interval = "confidence")
-predict(model, newdata = new_courts, interval = "prediction")
+```{r influence}
+cook <- cooks.distance(model_full)
+data.frame(court_id = courts$court_id,
+           cooks_distance = round(cook, 3))
+plot(model_full, which = 4)
 ```
 
-## Check residuals and assumptions
+Court 21 has a large Cook's distance. We omit it **only for a sensitivity analysis** and retain the original model.
 
-For conventional confidence intervals and tests, we assume a linear mean relationship, independent errors, constant error variance, and approximately normal errors (especially for small samples). Independence comes from the study design; a plot cannot establish it. Repeated observations from the same court would require additional care.
-
-```{r court-diagnostics}
-# A residual is observed minus fitted waiting time.
-head(data.frame(observed = courts$wait_minutes,
-                fitted = fitted(model), residual = resid(model)))
-
-# Ideally, residuals form a roughly even cloud around zero.
-plot(fitted(model), resid(model), pch = 19,
-     xlab = "Fitted waiting time (minutes)", ylab = "Residual (minutes)")
-abline(h = 0, lty = 2)
-
-# Points should be approximately along the line.
-qqnorm(resid(model))
-qqline(resid(model), col = "firebrick")
-
-# Large Cook's distances flag potentially influential courts to investigate. Can make the Residuals vs Leverage plot or just look at the Cook's distances directly.
-plot(model, which = 5)
-
-plot(model, which = 4)
+```{r refit}
+courts_without_21 <- filter(courts, court_id != 21)
+model_without_21 <- lm(wait_minutes ~ caseload, data = courts_without_21)
+summary(model_without_21)
 ```
 
-Curvature suggests that a straight line may be inadequate; a funnel shape suggests unequal variance. Investigate unusual observations rather than automatically deleting them. These checks are limited with small samples.
+When an exercise specifies a Cook's distance cutoff (such as 0.05), this is the filtering pattern. It assumes the fitted model used every row in the same order; check for missing values and inspect the flagged rows before excluding them.
 
+```{r cutoff-pattern, eval=FALSE}
+model <- lm(y ~ x, data = dat)
+dat_nooutliers <- dat %>% filter(cooks.distance(model) <= 0.05)
+model_nooutliers <- lm(y ~ x, data = dat_nooutliers)
+```
 
+## 4. Compare both models
 
+```{r comparison}
+# Correlation can change when an influential point is removed.
+cor(courts$caseload, courts$wait_minutes)
+cor(courts_without_21$caseload, courts_without_21$wait_minutes)
 
+# Compare the slope, its p-value, and R-squared in each summary.
+summary(model_full)
+summary(model_without_21)
 
-# Example 2: Neighborhood resources and reported incidents
+# R's four standard diagnostic plots for each model.
+par(mfrow = c(2, 2))
+plot(model_full)
+plot(model_without_21)
+par(mfrow = c(1, 1))
+```
 
-This second fictional example has a negative association. Each row represents a neighborhood. The outcome is a reported incident rate per 1,000 residents, not an individual person's risk.
+| Check | What to look for |
+|---|---|
+| Linearity | Roughly straight scatterplot; no clear curve in residuals |
+| Constant variance | Similar residual spread across fitted values |
+| Normality | Q-Q points roughly follow the line |
+| Independence | Does the study design make observations independent? |
 
-```{r neighborhood-example}
+Be reasonable with real data: small departures are common. The residuals vs leverage plot also helps identify influential points. Report if the conclusion changes between models.
+
+## 5. Interpret
+
+Use this sentence: **For one additional case per day, predicted mean waiting time changes by [slope] minutes, on average.** Then state whether the slope is statistically significant at 0.05, give its p-value, and describe association strength using correlation or R-squared. Read these from `summary(model_full)` and `summary(model_without_21)`.
+
+Association does not establish that adding cases *causes* waiting time to change.
+
+# Example 2: Try the workflow
+
+Each row is a fictional neighborhood. **x** is weekly recreation program hours; **y** is reported incidents per 1,000 residents.
+
+```{r second-example}
 neighborhoods <- data.frame(
   recreation_hours = c(2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 18, 20),
   incidents_per_1000 = c(38, 36, 39, 32, 35, 30, 33, 27, 29, 24, 27, 21)
 )
+neighborhoods %>%
+  ggplot(aes(x = recreation_hours, y = incidents_per_1000)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+cor(neighborhoods$recreation_hours, neighborhoods$incidents_per_1000)
 model2 <- lm(incidents_per_1000 ~ recreation_hours, data = neighborhoods)
-
-neighborhoods %>% ggplot(aes(x=recreation_hours, y=incidents_per_1000)) + geom_point() + geom_smooth(model="lm", se=FALSE)
-
-
 summary(model2)
-confint(model2)
-predict(model2, newdata = data.frame(recreation_hours = 12),
-        interval = "prediction")
+par(mfrow = c(2, 2))
+plot(model2)
+par(mfrow = c(1, 1))
 ```
 
-Interpret the slope as the estimated difference in reported incidents per 1,000 residents associated with one additional weekly program hour. An association between neighborhoods does not establish that adding program hours causes a change in crime or that the same relationship holds for individuals. Check the assumptions as in Example 1 before relying on inference.
-
-
-Look for influential outliers.
-
-```{r}
-plot(model2, which=5)
-```
-
-We don't see any here, but if you wanted to remove a point, you could do the following:
-
-```{r}
-
-# remove influential outliers
-courts_dat_clean <- courts %>%
-  filter(cooks.distance(model) <= 0.05)
-
-```
+Describe the slope in **incidents per 1,000 residents per additional program hour**. Give the p-value and say whether the association is strong. Can you interpret it as causal? Why or why not?
