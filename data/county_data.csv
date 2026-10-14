@@ -1,0 +1,241 @@
+state,county_id,median_income_thousands,property_crime_rate
+California,S01C01,77.5,29.8
+California,S01C02,51.7,36.2
+California,S01C03,49.1,43.1
+California,S01C04,56.6,38.4
+California,S01C05,38.8,43.8
+California,S01C06,48.7,43.1
+California,S01C07,37.5,49.5
+California,S01C08,71.5,33.4
+California,S01C09,67.2,33.2
+California,S01C10,39.9,46.0
+California,S01C11,85.9,31.4
+California,S01C12,76.4,31.6
+California,S01C13,78.9,31.7
+California,S01C14,70.8,33.7
+California,S01C15,84.1,31.3
+California,S01C16,96.0,21.2
+California,S01C17,45.4,41.2
+California,S01C18,96.3,22.6
+California,S01C19,45.7,40.0
+California,S01C20,39.1,50.0
+California,S01C21,44.0,44.0
+California,S01C22,68.9,30.6
+California,S01C23,69.6,39.0
+California,S01C24,74.0,29.9
+California,S01C25,43.2,41.9
+California,S01C26,95.4,27.5
+California,S01C27,37.4,41.9
+California,S01C28,75.1,27.6
+California,S01C29,72.9,35.0
+California,S01C30,79.7,31.5
+Florida,S02C01,45.6,61.8
+Florida,S02C02,91.7,48.8
+Florida,S02C03,65.3,60.2
+Florida,S02C04,93.6,43.8
+Florida,S02C05,53.4,64.4
+Florida,S02C06,42.4,63.7
+Florida,S02C07,78.4,52.3
+Florida,S02C08,97.4,48.2
+Florida,S02C09,74.2,50.1
+Florida,S02C10,36.3,66.8
+Florida,S02C11,72.1,52.0
+Florida,S02C12,84.9,52.2
+Florida,S02C13,80.3,54.4
+Florida,S02C14,79.1,49.4
+Florida,S02C15,78.2,49.1
+Florida,S02C16,74.8,54.5
+Florida,S02C17,54.1,65.2
+Florida,S02C18,42.2,65.2
+Florida,S02C19,80.3,55.3
+Florida,S02C20,36.2,59.4
+Florida,S02C21,39.9,65.1
+Florida,S02C22,55.9,58.8
+Florida,S02C23,94.0,45.2
+Florida,S02C24,95.8,51.4
+Florida,S02C25,66.4,54.7
+Florida,S02C26,94.8,49.0
+Florida,S02C27,63.8,61.3
+Florida,S02C28,65.9,55.6
+Florida,S02C29,78.9,56.5
+Florida,S02C30,45.1,62.9
+Georgia,S03C01,55.0,64.1
+Georgia,S03C02,52.8,67.3
+Georgia,S03C03,62.1,66.1
+Georgia,S03C04,58.1,73.3
+Georgia,S03C05,92.4,51.6
+Georgia,S03C06,47.2,68.5
+Georgia,S03C07,54.9,66.5
+Georgia,S03C08,61.2,64.8
+Georgia,S03C09,71.0,62.2
+Georgia,S03C10,65.7,67.5
+Georgia,S03C11,96.2,57.8
+Georgia,S03C12,68.4,65.7
+Georgia,S03C13,60.8,63.9
+Georgia,S03C14,61.8,66.8
+Georgia,S03C15,71.5,62.8
+Georgia,S03C16,49.0,69.9
+Georgia,S03C17,90.8,52.0
+Georgia,S03C18,73.3,61.8
+Georgia,S03C19,50.3,73.8
+Georgia,S03C20,43.5,76.0
+Georgia,S03C21,66.4,57.8
+Georgia,S03C22,38.3,70.9
+Georgia,S03C23,95.7,54.0
+Georgia,S03C24,96.0,50.7
+Georgia,S03C25,37.4,70.4
+Georgia,S03C26,74.6,63.1
+Georgia,S03C27,48.9,69.3
+Georgia,S03C28,75.8,58.2
+Georgia,S03C29,70.4,59.9
+Georgia,S03C30,73.0,65.4
+Illinois,S04C01,81.0,35.4
+Illinois,S04C02,64.9,38.9
+Illinois,S04C03,96.0,26.3
+Illinois,S04C04,61.0,40.4
+Illinois,S04C05,82.5,36.0
+Illinois,S04C06,67.6,36.7
+Illinois,S04C07,72.3,38.5
+Illinois,S04C08,90.2,28.4
+Illinois,S04C09,90.2,27.3
+Illinois,S04C10,72.2,43.3
+Illinois,S04C11,91.9,28.2
+Illinois,S04C12,39.1,50.7
+Illinois,S04C13,72.7,37.5
+Illinois,S04C14,59.0,39.9
+Illinois,S04C15,97.2,28.2
+Illinois,S04C16,98.0,27.2
+Illinois,S04C17,68.9,30.5
+Illinois,S04C18,53.7,42.1
+Illinois,S04C19,82.6,33.2
+Illinois,S04C20,41.1,47.4
+Illinois,S04C21,58.6,37.0
+Illinois,S04C22,76.7,35.3
+Illinois,S04C23,98.0,19.6
+Illinois,S04C24,46.5,46.3
+Illinois,S04C25,44.0,43.3
+Illinois,S04C26,94.8,32.4
+Illinois,S04C27,54.5,43.6
+Illinois,S04C28,88.6,34.2
+Illinois,S04C29,73.6,39.2
+Illinois,S04C30,42.0,44.9
+Michigan,S05C01,73.8,60.0
+Michigan,S05C02,98.9,47.8
+Michigan,S05C03,35.3,69.6
+Michigan,S05C04,82.8,61.3
+Michigan,S05C05,54.2,69.2
+Michigan,S05C06,85.7,58.5
+Michigan,S05C07,35.6,69.4
+Michigan,S05C08,97.6,51.2
+Michigan,S05C09,75.6,63.9
+Michigan,S05C10,51.1,65.9
+Michigan,S05C11,36.1,79.3
+Michigan,S05C12,86.5,53.4
+Michigan,S05C13,80.5,57.0
+Michigan,S05C14,60.9,65.7
+Michigan,S05C15,44.0,73.6
+Michigan,S05C16,90.5,57.0
+Michigan,S05C17,98.3,46.0
+Michigan,S05C18,47.5,71.3
+Michigan,S05C19,61.7,60.5
+Michigan,S05C20,44.4,68.9
+Michigan,S05C21,37.5,69.2
+Michigan,S05C22,70.6,55.6
+Michigan,S05C23,39.9,69.1
+Michigan,S05C24,84.8,58.0
+Michigan,S05C25,43.7,65.5
+Michigan,S05C26,99.4,47.3
+Michigan,S05C27,61.7,63.7
+Michigan,S05C28,35.1,80.6
+Michigan,S05C29,49.8,60.7
+Michigan,S05C30,41.5,71.9
+New York,S06C01,81.3,20.8
+New York,S06C02,82.6,24.6
+New York,S06C03,88.0,27.7
+New York,S06C04,72.2,31.9
+New York,S06C05,96.5,23.8
+New York,S06C06,35.6,41.2
+New York,S06C07,78.3,25.3
+New York,S06C08,66.6,27.1
+New York,S06C09,38.4,44.4
+New York,S06C10,39.5,42.3
+New York,S06C11,47.8,40.8
+New York,S06C12,69.8,29.6
+New York,S06C13,99.0,16.4
+New York,S06C14,69.1,31.0
+New York,S06C15,95.0,20.4
+New York,S06C16,86.0,20.7
+New York,S06C17,45.8,40.8
+New York,S06C18,55.0,34.6
+New York,S06C19,82.5,22.7
+New York,S06C20,41.1,33.9
+New York,S06C21,76.9,27.4
+New York,S06C22,35.6,43.4
+New York,S06C23,37.1,39.2
+New York,S06C24,59.6,35.7
+New York,S06C25,41.3,36.7
+New York,S06C26,63.4,34.0
+New York,S06C27,46.5,39.3
+New York,S06C28,99.0,19.7
+New York,S06C29,39.5,38.1
+New York,S06C30,90.2,25.1
+Ohio,S07C01,38.0,62.8
+Ohio,S07C02,50.7,58.8
+Ohio,S07C03,74.0,51.4
+Ohio,S07C04,85.2,45.4
+Ohio,S07C05,37.3,66.8
+Ohio,S07C06,43.7,56.8
+Ohio,S07C07,45.0,60.7
+Ohio,S07C08,57.1,53.6
+Ohio,S07C09,99.0,47.0
+Ohio,S07C10,80.2,52.2
+Ohio,S07C11,49.3,61.3
+Ohio,S07C12,90.6,39.6
+Ohio,S07C13,60.4,54.1
+Ohio,S07C14,70.6,50.1
+Ohio,S07C15,57.4,58.4
+Ohio,S07C16,58.3,56.2
+Ohio,S07C17,63.6,49.9
+Ohio,S07C18,42.0,64.7
+Ohio,S07C19,44.2,62.2
+Ohio,S07C20,78.4,55.3
+Ohio,S07C21,53.2,56.4
+Ohio,S07C22,38.6,65.6
+Ohio,S07C23,37.4,64.1
+Ohio,S07C24,93.8,45.7
+Ohio,S07C25,91.6,42.1
+Ohio,S07C26,63.4,51.1
+Ohio,S07C27,76.5,47.4
+Ohio,S07C28,99.1,34.8
+Ohio,S07C29,52.1,60.6
+Ohio,S07C30,68.5,53.9
+Texas,S08C01,79.6,37.7
+Texas,S08C02,97.1,29.4
+Texas,S08C03,76.1,41.4
+Texas,S08C04,99.9,30.5
+Texas,S08C05,100.0,35.9
+Texas,S08C06,64.4,49.2
+Texas,S08C07,58.7,42.7
+Texas,S08C08,54.0,52.4
+Texas,S08C09,86.6,41.4
+Texas,S08C10,44.0,53.4
+Texas,S08C11,42.4,57.3
+Texas,S08C12,68.3,39.8
+Texas,S08C13,99.2,35.6
+Texas,S08C14,73.6,43.7
+Texas,S08C15,96.9,30.5
+Texas,S08C16,51.2,49.1
+Texas,S08C17,79.1,40.4
+Texas,S08C18,48.0,45.0
+Texas,S08C19,64.8,46.5
+Texas,S08C20,62.1,44.0
+Texas,S08C21,89.9,33.7
+Texas,S08C22,96.5,34.6
+Texas,S08C23,60.8,41.9
+Texas,S08C24,52.0,50.3
+Texas,S08C25,62.8,44.7
+Texas,S08C26,70.2,44.6
+Texas,S08C27,79.2,36.9
+Texas,S08C28,97.6,29.2
+Texas,S08C29,62.6,50.4
+Texas,S08C30,61.5,47.4

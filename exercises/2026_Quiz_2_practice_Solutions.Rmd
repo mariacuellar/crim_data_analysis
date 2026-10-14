@@ -1,0 +1,203 @@
+---
+title: "2026 Quiz 2 practice questions"
+author: "Maria Cuellar"
+date: "2026-10-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Instructions
+
+These exercises use two **simulated** datasets. The purpose is to determine whether ordinary simple linear regression is appropriate **before** fitting a model. Answers appear directly after the questions.
+
+
+
+# Part 1: Police Presence and Property Crime
+
+## Question 1 (5 points)
+
+Load `neighborhood_data.csv`. We are interested in this research question: Is having police presence for more hours associated with a decrease in the property crime rate? For this question, what is the explanatory variable and what is the response variable?
+
+### Solution
+
+```{r q1, message=FALSE}
+library(tidyverse)
+neighborhood <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/neighborhood_data.csv", show_col_types = FALSE)
+```
+
+The **explanatory variable** is `police_presence_hours`, and the **response variable** is `property_crime_rate`, because the proposed analysis examines how crime rates differ across levels of police presence. This variable designation does **not** imply that increasing police presence causes changes in crime rates. It will simply allow us to find associations between the two variables, which might suggest a causal relationship.
+
+
+## Question 2 (5 points)
+
+Create a scatterplot of property crime rate vs. police presence, with labels. Describe the plot.
+
+### Solution
+
+```{r q2}
+neighborhood %>% ggplot(aes(x = police_presence_hours, y = property_crime_rate)) +
+  geom_point() +
+  labs(x = "Police presence (hours per day)",
+       y = "Property crimes per 1,000 residents",
+       title = "Police presence and property crime") 
+
+```
+
+Direction: There is no single direction that adequately describes the entire association. 
+
+Form: The points follow a **U-shaped (nonlinear)** pattern: crime rates tend to decrease as police presence increases from low levels to moderate levels, then increase as police presence rises further. 
+
+Strength: The points tightly follow a U-shaped pattern, but since it is nonlinear, we cannot say that there is a strong relationship between the two variables.
+
+Unusual features: There are no clearly isolated observations that need to be treated as outliers simply because they are at the ends of this curved pattern.
+
+
+
+## Question 3 (5 points)
+
+Would it be appropriate to calculate Pearson's correlation coefficient? If a correlation were close to zero, would that mean the variables are not associated? Do not calculate a correlation if you think it is inappropriate.
+
+
+### Solution
+
+A single Pearson correlation is **not an appropriate summary of this relationship** because Pearson's *r* measures the direction and strength of a **linear** association. The scatterplot shows a strong nonlinear pattern, so a correlation near zero could conceal a meaningful association. This does not mean the coefficient is mathematically undefined or impossible to calculate. It means it would be potentially misleading to use it to characterize the relationship. Accordingly, we do not calculate it here.
+
+
+## Question 4 (5 points)
+
+Would you recommend fitting a simple linear regression? Which assumption is problematic, and what would be lost by summarizing the data with a straight line?
+
+
+### Solution
+
+**No**, not as the main model. The **linearity assumption** is violated: the mean crime rate does not appear to be a straight-line function of police presence. A straight line would obscure the decrease in crime rates at lower values and the increase at higher values. It could yield a slope near zero even though the scatterplot shows a clear pattern. A researcher could consider a nonlinear model, such as a quadratic regression, but that is outside the scope of this course.
+
+Goodness of fit: R-squared: Not calculated.
+
+Homoscedasticity: Not studied.
+
+Independence: Not studied.
+
+Normality: Not studied.
+
+Linearity: Since this is not satisfied, none of the other diagnostic tests need to be performed.
+
+No influential outliers: Not studied.
+
+
+
+# Part 2: Income and Property Crime Across States
+
+
+## Question 5 (5 points)
+
+Load `county_data.csv`. We are interested in this research question: Is a higher median income associated with a lower property crime rate? For this question, what is the explanatory variable and what is the response variable?
+
+
+Load `county_data.csv`. Create a scatterplot of property crime rate vs. median income. Describe.
+
+
+### Solution
+
+```{r q5}
+county <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/county_data.csv")
+
+county %>% ggplot(aes(x = median_income_thousands, y = property_crime_rate)) +
+  geom_point() +
+  labs(x = "Median household income (thousands of dollars)",
+       y = "Property crimes per 1,000 residents",
+       title = "Median income and property crime across counties")
+```
+
+Direction: Negative.
+
+Form: Linear.
+
+Strength: Weak.
+
+Unusual features: None.
+
+Overall, there is a **moderate negative, roughly linear association**: higher-income counties tend to have lower property crime rates. The points have substantial vertical spread, suggesting that income does not explain all differences in crime rates. The plot alone does not show whether county observations are independent.
+
+
+## Question 6 (5 points)
+
+Recreate the scatterplot, coloring points by state by adding this code to your aesthetics vector: i.e., aes(x=,y=,color=state). Describe the grouping and what it adds to your interpretation as you prepare to run a linear regression.
+
+### Solution
+
+```{r q6}
+county %>% ggplot(aes(x=median_income_thousands, y=property_crime_rate, color=state)) +
+  geom_point() +
+  labs(x = "Median household income (thousands of dollars)",
+       y = "Property crimes per 1,000 residents",
+       color = "State",
+       title = "Income and property crime, grouped by state")
+```
+
+The colors reveal **distinct state-level groupings**. Counties from the same state tend to fall along a similar downward trend, but some states have consistently higher or lower crime rates than others at comparable income levels. This is evidence of meaningful between-state variation and raises concern that observations within a state might have correlated regression errors. Clustering of the points by state, on its own, does **not prove** conditional error dependence, but it is suggestive of it.
+
+
+
+## Question 7 (5 points)
+
+Fit a linear model regressing `property_crime_rate` onto `median_income_thousands`. Evaluate four assumptions of a simple linear regression. Explain what you can and cannot assess from the available information.
+
+
+### Solution
+
+```{r q7}
+
+model_county <- lm(property_crime_rate ~ median_income_thousands, data=county)
+
+par(mfrow=c(2,2))
+plot(model_county)
+par(mfrow=c(1,1))
+```
+
+Linearity: Reasonably linear relationship from the overall scatterplot, although patterns across states may complicate a single-line description.
+
+Independence of errors: Questionable. Counties in the same state share characteristics not included in the proposed model, so their errors may remain correlated after accounting for income.
+
+Homoscedasticity: Satisfied.
+
+Normality of errors: The Q-Q plot shows some deviations from the diagonal line at both tails, suggesting that the residuals may not be normally distributed. Therefore, the normality assumption may be violated. However, this does not automatically mean you should reject the linear regression model. Normality is primarily important for the validity of the hypothesis test, rather than for estimating the regression coefficients themselves.
+
+
+Note: I would still run the linear regression. If linearity is clearly violated, I would not. But if the other assumptions are violated, I might run the model as a first pass, and then try a different more complex model that can handle the deviations from the perfect model.
+
+
+
+
+## Question 8
+
+What is the null hypothesis for this research question? Answer the research question by interpreting the slope coefficient. Also state the results of your hypothesis test, i.e., whether you rejected the null hypothesis or not.
+
+### Solution
+
+
+```{r q8}
+summary(model_county)
+```
+Each increase of $1,000 is associated with a decrease in 0.37 property crimes per 1000 residents, with a p-value < 0.001. This is a statistically significant relationship.
+
+
+H0: b1 = 0
+
+HA: b1 $\neq$ 0
+
+We reject the null hypothesis that the population slope coefficient is zero. There is statistically significant evidence of a linear association between median household income and property crime rates. Because the estimated slope is negative, higher median household incomes are associated with lower property crime rates.
+
+
+# Part 3: Reflection
+
+## Question 9
+
+Explain the difference between nonlinearity and dependence among errors. Why check these issues before regression?
+
+### Solution
+
+**Nonlinearity** means that a straight line is an inadequate representation of the mean relationship between the explanatory and response variables. It concerns the **shape** of the association. **Dependence among errors** means that knowing one observation's error provides information about another observation's error, even after accounting for the model's predictors. It concerns the **dependence structure** of the data. These are different problems: the first can lead to misleading fitted relationships, while the second can make usual standard errors and hypothesis tests unreliable. A scatterplot, information about the sampling design, and (where appropriate) model diagnostics help researchers decide how to analyze the data.

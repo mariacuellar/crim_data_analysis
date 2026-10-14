@@ -1,0 +1,10 @@
+The file `county_data.csv` contains 240 simulated counties, with 30 counties from each of eight states. Researchers want to study the association between median household income and property crime rates. Counties within the same state may share state policies, economic conditions, and reporting practices.
+
+## Codebook
+
+| Variable | Description | 
+|:--|:--|:--|
+| `state` | State where the county is located | 
+| `county_id` | Unique county identifier | 
+| `median_income_thousands` | Median household income, in thousands of dollars | 
+| `property_crime_rate` | Annual reported property crimes per 1,000 residents | 

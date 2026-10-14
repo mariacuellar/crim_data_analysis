@@ -1,0 +1,9 @@
+The file `neighborhood_data.csv` contains data on 180 simulated neighborhoods. Researchers are interested in the association between police presence and property crime rates.
+
+## Codebook
+
+| Variable | Description | 
+|:--|:--|:--|
+| `neighborhood_id` | Unique neighborhood identifier | 
+| `police_presence_hours` | Average hours of police presence per day | 
+| `property_crime_rate` | Annual reported property crimes per 1,000 residents | 

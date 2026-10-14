@@ -1,0 +1,106 @@
+---
+title: "2026 Quiz 2 practice questions"
+author: "Maria Cuellar"
+date: "2026-10-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Instructions
+
+These exercises use two **simulated** datasets. The purpose is to determine whether ordinary simple linear regression is appropriate **before** fitting a model. Answers appear directly after the questions.
+
+
+
+# Part 1: Police Presence and Property Crime
+
+## Question 1 (5 points)
+
+Load `neighborhood_data.csv`. We are interested in this research question: Is having police presence for more hours associated with a decrease in the property crime rate? For this question, what is the explanatory variable and what is the response variable?
+
+### Solution
+
+
+
+## Question 2 (5 points)
+
+Create a scatterplot of property crime rate vs. police presence, with labels. Describe the plot.
+
+### Solution
+
+
+
+## Question 3 (5 points)
+
+Would it be appropriate to calculate Pearson's correlation coefficient? If a correlation were close to zero, would that mean the variables are not associated? Do not calculate a correlation if you think it is inappropriate.
+
+
+### Solution
+
+
+
+
+## Question 4 (5 points)
+
+Would you recommend fitting a simple linear regression? Which assumption is problematic, and what would be lost by summarizing the data with a straight line?
+
+
+### Solution
+
+
+
+
+
+# Part 2: Income and Property Crime Across States
+
+
+## Question 5 (5 points)
+
+Load `county_data.csv`. We are interested in this research question: Is a higher median income associated with a lower property crime rate? For this question, what is the explanatory variable and what is the response variable?
+
+
+Load `county_data.csv`. Create a scatterplot of property crime rate vs. median income. Describe.
+
+
+### Solution
+
+
+## Question 6 (5 points)
+
+Recreate the scatterplot, coloring points by state by adding this code to your aesthetics vector: i.e., aes(x=,y=,color=state). Describe the grouping and what it adds to your interpretation as you prepare to run a linear regression.
+
+### Solution
+
+
+
+
+## Question 7 (5 points)
+
+Fit a linear model regressing `property_crime_rate` onto `median_income_thousands`. Evaluate four assumptions of a simple linear regression. Explain what you can and cannot assess from the available information.
+
+
+### Solution
+
+
+
+
+## Question 8
+
+What is the null hypothesis for this research question? Answer the research question by interpreting the slope coefficient. Also state the results of your hypothesis test, i.e., whether you rejected the null hypothesis or not.
+
+### Solution
+
+
+
+
+# Part 3: Reflection
+
+## Question 9
+
+Explain the difference between nonlinearity and dependence among errors. Why check these issues before regression?
+
+### Solution
+
