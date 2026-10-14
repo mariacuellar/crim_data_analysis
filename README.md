@@ -80,7 +80,7 @@ Linked File.”
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_2_questions.Rmd)
   (Solutions)
 - [2026 Quiz 2 - Practice
-  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Quiz_2_practice_questions.Rmd.Rmd)
+  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Quiz_2_practice_questions.Rmd)
   (Solutions)
 
 ## Exams and Quizzes
