@@ -107,3 +107,5 @@ To download the file instead of opening it in a new tab, right-click the link (o
 - <a href="data/pretrial_df.csv" download>pretrial_df.csv</a> (<a href="data/pretrial_df_codebook.txt" download>Codebook</a>)
 - <a href="data/riverton-crime1.csv" download>riverton-crime1.csv</a> (<a href="data/codebook_riverton-crime.txt" download>Codebook</a>)
 - <a href="data/income_2.csv" download>income_2.csv</a> (<a href="data/income_2_codebook.txt" download>Codebook</a>)
+- <a href="data/neighborhood_data.csv" download>neighborhood_data.csv</a> (<a href="data/codebook_for_neighborhood_data.txt" download>Codebook</a>)
+- <a href="data/county_data.csv" download>county_data.csv</a> (<a href="data/codebook_for_county_data.txt" download>Codebook</a>)

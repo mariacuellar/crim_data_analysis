@@ -106,3 +106,7 @@ Linked File.”
   (<a href="data/codebook_riverton-crime.txt" download>Codebook</a>)
 - <a href="data/income_2.csv" download>income_2.csv</a>
   (<a href="data/income_2_codebook.txt" download>Codebook</a>)
+- <a href="data/neighborhood_data.csv" download>neighborhood_data.csv</a>
+  (<a href="data/codebook_for_neighborhood_data.txt" download>Codebook</a>)
+- <a href="data/county_data.csv" download>county_data.csv</a>
+  (<a href="data/codebook_for_county_data.txt" download>Codebook</a>)
