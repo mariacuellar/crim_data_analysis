@@ -1,22 +1,18 @@
 ---
-title: "Linear Regression In-Class Exercises - Solutions"
+title: "Linear Regression In-Class Exercises"
 author: "Maria Cuellar"
-date: "2026-10-06"
+date: "2026-10-17"
 output: html_document
 ---
-
-
 
 ```{r setup, message=FALSE}
 library(tidyverse)
 
-dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/riverton-crime.csv")
-dat
+dat_riverton <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/riverton-crime1.csv")
+
 ```
 
 # Linear Regression
-
-Use riverton-crime.csv.
 
 We will examine the relationship between the number of prior arrests and time served.
 
@@ -24,45 +20,53 @@ We will examine the relationship between the number of prior arrests and time se
 
 Create a scatterplot with `num_prior_arrests` on the x-axis and `time_served_months` on the y-axis.
 
-```{r}
-dat %>%
-  ggplot(aes(x = num_prior_arrests, y = time_served_months)) +
-  geom_point()
+```{r q1}
+dat_riverton %>%
+  ggplot(aes(x = num_prior_arrests, y = time_served_months)) + geom_point() +
+  labs(x="Number of Prior Arrests",
+       y="Time Served (Months)",
+       title="Scatterplot of time served by number of prior arrests")
 ```
 
 Describe the relationship. Is it positive or negative? Does it look approximately linear?
 
-**Answer:** There is a weak positive relationship: people with more prior arrests tend to have somewhat higher time served. The relationship is approximately linear, but there is a lot of variation around the general trend.
+**Answer:**
+It might be linear, but it is too spread out to tell. Thus, I wouldn't say it's positive or negative. 
 
 
 ## Question 2
 
 Fit a linear regression where you regress time served onto number of prior arrests.
 
-```{r}
-model <- lm(time_served_months ~ num_prior_arrests, data = dat)
-
-summary(model)
+```{r q2}
+model_riverton <- lm(time_served_months ~ num_prior_arrests, data = dat_riverton)
+summary(model_riverton)
 ```
 
 Which variable is the outcome/dependent variable?
 
-**Answer:** `time_served_months`
+**Answer:**
+The time served in months is the outcome/dependent variable. 
+
+
 
 Which variable is the explanatory/independent variable?
 
-**Answer:** `num_prior_arrests`
+**Answer:**
+The number of prior arrests is the independent variable. 
 
 
 ## Question 3
 
 Use the regression output to write the regression equation.
 
-Predicted time served = 31.82 + 0.86 × number of prior arrests
+Predicted time served = 44.23 + 0.077 (number of prior arrests)
 
 Interpret the slope in words.
 
-**Answer:** For each additional prior arrest, predicted time served increases by about 0.86 months, on average.
+**Answer:**
+Each additional prior arrest is associated with an additional 0.077 of a month in terms of time served, on average, with a p-value of 0.89. Thus, the relationship is not statistically significant at the 0.05 level.
+
 
 
 ## Question 4
@@ -70,15 +74,20 @@ Interpret the slope in words.
 Add the regression line to the scatterplot.
 
 ```{r}
-dat %>%
-  ggplot(aes(x = num_prior_arrests, y = time_served_months)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE)
+dat_riverton %>%
+  ggplot(aes(x = num_prior_arrests, y = time_served_months)) + geom_point() +
+  geom_smooth(method = "lm", se = FALSE)+ 
+  labs(x = "Number of prior arrests",
+       y = "Time served (Months)",
+       title = "Scatterplot of time served by number of prior arrests with linear model")
 ```
 
 Does the regression line seem like a reasonable summary of the relationship?
 
-**Answer:** It captures the slight positive trend in the data, but the observations are widely scattered around the line. So the line is a reasonable summary of the average trend, but number of prior arrests alone does not explain very much of the variation in time served.
+**Answer:**
+
+Since the line is just flat, and we've seen that the relationship is not statistically significantly different from zero, this seems like a reasonable summary. Basically, there does not seem to be a strong linear relationship between the two variables.
+
 
 
 ## Question 5
@@ -86,11 +95,10 @@ Does the regression line seem like a reasonable summary of the relationship?
 Use the model to predict time served for a person with 5 prior arrests.
 
 ```{r}
-predict(model,
-        newdata = data.frame(num_prior_arrests = 5))
+predict(model_riverton, newdata = data.frame(num_prior_arrests = 5))
 ```
 
-Predicted time served = **36.14 months**
+The predicted time served for a person with 5 prior arrests is 44.62 months.
 
 
 ## Question 6
@@ -98,21 +106,27 @@ Predicted time served = **36.14 months**
 Look at the R-squared value in the regression output.
 
 ```{r}
-summary(model)
+summary(model_riverton)
 ```
 
-R-squared = **0.014**
+R-squared = 4.096e-05 = 0.000041.
 
 Interpret the R-squared in words.
 
-**Answer:** About 1.4% of the variation in time served is explained by its linear relationship with number of prior arrests. This is a very small proportion, so prior arrests alone are not a strong predictor of time served in this dataset.
+**Answer:**
+The R-squared is very very low. This means that the relationship between the two variables is very weak.
+
+
+
 
 Can we conclude that having more prior arrests **causes** a person to serve more time? Why or why not?
 
-**Answer:** No. This regression shows an association between prior arrests and time served, not a causal effect. Other factors, such as offense type or seriousness, could be related to both prior arrests and time served. Establishing causation would require an appropriate research design, not just a regression.
+**Answer:**
+No. The R-squared only tells us about the strength of the relationship, or how spread out the points are around the regression line. 
 
+Linear regression doesn't ever tell us that there is a causal relationship, on its own. More assumptions need to be met. 
 
-
+Additionally, this relationship is not statistically significant. So, even if the model were causal, there would be no effect in this case.
 
 
 
@@ -120,36 +134,95 @@ Can we conclude that having more prior arrests **causes** a person to serve more
 
 
 Now let's look at the income_2.csv dataset. 
+
 a. Load the data
+```{r q7a}
+dat_income <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/income_2.csv")
+```
 
 b. Draw the scatterplot (without a line of best fit) (2 points)
+```{r q7b}
+dat_income %>%
+  ggplot(aes(x=income,y=happiness)) + geom_point() +
+  labs(x="Income (thousands of U.S. dollars)",
+       y="Happiness",
+       title="Scatterplot showing Income and Happiness")
+```
 
 c. Describe the scatterplot, calculate correlation if appropriate (5 points)
 
-d. Fit a linear model and report the estimated i) slope, y-intercept, and iii) p-value for the slope. (5 points)
+**Answer:**
+Direction: Positive direction of association.
+Form: Linear.
+Strength: Strong relationship.
+Unusual features: There are definitely three outliers.
 
-e. Test the assumptions of linear regression and assess the goodness of fit. (5 points)
+It is not appropriate to calculate correlation with these strong outliers. So, I'll calculate it with the outliers and without, to compare.
 
-f. Interpret the slope coefficient. (3 points)
+```{r q7c}
+# fit linear model
+model_income <- lm(happiness ~ income, data = dat_income)
 
+# define new dataset without influential outliers
+dat_income_nooutliers <- dat_income %>%
+  filter(cooks.distance(model_income) <= 0.05)
 
-
-```{r}
-
-income_dat <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/income_2.csv")
-
-income_dat %>% summarise(cor=cor(income,happiness))
-
-income_dat %>%
-  ggplot(aes(x = income, y = happiness)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE)
-
-model <- lm(happiness~income, data=income_dat)
-
-summary(model)
-
-plot(model)
-
+# calculate correlation with and without outliers
+dat_income %>% summarize(cor=cor(income, happiness))
+dat_income_nooutliers %>% summarize(cor=cor(income, happiness))
 ```
 
+The correlation with influential outliers is .78 and without is .87. 
+
+
+
+d. Fit a linear model and report the estimated i) slope, ii) y-intercept, and iii) p-value for the slope. (5 points)
+```{r q7d}
+# fit model
+model_income_nooutliers <- lm(happiness ~ income, data = dat_income_nooutliers)
+
+# give summary with and without outliers
+summary(model_income)
+summary(model_income_nooutliers)
+```
+**Answer:**
+With the influential outliers there is an estimated slope of 0.63 (p-value < 0.001) and a y-intercept of 0.58. 
+
+With the influential outliers there is an estimated slope of 0.71 (p-value < 0.001) and a y-intercept of 0.23. 
+
+Removing the influential outliers incrased the slope, and the statistical signficance remained.
+
+
+
+
+e. Test the assumptions of linear regression and assess the goodness of fit. (5 points)
+```{r q7e, fig.height=6}
+# show diagnostic plots both with and without outliers
+par(mfrow=c(2,2))
+plot(model_income)
+plot(model_income_nooutliers)
+par(mfrow=c(1,1))
+```
+
+**Answer:**
+Homoscedasticity: Satisfied because the variability along the x-axis seems constant, and the red curve on the scale location plot looks mostly flat. 
+
+Independence: There is no evidence of dependencies in the data.
+
+Normality: Satisfied since the points lie mostly on the diagonal line in the qq plot.
+
+Linearity: Satisfied because the scatterplot looks like it has a linear association, and the residuals vs. fitted plot has no unusual features or trends.
+
+No influential outliers: Not satisfied as shown by the points outside the Cook's distance of 0.5, so I removed them. I present results with and without influential outliers.
+
+
+f. Interpret the slope coefficient. (3 points)
+```{r}
+model_income$coefficients[2]
+model_income_nooutliers$coefficients[2]
+```
+**Answer:**
+
+When removing the influential outliers, the estimated slope coefficient increased from 0.63 to 0.71. I will read the inferential result without outliers.
+
+Each additional $1,000 is associated with an additional 0.71 units of happiness on average, with p-value < 0.001
