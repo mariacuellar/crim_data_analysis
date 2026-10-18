@@ -78,7 +78,7 @@ Linked File.”
   Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_practice_solutions.Rmd)
 - [2026 Exercises 2 -
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_2_questions.Rmd)
-  [(Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exercisees_2_solutions.html)
+  [(Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exercises_2_solutions.html)
 - [2026 Quiz 2 - Practice
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Quiz_2_practice_questions.Rmd)
   [(Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Quiz_2_practice_Solutions.html)
