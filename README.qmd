@@ -95,9 +95,9 @@ To download the file instead of opening it in a new tab, right-click the link (o
 ## Exams and Quizzes
 
 -  [2026 Exam 1 - questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_questions.Rmd)   [(Solutions in html)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exam_1_solutions.html)  [(Solutions in Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_solutions.Rmd)
--  [2026 Quiz 2 - questions.Rmd]  [(Solutions in html)]  (Solutions in Rmd)
+-  [2026 Quiz 2 - questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Quiz_2_questions.Rmd)  
 
-
+<!-- [(Solutions in html)]  (Solutions in Rmd) -->
 
 
 ## Datasets
@@ -109,3 +109,4 @@ To download the file instead of opening it in a new tab, right-click the link (o
 - <a href="data/income_2.csv" download>income_2.csv</a> (<a href="data/income_2_codebook.txt" download>Codebook</a>)
 - <a href="data/neighborhood_data.csv" download>neighborhood_data.csv</a> (<a href="data/codebook_for_neighborhood_data.txt" download>Codebook</a>)
 - <a href="data/county_data.csv" download>county_data.csv</a> (<a href="data/codebook_for_county_data.txt" download>Codebook</a>)
+- <a href="data/dat.nsduh.small.csv" download>dat.nsduh.small.csv</a> (<a href="data/codebook_for_NSDUH_2019_small.pdf" download>Codebook</a>)

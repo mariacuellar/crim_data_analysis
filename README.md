@@ -91,8 +91,10 @@ Linked File.”
   html)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exam_1_solutions.html)
   [(Solutions in
   Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_solutions.Rmd)
-- \[2026 Quiz 2 - questions.Rmd\] \[(Solutions in html)\] (Solutions in
-  Rmd)
+- [2026 Quiz 2 -
+  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Quiz_2_questions.Rmd)
+
+<!-- [(Solutions in html)]  (Solutions in Rmd) -->
 
 ## Datasets
 
@@ -111,3 +113,5 @@ Linked File.”
   (<a href="data/codebook_for_neighborhood_data.txt" download>Codebook</a>)
 - <a href="data/county_data.csv" download>county_data.csv</a>
   (<a href="data/codebook_for_county_data.txt" download>Codebook</a>)
+- <a href="data/dat.nsduh.small.csv" download>dat.nsduh.small.csv</a>
+  (<a href="data/codebook_for_NSDUH_2019_small.pdf" download>Codebook</a>)
