@@ -1,0 +1,207 @@
+---
+title: "Exercises 3: Hypothesis Tests — Solutions"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+---
+
+These solutions use the five fictional datasets supplied with Exercises 3. Place this file and all five CSV files in the same folder before knitting. All tests are two-sided unless otherwise stated, using alpha = 0.05.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## Exercise 1 — One-sample t-test
+
+**1. Import and summarize.**
+
+```{r ex1-summary}
+case <- read.csv("case_processing.csv")
+nrow(case)
+mean(case$processing_days)
+sd(case$processing_days)
+summary(case$processing_days)
+```
+
+There are **45 cases**, with mean **16.95 days** and standard deviation **4.80 days**.
+
+**2. Visualize and assess assumptions.**
+
+```{r ex1-plots}
+hist(case$processing_days,
+     main = "Case processing times", xlab = "Days")
+qqnorm(case$processing_days)
+qqline(case$processing_days)
+```
+
+This is a one-sample test of a quantitative outcome. We assume cases are independent and represent a suitable sample. Check the histogram and Q-Q plot for strong skewness or extreme outliers; minor deviations are usually tolerable with n = 45. The t-test does **not** require the raw data to be perfectly normally distributed.
+
+**3. Hypotheses.**
+
+H0: The population mean processing time is 20 days.
+
+Ha: The population mean processing time is not 20 days.
+
+**4–5. Test and interpret.**
+
+```{r ex1-test}
+t.test(case$processing_days, mu = 20)
+```
+
+Result: **t(44) = -4.26, p = 0.000106**, 95% confidence interval for the mean **[15.51, 18.39] days**. Reject H0. There is statistically significant evidence that the population mean processing time differs from 20 days; the observed mean is lower. This does not, by itself, establish what caused the change.
+
+## Exercise 2 — Independent two-sample t-test
+
+**1. Compare groups.**
+
+```{r ex2-summary}
+program <- read.csv("program_outcomes.csv")
+aggregate(days_to_resolution ~ program, data = program,
+          FUN = function(z) c(n = length(z), mean = mean(z), sd = sd(z)))
+boxplot(days_to_resolution ~ program, data = program,
+        xlab = "Program", ylab = "Days to resolution")
+```
+
+Diversion: **n = 42, mean = 63.19, SD = 14.41 days**. Traditional: **n = 42, mean = 66.79, SD = 15.75 days**. The observed difference (Diversion minus Traditional) is approximately **-3.59 days**.
+
+**2. Hypotheses.**
+
+H0: The population means are equal for the two programs.
+
+Ha: The population means differ.
+
+**3. Assumptions.**
+
+```{r ex2-diagnostics}
+by(program$days_to_resolution, program$program, function(z) {
+  qqnorm(z)
+  qqline(z)
+})
+```
+
+The outcome is quantitative; the groups contain different people, so the observations are **not paired**. Independence is supported by the sampling description but cannot be proven from a Q-Q plot. Examine each group's distribution for major departures from normality and outliers. Welch's test does not require equal population variances.
+
+**4–5. Welch test and interpretation.**
+
+```{r ex2-test}
+t.test(days_to_resolution ~ program, data = program)
+```
+
+R alphabetically orders groups as Diversion, Traditional, so the reported difference is Diversion minus Traditional. Result: **t ≈ -1.09, df ≈ 81.36, p ≈ 0.279**. Fail to reject H0. The sample suggests slightly shorter resolution times in diversion, but there is insufficient evidence of a difference in population means. Inspect the printed 95% confidence interval: it includes zero. Failure to reject H0 is not evidence that the two programs have identical means.
+
+## Exercise 3 — Paired t-test
+
+**1–2. Compute and explore within-officer differences.**
+
+```{r ex3-summary}
+training <- read.csv("training_scores.csv")
+training$difference <- training$score_after - training$score_before
+summary(training$difference)
+mean(training$difference)
+sd(training$difference)
+hist(training$difference,
+     main = "After minus before", xlab = "Score difference")
+qqnorm(training$difference)
+qqline(training$difference)
+```
+
+There are **36 paired observations**. The mean after-minus-before difference is **-4.96 points**, and the SD of the differences is **3.57 points**. The negative mean indicates that scores were, on average, *lower* after training. This is an unexpected but valid finding to report.
+
+**3. Hypotheses.**
+
+H0: The population mean of (after − before) is zero.
+
+Ha: The population mean of (after − before) is not zero.
+
+**4–5. Paired test and interpretation.**
+
+```{r ex3-test}
+t.test(training$score_after, training$score_before,
+       paired = TRUE)
+# Equivalent:
+t.test(training$difference, mu = 0)
+```
+
+Result: **t(35) = -8.33, p ≈ 8.10e-10**, 95% confidence interval for mean change **[-6.16, -3.75] points**. Reject H0. Scores are significantly different before and after training, with an average decrease of about five points. Normality should be assessed for the **differences**, not for each time point separately. An independent two-sample t-test is inappropriate because the two scores from the same officer are related. Even a statistically significant pre/post change alone cannot establish that training caused the change.
+
+## Exercise 4 — One-way ANOVA
+
+**1. Summaries and plot.**
+
+```{r ex4-summary}
+satisfaction <- read.csv("service_satisfaction.csv")
+aggregate(satisfaction_score ~ contact_method, data = satisfaction,
+          FUN = function(z) c(n = length(z), mean = mean(z), sd = sd(z)))
+boxplot(satisfaction_score ~ contact_method, data = satisfaction,
+        xlab = "Contact method", ylab = "Satisfaction (1–10)")
+```
+
+Email: **n = 32, mean = 7.73, SD = 1.18**. In-person: **n = 32, mean = 8.63, SD = 1.30**. Phone: **n = 32, mean = 6.61, SD = 1.07**.
+
+**2. Hypotheses.**
+
+H0: The population mean satisfaction is the same for Email, InPerson, and Phone.
+
+Ha: At least one population mean differs.
+
+**3–4. Fit ANOVA and examine diagnostics.**
+
+```{r ex4-anova}
+fit <- aov(satisfaction_score ~ contact_method, data = satisfaction)
+summary(fit)
+par(mfrow = c(2, 2))
+plot(fit)
+par(mfrow = c(1, 1))
+```
+
+The outcome is treated as quantitative and respondents are assumed independent. Examine residuals versus fitted values for similar spreads, and the Q-Q plot for strong residual nonnormality. There are equally sized groups (32 each) with relatively similar sample SDs. Still, a 1–10 rating is bounded and discrete, so normal-model assumptions are only approximate; note ceiling effects if visible. ANOVA assumes the population variances are equal; the ordinary ANOVA in `aov()` does not automatically relax that assumption.
+
+Result: **F(2, 93) = 23.50, p ≈ 5.48e-09**. Reject H0. At least one population mean satisfaction score differs across methods. This **does not** show that every pair differs or identify which pair differs.
+
+**5. Tukey comparisons.**
+
+```{r ex4-tukey}
+TukeyHSD(fit)
+```
+
+Use the Tukey-adjusted p-values and confidence intervals to identify statistically distinguishable pairs. In these data, the ordering of sample means is **InPerson > Email > Phone**. See the R output for which specific pairwise differences are statistically significant after multiplicity adjustment. Group differences do not necessarily reflect causal effects of the contact method.
+
+## Exercise 5 — Chi-square test of independence
+
+**1. Contingency table, percentages, plot.**
+
+```{r ex5-tables}
+survey <- read.csv("survey_responses.csv")
+tab <- table(survey$residence, survey$supports_policy)
+tab
+round(100 * prop.table(tab, margin = 1), 1)
+barplot(t(prop.table(tab, margin = 1)), beside = FALSE,
+        legend.text = TRUE, ylab = "Proportion", xlab = "Residence")
+```
+
+The rows are residence groups. In the suburban group, **20/60 = 33.3%** support the policy; in the urban group, **35/60 = 58.3%** support it.
+
+**2. Hypotheses.**
+
+H0: Residence and policy support are independent in the population.
+
+Ha: Residence and policy support are associated.
+
+**3–4. Expected counts and Pearson test.**
+
+```{r ex5-test}
+chi <- chisq.test(tab, correct = FALSE)
+chi$expected
+chi
+```
+
+Observed counts: Suburban (No = 40, Yes = 20); Urban (No = 25, Yes = 35). Expected counts under independence: each residence group has **32.5 No** and **27.5 Yes**. All expected counts exceed five. Each respondent is counted once; independence of respondents comes from the design assumption, not from the table itself. Use counts, not percentages, in `chisq.test()`.
+
+**5. Interpret.**
+
+Result: **chi-square(1) = 7.55, p ≈ 0.00599**. Reject H0. Residence type and policy support are statistically associated in these data. Support is higher among urban respondents (58.3%) than suburban respondents (33.3%). The test does not establish that residence *causes* support, as other characteristics may differ between the groups.
+
+## Instructor note
+
+With a 2-by-2 table, `chisq.test(tab)` in R applies Yates's continuity correction by default. We use `correct = FALSE` as the exercise specifies, so the statistic is the usual Pearson chi-square statistic. A Fisher exact test is an alternative when expected cell counts are small, but is unnecessary here.

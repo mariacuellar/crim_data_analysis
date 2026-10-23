@@ -1,0 +1,99 @@
+---
+title: "Exercises 3: Hypothesis Tests"
+output: html_document
+---
+
+**Instructions:** Use R to complete all five exercises. For each one, include appropriate descriptive statistics and at least one visualization, clearly state your null and alternative hypotheses, assess the assumptions, perform the indicated test, report the test statistic and p-value, and interpret the result in the context of the problem. Use a 5% significance level. Where appropriate, report a confidence interval. Do not interpret an association as evidence of causation.
+
+The datasets are fictional. Read `codebook.txt` before starting. Keep the `.csv` files in the same folder as this `.Rmd` file.
+
+## Exercise 1 — One-sample t-test
+
+A court system historically took an average of 20 days to process a particular kind of case. A researcher wants to determine whether the mean processing time has changed.
+
+Dataset: `case_processing.csv`
+
+1. Import the data and summarize the processing times (mean, standard deviation, and sample size).
+2. Create a histogram and a Q-Q plot. Discuss whether a one-sample t-test is appropriate.
+3. State H0 and Ha. Use a **two-sided** alternative.
+4. Run a one-sample t-test against the historical mean of 20 days.
+5. Report the t-statistic, degrees of freedom, p-value, and 95% confidence interval. Interpret the result.
+
+## Exercise 2 — Independent two-sample t-test
+
+A study compares how long cases take to resolve under two different programs. Each participant appears in only one group.
+
+Dataset: `program_outcomes.csv`
+
+1. Compare the distributions and means of `days_to_resolution` by `program` using a plot and a table.
+2. State H0 and Ha for a difference in population means.
+3. Check the assumptions for an independent two-sample t-test. Is a *paired* t-test appropriate? Explain.
+4. Perform a **Welch two-sample t-test** (the R default; do not assume equal population variances).
+5. Report the results and the estimated difference in means, including a 95% confidence interval. Interpret in context.
+
+## Exercise 3 — Paired t-test
+
+The same officers were assessed before and after a training session. Higher scores indicate better performance.
+
+Dataset: `training_scores.csv`
+
+1. Calculate `difference = score_after - score_before` for each officer.
+2. Summarize and visualize the differences, including a Q-Q plot of the **differences**.
+3. State H0 and Ha for the population mean difference. Use a two-sided alternative.
+4. Run a paired t-test (or equivalently, a one-sample t-test on the differences).
+5. Interpret the result and the 95% confidence interval. Why would an independent two-sample t-test be inappropriate?
+
+## Exercise 4 — One-way ANOVA
+
+A public agency surveys people who contacted it through one of three channels: email, phone, or in person. Researchers want to know whether mean satisfaction differs across these groups.
+
+Dataset: `service_satisfaction.csv`
+
+1. Report the mean, standard deviation, and sample size for each `contact_method`. Create side-by-side boxplots.
+2. State H0 and Ha for a one-way ANOVA.
+3. Fit a one-way ANOVA model. Inspect residual plots, including a Q-Q plot, and discuss independence and equal variance assumptions. Because satisfaction is bounded from 1 to 10, comment on any concerns this raises.
+4. Report the F-statistic, degrees of freedom, and p-value. Interpret the result correctly: what does a significant omnibus ANOVA establish, and what does it **not** establish?
+5. If the ANOVA is significant and its assumptions appear reasonable, run a Tukey post-hoc comparison. Which pairs of groups appear different?
+
+## Exercise 5 — Chi-square test of independence
+
+A survey asks whether respondents support a proposed local policy and whether they live in an urban or suburban area.
+
+Dataset: `survey_responses.csv`
+
+1. Construct a contingency table of `residence` by `supports_policy`. Compute **row percentages** and create a proportional bar chart.
+2. State H0 and Ha for a chi-square test of independence.
+3. Compute or display the expected counts. Do the expected-count and independence assumptions appear reasonable?
+4. Run a Pearson chi-square test of independence. Use `correct = FALSE` so the statistic matches the formula from class.
+5. Report the chi-square statistic, degrees of freedom, and p-value. Explain the direction of the observed association using the percentages. Would this test establish a causal relationship? Why or why not?
+
+## Optional R reminders
+
+```{r, eval=FALSE}
+# Import data:
+dat <- read.csv("case_processing.csv")
+
+# Numerical variable: descriptive statistics
+mean(dat$processing_days)
+sd(dat$processing_days)
+
+# One-sample t-test
+t.test(dat$processing_days, mu = 20)
+
+# Two-sample t-test (Welch)
+# t.test(outcome ~ group, data = dat)
+
+# Paired t-test
+# t.test(dat$after, dat$before, paired = TRUE)
+
+# One-way ANOVA
+# fit <- aov(outcome ~ group, data = dat)
+# summary(fit)
+# plot(fit)
+# TukeyHSD(fit)
+
+# Chi-square test
+# tab <- table(dat$variable1, dat$variable2)
+# prop.table(tab, margin = 1)
+# chisq.test(tab, correct = FALSE)
+```

@@ -1,0 +1,126 @@
+---
+title: "Quiz 2 - Solutions"
+author: "Maria Cuellar"
+date: "2026-10-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Question 1 (5 points)
+
+For your research question today, you will study whether an individual's age when they first used marijuana is associated with their age when they first used cigarettes (x=mjage and y=cigage). The dataset (dat.nsduh.small.csv) is an excerpt from the National Survey on Drug Use and Health, run by the US government. You are being given data from the year 2019. Read the codebook to learn about the variables.
+
+Load the dat.nsduh.small.csv dataset. 
+
+**Answer:**
+
+```{r q1, message=FALSE}
+library(tidyverse)
+dat_nsduh <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/dat.nsduh.small.csv")
+```
+
+
+
+
+# Question 2 (5 points)
+
+Perform visual EDA for x=mjage and y=cigage. Remember to label your figures. Describe your plot. (Note: you can include a line of best fit, but it is not necessary at this point.)
+
+**Answer:**
+
+```{r q2}
+dat_nsduh %>% ggplot(aes(x=mjage, y=cigage)) + 
+  geom_point() + 
+  geom_smooth(method="lm", se=FALSE) + 
+  labs(title="Scatterplot", x="Age of first use of marijuana", y="Age of first use of cigarettes") 
+```
+
+I drew a scatterplot. There is a positive association that is weak, the relationship seems linear, but there are some outliers. 
+
+
+
+
+
+
+# Question 3 (5 points)
+
+Fit a linear regression model with cigage as the response and mjage as the explanatory variable. 
+
+Create a second dataset excluding influential outliers. Calculate the correlation between the two variables both with and without influential observations. Interpret your results.
+
+
+**Answer:**
+
+```{r q3}
+model_nsduh <- lm(cigage~mjage, dat=dat_nsduh)
+
+dat_nsduh_nooutliers <- dat_nsduh %>% filter(cooks.distance(model_nsduh) <= 0.05)
+
+dat_nsduh %>% summarize(cor=cor(mjage, cigage))
+dat_nsduh_nooutliers %>% summarize(cor=cor(mjage, cigage))
+```
+I check the conditions for correlation: yes, the variables are quantitative, the relationship is linear, but there are some outliers. Therefore, I calculate the correlation with (.25) and without (.42) the outliers.
+
+
+
+
+# Question 4 (10 points)
+
+Fit a linear regression model using the dataset without influential observations. Generate the four standard diagnostic plots in R. Evaluate whether the following assumptions are reasonably satisfied: homoscedasticity, independence of errors, linearity, and normality of errors. Explain your reasoning.
+
+Hint: This is real-world data, not simulated. So, try to be super lenient when testing assumptions. If it looks ok for most of the data, then you can say it's satisfied.
+
+
+**Answer:**
+
+```{r q4, fig.height=7}
+model_nooutliers <- lm(cigage~mjage, dat=dat_nsduh_nooutliers)
+
+par(mfrow = c(2, 2))
+plot(model_nooutliers)
+par(mfrow = c(1, 1))
+```
+
+i) Homoscedasticity: 
+Reasonably satisfied, although I do see that the data towards the right has less variability.
+
+ii) Independence of residuals: 
+Cannot test, but I don't see any clumping suggesting dependencies.
+
+iii) Linearity: 
+Satisfied based on the scatterplot. 
+
+iv) Normality of the errors: 
+Reasonably satisfied, except towards the right of the plot.
+
+a) R-squared: 
+The R-squared is 0.17. Not very high, but because it's real-world data, that's ok.
+
+b) Influential outliers:
+There are no outliers with Cook's distance > 0.05.
+
+
+
+
+# Question 5 (5 points)
+
+Now you will answer the research question: In 2019, was an individual's age when they first used marijuana associated with their age when they first used cigarettes?
+
+To do this, interpret the slope coefficient of your model from Question 4 and do inference. Is the association statistically significant at the 0.05 level? Report the p-value. 
+
+
+**Answer:**
+
+```{r q5}
+summary(model_nooutliers)
+```
+
+Each additional year of age of first use of marijuana is associated with an additional 0.31 years of age of first use of cigarettes, and this is statistically significant at the 0.05 level, with p<0.001.
+
+
+
+
