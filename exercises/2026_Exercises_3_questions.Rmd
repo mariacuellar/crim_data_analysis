@@ -1,7 +1,7 @@
 ---
 title: "Exercises 3 questions"
 author: "Maria Cuellar"
-date: "2026-10-23"
+date: "2026-10-26"
 output: html_document
 ---
 
@@ -17,7 +17,7 @@ library(tidyverse)
 
 The datasets are fictional. Read `codebook.txt` before starting. Keep the `.csv` files in the same folder as this `.Rmd` file.
 
-## Exercise 1 — One-sample t-test
+## Exercise 1 — One-sample t-test (5 points)
 
 A court system historically took an average of 20 days to process a particular kind of case. A researcher wants to determine whether the mean processing time has changed.
 
@@ -29,7 +29,7 @@ Dataset: `case_processing.csv`
 4. Run a one-sample t-test against the historical mean of 20 days.
 5. Report the t-statistic, degrees of freedom, p-value, and 95% confidence interval. Interpret the result.
 
-## Exercise 2 — Independent two-sample t-test
+## Exercise 2 — Independent two-sample t-test  (5 points)
 
 A study compares how long cases take to resolve under two different programs. Each participant appears in only one group.
 
@@ -41,7 +41,7 @@ Dataset: `program_outcomes.csv`
 4. Perform a **Welch two-sample t-test** (the R default; do not assume equal population variances).
 5. Report the results and the estimated difference in means, including a 95% confidence interval. Interpret in context.
 
-## Exercise 3 — Paired t-test
+## Exercise 3 — Paired t-test  (5 points)
 
 The same officers were assessed before and after a training session. Higher scores indicate better performance.
 
@@ -53,7 +53,7 @@ Dataset: `training_scores.csv`
 4. Run a paired t-test (or equivalently, a one-sample t-test on the differences).
 5. Interpret the result and the 95% confidence interval. Why would an independent two-sample t-test be inappropriate?
 
-## Exercise 4 — One-way ANOVA
+## Exercise 4 — One-way ANOVA (5 points)
 
 A public agency surveys people who contacted it through one of three channels: email, phone, or in person. Researchers want to know whether mean satisfaction differs across these groups.
 
@@ -65,7 +65,7 @@ Dataset: `service_satisfaction.csv`
 4. Report the F-statistic, degrees of freedom, and p-value. Interpret the result correctly: what does a significant omnibus ANOVA establish, and what does it **not** establish?
 5. If the ANOVA is significant and its assumptions appear reasonable, run a Tukey post-hoc comparison. Which pairs of groups appear different?
 
-## Exercise 5 — Chi-square test of independence
+## Exercise 5 — Chi-square test of independence (EXTRA CREDIT)
 
 A survey asks whether respondents support a proposed local policy and whether they live in an urban or suburban area.
 

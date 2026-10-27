@@ -1,0 +1,7 @@
+
+training_scores.csv (n = 36)
+officer_id: unique officer identifier
+score_before: assessment score before training (numeric)
+score_after: assessment score after training (numeric)
+The same officer took both assessments. Higher scores indicate better performance.
+

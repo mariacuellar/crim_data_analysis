@@ -123,3 +123,13 @@ Linked File.”
   (<a href="data/codebook_for_county_data.txt" download>Codebook</a>)
 - <a href="data/dat.nsduh.small.csv" download>dat.nsduh.small.csv</a>
   (<a href="data/codebook_for_NSDUH_2019_small.pdf" download>Codebook</a>)
+- <a href="data/case_processing.csv" download>case_processing.csv</a>
+  (<a href="data/codebook_case_processing.txt" download>Codebook</a>)
+- <a href="data/program_outcomes.csv" download>program_outcomes.csv</a>
+  (<a href="data/codebook_program_outcomes.txt" download>Codebook</a>)
+- <a href="data/training_scores.csv" download>training_scores.csv</a>
+  (<a href="data/codebook_training_scores.txt" download>Codebook</a>)
+- <a href="data/service_satisfaction.csv" download>service_satisfaction.csv</a>
+  (<a href="data/codebook_service_satisfaction.txt" download>Codebook</a>)
+- <a href="data/survey_responses.csv" download>survey_responses.csv</a>
+  (<a href="data/codebook_survey_responses.txt" download>Codebook</a>)

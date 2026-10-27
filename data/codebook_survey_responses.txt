@@ -1,0 +1,6 @@
+
+survey_responses.csv (n = 120)
+respondent_id: unique respondent identifier
+residence: Urban or Suburban
+supports_policy: Yes or No
+Each respondent answered once. Assume independent survey responses.

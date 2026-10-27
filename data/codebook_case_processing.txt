@@ -1,0 +1,4 @@
+case_processing.csv (n = 45)
+case_id: unique case identifier
+processing_days: time in days to process a case (numeric)
+The historical benchmark is 20 days.

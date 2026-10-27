@@ -1,0 +1,7 @@
+
+service_satisfaction.csv (n = 96)
+response_id: unique respondent identifier
+contact_method: Email, Phone, or InPerson (three independent groups)
+satisfaction_score: respondent rating on a 1–10 scale (treated as numeric for this practice exercise)
+Assume independent respondents. Note the scale is bounded; check plots and discuss whether a classical ANOVA approximation is reasonable.
+

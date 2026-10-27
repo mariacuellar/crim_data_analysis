@@ -1,0 +1,7 @@
+
+program_outcomes.csv (n = 84)
+participant_id: unique participant identifier
+program: Traditional or Diversion (two independent groups)
+days_to_resolution: elapsed days until case resolution (numeric)
+Assume each participant appears once and was sampled independently.
+
