@@ -17,11 +17,18 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 **1. Import and summarize.**
 
 ```{r ex1-summary}
-case <- read.csv("case_processing.csv")
-nrow(case)
-mean(case$processing_days)
-sd(case$processing_days)
-summary(case$processing_days)
+
+# load packages
+library(tidyverse)
+
+# load data
+case <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/case_processing.csv")
+
+# summary statistic table
+case %>% summarize(mean=mean(processing_days),
+                   sd=sd(processing_days),
+                   n=n())
+
 ```
 
 There are **45 cases**, with mean **16.95 days** and standard deviation **4.80 days**.
@@ -29,8 +36,10 @@ There are **45 cases**, with mean **16.95 days** and standard deviation **4.80 d
 **2. Visualize and assess assumptions.**
 
 ```{r ex1-plots}
-hist(case$processing_days,
-     main = "Case processing times", xlab = "Days")
+# histogram
+case %>% ggplot(aes(x=processing_days)) + geom_histogram()
+
+# qq plot
 qqnorm(case$processing_days)
 qqline(case$processing_days)
 ```
@@ -40,12 +49,12 @@ This is a one-sample test of a quantitative outcome. We assume cases are indepen
 **3. Hypotheses.**
 
 H0: The population mean processing time is 20 days.
-
 Ha: The population mean processing time is not 20 days.
 
 **4–5. Test and interpret.**
 
 ```{r ex1-test}
+# test
 t.test(case$processing_days, mu = 20)
 ```
 
@@ -56,11 +65,26 @@ Result: **t(44) = -4.26, p = 0.000106**, 95% confidence interval for the mean **
 **1. Compare groups.**
 
 ```{r ex2-summary}
-program <- read.csv("program_outcomes.csv")
-aggregate(days_to_resolution ~ program, data = program,
-          FUN = function(z) c(n = length(z), mean = mean(z), sd = sd(z)))
-boxplot(days_to_resolution ~ program, data = program,
-        xlab = "Program", ylab = "Days to resolution")
+# load data
+program <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/program_outcomes.csv")
+
+# summary statistics table
+program %>% group_by(program) %>% 
+  summarize(mean=mean(days_to_resolution),
+            sd=sd(days_to_resolution))
+
+# boxplot
+program %>% ggplot(aes(y=days_to_resolution, x=program)) + 
+  geom_boxplot() + 
+    labs(
+    title    = "Boxplot comparing days to resolution, by program",
+    x        = "Program",
+    y        = "Days to resolution"
+  )
+
+# difference in means
+66.78571-63.19286
+
 ```
 
 Diversion: **n = 42, mean = 63.19, SD = 14.41 days**. Traditional: **n = 42, mean = 66.79, SD = 15.75 days**. The observed difference (Diversion minus Traditional) is approximately **-3.59 days**.
@@ -73,14 +97,22 @@ Ha: The population means differ.
 
 **3. Assumptions.**
 
-```{r ex2-diagnostics}
-by(program$days_to_resolution, program$program, function(z) {
-  qqnorm(z)
-  qqline(z)
-})
+```{r ex2-diagnostics, fig.height=6}
+
+div <- program %>% filter(program=="Diversion")
+tra <- program %>% filter(program=="Traditional")
+
+par(mfrow=c(2,1))
+qqnorm(div$days_to_resolution)
+qqline(div$days_to_resolution)
+
+qqnorm(tra$days_to_resolution)
+qqline(tra$days_to_resolution)
+
+par(mfrow=c(1,1))
 ```
 
-The outcome is quantitative; the groups contain different people, so the observations are **not paired**. Independence is supported by the sampling description but cannot be proven from a Q-Q plot. Examine each group's distribution for major departures from normality and outliers. Welch's test does not require equal population variances.
+The outcome is quantitative; the groups contain different people, so the observations are **not paired**. Independence is supported by the sampling description but cannot be proven from a Q-Q plot. Examine each group's distribution for major departures from normality and outliers. The Q-Q plots look fine.  Welch's test does not require equal population variances.
 
 **4–5. Welch test and interpretation.**
 
@@ -95,13 +127,27 @@ R alphabetically orders groups as Diversion, Traditional, so the reported differ
 **1–2. Compute and explore within-officer differences.**
 
 ```{r ex3-summary}
-training <- read.csv("training_scores.csv")
-training$difference <- training$score_after - training$score_before
-summary(training$difference)
-mean(training$difference)
-sd(training$difference)
-hist(training$difference,
-     main = "After minus before", xlab = "Score difference")
+
+# load data
+training <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/training_scores.csv")
+
+# define a new variable called "difference"
+training <- training %>% mutate(difference = score_after-score_before)
+
+# you can also do this using base R: training$difference <- training$score_after - training$score_before
+training %>% summarize(mean=mean(difference),
+                       sd=sd(difference))
+
+# histogram
+training %>% ggplot(aes(x=difference)) + 
+  geom_histogram() + 
+  labs(
+    title    = "Histogram of difference (after-before training)",
+    x        = "Difference",
+    y        = "Count"
+  )
+
+# qqplot 
 qqnorm(training$difference)
 qqline(training$difference)
 ```
@@ -117,10 +163,10 @@ Ha: The population mean of (after − before) is not zero.
 **4–5. Paired test and interpretation.**
 
 ```{r ex3-test}
-t.test(training$score_after, training$score_before,
-       paired = TRUE)
-# Equivalent:
-t.test(training$difference, mu = 0)
+t.test(training$score_after, training$score_before, paired = TRUE)
+
+# note that this is equivalent:
+# t.test(training$difference, mu = 0)
 ```
 
 Result: **t(35) = -8.33, p ≈ 8.10e-10**, 95% confidence interval for mean change **[-6.16, -3.75] points**. Reject H0. Scores are significantly different before and after training, with an average decrease of about five points. Normality should be assessed for the **differences**, not for each time point separately. An independent two-sample t-test is inappropriate because the two scores from the same officer are related. Even a statistically significant pre/post change alone cannot establish that training caused the change.
@@ -130,11 +176,26 @@ Result: **t(35) = -8.33, p ≈ 8.10e-10**, 95% confidence interval for mean chan
 **1. Summaries and plot.**
 
 ```{r ex4-summary}
-satisfaction <- read.csv("service_satisfaction.csv")
-aggregate(satisfaction_score ~ contact_method, data = satisfaction,
-          FUN = function(z) c(n = length(z), mean = mean(z), sd = sd(z)))
-boxplot(satisfaction_score ~ contact_method, data = satisfaction,
-        xlab = "Contact method", ylab = "Satisfaction (1–10)")
+
+# load data
+satisfaction <- read_csv("/Users/mariacuellar/Github/crim_data_analysis/data/service_satisfaction.csv")
+
+# summary statistics table
+satisfaction %>% 
+  group_by(contact_method) %>% 
+  summarize(mean=mean(satisfaction_score),
+            sd=sd(satisfaction_score),
+            n=n())
+
+# boxplot
+satisfaction %>% ggplot(aes(y=satisfaction_score, x=contact_method)) + 
+  geom_boxplot() + 
+    labs(
+    title    = "Boxplot of three groups",
+    x        = "Contact method",
+    y        = "Satisfaction score (1-10)"
+  )
+
 ```
 
 Email: **n = 32, mean = 7.73, SD = 1.18**. In-person: **n = 32, mean = 8.63, SD = 1.30**. Phone: **n = 32, mean = 6.61, SD = 1.07**.
@@ -150,12 +211,16 @@ Ha: At least one population mean differs.
 ```{r ex4-anova}
 fit <- aov(satisfaction_score ~ contact_method, data = satisfaction)
 summary(fit)
+
+# note that this Welch's ANOVA doesn't require equal variances, but it doesn't make the diagnostic plots automatically:
+# fit <- oneway.test(satisfaction_score ~ contact_method, data = satisfaction)
+
 par(mfrow = c(2, 2))
 plot(fit)
 par(mfrow = c(1, 1))
 ```
 
-The outcome is treated as quantitative and respondents are assumed independent. Examine residuals versus fitted values for similar spreads, and the Q-Q plot for strong residual nonnormality. There are equally sized groups (32 each) with relatively similar sample SDs. Still, a 1–10 rating is bounded and discrete, so normal-model assumptions are only approximate; note ceiling effects if visible. ANOVA assumes the population variances are equal; the ordinary ANOVA in `aov()` does not automatically relax that assumption.
+The outcome is treated as quantitative and respondents are assumed independent. Examine residuals versus fitted values for similar spreads, and the Q-Q plot for strong residual nonnormality. There are equally sized groups (32 each) with relatively similar sample SDs. Still, a 1–10 rating is bounded and discrete, so normal-model assumptions are only approximate; note ceiling (bounding) effects if visible - the Q-Q plot looks fine. ANOVA assumes the population variances are equal; the ordinary ANOVA in `aov()` does not automatically relax that assumption.
 
 Result: **F(2, 93) = 23.50, p ≈ 5.48e-09**. Reject H0. At least one population mean satisfaction score differs across methods. This **does not** show that every pair differs or identify which pair differs.
 
@@ -163,6 +228,8 @@ Result: **F(2, 93) = 23.50, p ≈ 5.48e-09**. Reject H0. At least one population
 
 ```{r ex4-tukey}
 TukeyHSD(fit)
+
+plot(TukeyHSD(fit))
 ```
 
 Use the Tukey-adjusted p-values and confidence intervals to identify statistically distinguishable pairs. In these data, the ordering of sample means is **InPerson > Email > Phone**. See the R output for which specific pairwise differences are statistically significant after multiplicity adjustment. Group differences do not necessarily reflect causal effects of the contact method.

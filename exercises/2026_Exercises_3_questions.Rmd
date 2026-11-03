@@ -65,17 +65,6 @@ Dataset: `service_satisfaction.csv`
 4. Report the F-statistic, degrees of freedom, and p-value. Interpret the result correctly: what does a significant omnibus ANOVA establish, and what does it **not** establish?
 5. If the ANOVA is significant and its assumptions appear reasonable, run a Tukey post-hoc comparison. Which pairs of groups appear different?
 
-## Exercise 5 — Chi-square test of independence (EXTRA CREDIT)
-
-A survey asks whether respondents support a proposed local policy and whether they live in an urban or suburban area.
-
-Dataset: `survey_responses.csv`
-
-1. Construct a contingency table of `residence` by `supports_policy`. Compute **row percentages** and create a proportional bar chart.
-2. State H0 and Ha for a chi-square test of independence.
-3. Compute or display the expected counts. Do the expected-count and independence assumptions appear reasonable?
-4. Run a Pearson chi-square test of independence. Use `correct = FALSE` so the statistic matches the formula from class.
-5. Report the chi-square statistic, degrees of freedom, and p-value. Explain the direction of the observed association using the percentages. Would this test establish a causal relationship? Why or why not?
 
 ## Optional R reminders
 
