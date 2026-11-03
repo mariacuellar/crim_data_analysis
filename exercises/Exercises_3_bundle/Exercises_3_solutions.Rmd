@@ -2,7 +2,7 @@
 title: "Exercises 3: Hypothesis Tests — Solutions"
 output:
   html_document:
-    toc: true
+    toc: false
     toc_depth: 2
 ---
 
@@ -234,41 +234,3 @@ plot(TukeyHSD(fit))
 
 Use the Tukey-adjusted p-values and confidence intervals to identify statistically distinguishable pairs. In these data, the ordering of sample means is **InPerson > Email > Phone**. See the R output for which specific pairwise differences are statistically significant after multiplicity adjustment. Group differences do not necessarily reflect causal effects of the contact method.
 
-## Exercise 5 — Chi-square test of independence
-
-**1. Contingency table, percentages, plot.**
-
-```{r ex5-tables}
-survey <- read.csv("survey_responses.csv")
-tab <- table(survey$residence, survey$supports_policy)
-tab
-round(100 * prop.table(tab, margin = 1), 1)
-barplot(t(prop.table(tab, margin = 1)), beside = FALSE,
-        legend.text = TRUE, ylab = "Proportion", xlab = "Residence")
-```
-
-The rows are residence groups. In the suburban group, **20/60 = 33.3%** support the policy; in the urban group, **35/60 = 58.3%** support it.
-
-**2. Hypotheses.**
-
-H0: Residence and policy support are independent in the population.
-
-Ha: Residence and policy support are associated.
-
-**3–4. Expected counts and Pearson test.**
-
-```{r ex5-test}
-chi <- chisq.test(tab, correct = FALSE)
-chi$expected
-chi
-```
-
-Observed counts: Suburban (No = 40, Yes = 20); Urban (No = 25, Yes = 35). Expected counts under independence: each residence group has **32.5 No** and **27.5 Yes**. All expected counts exceed five. Each respondent is counted once; independence of respondents comes from the design assumption, not from the table itself. Use counts, not percentages, in `chisq.test()`.
-
-**5. Interpret.**
-
-Result: **chi-square(1) = 7.55, p ≈ 0.00599**. Reject H0. Residence type and policy support are statistically associated in these data. Support is higher among urban respondents (58.3%) than suburban respondents (33.3%). The test does not establish that residence *causes* support, as other characteristics may differ between the groups.
-
-## Instructor note
-
-With a 2-by-2 table, `chisq.test(tab)` in R applies Yates's continuity correction by default. We use `correct = FALSE` as the exercise specifies, so the statistic is the usual Pearson chi-square statistic. A Fisher exact test is an alternative when expected cell counts are small, but is unnecessary here.
