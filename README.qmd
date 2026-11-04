@@ -118,7 +118,10 @@ To download the file instead of opening it in a new tab, right-click the link (o
 - <a href="data/service_satisfaction.csv" download>service_satisfaction.csv</a> (<a href="data/codebook_service_satisfaction.txt" download>Codebook</a>)
 - <a href="data/survey_responses.csv" download>survey_responses.csv</a> (<a href="data/codebook_survey_responses.txt" download>Codebook</a>)
 
-
+- <a href="data/beer.csv" download>beer.csv</a> 
+- <a href="data/reminders.csv" download>reminders.csv</a> 
+- <a href="data/filing.csv" download>filing.csv</a> 
+- <a href="data/courts.csv" download>courts.csv</a> 
 
 
 

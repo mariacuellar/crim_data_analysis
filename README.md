@@ -112,27 +112,47 @@ Linked File.”
 - <a href="data/pretrial_detention_teaching_data.csv" download>pretrial_detention_teaching_data.csv
   </a>
   (<a href="data/pretrial_detention_teaching_data_codebook.txt" download>Codebook</a>)
+
 - <a href="data/court_cases_teaching_data.csv" download>court_cases_teaching_data.csv</a>
   (<a href="data/court_cases_codebook.txt" download>Codebook</a>)
+
 - <a href="data/pretrial_df.csv" download>pretrial_df.csv</a>
   (<a href="data/pretrial_df_codebook.txt" download>Codebook</a>)
+
 - <a href="data/riverton-crime1.csv" download>riverton-crime1.csv</a>
   (<a href="data/codebook_riverton-crime.txt" download>Codebook</a>)
+
 - <a href="data/income_2.csv" download>income_2.csv</a>
   (<a href="data/income_2_codebook.txt" download>Codebook</a>)
+
 - <a href="data/neighborhood_data.csv" download>neighborhood_data.csv</a>
   (<a href="data/codebook_for_neighborhood_data.txt" download>Codebook</a>)
+
 - <a href="data/county_data.csv" download>county_data.csv</a>
   (<a href="data/codebook_for_county_data.txt" download>Codebook</a>)
+
 - <a href="data/dat.nsduh.small.csv" download>dat.nsduh.small.csv</a>
   (<a href="data/codebook_for_NSDUH_2019_small.pdf" download>Codebook</a>)
+
 - <a href="data/case_processing.csv" download>case_processing.csv</a>
   (<a href="data/codebook_case_processing.txt" download>Codebook</a>)
+
 - <a href="data/program_outcomes.csv" download>program_outcomes.csv</a>
   (<a href="data/codebook_program_outcomes.txt" download>Codebook</a>)
+
 - <a href="data/training_scores.csv" download>training_scores.csv</a>
   (<a href="data/codebook_training_scores.txt" download>Codebook</a>)
+
 - <a href="data/service_satisfaction.csv" download>service_satisfaction.csv</a>
   (<a href="data/codebook_service_satisfaction.txt" download>Codebook</a>)
+
 - <a href="data/survey_responses.csv" download>survey_responses.csv</a>
   (<a href="data/codebook_survey_responses.txt" download>Codebook</a>)
+
+- <a href="data/beer.csv" download>beer.csv</a>
+
+- <a href="data/reminders.csv" download>reminders.csv</a>
+
+- <a href="data/filing.csv" download>filing.csv</a>
+
+- <a href="data/courts.csv" download>courts.csv</a>
