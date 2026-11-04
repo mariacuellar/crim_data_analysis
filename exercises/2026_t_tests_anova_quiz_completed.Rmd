@@ -1,0 +1,303 @@
+---
+title: "Quiz: t Tests and ANOVA - Questions"
+author: "Maria Cuellar"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+**Time:** 90 minutes.
+
+
+
+
+
+# Question 1 (20 points)
+
+William Sealy Gosset worked at Guinness, where he needed to draw reliable conclusions from small, costly brewing experiments. He developed the t distribution to account for the extra uncertainty that arises when the population standard deviation is estimated from a small sample. He published under the name “Student,” giving Student’s t test its name.
+
+Dataset: beer.csv. One randomly selected bottle from each of 100 independent batches. batch identifies the batch; abv is alcohol by volume, expressed as a percentage (4.2 means 4.2% ABV). Assume the population is approximately normal; its standard deviation is unknown.
+
+Does the population mean alcohol content differ from the target of 4.2%? Complete the analysis described in the instructions. Explain whether a statistically significant difference must matter to customers.
+
+
+a. Summarize the data (i.e., visual and quantitative EDA).
+b. Use plots to check assumptions.
+c. State the null and alternative hypotheses. 
+d. Run the appropriate test. Report the test statistic, p-value, and confidence interval.
+e. Interpret the results. 
+
+
+**Answer:**
+
+```{r}
+beer <- read_csv("beer.csv")
+
+# histogram
+beer %>% ggplot(aes(x=abv)) + geom_histogram()
+
+# summary statistics table
+beer %>% summarize(mean=mean(abv),
+                   median=median(abv),
+                   sd=sd(abv),
+                   n=n())
+
+```
+
+a. Data summary:
+
+- Visual EDA: The histogram is unimodal, pretty symmetric, and has no extreme outliers. There are some gaps, but I think that's just because the sample size is relatively small at 100. 
+- Quantitative EDA: The mean is 4.27 and standard deviation is 0.047. 
+
+
+b. Assumption check:
+
+- Independent observations: We cannot tell whether the observations are independent, but the study describes independent batches with one randomly selected bottle per batch, so independence is reasonable.
+- Normality: The data look relatively normal, except a little on the right tail. Since we have 100 observations, though, the normality assumption does not need to be met perfectly.
+
+```{r}
+qqnorm(beer$abv)
+qqline(beer$abv)
+```
+
+c. 
+
+H0: The population mean ABV is equal to 4.2%.
+H1: The population mean ABV is not equal to 4.2%.
+
+d. 
+```{r}
+t.test(beer$abv, mu = 4.2)
+```
+I ran a one-sample t-test and found that the t-statistic is 14.38 (df = 99), the p-value < 0.001, and the confidence interval is [4.26, 4.28].
+
+e. The mean ABV is statistically significantly different from the target of 4.2% with p < 0.001 and a confidence interval of [4.26, 4.28]. The estimated difference is about 0.067 percentage points. Statistical significance does not establish whether this difference matters to customers; that requires a practical standard.
+
+
+
+
+
+# Question 2 (20 points)
+
+**Dataset: `reminders.csv`.** Forty-eight defendants were randomly assigned to Standard or Enhanced appointment reminders. Each attended one appointment. `defendant_id` identifies the person, `group` records the reminder, and `minutes_early` measures arrival time. Negative values mean late arrival.
+
+Do the population mean arrival times differ? Define the difference as Enhanced minus Standard.
+
+a. Summarize the data (i.e., visual and quantitative EDA).
+b. Use plots to check assumptions.
+c. State the null and alternative hypotheses. 
+d. Run the appropriate test. Report the test statistic, p-value, and confidence interval.
+e. Interpret the results. 
+
+
+
+**Answer:**
+
+```{r}
+reminders <- read_csv("reminders.csv")
+
+# histograms
+reminders %>%
+  ggplot(aes(x = minutes_early)) +
+  geom_histogram() + facet_wrap(~group) +
+  labs(x = "Minutes early", y = "Count")
+
+# boxplots
+reminders %>%
+  ggplot(aes(x = group, y = minutes_early)) +
+  geom_boxplot() +
+  labs(x = "Reminder group", y = "Minutes early")
+
+# summary statistics table
+reminders %>% group_by(group) %>%
+              summarize(mean=mean(minutes_early),
+                   median=median(minutes_early),
+                   sd=sd(minutes_early),
+                   n=n())
+
+```
+
+
+a. Data summary:
+
+- Visual EDA: The Enhanced group has a higher center and much greater spread. Neither group shows extreme outliers. The histograms have gaps because there are only 24 observations per group. 
+- Quantitative EDA: The Enhanced mean is 13.25 minutes (sd = 8.32), and the Standard mean is 7.79 minutes (sd = 2.23). Each group has 24 observations. We should use the Welch t-test since the sd's are so different.
+
+
+b. Assumption check:
+
+- Independent observations: Each defendant contributes one observation, and the groups contain different defendants. Independence is reasonable if defendants do not influence each other.
+- Normality: The Q-Q plots do not suggest strong skewness or extreme outliers. There are 24 observations per group, so we should assess each group rather than rely on the combined sample size of 48. Approximate normality seems reasonable.
+
+```{r}
+
+# make new vector for each group
+g1 <- reminders %>% filter(group=="Standard")
+g2 <- reminders %>% filter(group=="Enhanced")
+
+# make QQ plot for each group
+qqnorm(g1$minutes_early)
+qqline(g1$minutes_early)
+
+qqnorm(g2$minutes_early)
+qqline(g2$minutes_early)
+
+```
+
+c. 
+
+H0: The population means of the two groups are equal.
+H1: The population means of the two groups are not equal.
+
+d. 
+```{r}
+t.test(g2$minutes_early, g1$minutes_early) # Enhanced minus Standard
+```
+I ran a Welch's t-test and found that the t-statistic is 3.10 (df = 26.27), the p-value = 0.0045, and the confidence interval is [1.85, 9.07].
+
+e. The Enhanced group arrived an estimated 5.46 minutes earlier on average than the Standard group. The difference is statistically significant (p = 0.0045), with a 95% confidence interval of [1.85, 9.07] minutes for Enhanced minus Standard.
+
+
+
+
+
+
+# Question 3 (20 points)
+
+**Dataset: `filing.csv`.** Fifteen randomly sampled court clerks each processed equivalent packets before and after electronic filing was introduced. `clerk_id` identifies the clerk; `before` and `after` are completion times in minutes. Different clerks are independent. Everyone completed the before assessment first; there was no comparison group.
+
+Did the population mean completion time change? Complete the analysis described in the instructions, defining the difference as before minus after.
+
+Which values need to be approximately normal for this test? Explain one reason the observed change might not be caused by electronic filing.
+
+
+**Answer:**
+
+```{r}
+filing <- read_csv("filing.csv")
+filing <- filing %>% mutate(difference = before - after)
+
+# histograms
+filing %>% ggplot(aes(x = before)) + geom_histogram(binwidth = 20)
+filing %>% ggplot(aes(x = after)) + geom_histogram(binwidth = 20)
+filing %>% ggplot(aes(x = difference)) + geom_histogram(binwidth = 1)
+
+# summary statistics table
+filing %>% summarize(
+  mean_before = mean(before),
+  mean_after = mean(after),
+  mean_difference = mean(difference),
+  median_difference = median(difference),
+  sd_difference = sd(difference),
+  n = n()
+)
+```
+
+a. Data summary:
+
+- Visual EDA: The before and after times are strongly right-skewed. The differences are much more symmetric, with no extreme outliers.
+- Quantitative EDA: The means are 59.40 minutes before and 56.73 minutes after. The mean difference is 2.67 minutes, the median difference is 3 minutes, and the standard deviation of the differences is 2.58 minutes. There are 15 pairs.
+
+b. Assumption check:
+
+- Independent pairs: Different clerks are independent, as stated in the question. The measurements from the same clerk are paired.
+- Normality: The differences need to be approximately normal, not the before and after times separately. The Q-Q plot of the differences is reasonably straight, so this assumption seems reasonable.
+
+```{r}
+qqnorm(filing$difference)
+qqline(filing$difference)
+```
+
+c.
+
+H0: The population mean difference (before minus after) is zero.
+H1: The population mean difference is not zero.
+
+d.
+
+```{r}
+t.test(filing$before, filing$after, paired = TRUE)
+```
+
+I ran a paired t-test and found that the t-statistic is 4.00 (df = 14), the p-value = 0.0013, and the confidence interval is [1.24, 4.10] minutes.
+
+e. Completion time was an estimated 2.67 minutes shorter on average after implementation. The change is statistically significant, with a 95% confidence interval of [1.24, 4.10] minutes for before minus after. This does not establish causation: clerks may have become faster through practice, since everyone completed the before assessment first.
+
+
+# Question 4 (20 points)
+
+**Dataset: `courts.csv`.** Twelve closed cases were randomly sampled from each of three court divisions. Cases are independent and were not randomly assigned to divisions. `case_id` identifies the case, `division` identifies the division, and `days` measures time from filing to disposition.
+
+Do the population mean processing times differ across divisions? Complete the analysis described in the instructions using one-way ANOVA. Check normality and equal variances.
+
+If significant, use Tukey's HSD to identify which pairs differ. Report their estimated differences and adjusted p-values. Why not run three unadjusted t tests?
+
+**Answer:**
+
+```{r}
+courts <- read_csv("courts.csv")
+courts <- courts %>% mutate(division = factor(division))
+
+# histograms
+courts %>%
+  ggplot(aes(x = days)) +
+  geom_histogram(binwidth = 5) +
+  facet_wrap(~division)
+
+# boxplots
+courts %>%
+  ggplot(aes(x = division, y = days)) +
+  geom_boxplot() +
+  labs(x = "Court division", y = "Processing time (days)")
+
+# summary statistics table
+courts %>% group_by(division) %>%
+  summarize(mean = mean(days),
+            median = median(days),
+            sd = sd(days),
+            n = n())
+```
+
+a. Data summary:
+
+- Visual EDA: Division C has the highest center, followed by B and A. The groups have similar spreads and no extreme outliers.
+- Quantitative EDA: The means are 36 days for A, 39 days for B, and 46 days for C. Each group has a standard deviation of 5.26 days and 12 observations.
+
+b. Assumption check:
+
+- Independent observations: Cases are independent, as stated in the question.
+- Normality: The residual Q-Q plot shows some departures from a straight line, but no strong skewness or extreme outliers. Approximate normality seems reasonable.
+- Equal variances: The group standard deviations are identical, and the boxplots show similar spreads. The residuals also have similar spreads across fitted values, so equal population variances seem reasonable.
+
+```{r}
+fit <- aov(days ~ division, data = courts)
+plot(fit, which = 2) # Q-Q plot of residuals
+plot(fit, which = 1) # residuals versus fitted values
+```
+
+c.
+
+H0: The population mean processing times are equal across all three divisions.
+H1: At least one population mean differs.
+
+d.
+
+```{r}
+summary(fit)
+TukeyHSD(fit)
+```
+
+I ran a one-way ANOVA and found that the F-statistic is 11.43 (df = 2, 33) and the p-value = 0.00017. Tukey's HSD gives:
+
+| Comparison | Estimated difference (days) | Adjusted p-value |
+|---|---:|---:|
+| B minus A | 3.00 | 0.354 |
+| C minus A | 10.00 | 0.00015 |
+| C minus B | 7.00 | 0.0071 |
+
+e. There is evidence that the population mean processing times differ. Division C has significantly longer mean processing times than A and B. The difference between A and B is not statistically significant; this does not prove their means are equal.
+
+Three unadjusted t tests would increase the probability of at least one false rejection across the comparisons. Tukey's method accounts for these multiple comparisons. The differences are not necessarily causal because cases were not randomly assigned to divisions; divisions may handle different types of cases.

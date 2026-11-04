@@ -90,7 +90,10 @@ Linked File.”
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_3_questions.Rmd)
 
 - [2026 Practice exercises for Exam
-  2.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_t_tests_anova_practice_qs.Rmd)
+  2.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_t_tests_anova_quiz_-not%20completed.Rmd)
+
+- [2026 Practice exercises for Exam 2 -
+  solutions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_t_tests_anova_quiz_completed.Rmd)
 
 ## Exams and Quizzes
 
