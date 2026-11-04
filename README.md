@@ -89,6 +89,9 @@ Linked File.”
 - [2026 Exercises 3 -
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_3_questions.Rmd)
 
+- [2026 Practice exercises for Exam
+  2.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_t_tests_anova_practice_qs.Rmd)
+
 ## Exams and Quizzes
 
 - [2026 Exam 1 -
