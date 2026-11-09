@@ -3,8 +3,6 @@ title: "CRIM 1200 Exam — Questions"
 output: html_document
 ---
 
-**Time:** 90 minutes. **Total:** 60 points.
-
 Work on the three questions in any order. Each question uses a separate dataset.
 Keep this Rmd and all three CSVs in the same folder. The datasets are simulated
 for this exam. Show your R code and explain your answers in context. Use a
@@ -49,6 +47,7 @@ Perform visual and quantitative EDA on the quantitative variable for the complet
 **Question (c)** (4 points)
 
 Identify any assumptions required by the statistical test, and evaluate them.
+
 
 **Solution (c)**
 
