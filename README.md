@@ -103,12 +103,16 @@ Linked File.”
   html)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exam_1_solutions.html)
   [(Solutions in
   Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_1_solutions.Rmd)
+
 - [2026 Quiz 2 -
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Quiz_2_questions.Rmd)
   [(Solutions in
   html)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Quiz_2_solutions.html)
   [(Solutions in
   Rmd)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Quiz_2_solutions.Rmd)
+
+- [2026 Exam 2 -
+  questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exam_2_questions.Rmd)
 
 ## Datasets
 
@@ -159,3 +163,9 @@ Linked File.”
 - <a href="data/filing.csv" download>filing.csv</a>
 
 - <a href="data/courts.csv" download>courts.csv</a>
+
+- <a href="data/intake.csv" download>intake.csv</a>
+
+- <a href="data/redaction.csv" download>redaction.csv</a>
+
+- <a href="data/training.csv" download>training.csv</a>

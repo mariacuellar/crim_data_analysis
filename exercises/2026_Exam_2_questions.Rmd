@@ -1,0 +1,153 @@
+---
+title: "CRIM 1200 Exam — Questions"
+output: html_document
+---
+
+**Time:** 90 minutes. **Total:** 60 points.
+
+Work on the three questions in any order. Each question uses a separate dataset.
+Keep this Rmd and all three CSVs in the same folder. The datasets are simulated
+for this exam. Show your R code and explain your answers in context. Use a
+significance level of 0.05 throughout. Use the supplied plots for part (c) of
+each question.
+
+
+```{r, echo=FALSE, include=FALSE}
+library(tidyverse)
+```
+
+
+
+# Problem 1. Intake forms (20 points)
+
+- **Setup**: A public defender's office wants to know whether its standard and guided intake forms differ in mean completion time. Staff randomly assigned 48 new cases to the two forms, 24 per form. Each case used one form. Completion times for different cases can be treated as independent.
+
+- **Research question**: Does mean completion time differ between the standard and guided intake forms?
+
+- **Dataset** `intake.csv`. Each row is one case. `case_id` identifies the case,
+`form` is Standard or Guided, and `minutes` is completion time in minutes.
+
+
+
+**Question (a)** (4 points)
+
+Choose a test and explain why it fits the research question and study design. State the null and alternative hypotheses in terms of population means.
+
+**Solution (a)**
+
+
+
+**Question (b)** (4 points)
+
+Perform visual and quantitative EDA on the quantitative variable for the completion time (y=*minutes*), and the categorical variable (x=*form*) for the two groups, Standard and Guided. For the visual EDA, draw side-by-side boxplots (with proper labels) and describe them. For the quantitative EDA, report the sample size, mean, and standard deviation for each form.
+
+**Solution (b)**
+
+
+
+
+**Question (c)** (4 points)
+
+Identify any assumptions required by the statistical test, and evaluate them.
+
+**Solution (c)**
+
+
+
+
+
+**Question (d)** (8 points) 
+
+Run your test. Report the test statistic (t), p-value, and a 95% confidence interval. Answer the research question. 
+
+**Solution (d)**
+
+
+
+
+
+
+# Question 2. Document redaction (20 points)
+
+- **Setup**: A court wants to know whether mean redaction time differs between manual redaction and a software-assisted workflow. The court randomly sampled 18 clerks. Each clerk redacted two comparable packets, one using the manual workflow and one using the software-assisted workflow. For each clerk, the court randomly assigned which packet went with each workflow and randomized which workflow came first. Clerks worked independently of one another.
+
+- **Research question**: Does mean redaction time differ between the manual and software-assisted workflows when the same clerks use both?
+
+- **Dataset** `redaction.csv`. Each row is one clerk. `clerk_id` identifies the
+clerk. `manual_minutes` and `assisted_minutes` record completion times in minutes.
+
+
+**Question (a)** (4 points) Choose a test and explain why it fits the research question and study design. State the null and alternative hypotheses in terms of the population mean difference. 
+
+**Solution (a)**
+
+
+
+**Question (b)** (4 points) 
+
+Perform visual and quantitative EDA on the quantitative variable for the difference between the two workflows. For the visual EDA, draw a density plot (with proper labels) and describe it. For the quantitative EDA, report the sample size, mean, and standard deviation for the difference.
+
+
+**Solution (b)**
+
+
+
+
+
+**Question (c)** (4 points) Identify any assumptions required by the statistical test, and evaluate them. Explain which units must be independent.
+
+
+**Solution (c)**
+
+
+
+**Question (d)** (8 points) Run your test. Report the test statistic (t), p-value, and a 95% confidence interval. Answer the research question.
+
+
+**Solution (d)**
+
+
+
+
+
+
+
+
+
+# Question 3. Evidence-handling training (20 points)
+
+- **Setup**: A forensic laboratory wants to know whether mean assessment scores differ across three training formats. It randomly assigned 48 trainees to Video, Workshop, or Practice, with 16 trainees per format. Each trainee completed one format and took the same assessment individually. Scores from different trainees can be treated as independent.
+
+- **Research question:** Does the mean assessment score differ across the three training formats (Video, Workshop, and Practice)?
+
+- **Dataset** `training.csv`. Each row is one trainee. `trainee_id` identifies the trainee, `format` records the training format, and `score` is the assessment score on a 0–100 scale.
+
+
+**Question (a)** (4 points) Choose a single overall test and explain why it fits the research question and study design. State the null and alternative hypotheses in terms of the population means. 
+
+**Solution (a)**
+
+
+
+
+
+**Question (b)** (4 points) Perform visual and quantitative EDA on the quantitative variable y=*score* and the categorical variable x=*format* with three categories (Video, Workshop, and Practice). For the visual EDA, draw boxplots (with proper labels) and describe them. For the quantitative EDA, report the sample size, mean, and standard deviation for each group.
+
+
+**Solution (b)**
+
+
+
+
+**Question (c)** (4 points) Identify the assumption each supplied plot helps assess. Describe a feature of each plot and explain whether it raises a concern.
+
+**Solution (c)**
+
+
+
+**Question (d)** (8 points) Run the statistical test. Report the test statistic (F) and the p-value. Give your conclusion in context at the 0.05 significance level. Then, run a test to determine which groups differ from each other.  Answer the overall research question.
+
+
+**Solution (d)**
+
+
