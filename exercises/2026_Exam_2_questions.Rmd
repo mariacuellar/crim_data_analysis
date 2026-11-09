@@ -3,12 +3,6 @@ title: "CRIM 1200 Exam — Questions"
 output: html_document
 ---
 
-Work on the three questions in any order. Each question uses a separate dataset.
-Keep this Rmd and all three CSVs in the same folder. The datasets are simulated
-for this exam. Show your R code and explain your answers in context. Use a
-significance level of 0.05 throughout. Use the supplied plots for part (c) of
-each question.
-
 
 ```{r, echo=FALSE, include=FALSE}
 library(tidyverse)
@@ -16,7 +10,7 @@ library(tidyverse)
 
 
 
-# Problem 1. Intake forms (20 points)
+# Question 1. Intake forms (20 points)
 
 - **Setup**: A public defender's office wants to know whether its standard and guided intake forms differ in mean completion time. Staff randomly assigned 48 new cases to the two forms, 24 per form. Each case used one form. Completion times for different cases can be treated as independent.
 
@@ -93,8 +87,7 @@ Perform visual and quantitative EDA on the quantitative variable for the differe
 
 
 
-**Question (c)** (4 points) Identify any assumptions required by the statistical test, and evaluate them. Explain which units must be independent.
-
+**Question (c)** (4 points) Identify any assumptions required by the statistical test, and evaluate them. 
 
 **Solution (c)**
 
@@ -138,7 +131,8 @@ Perform visual and quantitative EDA on the quantitative variable for the differe
 
 
 
-**Question (c)** (4 points) Identify the assumption each supplied plot helps assess. Describe a feature of each plot and explain whether it raises a concern.
+**Question (c)** (4 points) Identify any assumptions required by the statistical test, and evaluate them. 
+
 
 **Solution (c)**
 
