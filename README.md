@@ -88,13 +88,11 @@ Linked File.”
 
 - [2026 Exercises 3 -
   questions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_Exercises_3_questions.Rmd)
-  [(Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exercises_3_Solutions.html)
+  [(Solutions)](https://mariacuellar.github.io/crim_data_analysis/exercises/2026_Exercises_3_solutions.html)
 
 - [2026 Practice exercises for Exam
   2.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_t_tests_anova_quiz_-not%20completed.Rmd)
-
-- [2026 Practice exercises for Exam 2 -
-  solutions.Rmd](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_t_tests_anova_quiz_completed.Rmd)
+  [(Solutions)](https://raw.githubusercontent.com/mariacuellar/crim_data_analysis/refs/heads/main/exercises/2026_t_tests_anova_quiz_completed.Rmd)
 
 ## Exams and Quizzes
 
